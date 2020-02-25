@@ -1,0 +1,15 @@
+---
+- name: Deploy Macos
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+    - packagesDarwin.yml
+
+  tasks:
+    - name: Instala pacotes necessarios
+      homebrew_cask:
+        name:
+          "{{ packages }}"
+        state: present
+      tags: admin

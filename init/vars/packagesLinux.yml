@@ -1,0 +1,67 @@
+packages:
+  - openssh-server
+  - fping
+  - htop
+  - pykickstart
+  - axel
+  - cmake
+  - freetype-devel
+  - fontconfig-devel
+  - libxcb-devel
+  - neovim
+  - gpick
+  - cmake
+  - gcc-c++
+  - make
+  - python3-devel
+  - dnf-plugin-system-upgrade
+  - dnf-plugins-core
+  - wdiff
+  - iotop
+  - ruby-devel
+  - tor
+  - proxychains
+  - vagrant
+  - gcc
+  - binutils
+  - make
+  - glibc-devel
+  - patch
+  - glibc-headers
+  - kernel-headers
+  - kernel-devel
+  - dkms
+  - zsh
+  - fzf
+  - git
+  - tmux
+  - vim-X11
+  - vim
+  - nmap
+  - fd-find
+  - ripgrep
+  - powerline
+  - powerline-fonts
+  - virt-viewer
+  - fping
+  - libnsl
+  - setroubleshoot
+  - setools
+  - htop
+  - fedora-workstation-repositories
+  - docker
+  - dia
+  - virt-manager
+  - bridge-utils
+  - libvirt
+  - virt-install
+  - qemu-kvm
+  - unzip
+  - google-chrome
+  - vlc
+  # - NetworkManager-vpnc-gnome NetworkManager-l2tp-gnome
+  # - NetworkManager-libreswan
+  # - /home/jpaulo/Dropbox/Tre-Pessoal/NetExtender.Linux.8.6.801-1.x86.64.rpm
+  # - alacritty --tem que instalar um repositorio especifico
+  # - chromium-freeworld --tem que instalar um outro repositorio
+  # - vlc --tem que instalar um outro repositorio

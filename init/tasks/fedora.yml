@@ -1,0 +1,34 @@
+    - name: Habilita repositorio google-chrome
+      yum_repository:
+        name: google-chrome
+        description: google-chrome repo
+        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64 
+        enabled: yes
+      become: true
+      tags: admin
+
+    - name: Instala repositorios fusions
+      dnf:
+        name:
+          - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedoraversion }}.noarch.rpm
+          - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedoraversion }}.noarch.rpm
+        state: present
+      become: true
+      tags: admin
+
+    - name: Instala pacotes necessarios
+      dnf:
+        name:
+          "{{ packages }}"
+        state: present
+      become: true
+      tags: admin
+
+    - name: Habilita ssh server
+      service:
+        name: sshd
+        enabled: yes
+        state: started
+      become: true
+      tags: admin
+
