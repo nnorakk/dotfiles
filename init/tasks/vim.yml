@@ -1,0 +1,17 @@
+    - name: clone repositorio gerenciador de plugins vundle
+      git:
+        repo: https://github.com/VundleVim/Vundle.vim.git
+        dest: ~/.vim/bundle/Vundle.vim
+        update: yes
+      tags: vim
+
+    - name: Instala plugins vim
+      command:
+        cmd: vim +PluginInstall +qall
+      tags: vim
+
+    - name: Finaliza instalacao YouCompleteMe plugin vim
+      command:
+        cmd: ~/.vim/bundle/YouCompleteMe/install.py
+      tags: vim
+

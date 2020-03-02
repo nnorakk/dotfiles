@@ -1,0 +1,13 @@
+dotfiles_dirs:
+  - .config/powerline
+  - .config/powerline/themes/shell
+  - .oh-my-zsh/custom/themes
+  - .vim/autoload/mappings
+  - .vim/plugin/mappings
+
+dotfiles:
+  - .alacritty.yml
+  - .fzf.bash
+  - .fzf.zsh
+  - .tmux.conf
+  

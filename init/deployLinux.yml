@@ -8,6 +8,8 @@
     - githubuser: nnorakk@gmail.com
     - fedoraversion: 31
 
+  vars_files:
+    - vars/dotfiles.yml
   # vars_prompt:
   #   - name: githubpassword
   #     prompt: "Digite a senha github"
@@ -19,6 +21,22 @@
 
     - name: Tarefas Fedora
       import_tasks: tasks/fedora.yml
+
+    - name: Cria diretorios necessarios
+      file:
+        path: $HOME/{{ item }}
+        state: directory
+      with_items:
+        - "{{ dotfiles_dirs }}"
+      tags: dotfiles
+
+    - name: Cria Links dos dotfiles
+      file:
+        src: ../dotfiles/{{ item }}
+        dest: $HOME/{{ item }}
+       with_items:
+         - "{{ dotfiles }}"
+      tags: dotfiles, links
 
     # Verificar destino depois colocar variavel do homeuser
     - name: clone repositorio dotfiles do github
@@ -61,22 +79,9 @@
         - checkout -f
       tags: dotfiles
 
-    - name: clone repositorio gerenciador de plugins vundle
-      git:
-        repo: https://github.com/VundleVim/Vundle.vim.git
-        dest: ~/.vim/bundle/Vundle.vim
-        update: yes
-      tags: vim
+    - name: Vim configs
+      import_tasks: tasks/vim.yml
 
-    - name: Instala plugins vim
-      command:
-        cmd: vim +PluginInstall +qall
-      tags: vim
-
-    - name: Finaliza instalacao YouCompleteMe plugin vim
-      command:
-        cmd: ~/.vim/bundle/YouCompleteMe/install.py
-      tags: vim
 
     # para usar o dropbox com muitos arquivos:
     # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p

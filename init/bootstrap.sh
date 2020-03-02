@@ -1,3 +1,4 @@
+#!/bin/sh
 # Inspirado em:
 # https://gitlab.dwbn.org/TobiasSteinhoff/dotfiles-ansible.git
 # https://github.com/wincent/wincent
