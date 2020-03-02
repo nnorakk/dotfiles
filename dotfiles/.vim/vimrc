@@ -1,0 +1,108 @@
+set foldmethod=indent " Usa folding atraves da identacao
+set foldlevel=99 " Abre sem folding
+
+" leader map igual a espaco. Default e '\'
+let mapleader = "\ "
+
+" expande tabs em espaco
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+" ignore case em buscas /
+set ignorecase smartcase
+
+" permite usar 24-bit colors, permite usar colorscheme do plugin base16 
+" set termguicolors
+if exists('+termguicolors')
+    " correcao quando usa dentro do tmux
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
+" Allow resize window inside tmux
+if !has('nvim')
+    set ttymouse=sgr
+endif
+
+" Show number and relativenumber
+set number relativenumber
+
+" Enables cursor line position tracking:
+set cursorline
+
+" BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+set fillchars+=vert:┃
+
+" Preferencias ao splitar janelas
+set splitbelow splitright
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Remove a mensagem de Intro do vim 
+set shortmess+=I
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-commentary' " comments using 'gc'
+Plugin 'tpope/vim-surround' " surround comandos ysw',csw',ds...
+Plugin 'tpope/vim-repeat' " permite usar o . ( dot ) para o plugin vim-surround
+Plugin 'chriskempson/base16-vim' " cores
+Plugin 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
+								 " precisa setar o hi ColorColumn para ficar mais adequado
+Plugin 'itchyny/lightline.vim' " status line plugin bem minimalista
+Plugin 'w0rp/ale' " linter 
+" Plugin 'airblade/vim-gitgutter' " sinaliza modificacoes rastreadas pelo git
+Plugin 'mhinz/vim-signify' " testando git
+Plugin 'itchyny/vim-gitbranch' " tetanto git pegar branchname
+Plugin 'Yggdroot/indentLine' " identacao 
+Plugin 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e tmux panes
+Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
+Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
+Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
+                                " sudo dnf install cmake gcc-c++ make
+                                " python3-devel
+                                " então entrar no diretorio e instalar:
+                                " install.py
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" YouCompleteMe : Fechar janela quando concluir complete
+" TODO: verificar configuracao dentro de virtualenv
+let g:ycm_autoclose_preview_window_after_completion=1
+
+" esmaecer quando muda de tmux pane
+let g:diminactive_enable_focus = 1
+
+" Ale : Comandos mais uteis :ALEToggle :ALEInfo :ALEFix
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+						\ 'python': [
+						\	'isort',
+						\   'remove_trailing_lines',
+						\   'yapf',
+						\	'trim_whitespace'
+						\	]
+						\}
+
+" indentline, nao mostra em text e help files
+let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
+
+" seta esquema de cores
+silent! color base16-default-dark " desert
+
+" desabilita relativenumber quando em modo insercao
+augroup BgHighlight
+	autocmd!
+    autocmd WinEnter,InsertLeave,FocusGained * call change_numbering#set_relativenumber()
+	autocmd WinLeave,BufLeave,InsertEnter,FocusLost * call change_numbering#unset_relativenumber()
+	autocmd FocusLost * silent redraw!
+	autocmd FocusGained * silent redraw!
+augroup END

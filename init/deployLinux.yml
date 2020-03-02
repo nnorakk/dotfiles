@@ -34,7 +34,7 @@
       file:
         src: ../dotfiles/{{ item }}
         dest: $HOME/{{ item }}
-       with_items:
+      with_items:
          - "{{ dotfiles }}"
       tags: dotfiles, links
 
