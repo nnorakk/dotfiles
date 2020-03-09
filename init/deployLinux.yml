@@ -19,67 +19,13 @@
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
       include_vars: "vars/packages{{ ansible_system }}.yml"
 
-    - name: Tarefas Fedora
+    - name: Fedora Tasks
       import_tasks: tasks/fedora.yml
 
-    - name: Cria diretorios necessarios
-      file:
-        path: $HOME/{{ item }}
-        state: directory
-      with_items:
-        - "{{ dotfiles_dirs }}"
-      tags: dotfiles
+    - name: Dotfiles Tasks
+      import_tasks: tasks/dotfiles.yml
 
-    - name: Cria Links dos dotfiles
-      file:
-        src: ../dotfiles/{{ item }}
-        dest: $HOME/{{ item }}
-      with_items:
-         - "{{ dotfiles }}"
-      tags: dotfiles, links
-
-    # Verificar destino depois colocar variavel do homeuser
-    - name: clone repositorio dotfiles do github
-      git:
-        repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/nnorakk/dotfilesCasa
-        dest: $HOME/.my-dotfiles 
-        bare: yes
-        update: yes
-      tags: dotfiles
-
-    - name: Clona repostiorio fzf
-      git:
-        repo: https://github.com/junegunn/fzf
-        dest: $HOME/.fzf
-      tags: dotfiles, fzf
-
-    - name: Instala oh-my-zsh
-      git: 
-        repo: https://github.com/robbyrussell/oh-my-zsh
-        dest: $HOME/.oh-my-zsh
-      tags: dotfiles, zsh
-
-    - name: Instala zsh-autosuggestions
-      git: 
-        repo: https://github.com/zsh-users/zsh-autosuggestions
-        dest: $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
-      tags: dotfiles, zsh
-
-    - name: Instala Tmux themes
-      git: 
-        repo: https://github.com/jimeh/tmux-themepack.git
-        dest: $HOME/.tmux-themepack
-      tags: dotfiles, tmux
-
-    - name: recupera todos os arquivos do repositorio
-      command:
-        cmd: git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME {{ item }} 
-      with_items:
-        - pull origin master
-        - checkout -f
-      tags: dotfiles
-
-    - name: Vim configs
+    - name: Vim Configs
       import_tasks: tasks/vim.yml
 
 
