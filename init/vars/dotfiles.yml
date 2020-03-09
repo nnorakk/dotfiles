@@ -10,4 +10,18 @@ dotfiles:
   - .fzf.bash
   - .fzf.zsh
   - .tmux.conf
-  
+  - .bashrc
+  - .config/powerline/config.json
+  - .config/powerline/themes/shell/jpaulo.json
+  - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
+  - .vim/autoload/change_numbering.vim
+  - .vim/autoload/mappings/leader.vim
+  - .vim/plugin/customscolors.vim
+  - .vim/plugin/mappings/insertmap.vim
+  - .vim/plugin/mappings/leader.vim
+  - .vim/plugin/mappings/normal.vim
+  - .vim/plugin/mappings/visual.vim
+  - .vim/plugin/protect.vim
+  - .vim/plugin/statusline.vim
+  - .vim/vimrc
+  - .zshrc
