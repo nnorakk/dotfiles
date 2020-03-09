@@ -10,6 +10,8 @@
       file:
         src: $HOME/.dotfiles/dotfiles/{{ item }}
         dest: $HOME/{{ item }}
+        state: link
+        force: true
       with_items:
          - "{{ dotfiles }}"
       tags: dotfiles, links
