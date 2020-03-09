@@ -47,11 +47,11 @@
         dest: $HOME/.tmux-themepack
       tags: dotfiles, tmux
 
-    - name: recupera todos os arquivos do repositorio
-      command:
-        cmd: git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME {{ item }} 
-      with_items:
-        - pull origin master
-        - checkout -f
-      tags: dotfiles
+    # - name: recupera todos os arquivos do repositorio
+    #   command:
+    #     cmd: git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME {{ item }} 
+    #   with_items:
+    #     - pull origin master
+    #     - checkout -f
+    #   tags: dotfiles
 
