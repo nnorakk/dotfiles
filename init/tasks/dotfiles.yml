@@ -1,22 +1,4 @@
-    - name: Cria diretorios necessarios
-      file:
-        path: $HOME/{{ item }}
-        state: directory
-      with_items:
-        - "{{ dotfiles_dirs }}"
-      tags: dotfiles
-
-    - name: Cria Links dos dotfiles
-      file:
-        src: $HOME/.dotfiles/dotfiles/{{ item }}
-        dest: $HOME/{{ item }}
-        state: link
-        force: true
-      with_items:
-         - "{{ dotfiles }}"
-      tags: dotfiles, links
-
-    # Verificar destino depois colocar variavel do homeuser
+        # Verificar destino depois colocar variavel do homeuser
     # - name: clone repositorio dotfiles do github
     #   git:
     #     repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/nnorakk/dotfilesCasa
@@ -48,6 +30,25 @@
         repo: https://github.com/jimeh/tmux-themepack.git
         dest: $HOME/.tmux-themepack
       tags: dotfiles, tmux
+
+    - name: Cria diretorios necessarios
+      file:
+        path: $HOME/{{ item }}
+        state: directory
+      with_items:
+        - "{{ dotfiles_dirs }}"
+      tags: dotfiles
+
+    - name: Cria Links dos dotfiles
+      file:
+        src: $HOME/.dotfiles/dotfiles/{{ item }}
+        dest: $HOME/{{ item }}
+        state: link
+        force: true
+      with_items:
+         - "{{ dotfiles }}"
+      tags: dotfiles, links
+
 
     # - name: recupera todos os arquivos do repositorio
     #   command:
