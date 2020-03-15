@@ -1,0 +1,13 @@
+    - name: Instala pacotes Homebrew Cask  
+      homebrew_cask:
+        name:
+          "{{ cask_packages }}"
+        state: present
+      tags: admin
+
+    - name: Instala pacotes Homebrew
+      homebrew:
+        name:
+          "{{ packages }}"
+        state: present
+      tags: admin

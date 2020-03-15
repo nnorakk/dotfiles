@@ -2,14 +2,19 @@
 - name: Deploy Macos
   hosts: localhost
   connection: local
-  gather_facts: no
+  gather_facts: yes
   vars_files:
-    - packagesDarwin.yml
+    - vars/dotfiles.yml
 
   tasks:
-    - name: Instala pacotes necessarios
-      homebrew_cask:
-        name:
-          "{{ packages }}"
-        state: present
-      tags: admin
+    - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
+      include_vars: "vars/packages{{ ansible_system }}.yml"
+
+    - name: Macos Tasks
+      import_tasks: tasks/darwin.yml
+
+    - name: Dotfiles Tasks
+      import_tasks: tasks/dotfiles.yml
+
+    - name: Vim Configs
+      import_tasks: tasks/vim.yml
