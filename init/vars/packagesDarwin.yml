@@ -10,3 +10,5 @@ packages:
   - ripgrep
   - fzf
   - cmake
+  - python3
+  - go

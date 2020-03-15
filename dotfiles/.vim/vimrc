@@ -1,3 +1,5 @@
+syntax on " habilita syntax highlight
+
 set foldmethod=indent " Usa folding atraves da identacao
 set foldlevel=99 " Abre sem folding
 
