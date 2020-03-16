@@ -6,6 +6,13 @@
     #     bare: yes
     #     update: yes
     #   tags: dotfiles
+    - name: Cria diretorios necessarios
+      file:
+        path: $HOME/{{ item }}
+        state: directory
+      with_items:
+        - "{{ dotfiles_dirs }}"
+      tags: dotfiles
 
     - name: Clona repositorio fzf
       git:
@@ -31,13 +38,11 @@
         dest: $HOME/.tmux-themepack
       tags: dotfiles, tmux
 
-    - name: Cria diretorios necessarios
-      file:
-        path: $HOME/{{ item }}
-        state: directory
-      with_items:
-        - "{{ dotfiles_dirs }}"
-      tags: dotfiles
+    - name: Instala Base16-shell
+      git: 
+        repo: https://github.com/chriskempson/base16-shell.git
+        dest: $HOME/.config/base16-shell
+      tags: dotfiles, base16
 
     - name: Cria Links dos dotfiles
       file:
@@ -57,4 +62,3 @@
     #     - pull origin master
     #     - checkout -f
     #   tags: dotfiles
-

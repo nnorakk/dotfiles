@@ -79,9 +79,9 @@ ZSH_THEME="refined-jp"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git 
-    virtualenv
-    zsh-autosuggestions)
+# plugins=(git 
+    # virtualenv
+    # zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
