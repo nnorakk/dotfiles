@@ -29,8 +29,8 @@
     - name: Instala zsh-autosuggestions
       git: 
         repo: https://github.com/zsh-users/zsh-autosuggestions
-        dest: $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
-      tags: dotfiles, zsh
+        dest: $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+      tags: dotfiles, zsh, autosuggestions
 
     - name: Instala Tmux themes
       git: 
