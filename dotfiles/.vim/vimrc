@@ -58,9 +58,8 @@ Plugin 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao
 								 " precisa setar o hi ColorColumn para ficar mais adequado
 Plugin 'itchyny/lightline.vim' " status line plugin bem minimalista
 Plugin 'w0rp/ale' " linter 
-" Plugin 'airblade/vim-gitgutter' " sinaliza modificacoes rastreadas pelo git
 Plugin 'mhinz/vim-signify' " testando git
-Plugin 'itchyny/vim-gitbranch' " tetanto git pegar branchname
+Plugin 'itchyny/vim-gitbranch' " tentanto git pegar branchname
 Plugin 'Yggdroot/indentLine' " identacao 
 Plugin 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e tmux panes
 Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
@@ -96,6 +95,9 @@ let g:ale_fixers = {
 
 " indentline, nao mostra em text e help files
 let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
+
+" indentline plugin quando cursoline esta selecionado
+" let g:indentLine_concealcursor=0
 
 " seta esquema de cores
 silent! color base16-default-dark " desert
