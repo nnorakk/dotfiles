@@ -147,3 +147,6 @@ if [ ! -z "$TMUX" ]; then
     tmux set-option window-active-style 'bg=terminal'
     tmux set-option window-style 'bg=#333333'
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
