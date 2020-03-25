@@ -66,11 +66,13 @@ Plugin 'Yggdroot/indentLine' " identacao
 Plugin 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e tmux panes
 Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
 Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
+if ! has('nvim')
 Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                 " sudo dnf install cmake gcc-c++ make
                                 " python3-devel
                                 " então entrar no diretorio e instalar:
                                 " install.py
+end
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
