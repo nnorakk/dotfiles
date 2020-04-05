@@ -32,6 +32,12 @@
         dest: $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
       tags: dotfiles, zsh, autosuggestions
 
+    - name: Instala zsh-syntax-highlighting
+      git: 
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting
+        dest: $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+      tags: dotfiles, zsh, zsh-syntax-highlighting
+
     - name: Instala Tmux themes
       git: 
         repo: https://github.com/jimeh/tmux-themepack.git
