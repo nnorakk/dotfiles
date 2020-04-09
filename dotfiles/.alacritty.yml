@@ -77,7 +77,7 @@ font:
     italic:
         family: Source Code Pro Medium
 #     family: SF Mono
-        style: Regular Italic
+        # style: Regular Italic
 #
 #   # Point size of the font
 #   size: 12.0
