@@ -67,6 +67,7 @@ Plugin 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows
 Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
 Plugin 'junegunn/fzf' " fzf com funcoes para plugin vim 
 Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
+Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
 if ! has('nvim')
     Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
@@ -105,7 +106,8 @@ let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
 " let g:indentLine_concealcursor=0
 
 " seta esquema de cores
-silent! color base16-default-dark " desert
+" silent! color base16-default-dark " desert
+silent! color gruvbox
 
 " desabilita relativenumber quando em modo insercao
 augroup BgHighlight
