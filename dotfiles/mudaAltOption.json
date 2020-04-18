@@ -1,0 +1,12 @@
+{
+  "Profiles": [
+    {
+      "Name": "MudaAltOption",
+      "Guid": "ba19744f-6af3-434d-aaa6-0a48e0969959",
+      "Normal Font" : "SourceCodeProForPowerline-Medium 16",
+      "Option Key Sends" : 2,
+      "Right Option Key Sends" : 0,
+      "Use Non-ASCII Font" : false
+    }
+  ]
+}
