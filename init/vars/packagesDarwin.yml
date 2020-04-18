@@ -12,3 +12,4 @@ packages:
   - cmake
   - python3
   - go
+  - ctags
