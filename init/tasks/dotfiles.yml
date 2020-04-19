@@ -1,11 +1,3 @@
-        # Verificar destino depois colocar variavel do homeuser
-    # - name: clone repositorio dotfiles do github
-    #   git:
-    #     repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.com/nnorakk/dotfilesCasa
-    #     dest: $HOME/.my-dotfiles 
-    #     bare: yes
-    #     update: yes
-    #   tags: dotfiles
     - name: Cria diretorios necessarios
       file:
         path: $HOME/{{ item }}
@@ -75,12 +67,3 @@
         state: link
         force: true
       tags: dotfiles, links, neovim
-
-
-    # - name: recupera todos os arquivos do repositorio
-    #   command:
-    #     cmd: git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME {{ item }} 
-    #   with_items:
-    #     - pull origin master
-    #     - checkout -f
-    #   tags: dotfiles
