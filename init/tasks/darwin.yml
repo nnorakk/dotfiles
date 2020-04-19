@@ -11,3 +11,17 @@
           "{{ packages }}"
         state: present
       tags: admin
+
+    - name:  Verifica diretorio de config iTerm2
+      stat:
+        path: "$HOME/Library/Application Support/iTerm2/DynamicProfiles/"
+      register: iterm_dynamic_profile_dir
+      tags: darwin, iterm
+
+    - name: Cria link para arquivo de profile iTerm2
+      file:
+        src: $HOME/.dotfiles/dotfiles/mudaAltOption.json
+        dest: "{{ iterm_dynamic_profile_dir.stat.path }}/mudaAltOption.json"
+        state: link
+      when: iterm_dynamic_profile_dir.stat.isdir is defined
+      tags: darwin, iterm
