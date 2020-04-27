@@ -151,3 +151,8 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Define o tamanho do historico
+export HISTSIZE=100000
+
+# Ctrl-U nao deleta da posicao do curso ate inicio da linha no iterm2
+bindkey \^U backward-kill-line
