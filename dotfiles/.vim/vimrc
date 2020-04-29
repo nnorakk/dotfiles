@@ -2,6 +2,8 @@ syntax on " habilita syntax highlight
 
 set clipboard=unnamed,unnamedplus " forca usar registros * e + em yank
 
+set background=dark " seta tema para dark
+
 set backspace=indent,eol,start " comportamento backspace
 
 set foldmethod=indent " Usa folding atraves da identacao
