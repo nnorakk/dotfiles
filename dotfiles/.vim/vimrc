@@ -72,6 +72,7 @@ Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
 Plugin 'junegunn/fzf' " fzf com funcoes para plugin vim 
 Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
 Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
+Plugin 'tpope/vim-fugitive' " Plugin Git
 if ! has('nvim')
     Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
@@ -93,6 +94,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:diminactive_enable_focus = 1
 
 " Ale : Comandos mais uteis :ALEToggle :ALEInfo :ALEFix
+let g:ale_python_pylint_options = '--disable=C0103'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 						\ 'python': [

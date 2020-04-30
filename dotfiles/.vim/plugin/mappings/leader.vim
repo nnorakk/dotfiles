@@ -17,3 +17,7 @@ nnoremap <Leader>l :BLines<CR>
 nnoremap <Leader>L :Lines<CR>
 " busca no help
 nnoremap <Leader>H :Helptags!<CR>
+
+" mapear :lnext e :lprevios do ALE linter
+" nnoremap <Leader>ln :lnext<CR>
+" nnoremap <Leader>lp :lprevious<CR>
