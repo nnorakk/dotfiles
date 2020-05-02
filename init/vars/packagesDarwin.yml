@@ -1,6 +1,7 @@
 cask_packages:
   - iterm2
   - google-chrome
+  - vlc
 
 packages:
   - tmux
