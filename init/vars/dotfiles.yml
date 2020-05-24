@@ -4,6 +4,7 @@ dotfiles_dirs:
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
   - .vim/plugin/mappings
+  - .vim/ftplugin
 
 dotfiles:
   - .alacritty.yml
@@ -23,5 +24,7 @@ dotfiles:
   - .vim/plugin/mappings/visual.vim
   - .vim/plugin/protect.vim
   - .vim/plugin/statusline.vim
+  - .vim/ftplugin/python.vim
+  - .vim/ftplugin/yaml.vim
   - .vim/vimrc
   - .zshrc
