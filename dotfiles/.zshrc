@@ -82,6 +82,8 @@ ZSH_THEME="refined-jp"
 plugins=(git 
     virtualenv
     zsh-autosuggestions
+    docker
+    docker-compose
     zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
