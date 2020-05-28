@@ -16,6 +16,7 @@ dotfiles:
   - .config/powerline/themes/shell/jpaulo.json
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim
+  - .vim/autoload/visual_movement.vim
   - .vim/autoload/mappings/leader.vim
   - .vim/plugin/customscolors.vim
   - .vim/plugin/mappings/insertmap.vim
