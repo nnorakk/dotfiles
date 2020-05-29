@@ -62,6 +62,7 @@ packages:
   - ffmpeg
   - kitty
   - bat
+  - ranger
   # - NetworkManager-vpnc-gnome NetworkManager-l2tp-gnome
   # - NetworkManager-libreswan
   # - /home/jpaulo/Dropbox/Tre-Pessoal/NetExtender.Linux.8.6.801-1.x86.64.rpm
