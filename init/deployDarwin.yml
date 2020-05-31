@@ -9,6 +9,7 @@
   tasks:
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
       include_vars: "vars/packages{{ ansible_system }}.yml"
+      tags: packages
 
     - name: Macos Tasks
       import_tasks: tasks/darwin.yml

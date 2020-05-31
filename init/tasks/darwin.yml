@@ -3,14 +3,14 @@
         name:
           "{{ cask_packages }}"
         state: present
-      tags: admin
+      tags: admin, packages
 
     - name: Instala pacotes Homebrew
       homebrew:
         name:
           "{{ packages }}"
         state: present
-      tags: admin
+      tags: admin, packages
 
     - name:  Verifica diretorio de config iTerm2
       stat:

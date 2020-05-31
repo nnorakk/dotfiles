@@ -6,6 +6,7 @@ cask_packages:
 packages:
   - tmux
   - nmap
+  - telnet
   - fping
   - nvim
   - ripgrep
@@ -16,3 +17,4 @@ packages:
   - ctags
   - ranger
   - bat
+  - w3m
