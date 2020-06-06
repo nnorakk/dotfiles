@@ -1,5 +1,6 @@
 dotfiles_dirs:
   - .config/powerline
+  - .config/ranger
   - .config/powerline/themes/shell
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
@@ -13,6 +14,7 @@ dotfiles:
   - .tmux.conf
   - .bashrc
   - .config/powerline/config.json
+  - .config/ranger/rc.conf
   - .config/powerline/themes/shell/jpaulo.json
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim

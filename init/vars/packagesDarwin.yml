@@ -2,6 +2,7 @@ cask_packages:
   - iterm2
   - google-chrome
   - vlc
+  - spotify
 
 packages:
   - tmux
