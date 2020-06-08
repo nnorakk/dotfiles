@@ -137,18 +137,9 @@ alias xfreerdp=myxfreerdp
 # servidores dominio antigo
 alias rdesktop='rdesktop -g 1600x1000 -u trern\\jbezerra'
 
-# dotfiles on git 
-alias mydotfiles='git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME'
-
 # Use vim with +xterm_clipboard support if installed
 if which vimx > /dev/null 2>&1; then 
 		alias vim=$(which vimx) 
-fi
-
-# tentativa customizacao cores de foco do pane tmux
-if [ ! -z "$TMUX" ]; then
-    tmux set-option window-active-style 'bg=terminal'
-    tmux set-option window-style 'bg=#333333'
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

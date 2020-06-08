@@ -51,12 +51,6 @@ fi
 # ~/.fzf/install
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# tentativa customizacao cores de foco do pane tmux
-if [ ! -z "$TMUX" ]; then
-    tmux set-option window-active-style 'bg=terminal'
-    tmux set-option window-style 'bg=#333333'
-fi
-
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
