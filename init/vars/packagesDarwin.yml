@@ -3,6 +3,10 @@ cask_packages:
   - google-chrome
   - vlc
   - spotify
+  - adobe-acrobat-pro 
+  - firefox
+  - libreoffice
+  - alfred
 
 packages:
   - tmux
@@ -19,3 +23,5 @@ packages:
   - ranger
   - bat
   - w3m
+  - flake8
+  - black
