@@ -4,9 +4,9 @@
   connection: local
   gather_facts: yes
 
-  vars:
-    - githubuser: nnorakk@gmail.com
-    - fedoraversion: 31
+  # vars:
+    # - githubuser: nnorakk@gmail.com
+    # - fedoraversion: 31
 
   vars_files:
     - vars/dotfiles.yml
