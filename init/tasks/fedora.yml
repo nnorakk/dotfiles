@@ -32,3 +32,16 @@
       become: true
       tags: admin
 
+    - name: Aumenta o valor de fs.inotify.max_user_watches para Dropbox
+      lineinfile:
+        dest: /etc/sysctl.conf
+        line: fs.inotify.max_user_watches=100000
+        state: present
+      register: fs_inotify_max_user_watches
+      become: true
+
+    - name: Rele arquivo de parametro do kernel modificado
+      command: sysctl -p
+      become: true
+      when:
+        fs_inotify_max_user_watches['changed'] is true
