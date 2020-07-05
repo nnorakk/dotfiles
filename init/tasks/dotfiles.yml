@@ -1,11 +1,3 @@
-    - name: Cria diretorios necessarios
-      file:
-        path: $HOME/{{ item }}
-        state: directory
-      with_items:
-        - "{{ dotfiles_dirs }}"
-      tags: dotfiles
-
     - name: Clona repositorio fzf
       git:
         repo: https://github.com/junegunn/fzf
@@ -41,6 +33,14 @@
         repo: https://github.com/chriskempson/base16-shell.git
         dest: $HOME/.config/base16-shell
       tags: dotfiles, base16
+
+    - name: Cria diretorios necessarios
+      file:
+        path: $HOME/{{ item }}
+        state: directory
+      with_items:
+        - "{{ dotfiles_dirs }}"
+      tags: dotfiles
 
     - name: Cria Links dos dotfiles
       file:
