@@ -27,28 +27,28 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
-" Allow resize window inside tmux
+" Permite redimensionar window dentro do tmux
 if !has('nvim')
     set ttymouse=sgr
 endif
 
-" Show number and relativenumber
+" Seta line e relativenumber
 set number relativenumber
 
-" Enables cursor line position tracking:
+" Habilita highlight na linha atual
 set cursorline
 
-" BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+" Modifica o caracter separador vertical (U+2503, UTF-8: E2 94 83)
 set fillchars+=vert:┃
 
 " Preferencias ao splitar janelas
 set splitbelow splitright
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " Remove a mensagem de Intro do vim 
 set shortmess+=I
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -58,22 +58,22 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-commentary' " comments using 'gc'
 Plugin 'tpope/vim-surround' " surround comandos ysw',csw',ds...
+Plugin 'tpope/vim-fugitive' " Plugin Git
 Plugin 'tpope/vim-repeat' " permite usar o . ( dot ) para o plugin vim-surround
 Plugin 'chriskempson/base16-vim' " cores
 Plugin 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
 								 " precisa setar o hi ColorColumn para ficar mais adequado
 Plugin 'itchyny/lightline.vim' " status line plugin bem minimalista
 Plugin 'w0rp/ale' " linter 
-Plugin 'mhinz/vim-signify' " testando git
-Plugin 'itchyny/vim-gitbranch' " tentanto git pegar branchname
+Plugin 'mhinz/vim-signify' " Indica se houve mudanca da versao atual do arquivo no git
+Plugin 'itchyny/vim-gitbranch' " Captura BranchName para mostrar no statusline
 Plugin 'Yggdroot/indentLine' " identacao 
 Plugin 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e tmux panes
 Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
 Plugin 'junegunn/fzf' " fzf com funcoes para plugin vim 
 Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
 Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
-Plugin 'tpope/vim-fugitive' " Plugin Git
-if ! has('nvim')
+if ! has('nvim') " Nao habilita se utilizar o neovim
     Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
                                     " python3-devel
@@ -107,9 +107,6 @@ let g:ale_fixers = {
 
 " indentline, nao mostra em text e help files
 let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
-
-" indentline plugin quando cursoline esta selecionado
-" let g:indentLine_concealcursor=0
 
 " seta esquema de cores
 " silent! color base16-default-dark " desert
