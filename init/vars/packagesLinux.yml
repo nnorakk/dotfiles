@@ -64,7 +64,9 @@ packages:
   - bat
   - ranger
   - httpie
+  - w3m
   - ldns-utils
+  - xfreerdp
   - redhat-lsb-core
   - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm 
   # TODO: instalar via git clone 
