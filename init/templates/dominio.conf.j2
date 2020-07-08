@@ -1,0 +1,8 @@
+server=/{{ dnsmasq_vars.remote_domain }}/{{ dnsmasq_vars.remote_dns }}
+server=/{{ dnsmasq_vars.remote_domain }}/{{ dnsmasq_vars.local_dns }}
+
+address=/{{ dnsmasq_vars.gw1[0] }}/{{ dnsmasq_vars.gw1[1] }}
+address=/{{ dnsmasq_vars.gw2[0] }}/{{ dnsmasq_vars.gw2[1] }}
+address=/{{ dnsmasq_vars.gw3[0] }}/{{ dnsmasq_vars.gw3[1] }}
+
+log-queries

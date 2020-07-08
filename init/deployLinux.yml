@@ -4,16 +4,10 @@
   connection: local
   gather_facts: yes
 
-  # vars:
-    # - githubuser: nnorakk@gmail.com
-    # - fedoraversion: 31
-
   vars_files:
     - vars/dotfiles.yml
-  # vars_prompt:
-  #   - name: githubpassword
-  #     prompt: "Digite a senha github"
-  #     private: yes
+    - vars/dnsmasq.yml
+    - vars/hostvars.yml
 
   tasks:
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
@@ -23,16 +17,27 @@
     - name: Fedora Tasks
       import_tasks: tasks/fedora.yml
 
+    - name: Dnsmasq tasks
+      import_tasks: tasks/dnsmasq.yml
+      become: true
+
+    - name: Virtualization tasks
+      import_tasks: tasks/virt.yml
+      become: true
+
+    - name: Docker tasks
+      import_tasks: tasks/docker.yml
+      become: true
+
     - name: Dotfiles Tasks
       import_tasks: tasks/dotfiles.yml
 
     - name: Vim Configs
       import_tasks: tasks/vim.yml
 
-
-    # para usar o dropbox com muitos arquivos:
-    # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
-
+  handlers:
+    - name: Handlers
+      import_tasks: handlers/handlers.yml
     # - name: primeiro teste debug
     #   debug:
     #     msg: chamado com sucesso
