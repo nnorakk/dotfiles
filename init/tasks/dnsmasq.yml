@@ -5,14 +5,14 @@
         state: present
         line: 'dns=dnsmasq'
         firstmatch: true
-      when:  dnsmasq_vars is defined
+      when:  domains is defined
       notify: Restarta NetworkManager
       tags: dnsmasq
 
     - name: Configurar entradas dnsmasq
       template:
         src: "templates/dominio.conf.j2"
-        dest: "/etc/NetworkManager/dnsmasq.d/00-{{ dnsmasq_vars.remote_domain }}.conf"
+        dest: "/etc/NetworkManager/dnsmasq.d/00-{{ domains }}.conf"
       notify: Restarta NetworkManager
       tags: dnsmasq
 
