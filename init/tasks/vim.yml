@@ -6,12 +6,14 @@
       tags: vim
 
     - name: Instala plugins vim
-      command:
-        cmd: vim +PluginInstall +qall
+      shell:
+        cmd: vim +PluginInstall +'normal l' +'w! /tmp/vundle.tmp' +qall ; cat /tmp/vundle.tmp
+      register: instala_plugin_output
+      changed_when: instala_plugin_output.stdout.find('Cloning into') != -1
       tags: vim
 
     - name: Finaliza instalacao YouCompleteMe plugin vim
       command:
         cmd: ~/.vim/bundle/YouCompleteMe/install.py
+      changed_when: false
       tags: vim
-
