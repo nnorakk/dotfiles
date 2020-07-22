@@ -16,6 +16,10 @@
       become: true
       tags: admin
 
+    - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
+      include_vars: "vars/packages{{ ansible_system }}.yml"
+      tags: admin
+
     - name: Instala pacotes necessarios
       dnf:
         name:
