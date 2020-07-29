@@ -5,3 +5,5 @@ server=/{{ domains[0] }}/{{ dns }}
 {% for item in addresses %}
 address=/{{ item.host }}/{{ item.ip }}
 {% endfor %}
+
+log-queries
