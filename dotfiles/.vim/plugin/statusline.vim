@@ -9,7 +9,7 @@ let g:lightline = { 'colorscheme': 'Tomorrow_Night', }
 let g:lightline = { 'colorscheme': 'wombat', }
 let g:lightline = { 'colorscheme': 'jellybeans', }
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified', 'gitbranch'] ],

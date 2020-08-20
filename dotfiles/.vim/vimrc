@@ -73,6 +73,7 @@ Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
 Plugin 'junegunn/fzf' " fzf com funcoes para plugin vim 
 Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
 Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
+Plugin 'aserebryakov/vim-todo-lists'
 if ! has('nvim') " Nao habilita se utilizar o neovim
     Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
@@ -111,6 +112,10 @@ let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
 " seta esquema de cores
 " silent! color base16-default-dark " desert
 silent! color gruvbox
+
+" fzf layout
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.4 } }
+let $FZF_DEFAULT_OPTS='--reverse'
 
 " desabilita relativenumber quando em modo insercao
 augroup BgHighlight
