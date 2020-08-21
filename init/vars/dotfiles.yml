@@ -1,6 +1,12 @@
 dotfiles_dirs:
   - .config/powerline
   - .config/ranger
+  - .config/rofi
+  - .config/dunst
+  - .config/picom
+  - .config/sxhkd
+  - .config/polybar
+  - .config/bspwm
   - .config/powerline/themes/shell
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
@@ -14,8 +20,16 @@ dotfiles:
   - .tmux.conf
   - .bashrc
   - .config/powerline/config.json
-  - .config/ranger/rc.conf
   - .config/powerline/themes/shell/jpaulo.json
+  - .config/ranger/rc.conf
+  - .config/rofi/config
+  - .config/dunst/dunstrc
+  - .config/picom/picom.conf
+  - .config/sxhkd/sxhkdrc
+  - .config/polybar/config
+  - .config/polybar/launch.sh
+  - .config/polybar/openvpn-isrunning.sh
+  - .config/bspwm/bspwmrc
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim
   - .vim/autoload/visual_movement.vim
