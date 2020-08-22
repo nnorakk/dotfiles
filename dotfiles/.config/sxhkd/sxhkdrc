@@ -128,7 +128,7 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# my customs
+# Minhas customizacoes
 
 # abrir aplicativos terminal
 super + x; b
@@ -145,3 +145,20 @@ ctrl + shift + Print
 # Rotaciona as janelas: https://my-take-on.tech/2020/07/03/some-tricks-for-sxhkd-and-bspwm/#extra-organizing-and-running-sxhkd
 super + shift + {d,a}
     bspc node @/ -C {forward,backward}
+
+# Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
+super + shift + {e,b}
+	bspc node {@/ --equalize,@parent --balance}
+
+# Rotaciona todas as janelas em 90 graus: https://protesilaos.com/pdfd/basics-my-bspwm/
+super + {_,shift + }r
+	bspc node @/ --rotate {90,-90}
+
+# Flipa, o que esta na esquerda vai para a direita, cima para baixo: https://protesilaos.com/pdfd/basics-my-bspwm/
+super + alt + {_,shift + }r
+	bspc node @/ --rotate {180,-180}
+
+# gaps dinamicos: https://protesilaos.com/pdfd/basics-my-bspwm/
+super + shift + bracket{left,right}
+	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {-,+} 5 ))"
+

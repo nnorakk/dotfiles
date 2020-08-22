@@ -59,6 +59,7 @@ packages:
   - unzip
   - google-chrome
   - vlc
+  - Thunar # gerenciador de arquivos
   - ffmpeg
   - kitty
   - bat
