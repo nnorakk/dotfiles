@@ -58,6 +58,9 @@ bspc rule -a xfreerdp desktop='^8' state=floating follow=on
 # https://github.com/D630/bin/blob/master/bspwm-rules
 bspc rule -a Spotify desktop='^8' state=floating follow=on
 bspc rule -a Zoiper5 desktop='^8' state=floating follow=on
+bspc rule -a Bashtop state=floating follow=on
+bspc rule -a Ranger state=floating follow=on
+bspc rule -a Calendar state=floating rectangle=680x570+540+310 layer=above
 # bspc rule -a snap desktop='^8' state=floating follow=on
 
 # Start Dropbox

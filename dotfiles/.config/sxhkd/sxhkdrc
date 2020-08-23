@@ -8,17 +8,16 @@ super + Return
     # kitty -c "tmux ls | grep -q attached || tmux attach || tmux new"
 
 # program launcher
-super + @space
-	dmenu_run
-
-# another program launcher
-super + shift + @space
-    rofi -show run 
+super + {_,shift +}@space
+	{rofi -show run,dmenu_run}
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# make sxhkd reload its configuration files:
+super + alt + Escape
+	pkill -USR1 -x sxhkd
 #
 # bspwm hotkeys
 #
@@ -131,8 +130,13 @@ super + {Left,Down,Up,Right}
 # Minhas customizacoes
 
 # abrir aplicativos terminal
-super + x; b
-    kitty -e "bashtop"
+super + x; {b,r,c,v}
+	{ \
+    kitty --class Bashtop --name bashtop -e "bashtop", \
+    kitty --class Ranger --name ranger -e "ranger", \
+    kitty --class Calendar --name calendar -e "testecal", \
+    kitty --class Vim --name vim -e "vim" \
+	}
 
 # lockscreen
 alt + shift + x
@@ -161,4 +165,3 @@ super + alt + {_,shift + }r
 # gaps dinamicos: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + shift + bracket{left,right}
 	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {-,+} 5 ))"
-
