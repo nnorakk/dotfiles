@@ -75,6 +75,7 @@ Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} den
 Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
 Plugin 'aserebryakov/vim-todo-lists'
 Plugin 'kovetskiy/sxhkd-vim' " syntax sxhkd file
+Plugin 'vimwiki/vimwiki' " vimwiki
 if ! has('nvim') " Nao habilita se utilizar o neovim
     Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
@@ -109,6 +110,11 @@ let g:ale_fixers = {
 
 " indentline, nao mostra em text e help files
 let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
+
+" configuracao vimwiki
+let g:vimwiki_list = [{ 'path': '~/Dropbox/Pessoal/vimnotes/',
+       \ 'syntax':'markdown', 'ext': '.md' }]
+" autocmd FileType vimwiki set ft=markdown
 
 " seta esquema de cores
 " silent! color base16-default-dark " desert

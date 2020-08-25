@@ -2,6 +2,10 @@
 nnoremap <silent> <leader>o <esc>:let currentPosition=getpos('.')<CR>o<Esc>:call setpos('.',currentPosition)<CR>
 nnoremap <silent> <leader>O <esc>:let currentPosition=getpos('.')<CR>O<Esc>:call setpos('.',[currentPosition[0],currentPosition[1]+1,currentPosition[2],currentPosition[3]])<CR>
 
+" navega entre linhas virtuais e reais naturalmente
+nnoremap j gj
+nnoremap k gk
+
 " Navegacao entre as janelas 
 nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
