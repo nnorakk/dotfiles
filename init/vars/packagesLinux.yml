@@ -63,6 +63,9 @@ packages:
   - ffmpeg
   - kitty
   - bat
+  - exa # versao turbinada do ls
+  - bashtop # monitor de sistema
+  - ytop # monitor de sistema
   - ranger
   - httpie
   - w3m
@@ -79,6 +82,8 @@ packages:
   - picom # compositor
   - feh # wallpaper
   - dunst # notificoes
+  - flameshot # captura de tela
+  - cava # visualizador de audio
   # TODO: instalar via git clone 
   # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
   # - ctop # ferramenta monitoramento docker
@@ -87,6 +92,7 @@ packages:
   # git clone + compilar
   # - tty-clock  # relogio terminal
   # - xcape  # mapeamento tecla
+  # - i3lock-color  # protecao de tela customizada
   #
   # - NetworkManager-vpnc-gnome NetworkManager-l2tp-gnome
   # - NetworkManager-libreswan
