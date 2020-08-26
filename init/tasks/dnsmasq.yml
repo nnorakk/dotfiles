@@ -1,3 +1,15 @@
+    - name: Testa se arquivo de variaveis dnsmasq.yml existe
+      stat:
+        path: "vars/dnsmasq.yml"
+      register: dnsmasq_file_vars
+      tags: dnsmasq
+
+    - name: Inclui arquivo de variaveis dnsmasq se existe
+      include_vars:
+        file: "vars/dnsmasq.yml"
+      when: dnsmasq_file_vars.stat.exists
+      tags: dnsmasq
+
     - name: Configurar dnsmasq extension NetworkManager
       lineinfile:
         path: "/etc/NetworkManager/NetworkManager.conf"
@@ -13,6 +25,7 @@
       template:
         src: "templates/dominio.conf.j2"
         dest: "/etc/NetworkManager/dnsmasq.d/00-{{ domains }}.conf"
+      when:  domains is defined
       notify: Restarta NetworkManager
       tags: dnsmasq
 

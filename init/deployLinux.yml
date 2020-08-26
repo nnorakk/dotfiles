@@ -6,7 +6,6 @@
 
   vars_files:
     - vars/dotfiles.yml
-    - vars/dnsmasq.yml
     - vars/hostvars.yml
 
   tasks:
