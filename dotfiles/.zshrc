@@ -149,3 +149,6 @@ export HISTSIZE=100000
 
 # Ctrl-U nao deleta da posicao do curso ate inicio da linha no iterm2
 bindkey \^U backward-kill-line
+
+# Define URI padrao ao usar o comando virsh do kvm
+export LIBVIRT_DEFAULT_URI="qemu:///system" 
