@@ -6,7 +6,6 @@
 
   vars_files:
     - vars/dotfiles.yml
-    - vars/hostvars.yml
 
   tasks:
     - name: Fedora Tasks
@@ -33,6 +32,3 @@
   handlers:
     - name: Handlers
       import_tasks: handlers/handlers.yml
-    # - name: primeiro teste debug
-    #   debug:
-    #     msg: chamado com sucesso

@@ -1,3 +1,24 @@
+    - name: Testa se arquivo de variaveis hostvars.yml existe
+      stat:
+        path: "vars/hostvars.yml"
+      register: hostvars_file_vars
+      tags: kvm
+
+    - name: Inclui arquivo de variaveis hostvars caso exista
+      include_vars:
+        file: "vars/hostvars.yml"
+      when: hostvars_file_vars.stat.exists
+      tags: kvm
+
+    - name: Verifica se vm ou host fisico
+      shell:
+        cmd: dmesg | grep 'Hypervisor detected:'
+      register: is_vm
+      ignore_errors: yes
+      changed_when: false
+      failed_when: false
+      tags: kvm
+
     # Usa nmcli para configurar a bridge a partir da conexao padrao inicial do fedora
     - name: Configura Bridge
       command: "{{ item }}"
@@ -9,7 +30,10 @@
         - "nmcli connection modify {{ conn_name }} +ipv4.dns {{ dns2 }}" 
         - "nmcli connection del 'Wired connection 1'" 
         - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_default_ipv4['interface'] }} ifname {{ ansible_default_ipv4['interface'] }} master {{ bridge_name }}" 
-      when:  ansible_default_ipv4['alias'] !=  bridge_name 
+      when: >
+        ( hostvars_file_vars.stat.exists ) and 
+        ( ansible_default_ipv4['alias'] !=  bridge_name ) and 
+        ( "'Hypervisor detected' not in is_vm.stdout" ) 
       tags: kvm
 
     - name: Instala pacotes necessarios pra virtualizacao
@@ -18,6 +42,7 @@
           "{{ kvm_packages }}"
         state: present
       notify: Habilita libvirt
+      when: "'Hypervisor detected' not in is_vm.stdout"
       tags: kvm
 
     - name: Adiciona usuario ao grupo libvirt
@@ -25,4 +50,5 @@
         name: "{{ lookup('env','LOGNAME') }}"
         groups: libvirt
         append: yes
+      when: "'Hypervisor detected' not in is_vm.stdout"
       tags: kvm
