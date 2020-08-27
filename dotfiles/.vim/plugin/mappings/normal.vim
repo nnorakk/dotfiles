@@ -12,6 +12,9 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
+" equaliza tamanho das janelas
+nnoremap <Leader>= <C-W>=
+
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>w :write<CR>
 nnoremap <Leader>x :xit<CR>
