@@ -76,6 +76,8 @@ Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
 Plugin 'aserebryakov/vim-todo-lists'
 Plugin 'kovetskiy/sxhkd-vim' " syntax sxhkd file
 Plugin 'vimwiki/vimwiki' " vimwiki
+Plugin 'ap/vim-css-color' " Color name highlight
+Plugin 'lambdalisue/fern.vim' " tree viewer
 if ! has('nvim') " Nao habilita se utilizar o neovim
     Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
