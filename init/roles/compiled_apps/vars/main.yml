@@ -1,0 +1,48 @@
+apps:
+  - app_name: tty-clock
+    repo: https://github.com/xorg62/tty-clock
+    targets:
+      - make
+      - make install
+    dependencies:
+      - ncurses-devel
+
+  - app_name: xcape
+    repo: https://github.com/alols/xcape
+    targets:
+      - make all
+      - make install
+      - make clean
+    dependencies:
+      - git 
+      - gcc 
+      - make 
+      - pkgconfig 
+      - libX11-devel 
+      - libXtst-devel 
+      - libXi-devel
+
+  - app_name: i3lock-color
+    repo: https://github.com/Raymo111/i3lock-color
+    targets:
+      - "./build.sh"
+      - "cd build && make install"
+    dependencies:
+      - autoconf
+      - automake
+      - libev-devel
+      - xcb-util-image-devel
+      - xcb-util-xrm-devel
+      - libxkbcommon-devel
+      - libxkbcommon-x11-devel
+      - cairo-devel
+      - libjpeg-turbo-devel
+      - pam-devel
+
+  - app_name: betterlockscreen
+    repo: https://github.com/pavanjadhaw/betterlockscreen
+    targets:
+      - "cp betterlockscreen /usr/bin/"
+    dependencies:
+      - ncurses-devel
+

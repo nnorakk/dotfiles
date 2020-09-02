@@ -1,0 +1,36 @@
+---
+- name: Defina Workspace
+  set_fact:
+    workspace: "{{ lookup('env', 'HOME') }}/tmp"
+
+- name: Certifica que o diretorio temporario existe
+  file:
+    path: "{{ workspace }}"
+    state: directory
+
+- name: Instala pacotes necessarios
+  dnf:
+    name:
+      "{{ item.dependencies }}"
+    state: present
+  with_items: 
+    - "{{ apps }}"
+  become: true
+
+- name: Git Clone App
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ workspace }}/{{ item.app_name }}"
+  with_items: 
+    - "{{ apps }}"
+
+- name: Compila e instala
+  shell: "{{ item[1] }}" # shell: "{{ item[1] | quote }}"
+  args:
+    chdir: "{{ workspace }}/{{ item[0].app_name }}"
+  environment:
+    PATH: "{{ ansible_env.PATH }}"
+  with_subelements: 
+    - "{{ apps }}"
+    - targets
+  become: true
