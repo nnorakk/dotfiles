@@ -14,6 +14,11 @@ nnoremap <C-l> <C-W>l
 
 " equaliza tamanho das janelas
 nnoremap <Leader>= <C-W>=
+" converte de vertical para horizontal as janelas
+nnoremap <Leader>- <c-w>t<c-w>K
+" converte de horizontal para vertical as janelas
+nnoremap <Leader>\ <c-w>t<c-w>H
+nnoremap <Leader>\| <c-w>t<c-w>H
 
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>w :write<CR>
