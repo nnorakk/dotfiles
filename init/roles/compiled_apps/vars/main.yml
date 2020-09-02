@@ -45,4 +45,3 @@ apps:
       - "cp betterlockscreen /usr/bin/"
     dependencies:
       - ncurses-devel
-

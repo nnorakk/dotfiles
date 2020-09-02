@@ -29,6 +29,9 @@
     - name: Vim Configs
       import_tasks: tasks/vim.yml
 
+  roles:
+    - role: compiled_apps
+
   handlers:
     - name: Handlers
       import_tasks: handlers/handlers.yml
