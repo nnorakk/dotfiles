@@ -134,7 +134,7 @@ super + x; {b,r,c,v}
 	{ \
     kitty --class Bashtop --name bashtop -e "bashtop", \
     kitty --class Ranger --name ranger -e "ranger", \
-    kitty --class Calendar --name calendar -e "testecal", \
+    kitty -c ~/gruvbox_light.conf --class Calendar --name showcalendarofyear -e "testecal", \
     kitty --class Vim --name vim -e "vim" \
 	}
 
