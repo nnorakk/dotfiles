@@ -47,7 +47,6 @@ bspc config presel_feedback_color "#5e81ac"
 
 bspc rule -a vlc state=fullscreen
 bspc rule -a xfreerdp desktop='^8' state=floating follow=on
-# nao funcionando, investigar depois rules bspc
 # https://github.com/baskerville/bspwm/issues/291
 # https://github.com/D630/bin/blob/master/bspwm-rules
 bspc rule -a Spotify desktop='^8' state=floating follow=on
@@ -68,7 +67,8 @@ setxkbmap -option ctrl:nocaps
 # scrollock funciona como CapsLock
 xmodmap -e "keycode 78 = Caps_Lock NoSymbol Caps_Lock"
 # CapsLock funciona como backspace quando pressionada e liberada
-${HOME}/tmp/xcape/xcape -e 'Control_L=BackSpace' && killall xcape && ${HOME}/tmp/xcape/xcape -e 'Control_L=BackSpace'
+# ${HOME}/tmp/xcape/xcape -e 'Control_L=BackSpace' && killall xcape && ${HOME}/tmp/xcape/xcape -e 'Control_L=BackSpace'
+xcape -e 'Control_L=BackSpace'
 
 # xmodmap -pke > ~/xmodmap_durante_bspwmrc
 # xmodmap xmodmap_original

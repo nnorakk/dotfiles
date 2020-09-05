@@ -9,9 +9,11 @@ alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+; width = 100%
+width = 96%
 height = 27
 ; offset-x = 1%
+offset-x = 2%
 ; offset-y = 0%
 radius = 6.0
 fixed-center = false
@@ -22,11 +24,13 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+; border-size = 4
+; border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+; padding-left = 0
+padding-left = 2
+; padding-right = 2
+padding-right = 30
 
 module-margin-left = 1
 module-margin-right = 2
@@ -52,9 +56,14 @@ modules-left = bspwm
 ; modules-center = sysmenu
 modules-right = pulseaudio memory cpu openvpn-isrunning date powermenu sysmenu
 
+; tray-position = right
 tray-position = right
-tray-padding = 2
+; tray-padding = 2
+; tray-padding = 10
 ;tray-background = #0063ff
+; tray-offset-x = ${self.radius}
+tray-offset-x = -20
+tray-detached = true
 
 wm-restack = bspwm
 ;override-redirect = true
