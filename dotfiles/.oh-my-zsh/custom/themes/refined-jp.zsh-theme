@@ -121,7 +121,7 @@ precmd() {
 # Define prompts
 #
 # PROMPT="%F{8}${SSH_TTY:+%n@%m}%f%(?.%F{green}.%F{red})❯%f " # Display a red prompt char on failure
-PROMPT="%F{8}${SSH_TTY:+%n@%m}%f%F{blue}%1~ %(?.%F{green}.%F{red})❯%f " # Display a red prompt char on failure
+PROMPT="%F{8}${SSH_TTY:+%n@%m}%f %F{blue}%1~ %(?.%F{green}.%F{red})❯%f " # Display a red prompt char on failure
 RPROMPT='%{$FG[242]%}%5~%{$reset_color%} '
 
 # ------------------------------------------------------------------------------
