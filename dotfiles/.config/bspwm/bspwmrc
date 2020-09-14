@@ -61,19 +61,19 @@ dropbox start
 # Random Wallpaper
 feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 
-# ajuste do teclado
 # capslock funciona como Control quando pressionada com outra tecla
 setxkbmap -option ctrl:nocaps
 # scrollock funciona como CapsLock
 xmodmap -e "keycode 78 = Caps_Lock NoSymbol Caps_Lock"
 # CapsLock funciona como backspace quando pressionada e liberada
-# ${HOME}/tmp/xcape/xcape -e 'Control_L=BackSpace' && killall xcape && ${HOME}/tmp/xcape/xcape -e 'Control_L=BackSpace'
 xcape -e 'Control_L=BackSpace'
-
-# xmodmap -pke > ~/xmodmap_durante_bspwmrc
-# xmodmap xmodmap_original
-# xmodmap xmodmapteste
-# tmp/xcape/xcape -e 'Control_R=BackSpace'
+# faz Enter funcionar como control direito
+xmodmap -e "remove Control = Control_R"
+xmodmap -e "keycode 0x69 = Return"
+xmodmap -e "keycode 0x24 = Control_R"
+xmodmap -e "add Control = Control_R"
+# Enter funcionamento normal quando pressionada e liberada
+xcape -e "Control_R=Return"
 
 # Inicia compositor
 pgrep -x picom > /dev/null || picom &
@@ -83,4 +83,4 @@ bspc config top_padding 29
 pgrep -x dunst > /dev/null || dunst &
 
 # protege tela depois de 5 minutos
-pgrep -x xautolock > /dev/null || xautolock -time 5 -locker 'betterlockscreen -l; betterlockscreen -u  ~/tmp/bspwm-wallpapers/backgrounds' 
+pgrep -x xautolock > /dev/null || xautolock -time 5 -locker 'betterlockscreen -l; betterlockscreen -u  ~/tmp/bspwm-wallpapers/backgrounds' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'"
