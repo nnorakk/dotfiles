@@ -1,4 +1,5 @@
 packages:
+  - dnf-utils
   - openssh-server
   - fping
   - htop
@@ -85,7 +86,8 @@ packages:
   - dunst # notificoes
   - flameshot # captura de tela
   - cava # visualizador de audio
-  - zathura # visualizador de pdf
+  - zathura # visualizador de arquivos
+  - zathura-pdf-mupdf # plugin zathura para pdf
   - okular # visualizador de pdf
 
   # TODO: instalar via git clone 
