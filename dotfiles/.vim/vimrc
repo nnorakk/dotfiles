@@ -50,46 +50,40 @@ set shortmess+=I
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" gerenciador de plugins plug
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-commentary' " comments using 'gc'
-Plugin 'tpope/vim-surround' " surround comandos ysw',csw',ds...
-Plugin 'tpope/vim-fugitive' " Plugin Git
-Plugin 'tpope/vim-repeat' " permite usar o . ( dot ) para o plugin vim-surround
-Plugin 'chriskempson/base16-vim' " cores
-Plugin 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
+Plug 'tpope/vim-commentary' " comments using 'gc'
+Plug 'tpope/vim-surround' " surround comandos ysw',csw',ds...
+Plug 'tpope/vim-fugitive' " Plugin Git
+Plug 'tpope/vim-repeat' " permite usar o . ( dot ) para o plugin vim-surround
+Plug 'chriskempson/base16-vim' " cores
+Plug 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
 								 " precisa setar o hi ColorColumn para ficar mais adequado
-Plugin 'itchyny/lightline.vim' " status line plugin bem minimalista
-Plugin 'w0rp/ale' " linter 
-Plugin 'mhinz/vim-signify' " Indica se houve mudanca da versao atual do arquivo no git
-Plugin 'itchyny/vim-gitbranch' " Captura BranchName para mostrar no statusline
-Plugin 'Yggdroot/indentLine' " identacao 
-Plugin 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e tmux panes
-Plugin 'junegunn/fzf.vim' " fzf fuzzy finder
-Plugin 'junegunn/fzf' " fzf com funcoes para plugin vim 
-Plugin 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
-Plugin 'morhetz/gruvbox' " Plugin colorscheme gruvbox
-Plugin 'aserebryakov/vim-todo-lists'
-Plugin 'kovetskiy/sxhkd-vim' " syntax sxhkd file
-Plugin 'vimwiki/vimwiki' " vimwiki
-Plugin 'ap/vim-css-color' " Color name highlight
-Plugin 'lambdalisue/fern.vim' " tree viewer
+Plug 'itchyny/lightline.vim' " status line plugin bem minimalista
+Plug 'w0rp/ale' " linter 
+Plug 'mhinz/vim-signify' " Indica se houve mudanca da versao atual do arquivo no git
+Plug 'itchyny/vim-gitbranch' " Captura BranchName para mostrar no statusline
+Plug 'Yggdroot/indentLine' " identacao 
+Plug 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e tmux panes
+Plug 'junegunn/fzf.vim' " fzf fuzzy finder
+Plug 'junegunn/fzf' " fzf com funcoes para plugin vim 
+Plug 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
+Plug 'morhetz/gruvbox' " Plugin colorscheme gruvbox
+Plug 'aserebryakov/vim-todo-lists'
+Plug 'kovetskiy/sxhkd-vim' " syntax sxhkd file
+Plug 'ap/vim-css-color' " Color name highlight
+Plug 'lambdalisue/fern.vim' " tree viewer
 if ! has('nvim') " Nao habilita se utilizar o neovim
-    Plugin 'ycm-core/YouCompleteMe' " tem que instalar: 
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' } " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
                                     " python3-devel
                                     " então entrar no diretorio e instalar:
                                     " install.py
 end
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+call plug#end()
+
 
 " YouCompleteMe : Fechar janela quando concluir complete
 " TODO: verificar configuracao dentro de virtualenv
@@ -112,12 +106,6 @@ let g:ale_fixers = {
 
 " indentline, nao mostra em text e help files
 let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
-
-" configuracao vimwiki
-let g:vimwiki_list = [{ 'path': '~/Dropbox/Pessoal/vimnotes/',
-       \ 'syntax':'markdown', 'ext': '.md' }]
-" autocmd FileType vimwiki set ft=markdown
-
 " seta esquema de cores
 " silent! color base16-default-dark " desert
 silent! color gruvbox
@@ -125,6 +113,14 @@ silent! color gruvbox
 " fzf layout
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.4 } }
 let $FZF_DEFAULT_OPTS='--reverse'
+" fzf action como abrir a selecao
+let g:fzf_action = { 
+            \'ctrl-t': 'tab split',
+            \'ctrl-s': 'split',
+            \'ctrl-x': 'split',
+            \'ctrl-v': 'vsplit'
+            \}
+
 
 " desabilita relativenumber quando em modo insercao
 augroup BgHighlight
