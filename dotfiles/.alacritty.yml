@@ -174,7 +174,8 @@ colors:
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
+# visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -233,7 +234,8 @@ selection:
   # clipboard.
   save_to_clipboard: true
 
-dynamic_title: true
+# dynamic_title: true
+window.dynamic_title: true
 
 cursor:
   # Cursor style
