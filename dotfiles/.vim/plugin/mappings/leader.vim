@@ -1,6 +1,24 @@
 nnoremap <silent> <Leader>r :call mappings#leader#cycle_numbering()<CR>
 nnoremap <silent> <Leader>m :call mappings#leader#cycle_mouse()<CR>
 
+" abre ou fecha fold
+nnoremap <Leader><Leader> za
+
+" equaliza tamanho das janelas
+nnoremap <Leader>= <C-W>=
+" converte de vertical para horizontal as janelas
+nnoremap <Leader>- <c-w>t<c-w>K
+" converte de horizontal para vertical as janelas
+nnoremap <Leader>\ <c-w>t<c-w>H
+nnoremap <Leader>\| <c-w>t<c-w>H
+
+" atalhos rapidos economiza alguns movimentos
+noremap <silent> <Leader>q :quit<CR>
+noremap <silent> <Leader>qa :quitall<CR>
+nnoremap <silent> <Leader>w :write<CR>
+nnoremap <silent> <Leader>x :xit<CR>
+nnoremap <silent> <Leader>so :source %<CR>
+
 " fzf plugin atalhos
 " Todos retirados de https://github.com/jesseleite/dotfiles/
 " busca nos arquivos rastreados pelo git
