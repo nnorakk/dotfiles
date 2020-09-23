@@ -1,0 +1,7 @@
+---
+- name: Habilita docker
+  service:
+    name: docker
+    enabled: yes
+    state: started
+  become: true

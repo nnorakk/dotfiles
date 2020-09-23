@@ -1,17 +1,3 @@
-    - name: Habilita libvirt
-      service:
-        name: libvirtd
-        enabled: yes
-        state: started
-      become: true
-
-    - name: Habilita docker
-      service:
-        name: docker
-        enabled: yes
-        state: started
-      become: true
-
     - name: Restarta NetworkManager
       service:
         name: NetworkManager

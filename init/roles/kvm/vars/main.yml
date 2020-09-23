@@ -1,0 +1,14 @@
+# Network vars
+conn_name: br0
+bridge_name: br0
+ip_address: 192.168.1.40/24
+gateway: 192.168.1.2
+dns1: 192.168.1.90
+dns2: 8.8.4.4
+
+# Pacotes Virtualizacao
+kvm_packages:
+  - qemu-kvm
+  - libvirt
+  - virt-install
+  - virt-manager

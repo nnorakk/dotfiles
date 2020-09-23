@@ -15,14 +15,6 @@
       import_tasks: tasks/dnsmasq.yml
       become: true
 
-    - name: Virtualization tasks
-      import_tasks: tasks/virt.yml
-      become: true
-
-    - name: Docker tasks
-      import_tasks: tasks/docker.yml
-      become: true
-
     - name: Dotfiles Tasks
       import_tasks: tasks/dotfiles.yml
 
@@ -30,7 +22,9 @@
       import_tasks: tasks/vim.yml
 
   roles:
-    - role: compiled_apps
+    - { role: kvm, tags: ["kvm"] }
+    - { role: docker, tags: ["docker"] }
+    - { role: compiled_apps, tags: ["compiled_apps"] }
 
   handlers:
     - name: Handlers
