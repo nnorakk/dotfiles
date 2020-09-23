@@ -29,8 +29,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 # mouse settings
-# com a tecla Shift pressionada move float window usando mouse
-bspc config pointer_modifier shift
+# com a tecla Alt pressionada move float window usando mouse
+bspc config pointer_modifier mod1
 # botao direito move a janela
 bspc config pointer_action1 move
 # botao central redimensiona janela usando a lateral mais proxima
