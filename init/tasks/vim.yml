@@ -1,19 +1,18 @@
-    - name: clone repositorio gerenciador de plugins vundle
-      git:
-        repo: https://github.com/VundleVim/Vundle.vim.git
-        dest: ~/.vim/bundle/Vundle.vim
-        update: yes
+    - name: Instala gerenciador de plugin vim-plug
+      get_url:
+        url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        dest: "$HOME/.vim/autoload"
       tags: vim
 
     - name: Instala plugins vim
       shell:
-        cmd: vim +PluginInstall +'normal l' +'w! /tmp/vundle.tmp' +qall ; cat /tmp/vundle.tmp
+        cmd: vim +PlugInstall +'normal l' +'w! /tmp/vimplug.tmp' +qall ; cat /tmp/vimplug.tmp
       register: instala_plugin_output
       changed_when: instala_plugin_output.stdout.find('Cloning into') != -1
       tags: vim
 
     - name: Finaliza instalacao YouCompleteMe plugin vim
       command:
-        cmd: ~/.vim/bundle/YouCompleteMe/install.py
+        cmd: ~/.vim/plugged/YouCompleteMe/install.py
       changed_when: false
       tags: vim
