@@ -19,8 +19,14 @@ nnoremap <silent> <Leader>w :write<CR>
 nnoremap <silent> <Leader>x :xit<CR>
 nnoremap <silent> <Leader>so :source %<CR>
 
+" atalhos para navegacao entre buffers
+nnoremap <leader>n :bnext<CR>
+nnoremap <leader>p :bprevious<CR>
+nnoremap <leader>ls :ls<CR>
+
 " fzf plugin atalhos
 " Todos retirados de https://github.com/jesseleite/dotfiles/
+"
 " busca nos arquivos rastreados pelo git
 nnoremap <Leader>f :GFiles<CR>
 " busca nos arquivos do projeto
