@@ -2,6 +2,8 @@ packages:
   - dnf-utils
   - openssh-server
   - fping
+  - tcpdump
+  - wireshark
   - htop
   - pykickstart
   - unrar
