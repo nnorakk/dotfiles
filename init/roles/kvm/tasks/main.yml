@@ -22,6 +22,7 @@
     groups: libvirt
     append: yes
   when: "'Hypervisor detected' not in is_vm.stdout"
+  become: true
 
 # Usa nmcli para configurar a bridge a partir da conexao padrao inicial do fedora
 - name: Configura Bridge
@@ -43,3 +44,4 @@
     gateway is defined and
     dns1 is defined and
     dns2 is defined
+  become: true
