@@ -63,6 +63,8 @@ dropbox start
 # Random Wallpaper
 feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 
+# certifica de nao existir processos xcape
+killall xcape
 # capslock funciona como Control quando pressionada com outra tecla
 setxkbmap -option ctrl:nocaps
 # scrollock funciona como CapsLock
