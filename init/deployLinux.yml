@@ -7,6 +7,13 @@
   vars_files:
     - vars/dotfiles.yml
 
+  pre_tasks:
+    - name: Inclui arquivo de variaveis hostvars caso exista
+      include_vars:
+        file: "vars/hostvars.yml"
+      ignore_errors: yes
+      failed_when: false
+
   tasks:
     - name: Fedora Tasks
       import_tasks: tasks/fedora.yml
