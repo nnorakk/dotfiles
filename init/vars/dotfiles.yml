@@ -8,6 +8,7 @@ dotfiles_dirs:
   - .config/polybar
   - .config/bspwm
   - .config/powerline/themes/shell
+  - .local/share/fonts
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
   - .vim/plugin/mappings
@@ -19,6 +20,7 @@ dotfiles:
   - .fzf.zsh
   - .tmux.conf
   - .bashrc
+  - '.local/share/fonts/Iosevka Nerd Font Complete.ttf'
   - .config/powerline/config.json
   - .config/powerline/themes/shell/jpaulo.json
   - .config/ranger/rc.conf
