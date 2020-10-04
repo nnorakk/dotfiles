@@ -8,8 +8,8 @@ super + Return
     # kitty -c "tmux ls | grep -q attached || tmux attach || tmux new"
 
 # program launcher
-super + {_,shift +}@space
-	{rofi -show run,dmenu_run}
+super + @space
+	rofi -modi drun,run -show drun -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
