@@ -52,7 +52,7 @@ bspc rule -a xfreerdp desktop='^8' state=floating follow=on
 # https://github.com/baskerville/bspwm/issues/291
 # https://github.com/D630/bin/blob/master/bspwm-rules
 bspc rule -a Spotify desktop='^8' state=floating follow=on
-bspc rule -a Zoiper5 desktop='^8' state=floating follow=on
+bspc rule -a Zoiper5 desktop='^10' state=floating follow=on
 bspc rule -a Bashtop state=floating follow=on
 bspc rule -a Ranger state=floating follow=on
 bspc rule -a Calendar state=floating rectangle=680x770+540+110 layer=above
@@ -64,7 +64,7 @@ dropbox start
 feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 
 # certifica de nao existir processos xcape
-killall xcape
+killall -9 xcape
 # capslock funciona como Control quando pressionada com outra tecla
 setxkbmap -option ctrl:nocaps
 # scrollock funciona como CapsLock
