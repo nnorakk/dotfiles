@@ -47,6 +47,9 @@ set splitbelow splitright
 " Remove a mensagem de Intro do vim 
 set shortmess+=I
 
+" Permite saltar para buffers nao salvos
+set hidden
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
