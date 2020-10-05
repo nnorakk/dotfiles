@@ -7,6 +7,7 @@ dotfiles_dirs:
   - .config/sxhkd
   - .config/polybar
   - .config/bspwm
+  - .config/kitty
   - .config/powerline/themes/shell
   - .local/share/fonts
   - .oh-my-zsh/custom/themes
@@ -32,6 +33,7 @@ dotfiles:
   - .config/polybar/launch.sh
   - .config/polybar/openvpn-isrunning.sh
   - .config/bspwm/bspwmrc
+  - .config/kitty/kitty.conf
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim
   - .vim/autoload/visual_movement.vim
