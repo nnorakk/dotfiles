@@ -86,6 +86,7 @@ packages:
   - picom # compositor
   - feh # wallpaper
   - dunst # notificoes
+  - xdotool # Usado pelo scratchpad tdrop
   - flameshot # captura de tela
   - cava # visualizador de audio
   - zathura # visualizador de arquivos

@@ -45,3 +45,10 @@ apps:
       - "cp betterlockscreen /usr/bin/"
     dependencies:
       - ncurses-devel
+
+  - app_name: tdrop
+    repo: https://github.com/noctuid/tdrop
+    targets:
+      - make install
+    dependencies:
+      - xdotool
