@@ -83,6 +83,7 @@ packages:
   - bspwm # bspwm window manager
   - sxhkd # daemon atalhos teclado
   - polybar #barra
+  - rofi # launcher
   - picom # compositor
   - feh # wallpaper
   - dunst # notificoes
