@@ -52,6 +52,7 @@ packages:
   - setroubleshoot
   - setools
   - htop
+  - xautolock
   - fedora-workstation-repositories
   - docker
   - dia
