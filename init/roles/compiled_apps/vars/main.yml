@@ -52,3 +52,11 @@ apps:
       - make install
     dependencies:
       - xdotool
+
+  - app_name: xdo
+    repo: https://github.com/baskerville/xdo
+    targets:
+      - make
+      - make install
+    dependencies:
+      - gcc
