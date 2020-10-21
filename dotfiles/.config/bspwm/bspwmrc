@@ -12,9 +12,9 @@ if [[ $(hostname) == bluestar* ]]; then
     xrandr --output HDMI-1 --mode resolucao
 
     # Define 10 Desktops
-    bspc monitor -d I II III IV V VI VII VIII IX X
+    bspc monitor -d 1 2 3 4 5 6 7 8
 else
-    # Define 10 Desktops em 2 monitores
+    # Define 8 Desktops em 2 monitores
     bspc monitor HDMI-1 -d 1 2 3 4
     bspc monitor HDMI-2 -d 5 6 7 8
 fi
@@ -61,7 +61,8 @@ bspc rule -a "Gnome-calculator" state=floating follow=on
 # https://github.com/baskerville/bspwm/issues/291
 # https://github.com/D630/bin/blob/master/bspwm-rules
 bspc rule -a Spotify desktop='^8' state=floating follow=on
-bspc rule -a Zoiper5 desktop='^10' state=floating follow=on
+# bspc rule -a Zoiper5 desktop='^10' state=floating follow=on
+bspc rule -a Zoiper5 state=floating
 # bspc rule -a "org.remmina.Remmina" desktop='^9' state=floating follow=on
 bspc rule -a "org.remmina.Remmina" desktop='^9' follow=on
 bspc rule -a Bashtop state=floating follow=on
