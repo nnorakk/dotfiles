@@ -76,6 +76,7 @@ packages:
   - w3m
   - ldns-utils
   - xfreerdp
+  - remmina
   - redhat-lsb-core
   - ImageMagick
   - w3m-img 
