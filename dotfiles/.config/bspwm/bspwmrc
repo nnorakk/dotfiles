@@ -75,6 +75,9 @@ dropbox start
 # Random Wallpaper
 feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 
+# seta formato cursor mouse
+xsetroot -cursor_name left_ptr
+
 # certifica de nao existir processos xcape
 killall -9 xcape
 # capslock funciona como Control quando pressionada com outra tecla
