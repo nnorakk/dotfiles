@@ -9,7 +9,7 @@ alert = #bd2c40
 
 [bar/right]
 ;monitor = ${env:MONITOR:HDMI-1}
-monitor = HDMI-1
+monitor = HDMI-0
 ; width = 100%
 width = 96%
 height = 27
@@ -63,7 +63,7 @@ cursor-scroll = ns-resize
 
 [bar/left]
 ;monitor = ${env:MONITOR:HDMI-1}
-monitor = HDMI-2
+monitor = HDMI-1
 ; width = 100%
 width = 96%
 height = 27
@@ -294,7 +294,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+; label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}

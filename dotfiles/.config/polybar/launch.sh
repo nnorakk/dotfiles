@@ -7,9 +7,9 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch principal polybar
-polybar right -c $HOME/.config/polybar/config &
+polybar left -c $HOME/.config/polybar/config &
 
 # Launch second polybar
 if [[ $(xrandr -q | grep -w connected | wc -l) -eq 2 ]]; then
-    polybar left -c $HOME/.config/polybar/config &
+    polybar right -c $HOME/.config/polybar/config &
 fi
