@@ -169,3 +169,7 @@ super + shift + bracket{left,right}
 # scratchpad com tdrop terminal emulator
 super + ctrl + Return
 	tdrop -am kitty
+
+# rofi -show window
+super + alt + space
+	rofi -show window
