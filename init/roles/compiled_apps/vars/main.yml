@@ -59,4 +59,4 @@ apps:
       - make
       - make install
     dependencies:
-      - gcc
+      - xcb-util-wm-devel
