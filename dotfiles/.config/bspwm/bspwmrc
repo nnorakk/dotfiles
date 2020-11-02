@@ -68,6 +68,8 @@ bspc rule -a "org.remmina.Remmina" desktop='^9' follow=on
 bspc rule -a Bashtop state=floating follow=on
 bspc rule -a Ranger state=floating follow=on
 bspc rule -a Calendar state=floating rectangle=680x770+540+110 layer=above
+bspc rule -a Zathura state=floating rectangle=680x770+540+110 layer=above
+# bspc rule -a 'Zathura' state=tiled
 
 # Start Dropbox
 dropbox start
