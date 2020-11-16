@@ -60,3 +60,11 @@ apps:
       - make install
     dependencies:
       - xcb-util-wm-devel
+
+  - app_name: xtitle
+    repo: https://github.com/baskerville/xtitle
+    targets:
+      - make
+      - make install
+    dependencies:
+      - gcc
