@@ -42,6 +42,7 @@ packages:
   - vim-X11
   - vim
   - nmap
+  - minicom # terminal console
   - fd-find
   - ripgrep
   - powerline
