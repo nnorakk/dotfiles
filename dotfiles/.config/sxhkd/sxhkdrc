@@ -152,8 +152,12 @@ super + shift + {d,a}
     bspc node @/ -C {forward,backward}
 
 # Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
-super + shift + {e,b}
-	bspc node {@/ --equalize,@parent --balance}
+super + shift + e
+	bspc node -f biggest.local ; bspc node @/ --equalize
+
+# Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
+super + shift + b
+	bspc node -f biggest.local ; bspc node @parent --balance
 
 # Rotaciona todas as janelas em 90 graus: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + {_,shift + }r
@@ -174,3 +178,7 @@ super + ctrl + Return
 # rofi -show window
 super + alt + space
 	rofi -show window
+
+# send to monitor
+super + shift + equal
+	bspc node -m last --follow
