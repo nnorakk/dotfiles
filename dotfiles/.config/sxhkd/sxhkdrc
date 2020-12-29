@@ -134,9 +134,9 @@ super + x; {b,r,c,v,o}
 	{ \
     kitty --class Bashtop --name bashtop -e "bashtop", \
     kitty --class Ranger --name ranger -e "ranger", \
-    kitty -c ~/gruvbox_light.conf --class Calendar --name showcalendarofyear -e "testecal", \
+    kitty -c ~/.config/kitty/gruvbox_light.conf --class Calendar --name showcalendarofyear -e "testecal", \
     kitty --class Vim --name vim -e "vim", \
-    kitty -c ~/gruvbox_light.conf --class fzfsearch --name fzfsearch -e "fzfsearch" \
+    kitty -c ~/.config/kitty/gruvbox_light.conf --class Fzfsearch --name fzfsearch -e "fzfsearch" \
 	}
 
 # lockscreen
