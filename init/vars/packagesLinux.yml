@@ -26,6 +26,7 @@ packages:
   - tor
   - proxychains
   - vagrant
+  - vagrant-libvirt
   - gcc
   - binutils
   - make
@@ -42,6 +43,7 @@ packages:
   - vim-X11
   - vim
   - nmap
+  - net-snmp-utils # snmpwalk
   - minicom # terminal console
   - fd-find
   - ripgrep
