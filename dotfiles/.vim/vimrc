@@ -131,6 +131,9 @@ let g:fzf_action = {
             \'ctrl-v': 'vsplit'
             \}
 
+" atalho copiar usando oscyank https://github.com/ojroques/vim-oscyank
+vnoremap <lead>c :OSCYank<CR>
+
 " desabilita relativenumber quando em modo insercao
 augroup BgHighlight
 	autocmd!
