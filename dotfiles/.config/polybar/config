@@ -9,14 +9,12 @@ alert = #bd2c40
 
 [bar/right]
 monitor = ${env:monitor1:HDMI-1}
-; monitor = HDMI-0
-; width = 100%
-width = 96%
+width = 99%
 height = 27
-; offset-x = 1%
-offset-x = 2%
-; offset-y = 0%
-radius = 6.0
+; offset-x = 2%
+offset-x = 1%
+offset-y = 0%
+radius = 0
 fixed-center = false
 
 background = ${colors.background}
@@ -25,13 +23,11 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-; border-size = 4
-; border-color = #00000000
+border-top-size = 1 
+border-color = #00000000
 
-; padding-left = 0
-padding-left = 2
-; padding-right = 2
-padding-right = 30
+padding-left = 0
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
@@ -44,14 +40,15 @@ modules-left = bspwm
 ; modules-center = sysmenu
 modules-right = pulseaudio memory cpu openvpn-isrunning date powermenu sysmenu
 
-; tray-position = right
 tray-position = right
+; tray-position = center
 ; tray-padding = 2
 ; tray-padding = 10
 ;tray-background = #0063ff
 ; tray-offset-x = ${self.radius}
-tray-offset-x = -20
-tray-detached = true
+; tray-offset-x = -20
+; tray-detached = true
+tray-detached = false
 
 wm-restack = bspwm
 ;override-redirect = true
@@ -130,7 +127,7 @@ type = custom/script
 label-active-font = 2
 exec = ~/.config/polybar/openvpn-isrunning.sh
 interval = 10
-format-underline = #b294bb
+; format-underline = #b294bb
 
 [module/xwindow]
 type = internal/xwindow
@@ -180,7 +177,7 @@ interval = 2
 ; U+E234
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+; format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -189,7 +186,7 @@ interval = 2
 ; U+F0C2
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+; format-underline = #4bffdc
 label = %gb_used%/%gb_free%
 
 [module/date]
@@ -209,7 +206,7 @@ format-prefix = " "
 ; format-foreground = #fefefe
 ; format-background = #668bd7
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+; format-underline = #0a6cf5
 label = "%date% %time% "
 
 [module/pulseaudio]
