@@ -58,6 +58,7 @@ packages:
   - xautolock
   - fedora-workstation-repositories
   - docker
+  - terraform
   - dia
   - virt-manager
   - bridge-utils

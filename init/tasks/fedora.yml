@@ -30,6 +30,13 @@
       become: true
       tags: admin
 
+    - name: Instala Repositorio Terraform
+      get_url:
+        url: "https://rpm.releases.hashicorp.com/fedora/hashicorp.repo"
+        dest: /etc/yum.repos.d/hashicorp.repo
+      become: true
+      tags: admin
+
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
       include_vars: "vars/packages{{ ansible_system }}.yml"
       tags: admin
