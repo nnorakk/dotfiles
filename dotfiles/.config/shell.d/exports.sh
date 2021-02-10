@@ -9,3 +9,6 @@ export HISTSIZE=100000
 
 # Editor
 export EDITOR=vim
+
+# Adiciona .loca/bin ao PATH
+export PATH=$PATH:$HOME/.local/bin
