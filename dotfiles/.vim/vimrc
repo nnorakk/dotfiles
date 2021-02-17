@@ -73,7 +73,6 @@ Plug 'junegunn/fzf.vim' " fzf fuzzy finder
 Plug 'junegunn/fzf' " fzf com funcoes para plugin vim 
 Plug 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
 Plug 'morhetz/gruvbox' " Plugin colorscheme gruvbox
-Plug 'aserebryakov/vim-todo-lists'
 Plug 'kovetskiy/sxhkd-vim' " syntax sxhkd file
 Plug 'ap/vim-css-color' " Color name highlight
 Plug 'lambdalisue/fern.vim' " tree viewer
