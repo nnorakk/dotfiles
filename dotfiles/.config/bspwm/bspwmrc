@@ -50,7 +50,7 @@ bspc config presel_feedback_color "#5e81ac"
 
 # Rules
 bspc rule -a vlc state=fullscreen
-bspc rule -a xfreerdp desktop='^8' state=floating follow=on
+bspc rule -a xfreerdp desktop='^8' state=floating follow=on center=true
 bspc rule -a "Gnome-calculator" state=floating follow=on
 # https://github.com/baskerville/bspwm/issues/291
 # https://github.com/D630/bin/blob/master/bspwm-rules
