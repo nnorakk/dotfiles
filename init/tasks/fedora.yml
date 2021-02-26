@@ -75,6 +75,11 @@
 
   # configura teclado americano com cedilha
   # localectl set-x11-keymap us intl
+    - name: Muda keymap para us acento
+      command: localectl set-keymap us-acentos
+      tags: keyboard
+
+  # testar se isso eh necessario mesmo
     - name: Instala pacotes necessarios mudar cedilha
       dnf:
         name:
