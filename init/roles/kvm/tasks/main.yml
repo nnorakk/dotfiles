@@ -24,6 +24,11 @@
   when: "'Hypervisor detected' not in is_vm.stdout"
   become: true
 
+# get default connection
+- name: Get default NetworkManager connection ethernet
+  shell: "nmcli | grep '{{ ansible_default_ipv4['interface'] }}:' | sed 's/.*connected to //'"
+  register: default_connection
+
 # Usa nmcli para configurar a bridge a partir da conexao padrao inicial do fedora
 - name: Configura Bridge
   command: "{{ item }}"
@@ -33,7 +38,7 @@
     - "nmcli connection modify {{ conn_name }} ipv4.gateway {{ gateway }}" 
     - "nmcli connection modify {{ conn_name }} ipv4.dns {{ dns1 }}" 
     - "nmcli connection modify {{ conn_name }} +ipv4.dns {{ dns2 }}" 
-    - "nmcli connection del 'Wired connection 1'" 
+    - "nmcli connection del '{{ default_connection.stdout }}'" 
     - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_default_ipv4['interface'] }} ifname {{ ansible_default_ipv4['interface'] }} master {{ bridge_name }}" 
   when: >
     ( ansible_default_ipv4['alias'] !=  bridge_name ) and 
@@ -46,3 +51,7 @@
     dns2 is defined
   notify: Restarta NetworkManager
   become: true
+
+# - name: Debuga criacao Bridge
+#   debug:
+#     msg: "Conname {{ conn_name }} Bridge Name: {{ bridge_name }} ip_address: {{ ip_address }}"
