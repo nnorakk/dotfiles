@@ -63,6 +63,8 @@ packages:
   - virt-manager
   - bridge-utils
   - libvirt
+  - libvirt-devel # necessario para instalar plugin vagrant libvirt
+  - vagrant
   - virt-install
   - qemu-kvm
   - unzip

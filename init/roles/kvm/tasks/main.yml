@@ -52,6 +52,13 @@
   notify: Restarta NetworkManager
   become: true
 
+- name: Instala plugin vagrant libvirt
+  shell:
+    cmd: vagrant plugin install vagrant-libvirt
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
+
 # - name: Debuga criacao Bridge
 #   debug:
 #     msg: "Conname {{ conn_name }} Bridge Name: {{ bridge_name }} ip_address: {{ ip_address }}"
