@@ -43,6 +43,8 @@ packages:
   - vim-X11
   - vim
   - nmap
+  - iperf
+  - iperf3
   - net-snmp-utils # snmpwalk
   - minicom # terminal console
   - fd-find
@@ -77,6 +79,7 @@ packages:
   - exa # versao turbinada do ls
   - bashtop # monitor de sistema
   - ytop # monitor de sistema
+  - bpytop # monitor de sistema
   - ranger
   - httpie
   - w3m
