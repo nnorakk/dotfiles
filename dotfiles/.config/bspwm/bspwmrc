@@ -77,20 +77,20 @@ feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 xsetroot -cursor_name left_ptr
 
 # certifica de nao existir processos xcape
-killall -9 xcape
+# killall -9 xcape
 # capslock funciona como Control quando pressionada com outra tecla
-setxkbmap -option ctrl:nocaps
+# setxkbmap -option ctrl:nocaps
 # scrollock funciona como CapsLock
-xmodmap -e "keycode 78 = Caps_Lock NoSymbol Caps_Lock"
+# xmodmap -e "keycode 78 = Caps_Lock NoSymbol Caps_Lock"
 # CapsLock funciona como backspace quando pressionada e liberada
-xcape -e 'Control_L=BackSpace'
+# xcape -e 'Control_L=BackSpace'
 # faz Enter funcionar como control direito
-xmodmap -e "remove Control = Control_R"
-xmodmap -e "keycode 0x69 = Return"
-xmodmap -e "keycode 0x24 = Control_R"
-xmodmap -e "add Control = Control_R"
+# xmodmap -e "remove Control = Control_R"
+# xmodmap -e "keycode 0x69 = Return"
+# xmodmap -e "keycode 0x24 = Control_R"
+# xmodmap -e "add Control = Control_R"
 # Enter funcionamento normal quando pressionada e liberada
-xcape -e "Control_R=Return"
+# xcape -e "Control_R=Return"
 
 # Inicia compositor
 pgrep -x picom > /dev/null || picom &

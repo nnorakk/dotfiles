@@ -72,14 +72,14 @@
       when:
         fs_inotify_max_user_watches['changed'] is true
 
-
-  # configura teclado americano com cedilha
-  # localectl set-x11-keymap us intl
+    # configura teclado americano com cedilha
+    # localectl set-x11-keymap us intl
     - name: Muda keymap para us acento
       command: localectl set-keymap us-acentos
+      changed_when: false
       tags: keyboard
 
-  # testar se isso eh necessario mesmo
+    # testar se isso eh necessario mesmo
     - name: Instala pacotes necessarios mudar cedilha
       dnf:
         name:
@@ -112,5 +112,25 @@
     # testar se isso eh necessario mesmo
     - name: Forca ler cedilha
       command: imsettings-switch im-cedilla
+      become: true
+      changed_when: false
+      tags: keyboard
+
+    - name: Copia arquivos Interception
+      copy:
+        dest: "{{ item }}"
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/{{ item }}"
+      with_items:
+        - /etc/interception/dual-function-keys.yaml
+        - /etc/interception/udevmon.yaml
+        - /etc/systemd/system/udevmon.service
+      become: true
+      tags: keyboard
+
+    - name: Habilita udevmon service
+      service:
+        name: udevmon
+        enabled: yes
+        state: started
       become: true
       tags: keyboard

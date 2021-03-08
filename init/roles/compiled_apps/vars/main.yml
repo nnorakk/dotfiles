@@ -68,3 +68,44 @@ apps:
       - make install
     dependencies:
       - gcc
+
+  - app_name: interception-tools
+    repo: https://gitlab.com/interception/linux/tools.git
+    targets:
+      - cmake -B build -DCMAKE_BUILD_TYPE=Release
+      - cmake --build build
+      - "cp -f build/udevmon /usr/bin"
+      - "cp -f build/intercept /usr/bin"
+      - "cp -f build/uinput /usr/bin"
+      - "cp -f udevmon.service /etc/systemd/system/"
+    dependencies:
+      - cmake
+      - libevdev-devel 
+      - systemd-devel
+      - yaml-cpp-devel
+      - boost-devel
+
+  - app_name: dual-function-keys-plugin
+    repo: https://gitlab.com/interception/linux/plugins/dual-function-keys
+    targets:
+      - make
+      - make install
+    dependencies:
+      - cmake
+      - libevdev-devel 
+      - systemd-devel
+      - yaml-cpp-devel
+      - boost-devel
+
+  - app_name: space2meta
+    repo: https://gitlab.com/interception/linux/plugins/space2meta
+    targets:
+      - cmake -Bbuild
+      - cmake --build build 
+      - "cp -f build/space2meta /usr/local/bin"
+    dependencies:
+      - cmake
+      - libevdev-devel 
+      - systemd-devel
+      - yaml-cpp-devel
+      - boost-devel
