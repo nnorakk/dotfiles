@@ -1,6 +1,6 @@
 myxfreerdp() {
     machine="$1"
-    if [[ "$machine" == "commvault" || "$machine" == "rrnwsri06" ]]; then
+    if [[ "$machine" == commvault* || "$machine" == rrnwsri06* ]]; then
         print "Conectando usando ***REMOVED***"
 		/usr/bin/xfreerdp /size:1600x1020 /d:tre-rn /u:***REMOVED*** /v:$machine
     else
