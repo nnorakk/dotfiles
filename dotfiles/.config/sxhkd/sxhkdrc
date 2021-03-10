@@ -147,10 +147,6 @@ alt + shift + x
 ctrl + shift + Print
     flameshot gui
 
-# Rotaciona as janelas: https://my-take-on.tech/2020/07/03/some-tricks-for-sxhkd-and-bspwm/#extra-organizing-and-running-sxhkd
-super + shift + {d,a}
-    bspc node @/ -C {forward,backward}
-
 # Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + shift + e
 	bspc node -f biggest.local ; bspc node @/ --equalize
@@ -158,6 +154,10 @@ super + shift + e
 # Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + shift + b
 	bspc node -f biggest.local ; bspc node @parent --balance
+
+# Rotaciona as janelas: https://my-take-on.tech/2020/07/03/some-tricks-for-sxhkd-and-bspwm/#extra-organizing-and-running-sxhkd
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
 
 # Rotaciona todas as janelas em 90 graus: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + {_,shift + }r
