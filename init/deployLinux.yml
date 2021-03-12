@@ -18,6 +18,9 @@
     - name: Fedora Tasks
       import_tasks: tasks/fedora.yml
 
+    - name: Keyboard Tasks
+      import_tasks: tasks/keyboard.yml
+
     - name: Dnsmasq tasks
       import_tasks: tasks/dnsmasq.yml
       become: true

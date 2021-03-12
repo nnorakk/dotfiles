@@ -1,0 +1,62 @@
+    # configura teclado americano com cedilha
+    # localectl set-x11-keymap us intl
+    - name: Muda keymap para us acento
+      command: localectl set-x11-keymap us pc105 intl shift:both_capslock,terminate:ctrl_alt_bksp
+      changed_when: false
+      tags: keyboard
+
+    # testar se isso eh necessario mesmo
+    - name: Instala pacotes necessarios mudar cedilha
+      dnf:
+        name:
+          - imsettings
+          - gtk3-immodule-xim
+          - gtk3-immodules
+          - gtk2-immodules
+          - im-chooser
+        state: present
+        disable_gpg_check: yes
+      become: true
+      tags: keyboard
+
+    - name: Muda cedilha minusculo arquivo Compose
+      replace:
+        path: /usr/share/X11/locale/en_US.UTF-8/Compose
+        regexp: 'ć' 
+        replace: 'ç'
+      become: true
+      tags: keyboard
+
+    - name: Muda cedilha maiusculo arquivo Compose
+      replace:
+        path: /usr/share/X11/locale/en_US.UTF-8/Compose
+        regexp: 'Ć' 
+        replace: 'Ç'
+      become: true
+      tags: keyboard
+
+    # testar se isso eh necessario mesmo
+    - name: Forca ler cedilha
+      command: imsettings-switch im-cedilla
+      become: true
+      changed_when: false
+      tags: keyboard
+
+    - name: Copia arquivos Interception
+      copy:
+        dest: "{{ item }}"
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/{{ item }}"
+      with_items:
+        - /etc/interception/dual-function-keys.yaml
+        - /etc/interception/udevmon.yaml
+        - /etc/systemd/system/udevmon.service
+      become: true
+      tags: keyboard
+
+    - name: Habilita udevmon service
+      service:
+        name: udevmon
+        enabled: yes
+        state: started
+      become: true
+      tags: keyboard
