@@ -27,6 +27,7 @@
 # get default connection
 - name: Get default NetworkManager connection ethernet
   shell: "nmcli | grep '{{ ansible_default_ipv4['interface'] }}:' | sed 's/.*connected to //'"
+  changed_when: false
   register: default_connection
 
 # Usa nmcli para configurar a bridge a partir da conexao padrao inicial do fedora
