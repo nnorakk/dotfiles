@@ -75,8 +75,13 @@ Plug 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentr
 Plug 'morhetz/gruvbox' " Plugin colorscheme gruvbox
 Plug 'kovetskiy/sxhkd-vim' " syntax sxhkd file
 Plug 'ap/vim-css-color' " Color name highlight
+" fern e icones
 Plug 'lambdalisue/fern.vim' " tree viewer
-Plug 'ojroques/vim-oscyank' " tree viewer
+Plug 'lambdalisue/nerdfont.vim' " Nerdfont fern
+Plug 'lambdalisue/fern-renderer-nerdfont.vim' " Nerdfont fern renderer
+Plug 'lambdalisue/glyph-palette.vim' " choose font
+Plug 'ryanoasis/vim-devicons' " Icons 
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 if ! has('nvim') " Nao habilita se utilizar o neovim
     Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' } " tem que instalar: 
                                     " sudo dnf install cmake gcc-c++ make
@@ -86,6 +91,18 @@ if ! has('nvim') " Nao habilita se utilizar o neovim
 end
 
 call plug#end()
+
+" Fern configuration render nerdfont
+let g:fern#renderer = "nerdfont"
+" let g:fern#disable_default_mappings = 1
+" nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+
+" Fern change color
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
 
 " TODO: verificar configuracao dentro de virtualenv
 " YouCompleteMe : Fechar janela quando concluir complete
@@ -115,6 +132,7 @@ let g:ale_fixers = {
 
 " indentline, nao mostra em text e help files
 let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
+
 " seta esquema de cores
 " silent! color base16-default-dark " desert
 silent! color gruvbox
@@ -129,9 +147,6 @@ let g:fzf_action = {
             \'ctrl-x': 'split',
             \'ctrl-v': 'vsplit'
             \}
-
-" atalho copiar usando oscyank https://github.com/ojroques/vim-oscyank
-vnoremap <lead>c :OSCYank<CR>
 
 " desabilita relativenumber quando em modo insercao
 augroup BgHighlight
