@@ -54,7 +54,7 @@ bspc rule -a xfreerdp desktop='^8' state=floating follow=on center=true
 bspc rule -a "Gnome-calculator" state=floating follow=on
 # https://github.com/baskerville/bspwm/issues/291
 # https://github.com/D630/bin/blob/master/bspwm-rules
-bspc rule -a Spotify desktop='^8' state=floating follow=on
+bspc rule -a Spotify desktop='^7' state=floating follow=on
 bspc rule -a Zoiper5 state=floating
 bspc rule ^7 --layout monocle
 bspc rule -a "org.remmina.Remmina" desktop='^7' state=monocle follow=on
@@ -63,6 +63,7 @@ bspc rule -a Ranger state=floating follow=on
 bspc rule -a Calendar state=floating rectangle=680x770+540+110 layer=above
 bspc rule -a Fzfsearch state=floating rectangle=680x770+540+110 layer=above
 bspc rule -a Zathura state=floating rectangle=680x770+540+110 layer=above
+bspc rule -a Zoiper5 desktop='^7' state=floating follow=on
 
 # inicia sxhkd caso nao esteja rodando
 pgrep -x sxhkd > /dev/null || sxhkd -m 1 &
