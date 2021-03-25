@@ -8,6 +8,7 @@ cask_packages:
   - libreoffice
   - alfred
   - tunnelblick
+  - karabiner-elements
 
 packages:
   - tmux
