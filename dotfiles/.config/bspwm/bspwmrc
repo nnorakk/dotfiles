@@ -108,3 +108,6 @@ pgrep -x kitty > /dev/null || kitty &
 
 # nm-applet --indicator &
 nm-applet --indicator &
+
+# automount disks
+udiskie &

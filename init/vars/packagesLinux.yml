@@ -116,6 +116,7 @@ packages:
   - xsel # commandline manipula clipboard
   - npm # gerenciador de pacotes node.js
   - tldr # ajuda em comandos mais uteis
+  - udiskie # automount disks
 
   # TODO: instalar via git clone 
   # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
