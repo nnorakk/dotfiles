@@ -61,6 +61,7 @@ packages:
   - fedora-workstation-repositories
   - docker
   - terraform
+  - packer # hashicorp packer
   - dia
   - virt-manager
   - bridge-utils

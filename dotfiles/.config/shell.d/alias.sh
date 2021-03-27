@@ -20,3 +20,7 @@ fi
 
 # evita erros em maquinas remotas via ssh
 alias ssh='TERM=xterm ssh'
+
+# evita erros do hashicorp packer
+# https://learn.hashicorp.com/tutorials/packer/getting-started-install
+[ -f /usr/bin/packer ] && alias packer='/usr/bin/packer'
