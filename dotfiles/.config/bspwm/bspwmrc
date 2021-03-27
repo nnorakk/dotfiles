@@ -52,10 +52,6 @@ bspc config presel_feedback_color "#5e81ac"
 bspc rule -a vlc state=fullscreen
 bspc rule -a xfreerdp desktop='^8' state=floating follow=on center=true
 bspc rule -a "Gnome-calculator" state=floating follow=on
-# https://github.com/baskerville/bspwm/issues/291
-# https://github.com/D630/bin/blob/master/bspwm-rules
-bspc rule -a Spotify desktop='^7' state=floating follow=on
-bspc rule -a Zoiper5 state=floating
 bspc rule ^7 --layout monocle
 bspc rule -a "org.remmina.Remmina" desktop='^7' state=monocle follow=on
 bspc rule -a Bashtop state=floating follow=on
@@ -76,22 +72,6 @@ feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 
 # seta formato cursor mouse
 xsetroot -cursor_name left_ptr
-
-# certifica de nao existir processos xcape
-# killall -9 xcape
-# capslock funciona como Control quando pressionada com outra tecla
-# setxkbmap -option ctrl:nocaps
-# scrollock funciona como CapsLock
-# xmodmap -e "keycode 78 = Caps_Lock NoSymbol Caps_Lock"
-# CapsLock funciona como backspace quando pressionada e liberada
-# xcape -e 'Control_L=BackSpace'
-# faz Enter funcionar como control direito
-# xmodmap -e "remove Control = Control_R"
-# xmodmap -e "keycode 0x69 = Return"
-# xmodmap -e "keycode 0x24 = Control_R"
-# xmodmap -e "add Control = Control_R"
-# Enter funcionamento normal quando pressionada e liberada
-# xcape -e "Control_R=Return"
 
 # Inicia compositor
 pgrep -x picom > /dev/null || picom &
