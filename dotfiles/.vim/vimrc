@@ -50,10 +50,8 @@ set shortmess+=I
 " Permite saltar para buffers nao salvos
 set hidden
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" gerenciador de plugins plug
+" gerenciador de plugins vim-plug
+" https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary' " comments using 'gc'
