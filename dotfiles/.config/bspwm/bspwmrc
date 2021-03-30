@@ -21,11 +21,9 @@ else
     bspc monitor ${monitor2} -d 5 6 7 8
 fi
 
-# Inicia polybar caso nao esteja rodando
-pgrep -x polybar > /dev/null || ${HOME}/.config/polybar/launch.sh
-
+# configs
 bspc config window_gap 4
-# bspc config top_padding 29
+bspc config top_padding 29
 bspc config border_width 4
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -59,10 +57,13 @@ bspc rule -a Ranger state=floating follow=on
 bspc rule -a Calendar state=floating rectangle=680x770+540+110 layer=above
 bspc rule -a Fzfsearch state=floating rectangle=680x770+540+110 layer=above
 bspc rule -a Zathura state=floating rectangle=680x770+540+110 layer=above
-bspc rule -a Zoiper5 desktop='^7' state=floating follow=on
+bspc rule -a Zoiper5 desktop='^7' state=floating
 
 # inicia sxhkd caso nao esteja rodando
 pgrep -x sxhkd > /dev/null || sxhkd -m 1 &
+
+# Inicia polybar caso nao esteja rodando
+pgrep -x polybar > /dev/null || ${HOME}/.config/polybar/launch.sh
 
 # Start Dropbox
 dropbox start

@@ -7,30 +7,31 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+; {{{
 [bar/right]
 monitor = ${env:monitor1:HDMI-1}
-width = 99%
-height = 27
+width = 100%
+height = 30
 ; offset-x = 2%
-offset-x = 1%
-offset-y = 0%
+; offset-x = 1%
+; offset-y = 0%
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
-border-top-size = 1 
+; border-top-size = 1 
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = .3
 
 ; Testes
 font-0 = JetBrainsMonoMedium:pixelsize=10;
@@ -38,7 +39,9 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 ; modules-center = sysmenu
-modules-right = pulseaudio memory cpu openvpn-isrunning date powermenu sysmenu
+modules-center = date
+; modules-right = pulseaudio memory cpu openvpn-isrunning date powermenu sysmenu
+modules-right = alsa memory cpu openvpn-isrunning powermenu sysmenu
 
 tray-position = right
 ; tray-position = center
@@ -57,7 +60,9 @@ wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+; }}}
 
+; {{{
 [bar/left]
 monitor = ${env:monitor2:HDMI-1}
 ; monitor = HDMI-1
@@ -65,7 +70,7 @@ monitor = ${env:monitor2:HDMI-1}
 width = 96%
 height = 27
 ; offset-x = 1%
-offset-x = 2%
+; offset-x = 2%
 ; offset-y = 0%
 radius = 6.0
 fixed-center = false
@@ -85,7 +90,7 @@ padding-left = 2
 padding-right = 30
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = .3
 
 ; Testes
 font-0 = JetBrainsMonoMedium:pixelsize=10;
@@ -93,7 +98,9 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 ; modules-center = sysmenu
-modules-right = pulseaudio memory cpu openvpn-isrunning date powermenu sysmenu
+modules-center = date
+; modules-right = pulseaudio memory cpu openvpn-isrunning date powermenu sysmenu
+modules-right = pulseaudio memory cpu openvpn-isrunning powermenu sysmenu
 
 ; tray-position = right
 tray-position = right
@@ -111,6 +118,10 @@ wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+; }}}
+
+; {{{
 ; sysmemnu
 [module/sysmenu]
 type = custom/text
@@ -185,7 +196,8 @@ type = internal/memory
 interval = 2
 ; U+F0C2
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
+; format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 ; format-underline = #4bffdc
 label = %gb_used%/%gb_free%
 
@@ -237,33 +249,52 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+; [module/alsa]
+; type = internal/alsa
+
+; format-volume = <label-volume> <bar-volume>
+; label-volume = VOL
+; label-volume-foreground = ${root.foreground}
+
+; format-muted-prefix = " "
+; format-muted-foreground = ${colors.foreground-alt}
+; label-muted = sound muted
+
+; bar-volume-width = 10
+; bar-volume-foreground-0 = #55aa55
+; bar-volume-foreground-1 = #55aa55
+; bar-volume-foreground-2 = #55aa55
+; bar-volume-foreground-3 = #55aa55
+; bar-volume-foreground-4 = #55aa55
+; bar-volume-foreground-5 = #f5a70a
+; bar-volume-foreground-6 = #ff5555
+; bar-volume-gradient = false
+; bar-volume-indicator = |
+; bar-volume-indicator-font = 2
+; bar-volume-fill = ─
+; bar-volume-fill-font = 2
+; bar-volume-empty = ─
+; bar-volume-empty-font = 2
+; bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage:3%%
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+format-muted-prefix = ﱝ
+label-muted = " Muted"
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+ramp-volume-0 = 奄
+ramp-volume-1 = 奄
+ramp-volume-2 = 奔
+ramp-volume-3 = 奔
+ramp-volume-4 = 奔
+ramp-volume-5 = 墳
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
 
 [module/temperature]
 type = internal/temperature
@@ -326,5 +357,6 @@ screenchange-reload = true
 ; margin-bottom = 5
 margin-top = 0
 margin-bottom = 0
+; }}}
 
-; vim:ft=dosini
+; vim:ft=dosini:foldmethod=marker
