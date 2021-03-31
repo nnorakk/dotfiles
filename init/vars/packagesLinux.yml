@@ -21,6 +21,7 @@ packages:
   - python3-devel
   - dnf-plugin-system-upgrade
   - dnf-plugins-core
+  - python3-dnf-plugin-versionlock # plugin dnf para evitar que pacote seja atualizado
   - wdiff
   - iotop
   - ruby-devel
