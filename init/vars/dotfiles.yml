@@ -48,6 +48,7 @@ dotfiles:
   - .vim/plugin/protect.vim
   - .vim/plugin/statusline.vim
   - .vim/plugin/osc52.vim
+  - .vim/plugin/fern.vim
   - .vim/ftplugin/python.vim
   - .vim/ftplugin/yaml.vim
   - .vim/vimrc
