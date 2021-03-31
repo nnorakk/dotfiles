@@ -75,6 +75,7 @@ Plug 'morhetz/gruvbox' " Plugin colorscheme gruvbox
 Plug 'kovetskiy/sxhkd-vim' " syntax sxhkd file
 Plug 'ap/vim-css-color' " Color name highlight
 Plug 'hashivim/vim-terraform' " highlight arquivos terraform
+Plug 'jvirtanen/vim-hcl' " highlight arquivos packer
 " fern e icones
 Plug 'lambdalisue/fern.vim' " tree viewer
 Plug 'lambdalisue/nerdfont.vim' " Nerdfont fern
