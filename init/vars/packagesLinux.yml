@@ -115,6 +115,7 @@ packages:
   - fuse-sshfs # montar via ssh
   - pandoc # usado para renderizar MarkDown files
   - jetbrains-mono-fonts # fonts com ligaduras =>
+  - jetbrains-mono-nl-fonts # font jetbrains sem ligaduras
   - xsel # commandline manipula clipboard
   - npm # gerenciador de pacotes node.js
   - tldr # ajuda em comandos mais uteis
