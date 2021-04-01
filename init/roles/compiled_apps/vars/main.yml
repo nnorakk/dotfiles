@@ -109,3 +109,11 @@ apps:
       - systemd-devel
       - yaml-cpp-devel
       - boost-devel
+
+  - app_name: pulseaudio-ctl
+    repo: https://github.com/graysky2/pulseaudio-ctl
+    targets:
+      - make
+      - make install
+    dependencies:
+      - bc

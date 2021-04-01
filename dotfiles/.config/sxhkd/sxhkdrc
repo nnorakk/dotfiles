@@ -182,3 +182,11 @@ super + alt + space
 # send to monitor
 super + shift + equal
 	bspc node -m last --follow
+
+# audio control
+XF86AudioRaiseVolume
+	pulseaudio-ctl up
+XF86AudioLowerVolume
+	pulseaudio-ctl down
+XF86AudioMute
+	pulseaudio-ctl mute
