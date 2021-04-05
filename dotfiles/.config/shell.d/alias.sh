@@ -24,3 +24,9 @@ alias ssh='TERM=xterm ssh'
 # evita erros do hashicorp packer
 # https://learn.hashicorp.com/tutorials/packer/getting-started-install
 [ -f /usr/bin/packer ] && alias packer='/usr/bin/packer'
+
+# Use lsd if installed
+if which lsd > /dev/null 2>&1; then 
+		alias ls='lsd'
+		alias tree='lsd --tree'
+fi
