@@ -12,6 +12,10 @@ nnoremap <Leader>- <c-w>t<c-w>K
 nnoremap <Leader>\ <c-w>t<c-w>H
 nnoremap <Leader>\| <c-w>t<c-w>H
 
+" inverte janelas tenta emular o atalho do tmux
+nnoremap <Leader>{ <c-w>r
+nnoremap <Leader>} <c-w>r
+
 " atalhos rapidos economiza alguns movimentos
 noremap <silent> <Leader>q :quit<CR>
 noremap <silent> <Leader>qa :quitall<CR>
