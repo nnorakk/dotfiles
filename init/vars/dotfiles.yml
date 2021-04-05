@@ -8,6 +8,7 @@ dotfiles_dirs:
   - .config/polybar
   - .config/bspwm
   - .config/kitty
+  - .config/zathura
   - .config/powerline/themes/shell
   - .local/share/fonts
   - .oh-my-zsh/custom/themes
@@ -34,6 +35,7 @@ dotfiles:
   - .config/polybar/openvpn-isrunning.sh
   - .config/bspwm/bspwmrc
   - .config/kitty/kitty.conf
+  - .config/zathura/zathurarc
   - .config/kitty/gruvbox_light.conf
   - .config/shell.d
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
