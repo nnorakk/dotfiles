@@ -50,6 +50,7 @@ dotfiles:
   - .vim/plugin/protect.vim
   - .vim/plugin/statusline.vim
   - .vim/plugin/fern.vim
+  - .vim/plugin/commands.vim
   - .vim/ftplugin/python.vim
   - .vim/ftplugin/yaml.vim
   - .vim/vimrc
