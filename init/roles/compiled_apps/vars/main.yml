@@ -117,3 +117,11 @@ apps:
       - make install
     dependencies:
       - bc
+
+  - app_name: bsp-layout
+    repo: https://github.com/phenax/bsp-layout
+    targets:
+      - make
+      - make install
+    dependencies:
+      - gcc
