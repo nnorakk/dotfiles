@@ -87,7 +87,8 @@ packages:
   - w3m # browser linha de comando
   - lynx # browser linha de comando
   - ldns-utils
-  - xfreerdp
+  - xfreerdp # remote desktop
+  - rdesktop # remote desktop
   - remmina
   - redhat-lsb-core
   - ImageMagick
