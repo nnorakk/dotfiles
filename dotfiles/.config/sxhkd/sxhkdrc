@@ -190,3 +190,7 @@ XF86AudioLowerVolume
 	pulseaudio-ctl down
 XF86AudioMute
 	pulseaudio-ctl mute
+
+# Hide/Unhide Window
+super + shift + i
+	~/.local/bin/winhide
