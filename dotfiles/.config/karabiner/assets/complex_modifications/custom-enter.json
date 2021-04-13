@@ -1,0 +1,27 @@
+{
+  "title": "Change Enter to Enter and Control",
+  "rules": [
+    {
+      "description": "Enter if tapped, Control if held",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+          "to": [
+            {
+              "key_code": "right_control",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "return_or_enter"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

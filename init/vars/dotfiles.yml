@@ -10,6 +10,7 @@ dotfiles_dirs:
   - .config/kitty
   - .config/zathura
   - .config/powerline/themes/shell
+  - .config/karabiner/assets/complex_modifications
   - .local/share/fonts
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
@@ -38,6 +39,9 @@ dotfiles:
   - .config/zathura/zathurarc
   - .config/kitty/gruvbox_light.conf
   - .config/shell.d
+  - .config/karabiner/karabiner.json
+  - .config/karabiner/assets/complex_modifications/custom-capslock.json
+  - .config/karabiner/assets/complex_modifications/custom-enter.json
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim
   - .vim/autoload/visual_movement.vim
