@@ -79,6 +79,9 @@ feh --bg-fill --randomize ${HOME}/tmp/bspwm-wallpapers/backgrounds/*
 # seta formato cursor mouse
 xsetroot -cursor_name left_ptr
 
+# esconde cursor do mouse
+pgrep -x unclutter > /dev/null || unclutter & 
+
 # Inicia compositor
 pgrep -x picom > /dev/null || picom &
 bspc config top_padding 29

@@ -125,3 +125,12 @@ apps:
       - make install
     dependencies:
       - gcc
+
+  - app_name: unclutter
+    repo: https://github.com/Airblader/unclutter-xfixes
+    targets:
+      - make
+      - make install
+    dependencies:
+      - gcc
+      - asciidoc
