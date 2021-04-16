@@ -79,6 +79,7 @@ packages:
   - kitty
   - bat
   - exa # versao turbinada do ls
+  - lsd # versao turbinada do ls
   - bashtop # monitor de sistema
   - ytop # monitor de sistema
   - bpytop # monitor de sistema
