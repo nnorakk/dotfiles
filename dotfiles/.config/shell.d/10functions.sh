@@ -2,3 +2,7 @@
 # TODO: adicionar num arquivo unico essas configuracoes
 # conectar servidores windows tre com meu titulo
 # TODO: remover explicitamente essas variaveis titulo e dominio
+
+manvim() {
+    vim -c "set ft=man | Man $1" -c 'silent! only'
+}

@@ -132,7 +132,7 @@ let g:ale_fixers = {
 						\}
 
 " indentline, nao mostra em text e help files
-let g:indentLine_fileTypeExclude = ['text', 'help', 'vim']
+let g:indentLine_fileTypeExclude = ['text', 'help', 'vim', 'man']
 
 " seta esquema de cores
 " silent! color base16-default-dark " desert

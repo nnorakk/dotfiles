@@ -30,3 +30,6 @@ if which lsd > /dev/null 2>&1; then
 		alias ls='lsd'
 		alias tree='lsd --tree'
 fi
+
+# Usa funcao que usa vimi como pager
+alias man='manvim'
