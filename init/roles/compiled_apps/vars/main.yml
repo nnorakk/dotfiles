@@ -79,6 +79,7 @@ apps:
       - "cp -f build/uinput /usr/bin"
       - "cp -f udevmon.service /etc/systemd/system/"
     dependencies:
+      - g++
       - cmake
       - libevdev-devel 
       - systemd-devel
