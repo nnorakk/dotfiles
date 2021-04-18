@@ -128,6 +128,7 @@ packages:
   - udiskie # automount disks
   - lxappearance # gtk theme switcher
   - qt5ct # qt5 configuration tool
+  - snapd # permite instalar pacotes snap
 
   # TODO: instalar via git clone 
   # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
