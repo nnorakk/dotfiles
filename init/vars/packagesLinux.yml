@@ -1,3 +1,7 @@
+snap_packages:
+  - bw
+  - spotify
+
 packages:
   - dnf-utils
   - openssh-server

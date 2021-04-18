@@ -50,6 +50,14 @@
       become: true
       tags: admin
 
+    - name: Instala Pacotes Snap
+      snap:
+        name: 
+          "{{ snap_packages }}"
+        state: present
+      become: true
+      tags: admin
+
     - name: Habilita ssh server
       service:
         name: sshd
