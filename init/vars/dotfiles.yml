@@ -35,6 +35,7 @@ dotfiles:
   - .config/polybar/launch.sh
   - .config/polybar/openvpn-isrunning.sh
   - .config/bspwm/bspwmrc
+  - .config/bspwm/external_rules
   - .config/kitty/kitty.conf
   - .config/zathura/zathurarc
   - .config/kitty/gruvbox_light.conf

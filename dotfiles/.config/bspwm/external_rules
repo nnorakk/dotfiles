@@ -1,0 +1,33 @@
+#!/bin/bash
+window_id="$1"
+window_class="$2"
+window_instance="$3"
+consequences="$4"
+window_title="$(xwininfo -id "$window_id" | sed ' /^xwininfo/!d ; s,.*"\(.*\)".*,\1,')"
+
+main() {
+    case "$window_class" in
+        "Spotify")
+            echo "desktop=^5"
+            echo "state=floating"
+            echo "rectangle=680x770+540+110"
+            ;;
+        "")
+            sleep 0.5
+            window_class=$(xprop -id $window_id | grep "WM_CLASS" | sed 's/.*"\(.*\)"/\1/g' ) 
+            window_instance="${window_class,,}"
+            [[ -n "$window_class" ]] && main
+            ;;
+        *)
+            echo "Nothing found... $1  $2  $3  $4"
+            ;;
+    esac
+}
+
+main
+
+echo "window_id: $1" >> "$HOME"/.rules_cmd.log
+echo "window_title: $window_title" >> "$HOME"/.rules_cmd.log
+echo "window_class: $window_class" >> "$HOME"/.rules_cmd.log
+echo "window_instance: $window_instance" >> "$HOME"/.rules_cmd.log
+echo "consequences: $4" >> "$HOME"/.rules_cmd.log
