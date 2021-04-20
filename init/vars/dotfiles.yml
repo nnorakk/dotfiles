@@ -16,6 +16,7 @@ dotfiles_dirs:
   - .vim/autoload/mappings
   - .vim/plugin/mappings
   - .vim/ftplugin
+  - .vim/after/ftdetect
 
 dotfiles:
   - .alacritty.yml
@@ -58,5 +59,6 @@ dotfiles:
   - .vim/plugin/commands.vim
   - .vim/ftplugin/python.vim
   - .vim/ftplugin/yaml.vim
+  - .vim/after/ftdetect/terraform.vim
   - .vim/vimrc
   - .zshrc
