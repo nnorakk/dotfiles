@@ -113,6 +113,7 @@ packages:
   - zathura # visualizador de arquivos
   - zathura-pdf-mupdf # plugin zathura para pdf
   - okular # visualizador de pdf
+  - sxiv # visualizador de imagem
   - python3-isort # fixer python para ALE plugin
   - python3-yapf # fixer python para ALE plugin
   - python3-flake8 # linter python para ALE plugin
