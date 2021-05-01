@@ -33,3 +33,6 @@ fi
 
 # Usa funcao que usa vimi como pager
 alias man='manvim'
+
+# editar arquivos sensiveis sem salvar historico
+alias vimsecret='vim -c "set nobackup noswapfile noundofile"'
