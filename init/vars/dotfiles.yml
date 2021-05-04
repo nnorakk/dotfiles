@@ -60,5 +60,6 @@ dotfiles:
   - .vim/ftplugin/python.vim
   - .vim/ftplugin/yaml.vim
   - .vim/after/ftdetect/terraform.vim
+  - .vim/after/ftdetect/hcl.vim
   - .vim/vimrc
   - .zshrc
