@@ -29,6 +29,7 @@ alias ssh='TERM=xterm ssh'
 if which lsd > /dev/null 2>&1; then 
 		alias ls='lsd'
 		alias tree='lsd --tree'
+        alias ltr='lsd -ltr'
 fi
 
 # Usa funcao que usa vimi como pager
