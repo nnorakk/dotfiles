@@ -50,6 +50,9 @@ set shortmess+=I
 " Permite saltar para buffers nao salvos
 set hidden
 
+" Nao imprime comando na ultima linha
+set noshowcmd
+
 " gerenciador de plugins vim-plug
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
