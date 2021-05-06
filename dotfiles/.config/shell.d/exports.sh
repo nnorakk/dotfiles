@@ -12,3 +12,6 @@ export EDITOR=vim
 
 # Adiciona .loca/bin ao PATH
 export PATH=$PATH:$HOME/.local/bin
+
+# 256 cores
+export TERM='xterm-256color'
