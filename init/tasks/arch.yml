@@ -2,10 +2,34 @@
       include_vars: "vars/packages{{ ansible_distribution }}.yml"
       tags: admin
 
+    - name: Clona yay repositorio
+      git:
+        repo: "https://aur.archlinux.org/yay-git.git"
+        dest: $HOME/tmp/yay-git
+      tags: arch
+
+    - name: Instala yay
+      command: "{{ item }}" 
+      args:
+        chdir: "{{ lookup('env', 'HOME') }}/tmp/yay-git"
+      with_items:
+        - "makepkg -si --noconfirm"
+        - "git reset --hard HEAD"
+      changed_when: false
+      tags: arch
+
     - name: Instala pacotes necessarios
       community.general.pacman:
         name:
           "{{ packages }}"
         state: present
       become: true
-      tags: admin
+      tags: admin, arch
+
+    - name: Habilita sshd
+      ansible.builtin.systemd:
+        name: sshd
+        enabled: yes
+        state: started
+        masked: no
+      become: true

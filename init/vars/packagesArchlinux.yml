@@ -5,7 +5,13 @@ snap_packages:
 packages:
   # - dnf-utils
   # - openssh-server
+  - base-devel
+  - openssh
   # - fping
+  - xf86-video-fbdev
+  - xorg
+  - xorg-xinit
+  - firefox
   - tcpdump
   # - wireshark
   - htop
