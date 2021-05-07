@@ -37,13 +37,31 @@ case "$HOST_OS" in
     Linux)
         echo "Linux"
 
-        sudo dnf update -y 
+        if grep -q 'NAME=Fedora' /etc/os-release; then
+            echo "Sistema Fedora"
 
-        if $(hash ansible-playbook 2> /dev/null); then
-            echo "ansible ja instalado"
-        else
-            echo "Instale ansible..."
-            sudo dnf install -y ansible
+            sudo dnf update -y 
+
+            if $(hash ansible-playbook 2> /dev/null); then
+                echo "ansible ja instalado"
+            else
+                echo "Instale ansible..."
+                sudo dnf install -y ansible
+            fi
+
+        elif grep -q 'NAME="Arch Linux"' /etc/os-release; then
+            echo "Sistema Archlinux"
+
+            sudo pacman -Syu
+
+            if $(hash ansible-playbook 2> /dev/null); then
+                echo "ansible ja instalado"
+            else
+                echo "Instale ansible..."
+                sudo pacman -S --noconfirm ansible
+            fi
+            
+            HOST_OS="Arch"
         fi
         ;;
 esac

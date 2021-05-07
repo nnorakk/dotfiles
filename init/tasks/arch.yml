@@ -1,0 +1,11 @@
+    - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
+      include_vars: "vars/packages{{ ansible_distribution }}.yml"
+      tags: admin
+
+    - name: Instala pacotes necessarios
+      community.general.pacman:
+        name:
+          "{{ packages }}"
+        state: present
+      become: true
+      tags: admin

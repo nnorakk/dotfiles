@@ -1,0 +1,25 @@
+---
+- name: Deploy Archlinux Workstation
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+
+  vars_files:
+    - vars/dotfiles.yml
+
+  pre_tasks:
+    - name: Inclui arquivo de variaveis hostvars caso exista
+      include_vars:
+        file: "vars/hostvars.yml"
+      ignore_errors: yes
+      failed_when: false
+
+  tasks:
+    - name: ArchLinux Tasks
+      import_tasks: tasks/arch.yml
+
+    - name: Dotfiles Tasks
+      import_tasks: tasks/dotfiles.yml
+
+    - name: Vim Configs
+      import_tasks: tasks/vim.yml
