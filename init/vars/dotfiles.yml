@@ -24,6 +24,7 @@ dotfiles:
   - .fzf.zsh
   - .tmux.conf
   - .bashrc
+  - .xinitrc
   - '.local/share/fonts/Iosevka Nerd Font Complete.ttf'
   - .config/powerline/config.json
   - .config/powerline/themes/shell/jpaulo.json
