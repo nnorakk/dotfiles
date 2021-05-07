@@ -2,6 +2,9 @@ snap_packages:
   - bw
   - spotify
 
+aur_packages:
+  - polybar
+
 packages:
   # - dnf-utils
   # - openssh-server
