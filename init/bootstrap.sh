@@ -60,7 +60,10 @@ case "$HOST_OS" in
                 echo "Instale ansible..."
                 sudo pacman -S --noconfirm ansible
             fi
-            
+
+            echo "Instala Modulo Ansible Aur"
+            git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/aur
+
             HOST_OS="Arch"
         fi
         ;;

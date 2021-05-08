@@ -3,47 +3,41 @@ snap_packages:
   - spotify
 
 aur_packages:
-  - polybar
+  - polybar #barra
+  - cava # visualizador de audio
+  - google-chrome # google web browser
 
 packages:
-  # - dnf-utils
-  # - openssh-server
   - base-devel
   - openssh
-  # - fping
+  - fping
   - xf86-video-fbdev
   - xorg
   - xorg-xinit
   - firefox
   - tcpdump
-  # - wireshark
+  - wireshark-qt
   - htop
-  # - procs # Modern replacement for ps
-  # - pykickstart
-  # - unrar
+  - procs # Modern replacement for ps
+  - unrar
   - axel
   - cmake
   # - freetype-devel
   # - fontconfig-devel
   # - libxcb-devel
-  # - neovim
-  # - gpick
+  - neovim
+  - gpick
   # - gcc-c++
   - make
   # - python3-devel
-  # - dnf-plugin-system-upgrade
-  # - dnf-plugins-core
-  # - python3-dnf-plugin-versionlock # plugin dnf para evitar que pacote seja atualizado
-  # - wdiff
-  # - iotop
+  - wdiff
+  - iotop
   # - ruby-devel
-  # - tor
+  - tor
   # - proxychains
-  # - vagrant
-  # - vagrant-libvirt
+  - vagrant # vagrant plugin install vagrant-libvirt # instala plugin libvirt
   # - gcc
   # - binutils
-  # - make
   # - glibc-devel
   # - patch
   # - glibc-headers
@@ -54,40 +48,36 @@ packages:
   - fzf
   - git
   - tmux
-  # - vim-X11
+  # - gvim # habilita o +clipboard
   - vim
   - nmap
-  # - iperf
-  # - iperf3
-  # - net-snmp-utils # snmpwalk
-  # - minicom # terminal console
-  # - fd-find
-  # - ripgrep
+  - iperf
+  - iperf3
+  - net-snmp # snmpwalk
+  - minicom # terminal console
+  - fd # mais rapido que o find
+  - ripgrep
   # - powerline
   # - powerline-fonts
   # - virt-viewer
-  # - fping
   # - libnsl
   # - setroubleshoot
   # - setools
-  # - xautolock
-  # - fedora-workstation-repositories
+  - xautolock
   # - docker
-  # - terraform
+  # - terraform # hahicorp terraform
   # - packer # hashicorp packer
-  # - dia
+  - dia
   # - virt-manager
   # - bridge-utils
   # - libvirt
   # - libvirt-devel # necessario para instalar plugin vagrant libvirt
-  # - vagrant
   # - virt-install
   # - qemu-kvm
-  # - unzip
-  # - google-chrome
-  # - vlc
-  # - Thunar # gerenciador de arquivos
-  # - ffmpeg
+  - unzip
+  - vlc
+  - thunar # gerenciador de arquivos
+  - ffmpeg
   - kitty
   - bat
   - exa # versao turbinada do ls
@@ -95,64 +85,48 @@ packages:
   # - bashtop # monitor de sistema
   # - ytop # monitor de sistema
   # - bpytop # monitor de sistema
-  # - ranger
-  # - httpie
-  # - w3m # browser linha de comando
-  # - lynx # browser linha de comando
+  - ranger
+  - httpie # curl para seres humanos :)
+  - w3m # browser linha de comando
+  - lynx # browser linha de comando
   # - ldns-utils
-  # - xfreerdp # remote desktop
-  # - rdesktop # remote desktop
-  # - remmina
-  # - redhat-lsb-core
+  - freerdp # remote desktop
+  - rdesktop # remote desktop
+  - remmina
   # - ImageMagick
   # - w3m-img 
   - alacritty
   # - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm 
   - bspwm # bspwm window manager
   - sxhkd # daemon atalhos teclado
-  # - polybar #barra
   - rofi # launcher
   - picom # compositor
   - feh # wallpaper
   - dunst # notificoes
   - xdotool # Usado pelo scratchpad tdrop
   - flameshot # captura de tela
-  # - cava # visualizador de audio
   - zathura # visualizador de arquivos
   - zathura-pdf-mupdf # plugin zathura para pdf
-  # - okular # visualizador de pdf
+  - okular # visualizador de pdf
   - sxiv # visualizador de imagem
   # - python3-isort # fixer python para ALE plugin
   # - python3-yapf # fixer python para ALE plugin
   # - python3-flake8 # linter python para ALE plugin
   # - python3-pylint # linter python para ALE plugin
-  # - filezilla # cliente ftp
+  - filezilla # cliente ftp
   # - fuse-sshfs # montar via ssh
-  # - pandoc # usado para renderizar MarkDown files
-  # - jetbrains-mono-fonts # fonts com ligaduras =>
+  - pandoc # usado para renderizar MarkDown files
+  - ttf-jetbrains-mono # fonts com ligaduras =>
   # - jetbrains-mono-nl-fonts # font jetbrains sem ligaduras
-  # - xsel # commandline manipula clipboard
+  - xsel # commandline manipula clipboard
   # - npm # gerenciador de pacotes node.js
-  # - tldr # ajuda em comandos mais uteis
-  # - udiskie # automount disks
+  - tldr # ajuda em comandos mais uteis
+  - udiskie # automount disks
   # - lxappearance # gtk theme switcher
   # - qt5ct # qt5 configuration tool
   # - snapd # permite instalar pacotes snap
-  # - neofetch # cmdline system information
+  - neofetch # cmdline system information
 
   # TODO: instalar via git clone 
-  # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
   # - ctop # ferramenta monitoramento docker
   # - lazydocker # ferramenta monitoramento docker
-  #
-  # git clone + compilar
-  # - tty-clock  # relogio terminal
-  # - xcape  # mapeamento tecla
-  # - i3lock-color  # protecao de tela customizada
-  #
-  # - NetworkManager-vpnc-gnome NetworkManager-l2tp-gnome
-  # - NetworkManager-libreswan
-  # - /home/jpaulo/Dropbox/Tre-Pessoal/NetExtender.Linux.8.6.801-1.x86.64.rpm
-  # - alacritty --tem que instalar um repositorio especifico
-  # - chromium-freeworld --tem que instalar um outro repositorio
-  # - vlc --tem que instalar um outro repositorio

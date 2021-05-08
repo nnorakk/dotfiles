@@ -26,11 +26,17 @@
       become: true
       tags: admin, arch
 
+    # - name: Instala pacotes aur
+    #   command: "yay --noconfirm -S {{ item }}"
+    #   with_items:
+    #     "{{ aur_packages }}"
+    #   changed_when: false
+    #   tags: admin, arch
+
     - name: Instala pacotes aur
-      command: "yay --noconfirm -S {{ item }}"
-      with_items:
-        "{{ aur_packages }}"
-      changed_when: false
+      aur:
+        name:
+          "{{ aur_packages }}"
       tags: admin, arch
 
     - name: Habilita sshd
