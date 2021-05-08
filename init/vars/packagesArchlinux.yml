@@ -126,6 +126,7 @@ packages:
   # - qt5ct # qt5 configuration tool
   # - snapd # permite instalar pacotes snap
   - neofetch # cmdline system information
+  - lsb-release # comando lsb_release
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
