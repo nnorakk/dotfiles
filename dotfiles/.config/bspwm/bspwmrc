@@ -8,7 +8,7 @@ export monitor1=$(xrandr --listmonitors | awk '/0:/{ print $4}')
 export monitor2=$(xrandr --listmonitors | awk '/1:/{ print $4}')
 
 # seta manualmente resolucao 
-if [[ $(hostname) == bluestar* ]]; then 
+if [[ $(hostnamectl | awk '/hostname/ { print $3}') == bluestar* ]]; then 
     xrandr --newmode resolucao  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync; 
     xrandr --addmode ${monitor1} resolucao; 
     xrandr --output ${monitor1} --mode resolucao
