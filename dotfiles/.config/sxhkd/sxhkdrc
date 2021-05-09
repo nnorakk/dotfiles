@@ -141,7 +141,7 @@ super + x; {b,r,c,v,o}
 
 # lockscreen
 alt + shift + x
-   betterlockscreen -l dim && betterlockscreen -u ~/tmp/bspwm-wallpapers/backgrounds
+   betterlockscreen -l dim && betterlockscreen -u ~/.config/wallpapers
 
 # screenshot utilizando flameshot
 ctrl + shift + Print

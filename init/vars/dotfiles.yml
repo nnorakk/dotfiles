@@ -26,6 +26,7 @@ dotfiles:
   - .bashrc
   - .xinitrc
   - '.local/share/fonts/Iosevka Nerd Font Complete.ttf'
+  - .config/wallpapers
   - .config/powerline/config.json
   - .config/powerline/themes/shell/jpaulo.json
   - .config/ranger/rc.conf
