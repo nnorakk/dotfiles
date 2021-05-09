@@ -110,9 +110,9 @@ packages:
   - okular # visualizador de pdf
   - sxiv # visualizador de imagem
   # - python3-isort # fixer python para ALE plugin
-  # - python3-yapf # fixer python para ALE plugin
-  # - python3-flake8 # linter python para ALE plugin
-  # - python3-pylint # linter python para ALE plugin
+  - yapf # fixer python para ALE plugin
+  - flake8 # linter python para ALE plugin
+  - python-pylint # linter python para ALE plugin
   - filezilla # cliente ftp
   # - fuse-sshfs # montar via ssh
   - pandoc # usado para renderizar MarkDown files
@@ -127,6 +127,8 @@ packages:
   # - snapd # permite instalar pacotes snap
   - neofetch # cmdline system information
   - lsb-release # comando lsb_release
+  - openvpn # vpn client
+  - unclutter # esconde cursor do mouse quando digitando
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
