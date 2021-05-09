@@ -1,4 +1,5 @@
 # dotfiles
+Esses sao meus dotfiles...um projeto inacabado
 
 ## TODO
 * proteger arquivos com vault
