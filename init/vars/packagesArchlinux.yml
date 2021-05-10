@@ -6,6 +6,7 @@ aur_packages:
   - polybar #barra
   - cava # visualizador de audio
   - google-chrome # google web browser
+  - bsp-layout # layouts dinamicos bspwm
 
 packages:
   - base-devel
