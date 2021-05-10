@@ -7,6 +7,10 @@ aur_packages:
   - cava # visualizador de audio
   - google-chrome # google web browser
   - bsp-layout # layouts dinamicos bspwm
+  - xtitle # output x window titles
+  - tty-clock # relogio em ascii para terminal
+  - tdrop # dropdown window
+  - pulseaudio-ctl # pulseaudio cli control
 
 packages:
   - base-devel
@@ -130,6 +134,8 @@ packages:
   - lsb-release # comando lsb_release
   - openvpn # vpn client
   - unclutter # esconde cursor do mouse quando digitando
+  - xcape # modificador de teclas
+  - xdo # automacao de tarefas no x
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
