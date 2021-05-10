@@ -1,11 +1,9 @@
 apps:
+  - app_name: space2meta
+    repo: https://gitlab.com/interception/linux/plugins/space2meta
     targets:
       - cmake -Bbuild
       - cmake --build build 
       - "cp -f build/space2meta /usr/local/bin"
     dependencies:
-      - cmake
-      - libevdev-devel 
-      - systemd-devel
-      - yaml-cpp-devel
-      - boost-devel
+      - gcc
