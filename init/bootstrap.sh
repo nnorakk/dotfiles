@@ -52,7 +52,7 @@ case "$HOST_OS" in
         elif grep -q 'NAME="Arch Linux"' /etc/os-release; then
             echo "Sistema Archlinux"
 
-            sudo pacman -Syu
+            sudo pacman -Syu --noconfirm
 
             if $(hash ansible-playbook 2> /dev/null); then
                 echo "ansible ja instalado"
