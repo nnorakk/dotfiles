@@ -8,14 +8,11 @@
     path: "{{ workspace }}"
     state: directory
 
-- name: Instala pacotes necessarios
-  dnf:
-    name:
-      "{{ item.dependencies }}"
-    state: present
-  with_items: 
-    - "{{ apps }}"
-  become: true
+- name: Inclui variaveis para distribuicao especifica
+  include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
+  include_tasks: "task_{{ ansible_distribution }}.yml"
 
 - name: Git Clone App
   git:

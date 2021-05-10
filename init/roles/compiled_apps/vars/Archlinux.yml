@@ -1,0 +1,11 @@
+apps:
+    targets:
+      - cmake -Bbuild
+      - cmake --build build 
+      - "cp -f build/space2meta /usr/local/bin"
+    dependencies:
+      - cmake
+      - libevdev-devel 
+      - systemd-devel
+      - yaml-cpp-devel
+      - boost-devel

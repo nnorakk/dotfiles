@@ -23,3 +23,6 @@
 
     - name: Vim Configs
       import_tasks: tasks/vim.yml
+
+  roles:
+    - { role: compiled_apps, tags: ["compiled_apps"] }
