@@ -12,6 +12,7 @@ aur_packages:
   - tdrop # dropdown window
   - pulseaudio-ctl # pulseaudio cli control
   - betterlockscreen # lockscreen
+  - interception-dual-function-keys # usado com interception tools
 
 packages:
   - base-devel
@@ -137,6 +138,9 @@ packages:
   - unclutter # esconde cursor do mouse quando digitando
   - xcape # modificador de teclas
   - xdo # automacao de tarefas no x
+  - pkgfile # a pacman .files metadata explorer
+  - interception-tools # intercepta eventos de teclado e mouse para remapeamento
+
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
