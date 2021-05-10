@@ -62,7 +62,7 @@ case "$HOST_OS" in
             fi
 
             echo "Instala Modulo Ansible Aur"
-            git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/aur
+            git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/aur 2> /dev/null
 
             HOST_OS="Arch"
         fi
