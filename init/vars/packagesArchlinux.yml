@@ -16,6 +16,8 @@ aur_packages:
 
 packages:
   - base-devel
+  - bash-completion
+  - zsh-completions
   - openssh
   - fping
   - xf86-video-fbdev
