@@ -28,4 +28,5 @@
       import_tasks: tasks/vim.yml
 
   roles:
+    - { role: docker, tags: ["docker"] }
     - { role: compiled_apps, tags: ["compiled_apps"] }

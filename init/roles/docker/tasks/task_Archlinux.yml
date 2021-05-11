@@ -1,0 +1,9 @@
+---
+- name: Instala pacotes necessarios
+  community.general.pacman:
+    name:
+      "{{ docker_packages }}"
+    state: present
+  when: docker_packages is defined
+  become: true
+  notify: Habilita docker

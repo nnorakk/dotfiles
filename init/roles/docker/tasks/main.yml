@@ -1,38 +1,10 @@
 ---
-- name: Instala pacotes necessarios para Docker
-  dnf:
-    name:
-      "{{ docker_packages }}"
-    state: present
-  when: docker_packages is defined
-  become: true
-  notify: Habilita docker
 
-# Fedora 32 usa versao do CGroup e NFtables incompativeis com Docker.
-# Necessario setar a versao mais antiga via grub
-- name: Habilita versao antiga CGroups
-  command: 'grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"'
-  changed_when: false
-  when: docker_packages is defined
-  become: true
+- name: Inclui variaveis para distribuicao especifica
+  include_vars: "{{ ansible_distribution }}.yml"
 
-- name: Adiciona interface docker zona trusted
-  firewalld:
-    zone: trusted
-    interface: docker0
-    state: enabled
-    permanent: true
-  when: docker_packages is defined
-  become: true
-
-- name: Adiciona add-masquerade
-  firewalld:
-    zone: FedoraWorkstation
-    masquerade: "yes"
-    state: enabled
-    permanent: true
-  when: docker_packages is defined
-  become: true
+- name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
+  include_tasks: "task_{{ ansible_distribution }}.yml"
 
 - name: Adiciona usuario ao grupo docker
   user:
