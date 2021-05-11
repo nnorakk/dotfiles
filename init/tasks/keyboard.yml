@@ -6,18 +6,19 @@
       tags: keyboard
 
     # testar se isso eh necessario mesmo
-    - name: Instala pacotes necessarios mudar cedilha
-      dnf:
-        name:
-          - imsettings
-          - gtk3-immodule-xim
-          - gtk3-immodules
-          - gtk2-immodules
-          - im-chooser
-        state: present
-        disable_gpg_check: yes
-      become: true
-      tags: keyboard
+    # no archlinux nao foi por isso estou comentando
+    # - name: Instala pacotes necessarios mudar cedilha
+    #   dnf:
+    #     name:
+    #       - imsettings
+    #       - gtk3-immodule-xim
+    #       - gtk3-immodules
+    #       - gtk2-immodules
+    #       - im-chooser
+    #     state: present
+    #     disable_gpg_check: yes
+    #   become: true
+    #   tags: keyboard
 
     - name: Muda cedilha minusculo arquivo Compose
       replace:
@@ -36,11 +37,12 @@
       tags: keyboard
 
     # testar se isso eh necessario mesmo
-    - name: Forca ler cedilha
-      command: imsettings-switch im-cedilla
-      become: true
-      changed_when: false
-      tags: keyboard
+    # no archlinux nao foi por isso estou comentando
+    # - name: Forca ler cedilha
+    #   command: imsettings-switch im-cedilla
+    #   become: true
+    #   changed_when: false
+    #   tags: keyboard
 
     - name: Cria diretorio
       file:

@@ -18,6 +18,9 @@
     - name: ArchLinux Tasks
       import_tasks: tasks/arch.yml
 
+    - name: Keyboard Tasks
+      import_tasks: tasks/keyboard.yml
+
     - name: Dotfiles Tasks
       import_tasks: tasks/dotfiles.yml
 
