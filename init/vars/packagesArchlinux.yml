@@ -13,6 +13,7 @@ aur_packages:
   - pulseaudio-ctl # pulseaudio cli control
   - betterlockscreen # lockscreen
   - interception-dual-function-keys # usado com interception tools
+  - zoiper # soft voip phone
 
 packages:
   - base-devel
