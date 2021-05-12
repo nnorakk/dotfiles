@@ -5,6 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Source global definitions
+if [ -f ~/.dotenv ]; then
+	. ~/.dotenv
+fi
+
 # Set vim for default editor
 if $(hash vim 2> /dev/null); then
     export EDITOR=vim
@@ -21,11 +26,11 @@ export PATH
 # .bashrc
 
 myxfreerdp() {
-		xfreerdp /size:1600x1020 /d:tre-rn /u:***REMOVED*** /v:$1
+		xfreerdp /size:1600x1020 /d:${domain} /u:${regular_user} /v:$1
 }
 
 # User specific aliases and functions
-# alias xfreerdp='xfreerdp -g 1600x1020 -d tre-rn -u ***REMOVED***'
+# alias xfreerdp='xfreerdp -g 1600x1020 -d tre-rn -u ${regular_user}'
 alias rdesktop='rdesktop -g 1600x1000 -u trern\\jbezerra'
 # dotfiles on git [TEST]
 # alias config='/usr/bin/git --git-dir=$HOME/.myconfig/ --work-tree=$HOME'

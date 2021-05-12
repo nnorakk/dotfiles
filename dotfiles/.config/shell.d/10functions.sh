@@ -1,8 +1,15 @@
-# Copia de algumas configuracoes do .bashrc
-# TODO: adicionar num arquivo unico essas configuracoes
-# conectar servidores windows tre com meu titulo
-# TODO: remover explicitamente essas variaveis titulo e dominio
+# seta variaveis abaixo do arquivo ~/.dotenv
+# export regular_user=
+# export admin_user=
+# export domain=
+if [ -f ~/.dotenv ]; then
+	. ~/.dotenv
+fi
 
 manvim() {
     vim -c "set ft=man | Man $1" -c 'silent! only'
+}
+
+function rdesktop() {
+/usr/bin/rdesktop -u ${regular_user} -d ${domain} $1 -z -P -x m
 }
