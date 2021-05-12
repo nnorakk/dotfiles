@@ -13,7 +13,8 @@ aur_packages:
   - pulseaudio-ctl # pulseaudio cli control
   - betterlockscreen # lockscreen
   - interception-dual-function-keys # usado com interception tools
-  - zoiper # soft voip phone
+  # - zoiper # soft voip phone
+  - openvpn-update-systemd-resolved # dns ajuste para openvpn
 
 packages:
   - base-devel
