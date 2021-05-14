@@ -144,6 +144,7 @@ packages:
   - xdo # automacao de tarefas no x
   - pkgfile # a pacman .files metadata explorer
   - interception-tools # intercepta eventos de teclado e mouse para remapeamento
+  - jq # json filter
 
 
   # TODO: instalar via git clone 
