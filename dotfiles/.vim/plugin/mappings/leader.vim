@@ -45,6 +45,8 @@ nnoremap <Leader>l :BLines<CR>
 nnoremap <Leader>L :Lines<CR>
 " busca no help
 nnoremap <Leader>H :Helptags!<CR>
+" busca usando Rg
+nnoremap <Leader>a :Rg<CR>
 
 " mapear :lnext e :lprevios do ALE linter
 " nnoremap <Leader>ln :lnext<CR>
