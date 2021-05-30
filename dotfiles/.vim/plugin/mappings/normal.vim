@@ -13,9 +13,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
 " redimensiona janelas usando ctr-{up,down,left,right}
-nnoremap [1;5A :resize +2<CR>
-nnoremap [1;5B :resize -2<CR>
-nnoremap [1;5C :vertical resize -2<CR>
-nnoremap [1;5D :vertical resize +2<CR>
+nnoremap <silent> [1;5A :resize +2<CR>
+nnoremap <silent> [1;5B :resize -2<CR>
+nnoremap <silent> [1;5C :vertical resize -2<CR>
+nnoremap <silent> [1;5D :vertical resize +2<CR>
 
 set timeoutlen=400
