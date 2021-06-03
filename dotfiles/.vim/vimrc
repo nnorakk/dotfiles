@@ -56,7 +56,6 @@ set noshowcmd
 " gerenciador de plugins vim-plug
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-
 Plug 'tpope/vim-commentary' " comments using 'gc'
 Plug 'tpope/vim-surround' " surround comandos ysw',csw',ds...
 Plug 'tpope/vim-fugitive' " Plugin Git
@@ -70,6 +69,7 @@ Plug 'christoomey/vim-tmux-navigator' " Transparente navegar entre vim windows e
 Plug 'junegunn/fzf.vim' " fzf fuzzy finder
 Plug 'junegunn/fzf' " fzf com funcoes para plugin vim 
 Plug 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
+Plug 'simeji/winresizer' " redimensionar janela: inicia modo resize ctrl+e
 " visualizacao
 Plug 'morhetz/gruvbox' " Plugin colorscheme gruvbox
 Plug 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
@@ -94,7 +94,6 @@ if ! has('nvim') " Nao habilita se utilizar o neovim
                                     " então entrar no diretorio e instalar:
                                     " install.py
 end
-
 call plug#end()
 
 " Fern configuration render nerdfont
