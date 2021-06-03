@@ -61,9 +61,6 @@ Plug 'tpope/vim-commentary' " comments using 'gc'
 Plug 'tpope/vim-surround' " surround comandos ysw',csw',ds...
 Plug 'tpope/vim-fugitive' " Plugin Git
 Plug 'tpope/vim-repeat' " permite usar o . ( dot ) para o plugin vim-surround
-Plug 'chriskempson/base16-vim' " cores
-Plug 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
-								 " precisa setar o hi ColorColumn para ficar mais adequado
 Plug 'itchyny/lightline.vim' " status line plugin bem minimalista
 Plug 'w0rp/ale' " linter 
 Plug 'mhinz/vim-signify' " Indica se houve mudanca da versao atual do arquivo no git
@@ -75,6 +72,10 @@ Plug 'junegunn/fzf' " fzf com funcoes para plugin vim
 Plug 'wincent/terminus' " necessario para os eventos de focus{Gained,Lost} dentro do tmux
 " visualizacao
 Plug 'morhetz/gruvbox' " Plugin colorscheme gruvbox
+Plug 'blueyed/vim-diminactive' " destacar janela selecionada e esmaecer as nao selecionadas
+								 " precisa setar o hi ColorColumn para ficar mais adequado
+Plug 'chriskempson/base16-vim' " cores
+" Syntax
 Plug 'kovetskiy/sxhkd-vim' " syntax sxhkd file
 Plug 'ap/vim-css-color' " Color name highlight
 Plug 'hashivim/vim-terraform' " highlight arquivos terraform
