@@ -42,6 +42,7 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%}═%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}✭%{$reset_color%}"
 
 local venv_prompt='$(virtualenv_prompt_info)'
+local kube_prompt='$(kube_ps1)'
 
 # Set required options
 #
@@ -113,8 +114,12 @@ preexec() {
 #
 precmd() {
     vcs_info # Get version control info before we start outputting stuff
-    print -P "\n${venv_prompt}$(repo_information)%F{blue} %F{yellow}$(cmd_exec_time)%f"
-    # print -P "\n%F{yellow}$(cmd_exec_time)%f"
+
+    if [[ ${KUBE_PS1_CONTEXT} != 'N/A' ]]; then
+        print -P "\n${venv_prompt}$(repo_information)${kube_prompt}%F{blue} %F{yellow}$(cmd_exec_time)%f"
+    else 
+        print -P "\n${venv_prompt}$(repo_information)%F{blue} %F{yellow}$(cmd_exec_time)%f"
+    fi
     unset cmd_timestamp #Reset cmd exec time.
 }
 

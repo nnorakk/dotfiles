@@ -15,7 +15,8 @@ plugins=(git
     zsh-autosuggestions
     docker
     docker-compose
-    zsh-syntax-highlighting)
+    zsh-syntax-highlighting
+    kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
 
