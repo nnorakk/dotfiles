@@ -145,7 +145,7 @@ packages:
   - pkgfile # a pacman .files metadata explorer
   - interception-tools # intercepta eventos de teclado e mouse para remapeamento
   - jq # json filter
-
+  - kubectl # kubernetes cli client
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
