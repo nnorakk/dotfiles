@@ -146,6 +146,7 @@ packages:
   - interception-tools # intercepta eventos de teclado e mouse para remapeamento
   - jq # json filter
   - kubectl # kubernetes cli client
+  - redshift # controla a temperatura dad cor do screen
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker

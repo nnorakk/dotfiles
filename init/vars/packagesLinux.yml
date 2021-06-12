@@ -134,6 +134,7 @@ packages:
   - arandr # gui xrandr monitor ajuste
   - lshw # listar hardware da maquina
   - kubernetes-client # kubernetes cli client
+  - redshift # controla a temperatura dad cor do screen
   # TODO: instalar via git clone 
   # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
   # - ctop # ferramenta monitoramento docker
