@@ -15,3 +15,6 @@ export PATH=$PATH:$HOME/.local/bin
 
 # 256 cores
 export TERM='xterm-256color'
+
+# formato 24h
+export LC_TIME=en_GB.UTF-8
