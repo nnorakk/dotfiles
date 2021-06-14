@@ -96,10 +96,6 @@ if ! has('nvim') " Nao habilita se utilizar o neovim
 end
 call plug#end()
 
-" atalho para iniciar modo de redimensionamento
-" padrao seria CTRl-e
-let g:winresizer_start_key = "<leader>w"
-
 " Fern configuration render nerdfont
 let g:fern#renderer = "nerdfont"
 " let g:fern#disable_default_mappings = 1

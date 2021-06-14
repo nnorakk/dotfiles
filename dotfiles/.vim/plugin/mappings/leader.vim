@@ -48,6 +48,10 @@ nnoremap <Leader>H :Helptags!<CR>
 " busca usando Rg
 nnoremap <Leader>a :Rg<CR>
 
+" atalho para iniciar modo de redimensionamento
+" padrao seria CTRl-e
+let g:winresizer_start_key = "<leader>rs"
+
 " mapear :lnext e :lprevios do ALE linter
 " nnoremap <Leader>ln :lnext<CR>
 " nnoremap <Leader>lp :lprevious<CR>
