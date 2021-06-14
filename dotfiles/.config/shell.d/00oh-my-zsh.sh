@@ -16,7 +16,8 @@ plugins=(git
     docker
     docker-compose
     zsh-syntax-highlighting
-    kube-ps1)
+    kube-ps1
+    kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
