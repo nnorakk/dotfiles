@@ -66,6 +66,9 @@ bspc rule -a Zoiper5 desktop='^7' state=floating follow=off
 bspc rule -a "serpro-ppgd-app-IRPFPGD" state=floating follow=on
 bspc rule -a "Sxiv" state=floating follow=on
 
+# configura wallpapers lockscreen
+betterlockscreen -u  ~/.config/wallpapers/
+
 # inicia sxhkd caso nao esteja rodando
 pgrep -x sxhkd > /dev/null || sxhkd -m 1 &
 
@@ -73,7 +76,7 @@ pgrep -x sxhkd > /dev/null || sxhkd -m 1 &
 pgrep -x polybar > /dev/null || ${HOME}/.config/polybar/launch.sh
 
 # Start Dropbox
-dropbox start
+# dropbox start
 
 # Random Wallpaper
 feh --bg-fill --randomize ${HOME}/.config/wallpapers/*
@@ -92,7 +95,8 @@ bspc config top_padding 29
 pgrep -x dunst > /dev/null || dunst &
 
 # protege tela depois de 5 minutos
-pgrep -x xautolock > /dev/null || xautolock -time 5 -locker 'betterlockscreen -l; betterlockscreen -u  ~/.config/wallpapers/' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" &
+# desliga monitor apos mais 1 minuto
+pgrep -x xautolock > /dev/null || xautolock -time 5 -corners ---- -cornersize 30 -locker 'betterlockscreen -l; sleep 60 && xset dpms force off' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" &
 
 # abre terminal kitty
 pgrep -x kitty > /dev/null || kitty &
@@ -102,3 +106,6 @@ nm-applet --indicator &
 
 # automount disks
 udiskie &
+
+# ajusta cores do monitor automaticamente
+pgrep -x redshift > /dev/null || redshift &

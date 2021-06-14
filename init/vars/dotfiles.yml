@@ -11,6 +11,8 @@ dotfiles_dirs:
   - .config/zathura
   - .config/powerline/themes/shell
   - .config/karabiner/assets/complex_modifications
+  - .config/redshift
+  - .config/redshift/hooks
   - .local/share/fonts
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
@@ -46,6 +48,8 @@ dotfiles:
   - .config/karabiner/karabiner.json
   - .config/karabiner/assets/complex_modifications/custom-capslock.json
   - .config/karabiner/assets/complex_modifications/custom-enter.json
+  - .config/redshift/redshift.conf
+  - .config/redshift/hooks/redshift_notify.sh
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim
   - .vim/autoload/visual_movement.vim
