@@ -30,3 +30,4 @@ packages:
   - black
   - iperf
   - jq
+  - minikube
