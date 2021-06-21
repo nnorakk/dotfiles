@@ -4,6 +4,7 @@ snap_packages:
 
 packages:
   - dnf-utils
+  - ntpdate # ajusta data
   - openssh-server
   - fping
   - tcpdump
