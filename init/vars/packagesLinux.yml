@@ -3,6 +3,7 @@ snap_packages:
   - spotify
 
 packages:
+  - pwgen # gerador de senha
   - dnf-utils
   - ntpdate # ajusta data
   - openssh-server
@@ -132,6 +133,7 @@ packages:
   - qt5ct # qt5 configuration tool
   - snapd # permite instalar pacotes snap
   - neofetch # cmdline system information
+  - inxi # Script da informacoes sobre o sistema
   - arandr # gui xrandr monitor ajuste
   - lshw # listar hardware da maquina
   - kubernetes-client # kubernetes cli client
