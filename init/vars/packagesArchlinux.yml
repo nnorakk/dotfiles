@@ -16,6 +16,7 @@ aur_packages:
   - zoiper # soft voip phone
   - openvpn-update-systemd-resolved # dns ajuste para openvpn
   - dropbox # https://aur.archlinux.org/packages/dropbox/ 
+  - ytop-bin # monitor de sistema
 
 packages:
   - base-devel
@@ -95,9 +96,8 @@ packages:
   - bat
   - exa # versao turbinada do ls
   - lsd # versao turbinada do ls
-  # - bashtop # monitor de sistema
-  # - ytop # monitor de sistema
-  # - bpytop # monitor de sistema
+  - bashtop # monitor de sistema
+  - bpytop # monitor de sistema
   - ranger
   - httpie # curl para seres humanos :)
   - w3m # browser linha de comando
@@ -109,7 +109,6 @@ packages:
   # - ImageMagick
   # - w3m-img 
   - alacritty
-  # - https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm 
   - bspwm # bspwm window manager
   - sxhkd # daemon atalhos teclado
   - rofi # launcher
