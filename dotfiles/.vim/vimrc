@@ -1,5 +1,7 @@
 syntax on " habilita syntax highlight
 
+set encoding=utf-8
+
 set clipboard=unnamed,unnamedplus " forca usar registros * e + em yank
 
 set background=dark " seta tema para dark
