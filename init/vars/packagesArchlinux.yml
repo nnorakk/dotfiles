@@ -13,8 +13,9 @@ aur_packages:
   - pulseaudio-ctl # pulseaudio cli control
   - betterlockscreen # lockscreen
   - interception-dual-function-keys # usado com interception tools
-  # - zoiper # soft voip phone
+  - zoiper # soft voip phone
   - openvpn-update-systemd-resolved # dns ajuste para openvpn
+  - dropbox # https://aur.archlinux.org/packages/dropbox/ 
 
 packages:
   - base-devel
@@ -27,6 +28,7 @@ packages:
   - xorg-xinit
   - firefox
   - tcpdump
+  - dnsutils # commando host
   - wireshark-qt
   - htop
   - procs # Modern replacement for ps
