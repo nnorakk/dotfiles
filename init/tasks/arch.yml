@@ -33,6 +33,12 @@
     #   changed_when: false
     #   tags: admin, arch
 
+    # https://aur.archlinux.org/packages/dropbox/
+    - name: Instala chave gpg para dropbox
+      shell: wget -q https://linux.dropbox.com/fedora/rpm-public-key.asc -O /tmp/rpm-public-key.asc && gpg --import /tmp/rpm-public-key.asc
+      changed_when: false
+      tags: admin, arch
+
     - name: Instala pacotes aur
       aur:
         name:
