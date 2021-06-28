@@ -11,7 +11,7 @@ export HISTSIZE=100000
 export EDITOR=vim
 
 # Adiciona .loca/bin ao PATH
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 # 256 cores
 export TERM='xterm-256color'
