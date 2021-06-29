@@ -36,6 +36,20 @@
       become: true
       tags: keyboard
 
+    # necessario adicionar essas variaveis porque no archlinux o cedilha
+    # nao era digitado corretamente em aplicativos graficos no entanto
+    # no terminal sim
+    - name: Adiciona variaveis de ambiente para cedilha
+      lineinfile:
+        path: /etc/environment
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+      loop:
+        - { regexp: '^GTK_IM_MODULE', line: 'GTK_IM_MODULE=cedilla' }
+        - { regexp: '^QT_IM_MODULE', line: 'QT_IM_MODULE=cedilla' }
+      become: true
+      tags: keyboard
+
     # testar se isso eh necessario mesmo
     # no archlinux nao foi por isso estou comentando
     # - name: Forca ler cedilha
