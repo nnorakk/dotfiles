@@ -52,3 +52,13 @@
         state: started
         masked: no
       become: true
+      tags: admin, arch
+
+    - name: Habilita cronie
+      ansible.builtin.systemd:
+        name: cronie
+        enabled: yes
+        state: started
+        masked: no
+      become: true
+      tags: admin, arch

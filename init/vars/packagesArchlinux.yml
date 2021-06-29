@@ -80,7 +80,6 @@ packages:
   # - setroubleshoot
   # - setools
   - xautolock
-  # - docker
   # - terraform # hahicorp terraform
   # - packer # hashicorp packer
   - dia
@@ -150,6 +149,7 @@ packages:
   - jq # json filter
   - kubectl # kubernetes cli client
   - redshift # controla a temperatura dad cor do screen
+  - cronie # crontab nao instalado por padrao no arch
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
