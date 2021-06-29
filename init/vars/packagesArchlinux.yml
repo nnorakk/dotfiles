@@ -19,6 +19,7 @@ aur_packages:
   - ytop-bin # monitor de sistema
   - snapd
   - it87-dkms-git # detectar fan speed placa mae B450 asus
+  - inxi # cmdline system information
 
 packages:
   - base-devel
@@ -29,6 +30,7 @@ packages:
   - xf86-video-fbdev
   - xorg
   - xorg-xinit
+  - mesa-demos # glxinfo command
   - firefox
   - tcpdump
   - dnsutils # commando host
@@ -135,6 +137,7 @@ packages:
   # - npm # gerenciador de pacotes node.js
   - tldr # ajuda em comandos mais uteis
   - udiskie # automount disks
+  - ntfs-3g # montar particoes/discos ntfs
   # - lxappearance # gtk theme switcher
   # - qt5ct # qt5 configuration tool
   # - snapd # permite instalar pacotes snap
