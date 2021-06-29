@@ -45,6 +45,14 @@
           "{{ aur_packages }}"
       tags: admin, arch
 
+    - name: Instala Pacotes Snap
+      snap:
+        name: 
+          "{{ snap_packages }}"
+        state: present
+      become: true
+      tags: admin, arch
+
     - name: Habilita sshd
       ansible.builtin.systemd:
         name: sshd
@@ -59,6 +67,14 @@
         name: cronie
         enabled: yes
         state: started
+        masked: no
+      become: true
+      tags: admin, arch
+
+    - name: Habilita snapd
+      ansible.builtin.systemd:
+        name: snapd
+        enabled: yes
         masked: no
       become: true
       tags: admin, arch
