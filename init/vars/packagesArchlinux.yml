@@ -17,6 +17,7 @@ aur_packages:
   - openvpn-update-systemd-resolved # dns ajuste para openvpn
   - dropbox # https://aur.archlinux.org/packages/dropbox/ 
   - ytop-bin # monitor de sistema
+  - snapd
 
 packages:
   - base-devel
