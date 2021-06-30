@@ -53,6 +53,15 @@
       become: true
       tags: admin, arch
 
+    - name: Adiciona modulo it87 # ler sensores fan da placa mae B450
+      copy:
+        dest: "/etc/modules-load.d/it87.conf"
+        content: |
+          # modulo para ler sensores fan placa mae B450
+          it87
+      become: true
+      tags: admin, arch
+
     - name: Habilita sshd
       ansible.builtin.systemd:
         name: sshd
