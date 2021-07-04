@@ -26,6 +26,7 @@ packages:
   - bash-completion
   - zsh-completions
   - openssh
+  - ntp
   - fping
   - xf86-video-fbdev
   - xorg
