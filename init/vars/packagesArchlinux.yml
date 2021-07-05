@@ -20,6 +20,7 @@ aur_packages:
   - snapd
   - it87-dkms-git # detectar fan speed placa mae B450 asus
   - inxi # cmdline system information
+  - zoom # video conferencia
 
 packages:
   - base-devel
