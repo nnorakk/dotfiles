@@ -36,6 +36,7 @@ packages:
   - xorg-xinit
   - mesa-demos # glxinfo command
   - firefox
+  - libreoffice-still # suite escritorio
   - tcpdump
   - dnsutils # commando host
   - wireshark-qt
