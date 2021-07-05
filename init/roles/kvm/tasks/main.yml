@@ -7,59 +7,16 @@
   changed_when: false
   failed_when: false
 
-- name: Instala pacotes necessarios pra virtualizacao
-  dnf:
-    name:
-      "{{ kvm_packages }}"
-    state: present
-  notify: Habilita libvirt
-  when: "'Hypervisor detected' not in is_vm.stdout"
-  become: true
+- name: Inclui variaveis para distribuicao especifica
+  include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
+  include_tasks: "task_{{ ansible_distribution }}.yml"
 
 - name: Adiciona usuario ao grupo libvirt
   user:
     name: "{{ lookup('env','LOGNAME') }}"
     groups: libvirt
     append: yes
-  when: "'Hypervisor detected' not in is_vm.stdout"
+  when: kvm_packages is defined
   become: true
-
-# get default connection
-- name: Get default NetworkManager connection ethernet
-  shell: "nmcli | grep '{{ ansible_default_ipv4['interface'] }}:' | sed 's/.*connected to //'"
-  changed_when: false
-  register: default_connection
-
-# Usa nmcli para configurar a bridge a partir da conexao padrao inicial do fedora
-- name: Configura Bridge
-  command: "{{ item }}"
-  with_items:
-    - "nmcli connection add type bridge autoconnect yes con-name {{ conn_name }} ifname {{ bridge_name }}" 
-    - "nmcli connection modify {{ conn_name }} ipv4.addresses {{ ip_address }} ipv4.method manual" 
-    - "nmcli connection modify {{ conn_name }} ipv4.gateway {{ gateway }}" 
-    - "nmcli connection modify {{ conn_name }} ipv4.dns {{ dns1 }}" 
-    - "nmcli connection modify {{ conn_name }} +ipv4.dns {{ dns2 }}" 
-    - "nmcli connection del '{{ default_connection.stdout }}'" 
-    - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_default_ipv4['interface'] }} ifname {{ ansible_default_ipv4['interface'] }} master {{ bridge_name }}" 
-  when: >
-    ( ansible_default_ipv4['alias'] !=  bridge_name ) and 
-    ( "'Hypervisor detected' not in is_vm.stdout" ) and
-    conn_name is defined and
-    bridge_name is defined and
-    ip_address is defined and
-    gateway is defined and
-    dns1 is defined and
-    dns2 is defined
-  notify: Restarta NetworkManager
-  become: true
-
-- name: Instala plugin vagrant libvirt
-  shell:
-    cmd: vagrant plugin install vagrant-libvirt
-  ignore_errors: yes
-  changed_when: false
-  failed_when: false
-
-# - name: Debuga criacao Bridge
-#   debug:
-#     msg: "Conname {{ conn_name }} Bridge Name: {{ bridge_name }} ip_address: {{ ip_address }}"

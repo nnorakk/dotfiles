@@ -1,0 +1,20 @@
+---
+- name: Instala pacotes necessarios
+  community.general.pacman:
+    name:
+      "{{ kvm_packages }}"
+    state: present
+  when: kvm_packages is defined
+  become: true
+  notify: Habilita libvirt
+
+- name: Configura arquivo libvirt.conf
+  lineinfile:
+    path: "/etc/libvirt/libvirtd.conf"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: '^unix_sock_group', line: 'unix_sock_group = "libvirt"' }
+    - { regexp: '^unix_sock_rw_perms', line: 'unix_sock_rw_perms = "0770"' }
+  become: true
+  notify: Habilita libvirt

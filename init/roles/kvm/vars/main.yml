@@ -5,10 +5,3 @@
 # gateway:
 # dns1:
 # dns2:
-
-# Pacotes Virtualizacao
-kvm_packages:
-  - qemu-kvm
-  - libvirt
-  - virt-install
-  - virt-manager
