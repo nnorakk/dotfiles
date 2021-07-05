@@ -47,6 +47,9 @@ case "$HOST_OS" in
             else
                 echo "Instale ansible..."
                 sudo dnf install -y ansible
+
+                # instala collection community.general
+                ansible-galaxy collection install community.general
             fi
 
         elif grep -q 'NAME="Arch Linux"' /etc/os-release; then
@@ -59,6 +62,9 @@ case "$HOST_OS" in
             else
                 echo "Instale ansible..."
                 sudo pacman -S --noconfirm ansible
+
+                # instala collection community.general
+                ansible-galaxy collection install community.general
             fi
 
             echo "Instala Modulo Ansible Aur"
