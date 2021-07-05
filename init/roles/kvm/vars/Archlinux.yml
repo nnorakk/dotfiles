@@ -8,7 +8,6 @@ kvm_packages:
   - dnsmasq
   - vde2
   - openbsd-netcat
-  - ebtables
   - iptables-nft
   - virt-manager
   - virt-viewer
