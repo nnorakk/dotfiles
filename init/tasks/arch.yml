@@ -71,6 +71,16 @@
       become: true
       tags: admin, arch
 
+    - name: Configura PATH de usuarios
+      copy:
+        dest: "{{ item }}"
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/{{ item }}"
+        mode: '0644'
+      with_items:
+        - /etc/profile.d/userdir-path.sh
+      become: true
+      tags: admin, arch
+
     - name: Habilita sshd
       ansible.builtin.systemd:
         name: sshd
