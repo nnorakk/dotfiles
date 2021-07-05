@@ -30,4 +30,3 @@
   roles:
     - { role: kvm, tags: ["kvm"] }
     - { role: docker, tags: ["docker"] }
-    - { role: compiled_apps, tags: ["compiled_apps"] }
