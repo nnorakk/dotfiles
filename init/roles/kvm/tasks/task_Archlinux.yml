@@ -1,4 +1,13 @@
 ---
+- name: Desinstala iptables
+  community.general.pacman:
+    name: iptables
+    state: absent
+    force: yes
+  when: kvm_packages is defined
+  become: true
+  notify: Habilita libvirt
+
 - name: Instala pacotes necessarios
   community.general.pacman:
     name:
