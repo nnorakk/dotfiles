@@ -49,6 +49,7 @@
       ansible.builtin.systemd:
         name: snapd
         enabled: yes
+        state: started
         masked: no
       become: true
       tags: admin, arch
