@@ -3,6 +3,7 @@
     - name: Muda keymap para us acento
       command: localectl set-x11-keymap us pc105 intl shift:both_capslock,terminate:ctrl_alt_bksp
       changed_when: false
+      become: true
       tags: keyboard
 
     # testar se isso eh necessario mesmo
