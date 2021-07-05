@@ -2,6 +2,14 @@
       include_vars: "vars/packages{{ ansible_distribution }}.yml"
       tags: admin
 
+    - name: Instala pacotes necessarios
+      community.general.pacman:
+        name:
+          "{{ packages }}"
+        state: present
+      become: true
+      tags: admin, arch
+
     - name: Clona yay repositorio
       git:
         repo: "https://aur.archlinux.org/yay-git.git"
@@ -17,14 +25,6 @@
         - "git reset --hard HEAD"
       changed_when: false
       tags: arch
-
-    - name: Instala pacotes necessarios
-      community.general.pacman:
-        name:
-          "{{ packages }}"
-        state: present
-      become: true
-      tags: admin, arch
 
     # - name: Instala pacotes aur
     #   command: "yay --noconfirm -S {{ item }}"
