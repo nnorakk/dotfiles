@@ -21,6 +21,7 @@ aur_packages:
   - it87-dkms-git # detectar fan speed placa mae B450 asus
   - inxi # cmdline system information
   - zoom # video conferencia
+  - warsaw-bin # banco do brasil acesso
 
 packages:
   - base-devel
@@ -29,6 +30,7 @@ packages:
   - openssh
   - ntp
   - fping
+  - wget
   - xf86-video-fbdev
   - xorg
   - xorg-xinit
