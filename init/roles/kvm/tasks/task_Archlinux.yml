@@ -27,3 +27,11 @@
     - { regexp: '^unix_sock_rw_perms', line: 'unix_sock_rw_perms = "0770"' }
   become: true
   notify: Habilita libvirt
+
+- name: Configura network default para autostart
+  command:
+    cmd: virsh net-autostart --network default
+    become: true
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
