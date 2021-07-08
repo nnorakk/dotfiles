@@ -74,6 +74,7 @@ packages:
   # - gvim # habilita o +clipboard
   - vim
   - nmap
+  - mtr # traceroute e ping
   - iperf
   - iperf3
   - net-snmp # snmpwalk
