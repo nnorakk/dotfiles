@@ -17,6 +17,12 @@ let mapleader = "\ "
 " expande tabs em espaco
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
+" highlight termos buscados
+set hlsearch
+
+" busca enquanto estiver digitando
+set incsearch
+
 " ignore case em buscas /
 set ignorecase smartcase
 
