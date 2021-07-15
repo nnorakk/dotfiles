@@ -1,4 +1,4 @@
-#
+
 # wm independent hotkeys
 #
 
@@ -127,7 +127,9 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-40 0,0 40,0 -40,40 0}
 
+#########################################
 # Minhas customizacoes
+#########################################
 
 # abrir aplicativos terminal
 super + x; {b,r,c,v,o}
