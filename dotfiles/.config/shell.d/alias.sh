@@ -37,3 +37,6 @@ alias man='manvim'
 
 # editar arquivos sensiveis sem salvar historico
 alias vimsecret='vim -c "set nobackup noswapfile noundofile"'
+
+# aliases uteis para ls
+alias l.='ls -d .* --color=auto'
