@@ -27,6 +27,7 @@ packages:
   - base-devel
   - bash-completion
   - zsh-completions
+  - yad # criar widgets para scripts shell
   - openssh
   - ntp
   - fping
@@ -39,6 +40,7 @@ packages:
   - libreoffice-still # suite escritorio
   - tcpdump
   - dnsutils # commando host
+  - whois # dns utils
   - wireshark-qt
   - htop
   - procs # Modern replacement for ps
@@ -53,6 +55,7 @@ packages:
   # - gcc-c++
   - make
   # - python3-devel
+  - python-pip # instalar pacotes python
   - wdiff
   - iotop
   # - ruby-devel
@@ -140,7 +143,7 @@ packages:
   - ttf-jetbrains-mono # fonts com ligaduras =>
   # - jetbrains-mono-nl-fonts # font jetbrains sem ligaduras
   - xsel # commandline manipula clipboard
-  # - npm # gerenciador de pacotes node.js
+  - npm # gerenciador de pacotes node.js
   - tldr # ajuda em comandos mais uteis
   - udiskie # automount disks
   - ntfs-3g # montar particoes/discos ntfs
