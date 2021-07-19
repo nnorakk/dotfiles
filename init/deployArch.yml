@@ -27,6 +27,9 @@
     - name: Vim Configs
       import_tasks: tasks/vim.yml
 
+    - name: NeoVim Configs
+      import_tasks: tasks/nvim.yml
+
   roles:
     - { role: kvm, tags: ["kvm"] }
     - { role: docker, tags: ["docker"] }

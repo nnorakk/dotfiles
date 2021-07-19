@@ -19,6 +19,8 @@ dotfiles_dirs:
   - .vim/plugin/mappings
   - .vim/ftplugin
   - .vim/after/ftdetect
+  - .config/nvim/lua
+  - .config/nvim/plugin/mappings
 
 dotfiles:
   - .alacritty.yml
@@ -69,3 +71,15 @@ dotfiles:
   - .vim/after/ftdetect/hcl.vim
   - .vim/vimrc
   - .zshrc
+  - .config/nvim/init.lua
+  - .config/nvim/lua/completion.lua
+  - .config/nvim/lua/maps.lua
+  - .config/nvim/lua/plugins.lua
+  - .config/nvim/lua/settings.lua
+  - .config/nvim/plugin/highlighActiveInactiveWindows.vim
+  - .config/nvim/plugin/settings.vim
+  - .config/nvim/plugin/statusline.vim
+  - .config/nvim/plugin/mappings/insertmap.vim
+  - .config/nvim/plugin/mappings/leader.vim
+  - .config/nvim/plugin/mappings/normal.vim
+  - .config/nvim/plugin/mappings/visual.vim

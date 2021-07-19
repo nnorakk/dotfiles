@@ -52,18 +52,18 @@
          - "{{ dotfiles }}"
       tags: dotfiles, links
 
-    - name: Cria Link neovim to vim directory
-      file:
-        src: $HOME/.vim
-        dest: $HOME/.config/nvim
-        state: link
-        force: true
-      tags: dotfiles, links, neovim
+    # - name: Cria Link neovim to vim directory
+    #   file:
+    #     src: $HOME/.vim
+    #     dest: $HOME/.config/nvim
+    #     state: link
+    #     force: true
+    #   tags: dotfiles, links, neovim
 
-    - name: Cria Link neovim init.vim to vimrc
-      file:
-        src: $HOME/.vim/vimrc
-        dest: $HOME/.vim/init.vim
-        state: link
-        force: true
-      tags: dotfiles, links, neovim
+    # - name: Cria Link neovim init.vim to vimrc
+    #   file:
+    #     src: $HOME/.vim/vimrc
+    #     dest: $HOME/.vim/init.vim
+    #     state: link
+    #     force: true
+    #   tags: dotfiles, links, neovim
