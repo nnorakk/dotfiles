@@ -143,6 +143,7 @@ packages:
   - ttf-jetbrains-mono # fonts com ligaduras =>
   # - jetbrains-mono-nl-fonts # font jetbrains sem ligaduras
   - xsel # commandline manipula clipboard
+  - xclip # commandline manipula clipboard
   - npm # gerenciador de pacotes node.js
   - tldr # ajuda em comandos mais uteis
   - udiskie # automount disks
