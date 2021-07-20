@@ -58,6 +58,7 @@ packages:
   - python-pip # instalar pacotes python
   - wdiff
   - iotop
+  - ipcalc # calcula mascaras, quantidade enderecos, gw ...
   # - ruby-devel
   - tor
   # - proxychains
