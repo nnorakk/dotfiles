@@ -14,6 +14,7 @@ vim.o.splitright = true -- " Preferencias ao splitar janelas
 vim.o.hidden = true -- Permite saltar para buffers nao salvos
 vim.o.showcmd = false -- Nao imprime comando na ultima linha
 vim.o.termguicolors = true -- 
+vim.g.colors_name = 'gruvbox'
 -- vim.o.encoding = 'utf-8'  -- nao necessario, ja default
 -- vim.o.background = 'dark' -- seta background, nao necessario, ja default no neovim
 -- vim.o.hlsearch = true -- highlight termos buscados, nao necessario, ja default no neovim
@@ -129,7 +130,7 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case',
-      '-L'
+      '--follow'
     },
     prompt_prefix = "> ",
     selection_caret = "> ",

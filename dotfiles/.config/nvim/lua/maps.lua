@@ -29,11 +29,7 @@ map('n', '<c-k>', '<c-w>k', options)
 map('n', '<c-l>', '<c-w>l', options)
 
 -- telescope plugin
--- nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
--- nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
--- nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
--- nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-map('n', '<Leader>ff', ':lua require("telescope.builtin").find_files()<cr>', options)
+map('n', '<Leader>ff', ':lua require("telescope.builtin").find_files({follow=true})<cr>', options)
 map('n', '<Leader>fg', ':lua require("telescope.builtin").live_grep()<cr>', options)
 map('n', '<Leader>fb', ':lua require("telescope.builtin").buffers()<cr>', options)
 map('n', '<Leader>fh', ':lua require("telescope.builtin").help_tags()<cr>', options)

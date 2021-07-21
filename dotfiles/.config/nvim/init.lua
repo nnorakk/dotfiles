@@ -6,6 +6,4 @@ require('plugins')
 require('settings')
 require('completion')
 
--- pq nao seta em lua?
-vim.cmd('colorscheme gruvbox')
 vim.cmd('let g:diminactive=0')
