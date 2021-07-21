@@ -162,6 +162,8 @@ packages:
   - interception-tools # intercepta eventos de teclado e mouse para remapeamento
   - jq # json filter
   - kubectl # kubernetes cli client
+  - kubectx # Alternar entre clusters
+  - minikube # kubernetes cluster local
   - redshift # controla a temperatura dad cor do screen
   - cronie # crontab nao instalado por padrao no arch
 
