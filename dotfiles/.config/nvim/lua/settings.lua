@@ -132,6 +132,14 @@ require('telescope').setup{
       '--smart-case',
       '--follow'
     },
+    mappings = {
+        i = {
+            ["<C-s>"] = require("telescope.actions").select_horizontal,
+        },
+        n = {
+            ["<C-s>"] = require("telescope.actions").select_horizontal,
+        },
+    },
     prompt_prefix = "> ",
     selection_caret = "> ",
     entry_prefix = "  ",
