@@ -1,4 +1,14 @@
--- global options 
+-- Opcoes default no neovim diferente do vim 8j
+--
+-- vim.o.encoding = 'utf-8'  -- seta encoding
+-- vim.o.background = 'dark' -- seta background
+-- vim.o.hlsearch = true -- highlight termos buscados
+-- vim.o.incsearch = true -- busca enquanto estiver digitando
+-- vim.o.ignorecase = true -- ignore case em buscas /
+-- vim.o.smartcase = true -- ignore case em buscas /
+-- vim.o.fillchars="vert:│" -- Modifica o caracter separador vertical (U+2503, UTF-8: E2 94 83)
+-- vim.o.backspace = 'indent,eol,start' -- comportamento backspace
+
 vim.o.clipboard = 'unnamedplus' -- forca registros * e + em yank
 vim.o.foldmethod = 'indent' -- Usa folding atraves da identacao
 vim.o.foldlevel = 99  -- Abre sem folding
@@ -14,18 +24,10 @@ vim.o.splitright = true -- " Preferencias ao splitar janelas
 vim.o.hidden = true -- Permite saltar para buffers nao salvos
 vim.o.showcmd = false -- Nao imprime comando na ultima linha
 vim.o.termguicolors = true -- 
-vim.g.colors_name = 'gruvbox'
--- vim.o.encoding = 'utf-8'  -- nao necessario, ja default
--- vim.o.background = 'dark' -- seta background, nao necessario, ja default no neovim
--- vim.o.hlsearch = true -- highlight termos buscados, nao necessario, ja default no neovim
--- vim.o.incsearch = true -- busca enquanto estiver digitando, nao necessario, ja default no neovim
--- vim.o.ignorecase = true -- ignore case em buscas /, nao necessario, ja default no neovim
--- vim.o.smartcase = true -- ignore case em buscas /, nao necessario, ja default no neovim
--- vim.o.fillchars="vert:│" -- Modifica o caracter separador vertical (U+2503, UTF-8: E2 94 83)
--- vim.o.backspace = 'indent,eol,start' -- comportamento backspace, nao necessario, ja default no neovim
+vim.o.mouse = 'nv' -- habilita mouse modos normal e visual
+vim.o.completeopt = "menuone,noselect" --https://github.com/hrsh7th/nvim-compe
 
---https://github.com/hrsh7th/nvim-compe
-vim.o.completeopt = "menuone,noselect"
+vim.g.colors_name = 'gruvbox'
 
 vim.cmd('highlight link CompeDocumentation NormalFloat')
 vim.cmd('highlight Comment gui=italic')
