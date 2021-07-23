@@ -79,6 +79,7 @@ dotfiles:
   - .config/nvim/plugin/highlighActiveInactiveWindows.vim
   - .config/nvim/plugin/settings.vim
   - .config/nvim/plugin/statusline.vim
+  - .config/nvim/plugin/statusline.lua
   - .config/nvim/plugin/mappings/insertmap.vim
   - .config/nvim/plugin/mappings/leader.vim
   - .config/nvim/plugin/mappings/normal.vim
