@@ -22,6 +22,7 @@ aur_packages:
   - inxi # cmdline system information
   - zoom # video conferencia
   - warsaw-bin # banco do brasil acesso
+  # - paman # pulseaudio manager
 
 packages:
   - base-devel
@@ -166,6 +167,8 @@ packages:
   - minikube # kubernetes cluster local
   - redshift # controla a temperatura dad cor do screen
   - cronie # crontab nao instalado por padrao no arch
+  # - pulseaudio # sound server
+  - pavucontrol # pulseaudio volume controle
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
