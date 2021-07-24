@@ -1,0 +1,9 @@
+---
+- name: Instala pacotes necessarios
+  community.general.pacman:
+    name:
+      "{{ virtualbox_packages }}"
+    state: present
+  when: virtualbox_packages is defined
+  become: true
+  # notify: Habilita libvirt

@@ -1,0 +1,8 @@
+- name: Instala pacotes necessarios pra virtualizacao
+  dnf:
+    name:
+      "{{ virtualbox_packages }}"
+    state: present
+  notify: Habilita libvirt
+  # when: "'Hypervisor detected' not in is_vm.stdout"
+  become: true

@@ -1,0 +1,22 @@
+---
+- name: Verifica se vm ou host fisico
+  shell:
+    cmd: dmesg | grep 'Hypervisor detected:'
+  register: is_vm
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
+
+- name: Inclui variaveis para distribuicao especifica
+  include_vars: "{{ ansible_distribution }}.yml"
+
+- name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
+  include_tasks: "task_{{ ansible_distribution }}.yml"
+
+- name: Adiciona usuario ao grupo vboxusers
+  user:
+    name: "{{ lookup('env','LOGNAME') }}"
+    groups: vboxusers
+    append: yes
+  when: virtualbox_packages is defined
+  become: true

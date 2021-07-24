@@ -33,3 +33,4 @@
   roles:
     - { role: kvm, tags: ["kvm"] }
     - { role: docker, tags: ["docker"] }
+    - { role: virtualbox, tags: ["virtualbox"] }

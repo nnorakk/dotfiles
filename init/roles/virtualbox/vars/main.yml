@@ -1,0 +1,7 @@
+# Network vars caso queira configurar bridge com endereco manual
+# conn_name:
+# bridge_name:
+# ip_address:
+# gateway:
+# dns1:
+# dns2:

@@ -1,0 +1,13 @@
+---
+# - name: Habilita libvirt
+#   service:
+#     name: libvirtd
+#     enabled: yes
+#     state: started
+#   become: true
+
+# - name: Restarta NetworkManager
+#   service:
+#     name: NetworkManager
+#     state: restarted
+#   become: true
