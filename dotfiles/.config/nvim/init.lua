@@ -1,9 +1,6 @@
--- Map leader to space
-vim.g.leader = ' ' -- leader map igual a espaco. Default e '\'
-
-require('maps')
-require('plugins')
+-- Configuracao
 require('settings')
-require('completion')
+require('plugins')
+require('maps')
 
 vim.cmd('let g:diminactive=0')

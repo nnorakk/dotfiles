@@ -72,15 +72,14 @@ dotfiles:
   - .vim/vimrc
   - .zshrc
   - .config/nvim/init.lua
-  - .config/nvim/lua/completion.lua
   - .config/nvim/lua/maps.lua
   - .config/nvim/lua/plugins.lua
   - .config/nvim/lua/settings.lua
   - .config/nvim/plugin/highlighActiveInactiveWindows.vim
   - .config/nvim/plugin/settings.vim
-  - .config/nvim/plugin/statusline.vim
   - .config/nvim/plugin/statusline.lua
   - .config/nvim/plugin/mappings/insertmap.vim
   - .config/nvim/plugin/mappings/leader.vim
   - .config/nvim/plugin/mappings/normal.vim
   - .config/nvim/plugin/mappings/visual.vim
+  - .config/nvim/plugin/plugins_config
