@@ -7,7 +7,7 @@ math.randomseed(os.time())
 local random_theme = themes[math.random(1,#themes)]
 
 -- local function GitInformation()
---    -- return vim.b.gitsigns_head 
+--    -- return vim.b.gitsigns_head
 --    if not vim.b.gitsigns_head then
 --        return 'gitsigns_head nao existe'
 --    else
@@ -22,15 +22,15 @@ local random_theme = themes[math.random(1,#themes)]
 --
 -- obrigado
 -- https://github.com/jens1205/dotfiles/blob/c534a34d08133084348cabf8b073db5cae6d975c/nvim/.config/nvim/lua/lightline_config.lua
--- vim.cmd([[
--- function! GitInformation()
---     if !empty(gitbranch#name()) 
---         return ' ' . gitbranch#name()
---     else
---         return ''
---     endif
--- endfunction
--- ]])
+vim.cmd([[
+function! GitInformation()
+    if !empty(gitbranch#name())
+        return ' ' . gitbranch#name()
+    else
+        return ''
+    endif
+endfunction
+]])
 
 -- definir statusline
 vim.g.lightline = {
@@ -43,7 +43,7 @@ vim.g.lightline = {
         left = { { 'absolutepath' } },
     },
     component_function = {
-        gitbranch = 'gitbranch#name' 
-        -- gitbranch = 'GitInformation' 
+        -- gitbranch = 'gitbranch#name'
+        gitbranch = 'GitInformation'
     }
 }
