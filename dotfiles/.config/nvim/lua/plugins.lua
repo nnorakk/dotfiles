@@ -16,8 +16,7 @@ return require('packer').startup(function()
   use {'lukas-reineke/indent-blankline.nvim'}
   -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'}
-  use {'itchyny/lightline.vim'}
-  use {'itchyny/vim-gitbranch'}
+  use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
   use {'christoomey/vim-tmux-navigator'}
   use {'blueyed/vim-diminactive'}
   use {'tpope/vim-commentary'}
