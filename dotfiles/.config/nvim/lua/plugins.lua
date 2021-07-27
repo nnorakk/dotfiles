@@ -18,7 +18,6 @@ return require('packer').startup(function()
   use {'morhetz/gruvbox'}
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
   use {'christoomey/vim-tmux-navigator'}
-  use {'blueyed/vim-diminactive'}
   use {'tpope/vim-commentary'}
   use {'tpope/vim-surround'}
   use {'tpope/vim-repeat'}
