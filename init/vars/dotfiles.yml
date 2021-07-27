@@ -75,7 +75,7 @@ dotfiles:
   - .config/nvim/lua/maps.lua
   - .config/nvim/lua/plugins.lua
   - .config/nvim/lua/settings.lua
-  - .config/nvim/plugin/highlighActiveInactiveWindows.vim
+  - .config/nvim/plugin/highlightActiveInactiveWindows.vim
   - .config/nvim/plugin/settings.vim
   - .config/nvim/plugin/statusline.lua
   - .config/nvim/plugin/mappings/insertmap.vim
