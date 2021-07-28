@@ -48,3 +48,8 @@ alias -2='cd -2'
 alias -3='cd -3'
 alias -4='cd -4'
 alias -5='cd -5'
+
+# Aliases melhorar minha vida com um teclado ruim
+alias suudo='sudo'
+alias vimm='vim'
+alias viim='vim'
