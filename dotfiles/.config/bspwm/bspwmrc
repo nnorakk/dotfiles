@@ -79,18 +79,11 @@ bspc rule -a Zoiper5 desktop='^7' state=floating follow=off
 bspc rule -a "serpro-ppgd-app-IRPFPGD" state=floating follow=on
 bspc rule -a "Sxiv" state=floating follow=on
 
-# configura wallpapers lockscreen
-betterlockscreen -u  ~/.config/wallpapers/
-
 # inicia sxhkd caso nao esteja rodando
 pgrep -x sxhkd > /dev/null || sxhkd -m 1 &
 
 # Inicia polybar caso nao esteja rodando
 pgrep -x polybar > /dev/null || ${HOME}/.config/polybar/launch.sh
-
-# Start Dropbox
-# dropbox start
-dropbox &
 
 # Random Wallpaper
 feh --bg-fill --randomize ${HOME}/.config/wallpapers/*
@@ -115,7 +108,7 @@ pgrep -x xautolock > /dev/null || xautolock -time 5 -corners ---- -cornersize 30
 # abre terminal kitty
 pgrep -x kitty > /dev/null || kitty &
 
-# nm-applet --indicator &
+# Indicador rede
 nm-applet --indicator &
 
 # automount disks
@@ -123,3 +116,9 @@ udiskie &
 
 # ajusta cores do monitor automaticamente
 pgrep -x redshift > /dev/null || redshift &
+
+# configura wallpapers lockscreen
+betterlockscreen -u  ~/.config/wallpapers/ &
+
+# Start Dropbox
+dropbox &
