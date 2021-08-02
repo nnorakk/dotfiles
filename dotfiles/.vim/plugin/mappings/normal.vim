@@ -18,4 +18,9 @@ nnoremap <silent> [1;5B :resize -2<CR>
 nnoremap <silent> [1;5C :vertical resize -2<CR>
 nnoremap <silent> [1;5D :vertical resize +2<CR>
 
+" from https://github.com/ThePrimeagen/.dotfiles
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
 set timeoutlen=400
