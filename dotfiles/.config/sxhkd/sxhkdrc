@@ -181,6 +181,10 @@ super + ctrl + Return
 super + alt + space
 	rofi -show window
 
+# rofi escolher remote desktops
+super + shift + space
+	"$HOME/bin/rofi-remote-desktops.sh"
+
 # send to monitor
 super + shift + equal
 	bspc node -m last --follow
