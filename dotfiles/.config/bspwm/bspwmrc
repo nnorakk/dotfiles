@@ -118,7 +118,7 @@ udiskie &
 pgrep -x redshift > /dev/null || redshift &
 
 # configura wallpapers lockscreen
-betterlockscreen -u  ~/.config/wallpapers/ &
+betterlockscreen -u  ~/.config/wallpapers/ -r 1920x1080 -b 0.5 &
 
 # Start Dropbox
 dropbox &

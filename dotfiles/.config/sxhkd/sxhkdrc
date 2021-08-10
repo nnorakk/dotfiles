@@ -143,7 +143,8 @@ super + x; {b,r,c,v,o}
 
 # lockscreen
 alt + shift + x
-   betterlockscreen -l dim && betterlockscreen -u ~/.config/wallpapers && sleep 30 && xset dpms force off
+   betterlockscreen -l dim --off 5 -r 1920x1080
+   # betterlockscreen -l dim && betterlockscreen -u ~/.config/wallpapers && sleep 30 && xset dpms force off
 
 # screenshot utilizando flameshot
 ctrl + shift + Print
