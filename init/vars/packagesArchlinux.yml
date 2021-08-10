@@ -169,6 +169,7 @@ packages:
   - cronie # crontab nao instalado por padrao no arch
   # - pulseaudio # sound server
   - pavucontrol # pulseaudio volume controle
+  - asciinema # grava terminal
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
