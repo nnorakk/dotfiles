@@ -43,6 +43,7 @@ dotfiles:
   - .config/polybar/openvpn-isrunning.sh
   - .config/bspwm/bspwmrc
   - .config/bspwm/external_rules
+  - .config/bspwm/randomize_focused_border_color.sh
   - .config/kitty/kitty.conf
   - .config/zathura/zathurarc
   - .config/kitty/gruvbox_light.conf
