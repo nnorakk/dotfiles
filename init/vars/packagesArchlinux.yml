@@ -22,6 +22,7 @@ aur_packages:
   - inxi # cmdline system information
   - zoom # video conferencia
   - warsaw-bin # banco do brasil acesso
+  - evernote-for-linux-bin # evernote
   # - paman # pulseaudio manager
 
 packages:
