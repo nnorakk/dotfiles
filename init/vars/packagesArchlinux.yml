@@ -94,8 +94,8 @@ packages:
   # - setroubleshoot
   # - setools
   - xautolock
-  # - terraform # hahicorp terraform
-  # - packer # hashicorp packer
+  - terraform # hahicorp terraform
+  - packer # hashicorp packer
   - dia
   # - virt-manager
   # - bridge-utils
