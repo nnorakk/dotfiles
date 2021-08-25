@@ -13,6 +13,7 @@ dotfiles_dirs:
   - .config/karabiner/assets/complex_modifications
   - .config/redshift
   - .config/redshift/hooks
+  - .config/xbindkeys
   - .local/share/fonts
   - .oh-my-zsh/custom/themes
   - .vim/autoload/mappings
@@ -53,6 +54,7 @@ dotfiles:
   - .config/karabiner/assets/complex_modifications/custom-enter.json
   - .config/redshift/redshift.conf
   - .config/redshift/hooks/redshift_notify.sh
+  - .config/xbindkeys/xbindkeysrc
   - .oh-my-zsh/custom/themes/refined-jp.zsh-theme
   - .vim/autoload/change_numbering.vim
   - .vim/autoload/visual_movement.vim

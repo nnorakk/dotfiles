@@ -173,6 +173,8 @@ packages:
   # - pulseaudio # sound server
   - pavucontrol # pulseaudio volume controle
   - asciinema # grava terminal
+  - xbindkeys # lancar comandos do teclado/mouse em x
+  - pamixer # ajustar volumen commandline - maximo 100%
 
   # TODO: instalar via git clone 
   # - ctop # ferramenta monitoramento docker
