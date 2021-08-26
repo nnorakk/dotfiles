@@ -143,7 +143,7 @@ super + x; {b,r,c,v,o}
 
 # lockscreen
 alt + shift + x
-   betterlockscreen -l dim --off 5 -r 1920x1080
+   betterlockscreen -l dim --off 30
    # betterlockscreen -l dim && betterlockscreen -u ~/.config/wallpapers && sleep 30 && xset dpms force off
 
 # screenshot utilizando flameshot
@@ -192,11 +192,14 @@ super + shift + equal
 
 # audio control
 XF86AudioRaiseVolume
-	pulseaudio-ctl up
+	pamixer -i 5
+	# pulseaudio-ctl up
 XF86AudioLowerVolume
-	pulseaudio-ctl down
+	pamixer -d 5
+	# pulseaudio-ctl down
 XF86AudioMute
-	pulseaudio-ctl mute
+	pamixer --get-mute && pamixer -u || pamixer -m 
+	# pulseaudio-ctl mute
 
 # Hide/Unhide Window
 super + shift + i
