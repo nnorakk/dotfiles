@@ -117,11 +117,14 @@ nm-applet --indicator &
 # automount disks
 udiskie &
 
+# atalhos mouse
+xbindkeys -f ${HOME}/.config/xbindkeys/xbindkeysrc
+
 # ajusta cores do monitor automaticamente
 pgrep -x redshift > /dev/null || redshift &
 
 # configura wallpapers lockscreen
-betterlockscreen -u  ~/.config/wallpapers/ -r 1920x1080 -b 0.5 &
+betterlockscreen -u  ~/.config/wallpapers/ --blur 0.5 &
 
 # Start Dropbox
 dropbox &
