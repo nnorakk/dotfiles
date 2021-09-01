@@ -2,24 +2,16 @@
 # adiciona a linha seguinte no crontab do usuario
 # * * * * * DISPLAY=:0 $HOME/.config/bspwm/randomize_focused_border_color.sh
 declare -a colors=(
- "#406ea5" 
- "#ff00ff" 
- "#8b008b" 
- "#ff00ff" 
- "#ffffff" 
- "#d6006e" 
- "#00ffff" 
- "#7fff00" 
- "#ffd700" 
  "#00ded1" 
- "#ffd700" 
- "#daa520" 
- "#ffd700" 
- "#7fffd4" 
+ "#00ffff" 
  "#406ea5" 
+ "#7fff00" 
+ "#7fffd4" 
  "#8b008b" 
- "#ff00ff" 
  "#d6006e" 
+ "#daa520" 
+ "#ff00ff" 
+ "#ffd700" 
 )
 
 # tamanho do array
