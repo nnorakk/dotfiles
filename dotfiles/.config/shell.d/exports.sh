@@ -18,3 +18,8 @@ export TERM='xterm-256color'
 
 # formato 24h
 export LC_TIME=en_GB.UTF-8
+
+# fzf ignorar arquivos ignorados pelo .gitignore
+if which fd > /dev/null 2>&1; then 
+    export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+fi
