@@ -66,8 +66,8 @@
 #  Control + b:2 + Release
 
 # make F8 launch Google Chrome browser
-"google-chrome-beta"
-F8
+# "google-chrome-beta"
+# F8
 
 "pamixer -i 5"
 b:9
