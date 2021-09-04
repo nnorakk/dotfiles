@@ -15,7 +15,7 @@ aur_packages:
   - interception-dual-function-keys # usado com interception tools
   - zoiper # soft voip phone
   - openvpn-update-systemd-resolved # dns ajuste para openvpn
-  - dropbox # https://aur.archlinux.org/packages/dropbox/ 
+  - dropbox # https://aur.archlinux.org/packages/dropbox/
   - ytop-bin # monitor de sistema
   - snapd
   - it87-dkms-git # detectar fan speed placa mae B450 asus
@@ -116,7 +116,7 @@ packages:
   - rdesktop # remote desktop
   - remmina
   # - ImageMagick
-  # - w3m-img 
+  # - w3m-img
   - alacritty
   - bspwm # bspwm window manager
   - sxhkd # daemon atalhos teclado
@@ -149,7 +149,6 @@ packages:
   - ntfs-3g # montar particoes/discos ntfs
   # - lxappearance # gtk theme switcher
   # - qt5ct # qt5 configuration tool
-  # - snapd # permite instalar pacotes snap
   - neofetch # cmdline system information
   - lsb-release # comando lsb_release
   - openvpn # vpn client
@@ -165,11 +164,12 @@ packages:
   - redshift # controla a temperatura dad cor do screen
   - cronie # crontab nao instalado por padrao no arch
   # - pulseaudio # sound server
-  - pavucontrol # pulseaudio volume controle
+  - pavucontrol # pulseaudio volume controle permite selecionar dispositivo saida volume
   - asciinema # grava terminal
   - xbindkeys # lancar comandos do teclado/mouse em x
   - pamixer # ajustar volumen commandline - maximo 100%
+  - obs-studio # gravar desktop
 
-  # TODO: instalar via git clone 
+  # TODO: instalar via git clone
   # - ctop # ferramenta monitoramento docker
   # - lazydocker # ferramenta monitoramento docker
