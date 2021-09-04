@@ -2,18 +2,16 @@
 
 if pgrep -x "openvpn" > /dev/null 
 then
-    echo "%{F#08fee4} VPN%{F-}" # return a green lock icon (openvpn is running)
-# format-prefix = "🧠 "
-    # echo "%{F#ff5b77}🧠%{F-}" # return a red lock icon (openvpn isnt running)
-    # echo "%{F#08fee4}%{F-}" # return a green lock icon (openvpn is running)
+    output=$(ping -q -c 2 10.16.1.1 2> /dev/null)
+    rc=$?
+    if [[ $rc -eq 0 ]]; then
+        # processo openvpn ativo e vpn acessivel
+        echo "%{F#08fee4} VPN%{F-}"
+    else
+        # processo openvpn ativo e vpn NAO acessivel
+        echo "%{F#daa520} VPN%{F-}"
+    fi
 else
-    echo "%{F#ff5b77} VPN%{F-}" # return a red lock icon (openvpn isnt running)
+    # processo openvpn inativo
+    echo "%{F#ff5b77} VPN%{F-}"
 fi
-
-# esses icones sao da fonte awesome
-# echo "%{F#ff5b77}%{F-}" # return a red lock icon (openvpn isnt running)
-# nao sei
-# format-prefix = "🧠 "
-
-# Font Unifont
-# U+E04F
