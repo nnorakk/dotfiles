@@ -42,6 +42,7 @@ packages:
   - libreoffice-still # suite escritorio
   - tcpdump
   - dnsutils # commando host
+  - traceroute # traceroute 
   - whois # dns utils
   - wireshark-qt
   - htop
