@@ -100,6 +100,8 @@ packages:
   - dia
   - unzip
   - vlc
+  - mpv # cross-platform media player
+  - youtube-dl # command-line program to download videos from YouTube.com
   - thunar # gerenciador de arquivos
   - ffmpeg
   - kitty
