@@ -7,7 +7,7 @@ if [ -f ~/.dotenv ]; then
 fi
 
 manvim() {
-    vim -c "set ft=man | Man $1" -c 'silent! only'
+    nvim -c "set ft=man | Man $1" -c 'silent! only'
 }
 
 function rdesktop() {
