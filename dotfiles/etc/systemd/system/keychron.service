@@ -1,0 +1,11 @@
+# habilita teclas F1-F12 no keychron keyboard
+# creditos: github.com/adam-savard/keychron-k2-function-keys-linux
+[Unit]
+Description=The command to make the Keychron K2 work
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "echo 0 > /sys/module/hid_apple/parameters/fnmode"
+
+[Install]
+WantedBy=multi-user.target

@@ -84,3 +84,20 @@
         state: started
       become: true
       tags: keyboard
+
+    - name: Cria servico sysemd keychron
+      copy:
+        dest: "{{ item }}"
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/{{ item }}"
+      with_items:
+        - /etc/systemd/system/keychron.service
+      become: true
+      tags: keyboard
+
+    - name: Habilita keychron service
+      service:
+        name: keychron
+        enabled: yes
+        state: started
+      become: true
+      tags: keyboard
