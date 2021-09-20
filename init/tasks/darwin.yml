@@ -33,3 +33,9 @@
         state: link
         force: true
       tags: darwin, ranger  
+
+    - name: Copia Fonte Jetbrains
+      copy:
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/Library/Fonts"
+        dest: "{{ lookup('env', 'HOME') }}/Library/Fonts"
+      tags: darwin, fonts
