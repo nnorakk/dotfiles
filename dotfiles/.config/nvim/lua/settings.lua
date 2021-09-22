@@ -34,5 +34,7 @@ vim.opt.listchars      = {trail='•'}
 vim.g.gruvbox_italic = 1 -- verificar pq aqui antes de tudo
 vim.g.colors_name = 'gruvbox'
 
+vim.bo.undofile = true -- seta persistent undo ~/.local/share/nvim/undo
+
 -- vim.cmd('highlight link CompeDocumentation NormalFloat')
 -- vim.cmd('highlight Comment gui=italic')
