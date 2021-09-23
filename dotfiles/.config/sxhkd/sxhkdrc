@@ -180,7 +180,15 @@ super + alt + bracket{left,right}
 
 # scratchpad com tdrop terminal emulator
 super + ctrl + Return
-	tdrop -am kitty
+	tdrop -am -w -18 kitty
+
+# scratchpad com tdrop chamando aplicacao
+super + shift + Return
+	"$HOME/bin/tmux-scratch" ; tdrop -am -w -18 -s scratch kitty
+
+# closing scratchpad com tdrop chamando aplicacao
+super + shift + Escape
+	"$HOME/bin/stop-tmux-scratch"
 
 # rofi -show window
 super + alt + space
@@ -202,7 +210,7 @@ XF86AudioLowerVolume
 	pamixer -d 5
 	# pulseaudio-ctl down
 XF86AudioMute
-	pamixer --get-mute && pamixer -u || pamixer -m 
+	pamixer --get-mute && pamixer -u || pamixer -m
 	# pulseaudio-ctl mute
 
 # Hide/Unhide Window
