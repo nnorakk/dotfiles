@@ -13,7 +13,6 @@ aur_packages:
   - pulseaudio-ctl # pulseaudio cli control
   - betterlockscreen # lockscreen
   - interception-dual-function-keys # usado com interception tools
-  - zoiper # soft voip phone
   - openvpn-update-systemd-resolved # dns ajuste para openvpn
   - dropbox # https://aur.archlinux.org/packages/dropbox/
   - ytop-bin # monitor de sistema
@@ -23,6 +22,8 @@ aur_packages:
   - zoom # video conferencia
   - warsaw-bin # banco do brasil acesso
   - evernote-for-linux-bin # evernote
+  # - zoiper # soft voip phone
+  # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
 
 packages:
@@ -164,6 +165,7 @@ packages:
   - kubectl # kubernetes cli client
   - kubectx # Alternar entre clusters
   - minikube # kubernetes cluster local
+  - helm # kubernetes package manager
   - redshift # controla a temperatura dad cor do screen
   - cronie # crontab nao instalado por padrao no arch
   # - pulseaudio # sound server
