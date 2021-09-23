@@ -50,6 +50,8 @@ case "$HOST_OS" in
 
                 # instala collection community.general
                 ansible-galaxy collection install community.general
+                # instala collection aur module
+                ansible-galaxy collection install kewlfft.aur
             fi
 
         elif grep -q 'NAME="Arch Linux"' /etc/os-release; then
@@ -65,10 +67,9 @@ case "$HOST_OS" in
 
                 # instala collection community.general
                 ansible-galaxy collection install community.general
+                # instala collection aur module
+                ansible-galaxy collection install kewlfft.aur
             fi
-
-            echo "Instala Modulo Ansible Aur"
-            git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/aur 2> /dev/null
 
             HOST_OS="Arch"
         fi

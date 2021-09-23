@@ -40,7 +40,7 @@
       tags: admin, arch
 
     - name: Instala pacotes aur
-      aur:
+      kewlfft.aur.aur:
         name:
           "{{ aur_packages }}"
       tags: admin, arch
