@@ -99,5 +99,6 @@
         name: keychron
         enabled: yes
         state: started
+      ignore_errors: yes
       become: true
       tags: keyboard
