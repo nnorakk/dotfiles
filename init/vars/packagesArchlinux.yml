@@ -22,6 +22,7 @@ aur_packages:
   - zoom # video conferencia
   - warsaw-bin # banco do brasil acesso
   - evernote-for-linux-bin # evernote
+  - gcalcli # client cli google calendar
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
@@ -174,6 +175,7 @@ packages:
   - xbindkeys # lancar comandos do teclado/mouse em x
   - pamixer # ajustar volumen commandline - maximo 100%
   - obs-studio # gravar desktop
+  - figlet # escrever em fontes grandes no terminal
 
   # TODO: instalar via git clone
   # - ctop # ferramenta monitoramento docker
