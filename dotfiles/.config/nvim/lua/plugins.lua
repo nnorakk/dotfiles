@@ -11,6 +11,7 @@ return require('packer').startup(function()
   use {'neovim/nvim-lspconfig'}
   use {'kabouzeid/nvim-lspinstall'}
   use {'hrsh7th/nvim-compe'}
+  use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'onsails/lspkind-nvim'}}}
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
   use {'sbdchd/neoformat'}
   use {'lukas-reineke/indent-blankline.nvim'}
@@ -22,4 +23,5 @@ return require('packer').startup(function()
   use {'tpope/vim-surround'}
   use {'tpope/vim-repeat'}
   use {'hashivim/vim-terraform'}
+  -- use {'glepnir/lspsaga.nvim'}
 end)
