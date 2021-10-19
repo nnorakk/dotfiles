@@ -23,6 +23,7 @@ aur_packages:
   - warsaw-bin # banco do brasil acesso
   - evernote-for-linux-bin # evernote
   - gcalcli # client cli google calendar
+  - terraform-ls # lsp terraform
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
