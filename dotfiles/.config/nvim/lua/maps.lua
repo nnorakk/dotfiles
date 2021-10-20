@@ -7,7 +7,7 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
 
-options = { noremap = true }
+options = { noremap = true, silent = true }
 map('n', '<leader><esc>', ':nohlsearch<cr>', options)
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
@@ -18,6 +18,7 @@ map('n', '<Leader>qa', ':quitall<CR>', options)
 map('n', '<Leader>w', ':write<CR>', options)
 map('n', '<Leader>x', ':xit<CR>', options)
 map('n', '<Leader>so', ':source %<CR>', options)
+map('n', '<Leader>cd', ':cd %:p:h<CR>', options)
 
 -- insert mapping
 map('i', 'jk', '<Esc>', {})

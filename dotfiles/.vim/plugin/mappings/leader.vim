@@ -22,6 +22,7 @@ noremap <silent> <Leader>qa :quitall<CR>
 nnoremap <silent> <Leader>w :write<CR>
 nnoremap <silent> <Leader>x :xit<CR>
 nnoremap <silent> <Leader>so :source %<CR>
+nnoremap <silent> <Leader>cd :cd %:p:h<CR>
 
 " atalhos para navegacao entre buffers
 nnoremap <leader>n :bnext<CR>
