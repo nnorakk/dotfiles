@@ -10,7 +10,6 @@ return require('packer').startup(function()
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
   use {'neovim/nvim-lspconfig'}
   use {'kabouzeid/nvim-lspinstall'}
-  use {'hrsh7th/nvim-compe'}
   use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'onsails/lspkind-nvim'}}}
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
   use {'sbdchd/neoformat'}
