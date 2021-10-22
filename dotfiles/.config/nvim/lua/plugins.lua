@@ -9,18 +9,23 @@ return require('packer').startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
   use {'neovim/nvim-lspconfig'}
-  use {'kabouzeid/nvim-lspinstall'}
-  use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'onsails/lspkind-nvim'}}}
+  -- use {'kabouzeid/nvim-lspinstall'}
+  use {'hrsh7th/nvim-cmp', requires = {
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-buffer'}, 
+      {'hrsh7th/cmp-path'}, 
+      {'onsails/lspkind-nvim'}}
+  }
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
-  use {'sbdchd/neoformat'}
-  use {'lukas-reineke/indent-blankline.nvim'}
-  -- Ja utilizados historicamente com o vim
+  -- use {'sbdchd/neoformat'}
+  -- use {'lukas-reineke/indent-blankline.nvim'}
+  -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'}
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
-  use {'christoomey/vim-tmux-navigator'}
+  -- use {'christoomey/vim-tmux-navigator'}
   use {'tpope/vim-commentary'}
-  use {'tpope/vim-surround'}
-  use {'tpope/vim-repeat'}
-  use {'hashivim/vim-terraform'}
+  -- use {'tpope/vim-surround'}
+  -- use {'tpope/vim-repeat'}
+  -- use {'hashivim/vim-terraform'}
   -- use {'glepnir/lspsaga.nvim'}
 end)
