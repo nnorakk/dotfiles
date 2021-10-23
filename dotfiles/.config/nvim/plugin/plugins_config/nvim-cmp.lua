@@ -41,7 +41,7 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
+    { name = 'buffer', keyword_length = 5 }, -- apresenta sugestoes depois de 5 caracteres
     { name = 'path' },
   },
   formatting = {

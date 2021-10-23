@@ -24,8 +24,8 @@ return require('packer').startup(function()
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
   -- use {'christoomey/vim-tmux-navigator'}
   use {'tpope/vim-commentary'}
-  -- use {'tpope/vim-surround'}
-  -- use {'tpope/vim-repeat'}
-  -- use {'hashivim/vim-terraform'}
+  use {'tpope/vim-surround'}
+  use {'tpope/vim-repeat'}
+  use {'hashivim/vim-terraform'}
   -- use {'glepnir/lspsaga.nvim'}
 end)
