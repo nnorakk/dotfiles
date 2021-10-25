@@ -134,7 +134,9 @@ packages:
   - flameshot # captura de tela
   - zathura # visualizador de arquivos
   - zathura-pdf-mupdf # plugin zathura para pdf
+  - calibre # leitor mobi
   - okular # visualizador de pdf
+  - qpdf # cli tool para remover password
   - sxiv # visualizador de imagem
   # - python3-isort # fixer python para ALE plugin
   - yapf # fixer python para ALE plugin
