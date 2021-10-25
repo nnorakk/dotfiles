@@ -56,3 +56,17 @@ map('i', '<C-k>', 'vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-k>"', op
 local opts = {noremap = true, silent = true}
 -- Insert mode snippet completion mapping - '<Control-s>'
 map('i', '<C-s>', '<C-r>=snippets#Complete()<CR>', opts)
+
+
+-- from: https://github.com/windwp/nvim-autopairs
+-- you need setup cmp first put this after cmp.setup()
+require("nvim-autopairs.completion.cmp").setup({
+  map_cr = true, --  map <CR> on insert mode
+  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
+  auto_select = true, -- automatically select the first item
+  insert = false, -- use insert confirm behavior instead of replace
+  map_char = { -- modifies the function or method delimiter by filetypes
+    all = '(',
+    tex = '{'
+  }
+})

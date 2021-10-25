@@ -20,6 +20,8 @@ return require('packer').startup(function()
       {'onsails/lspkind-nvim'}}
   }
 
+  use {'windwp/nvim-autopairs'}
+
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
   -- use {'sbdchd/neoformat'}
   -- use {'L3MON4D3/LuaSnip', requires = {'saadparwaiz1/cmp_luasnip'}}
