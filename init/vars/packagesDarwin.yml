@@ -19,6 +19,7 @@ packages:
   - nvim
   - ripgrep
   - fzf
+  - lsd
   - cmake
   - python3
   - go
