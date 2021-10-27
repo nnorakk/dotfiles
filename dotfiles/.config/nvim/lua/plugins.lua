@@ -22,7 +22,7 @@ return require('packer').startup(function()
 
   use {'windwp/nvim-autopairs'}
 
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},}
   -- use {'sbdchd/neoformat'}
   -- use {'L3MON4D3/LuaSnip', requires = {'saadparwaiz1/cmp_luasnip'}}
   -- use {'sbdchd/neoformat'}
@@ -32,7 +32,7 @@ return require('packer').startup(function()
   -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'}
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
-  -- use {'christoomey/vim-tmux-navigator'}
+  use {'christoomey/vim-tmux-navigator'}
   use {'tpope/vim-commentary'}
   use {'tpope/vim-surround'}
   use {'tpope/vim-repeat'}
