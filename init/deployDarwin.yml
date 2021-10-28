@@ -19,3 +19,6 @@
 
     - name: Vim Configs
       import_tasks: tasks/vim.yml
+
+    - name: NeoVim Configs
+      import_tasks: tasks/nvim.yml
