@@ -12,6 +12,11 @@
         state: present
       tags: admin, packages
 
+    - name: Habilita tap
+      homebrew_tap:
+        name: homebrew/cask-fonts
+      tags: admin, packages, fonts
+
     - name:  Verifica diretorio de config iTerm2
       stat:
         path: "$HOME/Library/Application Support/iTerm2/DynamicProfiles/"

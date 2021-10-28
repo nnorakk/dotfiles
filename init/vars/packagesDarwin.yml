@@ -19,6 +19,7 @@ packages:
   - nvim
   - ripgrep
   - fzf
+  - font-hack-nerd-font # necessario pelo lsd
   - lsd
   - cmake
   - python3
