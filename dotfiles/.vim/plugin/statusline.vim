@@ -25,7 +25,7 @@ let g:lightline = {
 
 function! GitInformation()
     if !empty(gitbranch#name()) 
-        return ' ' . gitbranch#name()
+        return ' ' . gitbranch#name()
     else
         return ''
     endif

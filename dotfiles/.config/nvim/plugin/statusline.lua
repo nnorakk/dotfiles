@@ -25,7 +25,7 @@ local random_theme = themes[math.random(1,#themes)]
 vim.cmd([[
 function! GitInformation()
     if !empty(gitbranch#name())
-        return ' ' . gitbranch#name()
+        return ' ' . gitbranch#name()
     else
         return ''
     endif
