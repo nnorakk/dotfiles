@@ -28,13 +28,10 @@ vim.opt.termguicolors = true --
 vim.opt.mouse = 'nv' -- habilita mouse modos normal e visual
 vim.opt.completeopt = "menuone,noselect" --https://github.com/hrsh7th/nvim-compe
 vim.opt.shortmess = vim.opt.shortmess + 'I' -- nao aparece tela inicial
-vim.opt.list           = true                              -- show whitespace
+vim.opt.list           = true -- show whitespace
 vim.opt.listchars      = {trail='•'}
 
 vim.g.gruvbox_italic = 1 -- verificar pq aqui antes de tudo
 vim.g.colors_name = 'gruvbox'
 
 vim.bo.undofile = true -- seta persistent undo ~/.local/share/nvim/undo
-
--- vim.cmd('highlight link CompeDocumentation NormalFloat')
--- vim.cmd('highlight Comment gui=italic')

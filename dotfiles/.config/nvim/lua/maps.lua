@@ -1,14 +1,16 @@
 -- maps.lua
 
 local map = vim.api.nvim_set_keymap
+local options = { noremap = true, silent = true }
 
 -- map the leader key
 map('n', '<Space>', '', {})
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
-
-options = { noremap = true, silent = true }
+-- rapidamente remove highligth na busca recente
 map('n', '<leader><esc>', ':nohlsearch<cr>', options)
+
+-- movimentacao rapida entre buffers
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
 
