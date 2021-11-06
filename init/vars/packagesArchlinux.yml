@@ -24,6 +24,7 @@ aur_packages:
   - evernote-for-linux-bin # evernote
   - gcalcli # client cli google calendar
   - terraform-ls # lsp terraform
+  - autojump # database visited locations
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
