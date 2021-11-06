@@ -13,7 +13,7 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 # make sxhkd reload its configuration files:
 super + alt + Escape
@@ -68,7 +68,7 @@ super + {p,b,comma,period}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -224,6 +224,10 @@ super + shift + i
 # focus to the given desktop
 alt + {1-9,0}
 	bspc desktop -f '^{1-9,10}'
+
+# focus the next/previous node in the current desktop
+alt + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
 
 # send to given desktop following
 super + shift + alt + {1-9,0}
