@@ -10,6 +10,7 @@ cask_packages:
   - tunnelblick
   - karabiner-elements
   - brave-browser
+  - font-hack-nerd-font # necessario pelo lsd
 
 packages:
   - tmux
@@ -19,7 +20,6 @@ packages:
   - nvim
   - ripgrep
   - fzf
-  - font-hack-nerd-font # necessario pelo lsd
   - lsd
   - cmake
   - python3

@@ -1,14 +1,14 @@
-    - name: Instala pacotes Homebrew Cask  
+    - name: Habilita tap
+      homebrew_tap:
+        name: homebrew/cask-fonts
+      tags: admin, packages, fonts
+
+    - name: Instala pacotes Homebrew Cask
       homebrew_cask:
         name:
           "{{ cask_packages }}"
         state: present
       tags: admin, packages
-
-    - name: Habilita tap
-      homebrew_tap:
-        name: homebrew/cask-fonts
-      tags: admin, packages, fonts
 
     - name: Instala pacotes Homebrew
       homebrew:
