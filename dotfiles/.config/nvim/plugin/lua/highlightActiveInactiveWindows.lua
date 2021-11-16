@@ -5,9 +5,13 @@ vim.cmd('hi link ActiveWindow Normal')
 autocommands = {} -- or wherever you prefer
 
 autocommands.win_enter = function()
-    vim.cmd('set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow')
-    vim.cmd [[IndentBlanklineEnable]]
-    vim.opt.relativenumber = true
+    local filetype = vim.bo.filetype
+
+    if filetype ~= 'man' then
+        vim.cmd('set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow')
+        vim.cmd [[IndentBlanklineEnable]]
+        vim.opt.relativenumber = true
+    end
 end
 
 autocommands.win_leave = function()
