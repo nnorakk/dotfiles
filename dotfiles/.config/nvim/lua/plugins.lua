@@ -5,7 +5,7 @@ return require('packer').startup(function()
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
   use {'neovim/nvim-lspconfig'}
   use {'hrsh7th/nvim-cmp', requires = {
-      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lsp'}, -- funciona aqui comentario?
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'hrsh7th/cmp-vsnip'},
@@ -17,7 +17,6 @@ return require('packer').startup(function()
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},}
   use {'lukas-reineke/indent-blankline.nvim'}
   use {'rafamadriz/friendly-snippets'}
-
   -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'}
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
