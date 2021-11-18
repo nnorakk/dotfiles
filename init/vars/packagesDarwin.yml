@@ -33,3 +33,4 @@ packages:
   - iperf
   - jq
   - minikube
+  - autojump
