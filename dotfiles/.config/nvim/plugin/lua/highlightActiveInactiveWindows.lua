@@ -7,7 +7,8 @@ autocommands = {} -- or wherever you prefer
 autocommands.win_enter = function()
     local filetype = vim.bo.filetype
 
-    if filetype ~= 'man' then
+    -- nao aplica em tipos help e manpages
+    if filetype ~= 'help' and filetype ~= 'man' then
         vim.cmd('set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow')
         vim.cmd [[IndentBlanklineEnable]]
         vim.opt.relativenumber = true
