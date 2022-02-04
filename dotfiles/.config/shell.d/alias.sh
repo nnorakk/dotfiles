@@ -41,6 +41,16 @@ alias vimsecret='vim -c "set nobackup noswapfile noundofile"'
 # aliases uteis para ls
 alias l.='ls -d .* --color=auto'
 
+# Gets external IP address.
+# https://gist.github.com/kakawait/4572163
+if command -v dig &> /dev/null; then
+    alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+elif command -v curl > /dev/null; then
+    alias publicip='curl --silent --compressed --max-time 5 --url "https://ipinfo.io/ip"'
+else
+    alias publicip='wget -qO- --compression=auto --timeout=5 "https://ipinfo.io/ip"'
+fi
+
 # aliases uteis para saltar entre locais ja visitados
 alias dirs='dirs -v'
 if [ -z $BASH ]; then
