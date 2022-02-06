@@ -23,3 +23,6 @@ export LC_TIME=en_GB.UTF-8
 if which fd > /dev/null 2>&1; then 
     export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 fi
+
+# temas cores do tmux
+export TMUXTHEMES=('redwine' 'gold' 'moon' 'forest' 'violet' 'snow' 'coral' 'sky')

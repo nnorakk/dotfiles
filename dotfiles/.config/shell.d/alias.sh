@@ -65,3 +65,7 @@ fi
 alias suudo='sudo'
 alias vimm='vim'
 alias viim='vim'
+
+
+# tmux randomiza escolha do tema
+alias tmux='TMUXCOL=${TMUXTHEMES[$RANDOM % ${#TMUXTHEMES[@]} + 1]} tmux'
