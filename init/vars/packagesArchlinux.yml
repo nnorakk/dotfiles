@@ -8,7 +8,7 @@ aur_packages:
   - google-chrome # google web browser
   - bsp-layout # layouts dinamicos bspwm
   - xtitle # output x window titles
-  - tty-clock # relogio em ascii para terminal
+  - tty-clock-git # relogio em ascii para terminal
   - tdrop # dropdown window
   - pulseaudio-ctl # pulseaudio cli control
   - betterlockscreen # lockscreen
