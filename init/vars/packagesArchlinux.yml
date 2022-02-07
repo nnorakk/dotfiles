@@ -144,6 +144,7 @@ packages:
   - yapf # fixer python para ALE plugin
   - flake8 # linter python para ALE plugin
   - python-pylint # linter python para ALE plugin
+  - python-lsp-server # python language server para nvim
   - filezilla # cliente ftp
   # - fuse-sshfs # montar via ssh
   - pandoc # usado para renderizar MarkDown files
