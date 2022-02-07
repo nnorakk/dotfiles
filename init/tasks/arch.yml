@@ -15,6 +15,12 @@
       become: true
       tags: admin, arch
 
+    - name: Instala pacotes pip
+      pip:
+        name:
+          "{{ pip_packages }}"
+      tags: admin, arch, pip
+
     - name: Clona yay repositorio
       git:
         repo: "https://aur.archlinux.org/yay-git.git"

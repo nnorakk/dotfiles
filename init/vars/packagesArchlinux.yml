@@ -2,6 +2,9 @@ snap_packages:
   - bw
   - spotify
 
+pip_packages:
+  - pyls-isort # isort sort imports python
+
 aur_packages:
   - polybar #barra
   - cava # visualizador de audio
