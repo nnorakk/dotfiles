@@ -2,6 +2,11 @@
       include_vars: "vars/packages{{ ansible_distribution }}.yml"
       tags: admin
 
+    - name: Corrige problema de assinaturas desconhecidas
+      shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux"
+      become: true
+      tags: admin, arch
+
     - name: Instala pacotes necessarios
       community.general.pacman:
         name:
