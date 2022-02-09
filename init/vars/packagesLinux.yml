@@ -5,7 +5,7 @@ snap_packages:
 packages:
   - pwgen # gerador de senha
   - dnf-utils
-  - ntpdate # ajusta data # nao tem no fedora34
+  # - ntpdate # ajusta data # nao tem no fedora34
   - openssh-server
   - fping
   - tcpdump
@@ -32,7 +32,7 @@ packages:
   - iotop
   - ruby-devel
   - tor
-  - proxychains
+  # - proxychains # ajusta data # nao tem no fedora34
   - vagrant
   - vagrant-libvirt
   - gcc
@@ -86,7 +86,7 @@ packages:
   - bat
   - exa # versao turbinada do ls
   - lsd # versao turbinada do ls
-  - bashtop # monitor de sistema # nao tem no fedora34
+  # - bashtop # monitor de sistema # nao tem no fedora34
   - ytop # monitor de sistema
   - bpytop # monitor de sistema
   - ranger
