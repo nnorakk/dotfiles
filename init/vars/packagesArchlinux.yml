@@ -120,6 +120,9 @@ packages:
   - bpytop # monitor de sistema
   - ranger
   - httpie # curl para seres humanos :)
+  - dust # du + rust verificar utilizacao disco particao diretorio
+  - duf # versao turbinada do df
+  - dog # versao turbinada do dig dns consulta
   - w3m # browser linha de comando
   - lynx # browser linha de comando
   # - ldns-utils
