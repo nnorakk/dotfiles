@@ -11,6 +11,7 @@ cask_packages:
   - karabiner-elements
   - brave-browser
   - font-hack-nerd-font # necessario pelo lsd
+  - wireshark
 
 packages:
   - tmux
