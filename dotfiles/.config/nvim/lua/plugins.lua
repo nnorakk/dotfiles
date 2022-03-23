@@ -17,6 +17,7 @@ return require('packer').startup(function()
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},}
   use {'lukas-reineke/indent-blankline.nvim'}
   use {'rafamadriz/friendly-snippets'}
+  use {'mrjones2014/smart-splits.nvim'}
   -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'}
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}

@@ -36,3 +36,9 @@ map('n', '<Leader>ff', ':lua require("telescope.builtin").find_files({follow=tru
 map('n', '<Leader>fg', ':lua require("telescope.builtin").live_grep()<cr>', options)
 map('n', '<Leader>fb', ':lua require("telescope.builtin").buffers()<cr>', options)
 map('n', '<Leader>fh', ':lua require("telescope.builtin").help_tags()<cr>', options)
+
+-- smart-splits plugin
+vim.cmd [[nnoremap <silent> <M-j> :SmartResizeDown 3<cr>]]
+vim.cmd [[nnoremap <silent> <M-k> :SmartResizeUp 3<cr>]]
+vim.cmd [[nnoremap <silent> <M-h> :SmartResizeLeft 3<cr>]]
+vim.cmd [[nnoremap <silent> <M-l> :SmartResizeRight 3<cr>]]
