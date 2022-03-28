@@ -74,6 +74,7 @@ packages:
   - tor
   # - proxychains
   - vagrant # vagrant plugin install vagrant-libvirt # instala plugin libvirt
+  - ansible-lint # linter para ansible
   # - gcc
   # - binutils
   # - glibc-devel
