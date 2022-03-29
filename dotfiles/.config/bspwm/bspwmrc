@@ -129,3 +129,6 @@ betterlockscreen -u  ~/.config/wallpapers/ --blur 0.5 &
 
 # Start Dropbox
 dropbox &
+
+# Start conky
+conky -d -c ~/.config/conky/conky.conf.4

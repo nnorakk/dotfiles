@@ -189,6 +189,7 @@ packages:
   - pamixer # ajustar volumen commandline - maximo 100%
   - obs-studio # gravar desktop
   - figlet # escrever em fontes grandes no terminal
+  - conky # monitor
 
   # TODO: instalar via git clone
   # - ctop # ferramenta monitoramento docker
