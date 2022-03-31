@@ -7,3 +7,6 @@ xnoremap kj <Esc>
 " permite usar shift varias vezes sem perder a selecao
 xnoremap < <gv
 xnoremap > >gv
+
+" copia bloco permanecendo no final do bloco
+xnoremap gy <ESC>`>magvy'a
