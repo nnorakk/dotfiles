@@ -6,3 +6,13 @@
   with_items: 
     - "{{ apps }}"
   become: true
+
+- name: Prepara e instala
+  shell: "{{ item[1] }}" # shell: "{{ item[1] | quote }}"
+  args:
+    chdir: "{{ workspace }}/{{ item[0].app_name }}"
+  environment:
+    PATH: "{{ ansible_env.PATH }}"
+  with_subelements: 
+    - "{{ apps }}"
+    - targets

@@ -1,9 +1,9 @@
 apps:
-  - app_name: space2meta
-    repo: https://gitlab.com/interception/linux/plugins/space2meta
+  - app_name: lfimg
+    repo: https://gitlab.com/cirala/lfimg
     targets:
-      - cmake -Bbuild
-      - cmake --build build 
-      - "cp -f build/space2meta /usr/local/bin"
+      - "mkdir -p $HOME/.config/lf"
+      - "chmod +x preview; cp preview $HOME/.config/lf"
+      - "chmod +x cleaner; cp cleaner $HOME/.config/lf"
     dependencies:
       - gcc
