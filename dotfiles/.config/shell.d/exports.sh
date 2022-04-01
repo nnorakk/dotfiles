@@ -8,7 +8,7 @@ export PYTHONSTARTUP=~/.pythonrc
 export HISTSIZE=100000
 
 # Editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # Adiciona .loca/bin ao PATH
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
