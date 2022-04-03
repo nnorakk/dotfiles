@@ -4,43 +4,43 @@
 
 # terminal emulator
 super + Return
-	kitty
+    kitty
     # kitty -c "tmux ls | grep -q attached || tmux attach || tmux new"
 
 # program launcher
 super + @space
-	rofi -modi drun,run -show drun -show-icons
+    rofi -modi drun,run -show drun -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+    pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 # make sxhkd reload its configuration files:
 super + alt + Escape
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 #
 # bspwm hotkeys
 #
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+    bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }w
-	bspc node -{c,k}
+    bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
 super + m
-	bspc desktop -l next
+    bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
 super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+    bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+    bspc node -s biggest
 
 #
 # state/flags
@@ -48,11 +48,11 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+    bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
@@ -60,36 +60,36 @@ super + ctrl + {m,x,y,z}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+    bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+    bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 # super + {grave,Tab}
-	# bspc {node,desktop} -f last
+    # bspc {node,desktop} -f last
 
 super + Tab
-	bspc node -f last
+    bspc node -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+    bspc wm -h off; \
+    bspc node {older,newer} -f; \
+    bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
@@ -97,19 +97,19 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+    bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-	bspc node -p cancel
+    bspc node -p cancel
 
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -117,15 +117,15 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-40 0,0 40,0 -40,40 0}
+    bspc node -v {-40 0,0 40,0 -40,40 0}
 
 #########################################
 # Minhas customizacoes
@@ -133,17 +133,17 @@ super + {Left,Down,Up,Right}
 
 # abrir aplicativos terminal
 super + x; {b,r,c,v,o}
-	{ \
+    { \
     kitty --class Bashtop --name bashtop -e "bashtop", \
     kitty --class Ranger --name ranger -e "ranger", \
     kitty -c ~/.config/kitty/gruvbox_light.conf --class Calendar --name showcalendarofyear -e "testecal", \
     kitty --class Vim --name vim -e "vim", \
     kitty -c ~/.config/kitty/gruvbox_light.conf --class Fzfsearch --name fzfsearch -e "fzfsearch" \
-	}
+    }
 
 # modificar bsp-layouts
 super + e; {1,2,3,4,5,6,7,8,9}
-	bsp-layout set {tiled,monocle,even,grid,rgrid,rtall,rwide,tall,wide}
+    bsp-layout set {tiled,monocle,even,grid,rgrid,rtall,rwide,tall,wide}
 
 # lockscreen
 alt + shift + x
@@ -160,11 +160,11 @@ ctrl + shift + Print
 
 # Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + shift + e
-	bspc node -f biggest.local ; bspc node @/ --equalize
+    bspc node -f biggest.local ; bspc node @/ --equalize
 
 # Equaliza Balenceia Janelas: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + shift + b
-	bspc node -f biggest.local ; bspc node @parent --balance
+    bspc node -f biggest.local ; bspc node @parent --balance
 
 # Rotaciona as janelas: https://my-take-on.tech/2020/07/03/some-tricks-for-sxhkd-and-bspwm/#extra-organizing-and-running-sxhkd
 super + shift + {d,a}
@@ -172,63 +172,63 @@ super + shift + {d,a}
 
 # Rotaciona todas as janelas em 90 graus: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + {_,shift + }r
-	bspc node @/ --rotate {90,-90}
+    bspc node @/ --rotate {90,-90}
 
 # Flipa, o que esta na esquerda vai para a direita, cima para baixo: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + alt + {_,shift + }r
-	bspc node @/ --rotate {180,-180}
+    bspc node @/ --rotate {180,-180}
 
 # gaps dinamicos: https://protesilaos.com/pdfd/basics-my-bspwm/
 super + alt + bracket{left,right}
-	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {-,+} 5 ))"
+    bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {-,+} 5 ))"
 
 # scratchpad com tdrop terminal emulator
 super + ctrl + Return
-	tdrop -am -w -18 kitty
+    tdrop -am -w -18 kitty
 
 # scratchpad com tdrop chamando aplicacao
 super + shift + Return
-	"$HOME/bin/tmux-scratch" ; tdrop -am -w -18 -s scratch kitty
+    "$HOME/bin/tmux-scratch" ; tdrop -am -w -18 -s scratch kitty
 
 # closing scratchpad com tdrop chamando aplicacao
 super + shift + Escape
-	"$HOME/bin/stop-tmux-scratch"
+    "$HOME/bin/stop-tmux-scratch"
 
 # rofi -show window
 super + alt + space
-	rofi -show window
+    rofi -show window
 
 # rofi escolher remote desktops
 super + shift + space
-	"$HOME/bin/rofi-remote-desktops.sh"
+    "$HOME/bin/rofi-remote-desktops.sh"
 
 # send to monitor
 super + shift + equal
-	bspc node -m last --follow
+    bspc node -m last --follow
 
 # audio control
 XF86AudioRaiseVolume
-	pamixer -i 5
-	# pulseaudio-ctl up
+    pamixer -i 5
+    # pulseaudio-ctl up
 XF86AudioLowerVolume
-	pamixer -d 5
-	# pulseaudio-ctl down
+    pamixer -d 5
+    # pulseaudio-ctl down
 XF86AudioMute
-	pamixer --get-mute && pamixer -u || pamixer -m
-	# pulseaudio-ctl mute
+    pamixer --get-mute && pamixer -u || pamixer -m
+    # pulseaudio-ctl mute
 
 # Hide/Unhide Window
 super + shift + i
-	~/.local/bin/winhide
+    ~/.local/bin/winhide
 
 # focus to the given desktop
 alt + {1-9,0}
-	bspc desktop -f '^{1-9,10}'
+    bspc desktop -f '^{1-9,10}'
 
 # focus the next/previous node in the current desktop
 alt + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+    bspc node -f {next,prev}.local.!hidden.window
 
 # send to given desktop following
 super + shift + alt + {1-9,0}
-	bspc node -d '^{1-9,10}' --follow
+    bspc node -d '^{1-9,10}' --follow
