@@ -35,7 +35,7 @@ dotfiles:
   - .config/powerline/config.json
   - .config/powerline/themes/shell/jpaulo.json
   - .config/ranger/rc.conf
-  - .config/rofi/config
+  - .config/rofi/config.rasi
   - .config/dunst/dunstrc
   - .config/picom/picom.conf
   - .config/sxhkd/sxhkdrc
