@@ -28,6 +28,7 @@ aur_packages:
   - gcalcli # client cli google calendar
   - terraform-ls # lsp terraform
   - autojump # database visited locations
+  - sqlitestudio # studio gui para sqlite databases
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
