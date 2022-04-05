@@ -42,6 +42,7 @@ dotfiles:
   - .config/polybar/config
   - .config/polybar/launch.sh
   - .config/polybar/openvpn-isrunning.sh
+  - .config/polybar/internet-isup.sh
   - .config/bspwm/bspwmrc
   - .config/bspwm/external_rules
   - .config/bspwm/randomize_focused_border_color.sh

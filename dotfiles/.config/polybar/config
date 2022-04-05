@@ -39,7 +39,7 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = pulseaudio memory cpu openvpn-isrunning powermenu sysmenu
+modules-right = pulseaudio memory cpu openvpn-isrunning internet-isup powermenu sysmenu
 
 tray-position = right
 ; tray-position = center
@@ -132,6 +132,16 @@ interval = 10
 click-left = ~/bin/tmux-scratch
 click-right = ~/bin/stop-tmux-scratch
 ; format-underline = #b294bb
+
+[module/internet-isup]
+type = custom/script
+; font-3 = "FontAwesome:pixelsize=12;1"
+; font-4 = HackNerdFont:pixelsize=10;
+label-active-font = 2
+exec = ~/.config/polybar/internet-isup.sh
+interval = 10
+; click-left = ~/bin/tmux-scratch
+; click-right = ~/bin/stop-tmux-scratch
 
 [module/xwindow]
 type = internal/xwindow
