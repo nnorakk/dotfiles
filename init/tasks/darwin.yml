@@ -17,6 +17,12 @@
         state: present
       tags: admin, packages
 
+    - name: Instala pacotes pip
+      pip:
+        name:
+          "{{ pip_packages }}"
+      tags: admin, packages
+
     - name:  Verifica diretorio de config iTerm2
       stat:
         path: "$HOME/Library/Application Support/iTerm2/DynamicProfiles/"

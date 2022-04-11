@@ -36,3 +36,6 @@ packages:
   - minikube
   - autojump
   - poppler
+
+pip_packages:
+  - pdftotext
