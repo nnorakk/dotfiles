@@ -1,6 +1,12 @@
 # Use vim with +xterm_clipboard support if installed
 if which vimx > /dev/null 2>&1; then 
-		alias vim=$(which vimx) 
+    alias vim=$(which vimx) 
+fi
+
+# usa neovim ao inves de vim
+if which nvim > /dev/null 2>&1; then 
+    alias vim=$(which nvim) 
+    alias v=$(which nvim) 
 fi
 
 # evita erros em maquinas remotas via ssh
@@ -12,9 +18,9 @@ alias ssh='TERM=xterm ssh'
 
 # Use lsd if installed
 if which lsd > /dev/null 2>&1; then 
-		alias ls='lsd'
-		alias tree='lsd --tree'
-        alias ltr='lsd -ltr'
+    alias ls='lsd'
+    alias tree='lsd --tree'
+    alias ltr='lsd -ltr'
 fi
 
 # Usa funcao que usa vimi como pager
