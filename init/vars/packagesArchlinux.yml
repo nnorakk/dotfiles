@@ -29,6 +29,7 @@ aur_packages:
   - terraform-ls # lsp terraform
   - autojump # database visited locations
   - sqlitestudio # studio gui para sqlite databases
+  - entr # event notify
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
@@ -191,6 +192,8 @@ packages:
   - obs-studio # gravar desktop
   - figlet # escrever em fontes grandes no terminal
   - conky # monitor
+  - lnav # logfile navigator viewer de logs
+  - direnv # extensao para shell load and unload variaveis ambiente
 
   # TODO: instalar via git clone
   # - ctop # ferramenta monitoramento docker
