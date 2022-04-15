@@ -81,6 +81,7 @@ dotfiles:
   - .config/nvim/lua/settings.lua
   - .config/nvim/plugin/settings.vim
   - .config/nvim/plugin/statusline.lua
+  - .config/nvim/plugin/utils.lua
   - .config/nvim/plugin/mappings/insertmap.vim
   - .config/nvim/plugin/mappings/leader.vim
   - .config/nvim/plugin/mappings/normal.vim
