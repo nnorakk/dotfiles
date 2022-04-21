@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup({function()
 -- Packer can manage itself
   use {'wbthomason/packer.nvim'}
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -26,4 +26,9 @@ return require('packer').startup(function()
   use {'tpope/vim-surround'}
   use {'tpope/vim-repeat'}
   use {'hashivim/vim-terraform'}
-end)
+end,
+config ={
+  display = {
+    open_fn = require('packer.util').float,
+  }
+}})
