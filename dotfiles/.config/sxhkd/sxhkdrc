@@ -221,6 +221,10 @@ XF86AudioMute
 super + shift + i
     ~/.local/bin/winhide
 
+# Hide/Unhide Window
+alt + i
+    ~/.local/bin/winhide
+
 # focus to the given desktop
 alt + {1-9,0}
     bspc desktop -f '^{1-9,10}'
