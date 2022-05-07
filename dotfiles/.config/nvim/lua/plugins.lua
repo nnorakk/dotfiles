@@ -18,6 +18,7 @@ return require('packer').startup({function()
   use {'lukas-reineke/indent-blankline.nvim'}
   use {'rafamadriz/friendly-snippets'}
   use {'mrjones2014/smart-splits.nvim'}
+  use {'voldikss/vim-floaterm'}
   -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'}
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}

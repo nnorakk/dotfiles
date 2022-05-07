@@ -42,3 +42,7 @@ vim.cmd [[nnoremap <silent> <M-j> :SmartResizeDown 3<cr>]]
 vim.cmd [[nnoremap <silent> <M-k> :SmartResizeUp 3<cr>]]
 vim.cmd [[nnoremap <silent> <M-h> :SmartResizeLeft 3<cr>]]
 vim.cmd [[nnoremap <silent> <M-l> :SmartResizeRight 3<cr>]]
+
+-- Floaterm plugin
+map('n', '<F12>', ':FloatermToggle<cr>', options)
+map('t', '<F12>', '<C-\\><C-n>:FloatermToggle<cr>', options)
