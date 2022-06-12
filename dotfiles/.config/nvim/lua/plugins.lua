@@ -20,13 +20,13 @@ return require('packer').startup({function()
   use {'mrjones2014/smart-splits.nvim'}
   use {'voldikss/vim-floaterm'}
   -- -- Ja utilizados historicamente com o vim
-  use {'morhetz/gruvbox'}
-  use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}}
-  use {'christoomey/vim-tmux-navigator'}
-  use {'tpope/vim-commentary'}
-  use {'tpope/vim-surround'}
-  use {'tpope/vim-repeat'}
-  use {'hashivim/vim-terraform'}
+  use {'morhetz/gruvbox'} -- tema
+  use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
+  use {'christoomey/vim-tmux-navigator'} -- interacao com tmux
+  use {'tpope/vim-commentary'} -- comentarios
+  use {'tpope/vim-surround'} --  manipular em ''"" em torno objetos mais complexos
+  use {'tpope/vim-repeat'} -- repete comandos
+  use {'hashivim/vim-terraform'} -- terraform
 end,
 config ={
   display = {
