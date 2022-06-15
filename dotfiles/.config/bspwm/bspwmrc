@@ -106,8 +106,13 @@ bspc config top_padding 29
 pgrep -x dunst > /dev/null || dunst &
 
 # protege tela depois de 5 minutos
-# desliga monitor apos mais 1 minuto
-pgrep -x xautolock > /dev/null || xautolock -time 5 -corners ---- -cornersize 30 -locker 'betterlockscreen -l; sleep 60 && xset dpms force off' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" &
+# metodo prefencial usando xidlehook
+# caso nao esteja instalado tenta xautolock
+if command -v xidlehook &> /dev/null; then
+    pgrep -x xidlehook > /dev/null || xidlehook --not-when-fullscreen --not-when-audio --timer 300 "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" "" --timer 29 'betterlockscreen -l' '' --timer 20 'xset dpms force off' '' &
+elif command -v xautolock &> /dev/null; then
+    pgrep -x xautolock > /dev/null || xautolock -time 4 -corners ---- -cornersize 30 -locker 'betterlockscreen -l' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" &
+fi
 
 # abre terminal kitty
 pgrep -x kitty > /dev/null || kitty &

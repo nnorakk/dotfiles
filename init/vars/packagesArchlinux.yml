@@ -30,6 +30,7 @@ aur_packages:
   - autojump # database visited locations
   - sqlitestudio # studio gui para sqlite databases
   - entr # event notify
+  - xidlehook # substitui o xautolock, executa comandos quando idle
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
