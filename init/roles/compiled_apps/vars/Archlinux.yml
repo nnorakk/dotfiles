@@ -5,5 +5,6 @@ apps:
       - "mkdir -p $HOME/.config/lf"
       - "chmod +x preview; cp preview $HOME/.config/lf"
       - "chmod +x cleaner; cp cleaner $HOME/.config/lf"
+      - "chmod +x lfrun; cp lfrun $HOME/.local/bin"
     dependencies:
-      - gcc
+      - ueberzug

@@ -60,3 +60,8 @@ alias viim='vim'
 
 # tmux randomiza escolha do tema
 alias tmux='TMUXCOL=${TMUXTHEMES[$RANDOM % ${#TMUXTHEMES[@]} + 1]} tmux'
+
+# se existe script lfrun torna lf um alias
+if command -v lfrun &> /dev/null; then
+    alias lf='lfrun'
+fi
