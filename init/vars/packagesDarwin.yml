@@ -37,6 +37,7 @@ packages:
   - autojump
   - poppler
   - direnv
+  - zoxide
 
 pip_packages:
   - pdftotext
