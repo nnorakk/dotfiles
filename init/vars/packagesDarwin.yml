@@ -38,6 +38,7 @@ packages:
   - poppler
   - direnv
   - zoxide
+  - dust # du + rust verificar utilizacao disco particao diretorio
 
 pip_packages:
   - pdftotext
