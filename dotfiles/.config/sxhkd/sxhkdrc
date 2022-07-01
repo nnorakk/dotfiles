@@ -225,6 +225,10 @@ super + shift + i
 alt + i
     ~/.local/bin/winhide
 
+# esconde todas janelas
+super + d
+    bspc query -N -n .local.window | xargs -I ID bspc node ID -g hidden
+
 # focus to the given desktop
 alt + {1-9,0}
     bspc desktop -f '^{1-9,10}'
