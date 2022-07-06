@@ -31,6 +31,7 @@ aur_packages:
   - sqlitestudio # studio gui para sqlite databases
   - entr # event notify
   - xidlehook # substitui o xautolock, executa comandos quando idle
+  - lazydocker # monitora docker
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
@@ -101,6 +102,7 @@ packages:
   - lsd # versao turbinada do ls
   - bashtop # monitor de sistema
   - bpytop # monitor de sistema
+  - ctop # monitor de containers
   - ranger
   - httpie # curl para seres humanos :)
   - dust # du + rust verificar utilizacao disco particao diretorio
