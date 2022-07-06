@@ -8,18 +8,18 @@
 
     # testar se isso eh necessario mesmo
     # no archlinux nao foi por isso estou comentando
-    # - name: Instala pacotes necessarios mudar cedilha
-    #   dnf:
-    #     name:
-    #       - imsettings
-    #       - gtk3-immodule-xim
-    #       - gtk3-immodules
-    #       - gtk2-immodules
-    #       - im-chooser
-    #     state: present
-    #     disable_gpg_check: yes
-    #   become: true
-    #   tags: keyboard
+    - name: Instala pacotes necessarios mudar cedilha
+      dnf:
+        name:
+          - imsettings
+          - gtk3-immodule-xim
+          - gtk3-immodules
+          - gtk2-immodules
+          - im-chooser
+        state: present
+        disable_gpg_check: yes
+      become: true
+      tags: keyboard
 
     - name: Muda cedilha minusculo arquivo Compose
       replace:
@@ -37,6 +37,8 @@
       become: true
       tags: keyboard
 
+    # grande fonte de informacao
+    #https://superuser.com/questions/1075992/cedilla-under-c-%C3%A7-in-us-international-with-dead-keys-keyboard-layout-in-linu/1235405
     # necessario adicionar essas variaveis porque no archlinux o cedilha
     # nao era digitado corretamente em aplicativos graficos no entanto
     # no terminal sim
@@ -53,11 +55,11 @@
 
     # testar se isso eh necessario mesmo
     # no archlinux nao foi por isso estou comentando
-    # - name: Forca ler cedilha
-    #   command: imsettings-switch im-cedilla
-    #   become: true
-    #   changed_when: false
-    #   tags: keyboard
+    - name: Forca ler cedilha
+      command: imsettings-switch im-cedilla
+      become: true
+      changed_when: false
+      tags: keyboard
 
     - name: Cria diretorio
       file:
