@@ -19,7 +19,7 @@ packages:
   - freetype-devel
   - fontconfig-devel
   - libxcb-devel
-  - neovim
+  # - neovim
   - gpick
   - cmake
   - gcc-c++
@@ -66,7 +66,7 @@ packages:
   - setools
   - xautolock
   - fedora-workstation-repositories
-  - docker
+  # - docker
   - terraform
   - packer # hashicorp packer
   - dia
@@ -141,6 +141,7 @@ packages:
   - autojump # navega rapidamente pelos locais visitados como 'z'
   - conky # monitor
   - zoxide # atalhos linha comando para jumps
+  - mpv # player video pode usar cli
   # TODO: instalar via git clone 
   # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
   # - ctop # ferramenta monitoramento docker
