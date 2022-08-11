@@ -42,6 +42,7 @@ packages:
   - zsh-completions
   - yad # criar widgets para scripts shell
   - openssh
+  - usbutils
   - ntp
   - fping
   - wget
