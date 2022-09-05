@@ -24,7 +24,7 @@ end
 vim.api.nvim_exec([[
 augroup line_return
     au!
-    au WinEnter,FocusGained * lua autocommands.win_enter()
+    au WinEnter,FocusGained,BufReadPre * lua autocommands.win_enter()
     au WinLeave,FocusLost,BufLeave * lua autocommands.win_leave()
 augroup END
 ]], false)
