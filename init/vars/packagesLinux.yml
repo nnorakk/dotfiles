@@ -1,6 +1,7 @@
 snap_packages:
   - bw
   - spotify
+  - todoist # todo list app
 
 packages:
   - pwgen # gerador de senha
@@ -142,6 +143,7 @@ packages:
   - conky # monitor
   - zoxide # atalhos linha comando para jumps
   - mpv # player video pode usar cli
+  - vivaldi-stable # vivaldi browser
   # TODO: instalar via git clone 
   # https://medium.com/swlh/my-favorite-cli-tools-c2fa484cee52
   # - ctop # ferramenta monitoramento docker

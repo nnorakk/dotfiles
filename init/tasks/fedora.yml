@@ -17,23 +17,30 @@
       become: true
       tags: admin
 
-    - name: Instala Repositorio alacritty 
-      yum_repository:
-        name: "copr:copr.fedorainfracloud.org:pschyska:alacritty"
-        description: "Allacrity Copr Repo"
-        file: "_copr:copr.fedorainfracloud.org:pschyska:alacritty"
-        baseurl: "https://download.copr.fedorainfracloud.org/results/pschyska/alacritty/fedora-$releasever-$basearch/"
-        gpgkey: "https://download.copr.fedorainfracloud.org/results/pschyska/alacritty/pubkey.gpg"
-        gpgcheck: yes
-        enabled: yes
-        skip_if_unavailable: yes
-      become: true
-      tags: admin
+    # - name: Instala Repositorio alacritty 
+    #   yum_repository:
+    #     name: "copr:copr.fedorainfracloud.org:pschyska:alacritty"
+    #     description: "Allacrity Copr Repo"
+    #     file: "_copr:copr.fedorainfracloud.org:pschyska:alacritty"
+    #     baseurl: "https://download.copr.fedorainfracloud.org/results/pschyska/alacritty/fedora-$releasever-$basearch/"
+    #     gpgkey: "https://download.copr.fedorainfracloud.org/results/pschyska/alacritty/pubkey.gpg"
+    #     gpgcheck: yes
+    #     enabled: yes
+    #     skip_if_unavailable: yes
+    #   become: true
+    #   tags: admin
 
     - name: Instala Repositorio Terraform
       get_url:
         url: "https://rpm.releases.hashicorp.com/fedora/hashicorp.repo"
         dest: /etc/yum.repos.d/hashicorp.repo
+      become: true
+      tags: admin
+
+    - name: Instala Repositorio Vivaldi
+      get_url:
+        url: "https://repo.vivaldi.com/archive/vivaldi-fedora.repo"
+        dest: /etc/yum.repos.d/vivaldi.repo
       become: true
       tags: admin
 
