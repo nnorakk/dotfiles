@@ -1,6 +1,7 @@
 snap_packages:
   - bw
   - spotify
+  - todoist # todo list app
 
 pip_packages:
   - pyls-isort # isort sort imports python
@@ -169,3 +170,4 @@ packages:
   - lnav # logfile navigator viewer de logs
   - direnv # extensao para shell load and unload variaveis ambiente
   - termdown # cronometro, timer linha de comando
+  - vivaldi # internet browser
