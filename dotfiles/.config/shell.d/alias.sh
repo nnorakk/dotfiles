@@ -65,3 +65,6 @@ alias tmux='TMUXCOL=${TMUXTHEMES[$RANDOM % ${#TMUXTHEMES[@]} + 1]} tmux'
 if command -v lfrun &> /dev/null; then
     alias lf='lfrun'
 fi
+
+# colorir saida do comando ip
+alias ip='ip --color=always'
