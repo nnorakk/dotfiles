@@ -70,7 +70,7 @@ bspc config external_rules_command /home/jpaulo/.config/bspwm/external_rules
 bspc rule -a vlc state=fullscreen
 bspc rule -a xfreerdp desktop='^8' state=floating follow=on center=true
 bspc rule -a rdesktop desktop='^8' state=monocle follow=on center=true
-bspc rule -a "gnome-calculator" state=floating follow=on
+bspc rule -a "gnome-calculator" state=floating rectangle=0x0+1550+60 follow=on
 # bspc rule ^7 --layout monocle
 bspc rule -a "org.remmina.Remmina" desktop='^7' state=monocle follow=on
 bspc rule -a Bashtop state=floating follow=on
