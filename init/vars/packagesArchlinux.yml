@@ -57,6 +57,7 @@ packages:
   - dnsutils # commando host
   - inetutils # comando telnet
   - traceroute # traceroute 
+  - net-tools # comando arp
   - whois # dns utils
   - wireshark-qt
   - htop
