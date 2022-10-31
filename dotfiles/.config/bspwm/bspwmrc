@@ -137,7 +137,7 @@ betterlockscreen -u  ~/.config/wallpapers/ --blur 0.5 &
 pgrep -x dropbox > /dev/null || dropbox &
 
 # Start conky
-conky -d -c ~/.config/conky/conky.conf.4
+pgrep -x conky > /dev/null || conky -d -c ~/.config/conky/conky.conf.4
 
 # randomize border color
 $HOME/.config/bspwm/randomize_focused_border_color.sh
