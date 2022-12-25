@@ -54,7 +54,7 @@ case "$HOST_OS" in
                 ansible-galaxy collection install kewlfft.aur
             fi
 
-        elif grep -q 'NAME="Arch Linux"' /etc/os-release; then
+        elif grep -qi 'Arch' /etc/os-release; then
             echo "Sistema Archlinux"
 
             sudo pacman -Syu --noconfirm
