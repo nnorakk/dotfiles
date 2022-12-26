@@ -92,7 +92,7 @@ packages:
   - xautolock
   - terraform # hahicorp terraform
   - packer # hashicorp packer
-  - dia
+  # - dia
   - unzip
   - vlc
   - mpv # cross-platform media player

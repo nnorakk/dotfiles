@@ -70,7 +70,7 @@ packages:
   # - docker
   - terraform
   - packer # hashicorp packer
-  - dia
+  # - dia
   - virt-manager
   - bridge-utils
   - libvirt
