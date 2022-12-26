@@ -3,7 +3,7 @@
       tags: admin
 
     - name: Corrige problema de assinaturas desconhecidas
-      shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux"
+      shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux manjaro"
       become: true
       tags: admin, arch
 
