@@ -19,7 +19,6 @@ aur_packages:
   - interception-dual-function-keys # usado com interception tools
   - openvpn-update-systemd-resolved # dns ajuste para openvpn
   - dropbox # https://aur.archlinux.org/packages/dropbox/
-  - ytop-bin # monitor de sistema
   - snapd
   - it87-dkms-git # detectar fan speed placa mae B450 asus
   - inxi # cmdline system information
@@ -33,6 +32,7 @@ aur_packages:
   - entr # event notify
   - xidlehook # substitui o xautolock, executa comandos quando idle
   - lazydocker # monitora docker
+  # - ytop-bin # monitor de sistema
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
   # - paman # pulseaudio manager
