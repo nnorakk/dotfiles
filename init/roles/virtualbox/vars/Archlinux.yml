@@ -1,4 +1,3 @@
 # Pacotes Virtualizacao
 virtualbox_packages:
-  - virtualbox-host-modules-arch
   - virtualbox
