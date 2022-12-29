@@ -2,10 +2,17 @@
       include_vars: "vars/packages{{ ansible_distribution }}.yml"
       tags: admin
 
-    - name: Corrige problema de assinaturas desconhecidas
+    - name: Corrige problema de assinaturas desconhecidas manjaro
       shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux manjaro"
       become: true
       tags: admin, arch
+      when: ansible_facts["lsb"]["id"] == "ManjaroLinux"
+
+    - name: Corrige problema de assinaturas desconhecidas archlinux
+      shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux"
+      become: true
+      tags: admin, arch
+      when: ansible_facts["lsb"]["id"] == "Arch"
 
     - name: Instala pacotes necessarios
       community.general.pacman:
