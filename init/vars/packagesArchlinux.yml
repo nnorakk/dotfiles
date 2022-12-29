@@ -32,6 +32,9 @@ aur_packages:
   - entr # event notify
   - xidlehook # substitui o xautolock, executa comandos quando idle
   - lazydocker # monitora docker
+  - timeshift # snapshots btfrs
+  - grub-btrfs # snapshots btfrs
+  - timeshift-autosnap # snapshots btfrs
   # - ytop-bin # monitor de sistema
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
