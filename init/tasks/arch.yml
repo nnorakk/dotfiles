@@ -102,3 +102,12 @@
         masked: no
       become: true
       tags: admin, arch
+
+    - name: Habilita systemd-resolved
+      ansible.builtin.systemd:
+        name: systemd-resolved
+        enabled: yes
+        state: started
+        masked: no
+      become: true
+      tags: admin, arch
