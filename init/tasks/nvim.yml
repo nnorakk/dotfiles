@@ -10,9 +10,11 @@
         dest: "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
       tags: nvim
 
+      # tip from 
+      # https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
     - name: Instala plugins nvim
       shell:
-        cmd: nvim -es -u ~/.config/nvim/lua/plugins.lua -c "packadd packer.nvim | lua require('plugins').install() " -c "sleep 50"
+        cmd: nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync' --headless
       tags: nvim
       # register: instala_plugin_output
       # changed_when: instala_plugin_output.stdout.find('Cloning into') != -1
