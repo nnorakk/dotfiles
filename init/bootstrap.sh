@@ -74,4 +74,4 @@ case "$HOST_OS" in
     ;;
 esac
 
-# ansible-playbook -K deploy${HOST_OS}.yml 
+ansible-playbook -K deploy${HOST_OS}.yml 
