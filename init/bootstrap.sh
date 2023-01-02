@@ -48,10 +48,6 @@ case "$HOST_OS" in
                 echo "Instale ansible..."
                 sudo dnf install -y ansible
 
-                # instala collection community.general
-                ansible-galaxy collection install community.general
-                # instala collection aur module
-                ansible-galaxy collection install kewlfft.aur
             fi
 
         elif grep -qi 'Arch' /etc/os-release; then
@@ -65,10 +61,6 @@ case "$HOST_OS" in
                 echo "Instale ansible..."
                 sudo pacman -S --noconfirm ansible
 
-                # instala collection community.general
-                ansible-galaxy collection install community.general
-                # instala collection aur module
-                ansible-galaxy collection install kewlfft.aur
             fi
 
             HOST_OS="Arch"
