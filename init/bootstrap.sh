@@ -47,11 +47,6 @@ case "$HOST_OS" in
             else
                 echo "Instale ansible..."
                 sudo dnf install -y ansible
-
-                # instala collection community.general
-                ansible-galaxy collection install community.general
-                # instala collection aur module
-                ansible-galaxy collection install kewlfft.aur
             fi
 
         elif grep -qi 'Arch' /etc/os-release; then
@@ -64,16 +59,19 @@ case "$HOST_OS" in
             else
                 echo "Instale ansible..."
                 sudo pacman -S --noconfirm ansible
-
-                # instala collection community.general
-                ansible-galaxy collection install community.general
-                # instala collection aur module
-                ansible-galaxy collection install kewlfft.aur
             fi
 
             HOST_OS="Arch"
         fi
-        ;;
+
+    # instala collection usado para instalar pacotes aur
+    if ansible-galaxy collection list | grep -q 'kewlfft'; then
+        echo "collection kewlfft.aur ja instalada"
+    else
+        ansible-galaxy collection install kewlfft.aur
+    fi
+
+    ;;
 esac
 
-ansible-playbook -K deploy${HOST_OS}.yml 
+# ansible-playbook -K deploy${HOST_OS}.yml 
