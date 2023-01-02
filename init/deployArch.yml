@@ -14,10 +14,6 @@
       ignore_errors: yes
       failed_when: false
 
-    - name: Instala collections
-      ansible.builtin.command:
-        cmd: ansible-galaxy collection install community.general kewlfft.aur
-
   tasks:
     - name: ArchLinux Tasks
       import_tasks: tasks/arch.yml
