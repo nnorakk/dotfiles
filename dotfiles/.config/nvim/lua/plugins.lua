@@ -31,6 +31,12 @@ return require('packer').startup({function()
   use {'voldikss/vim-floaterm'}
 
   use {'echasnovski/mini.nvim'}
+
+  use {'folke/tokyonight.nvim'}
+  use {'joshdick/onedark.vim'}
+  use {'lunarvim/darkplus.nvim'}
+  use {'tanvirtin/monokai.nvim'}
+  use {'williamboman/mason.nvim'}
   -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'} -- tema
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
