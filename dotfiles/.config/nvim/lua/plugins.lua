@@ -7,6 +7,7 @@ return require('packer').startup({function()
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
 
   use {'neovim/nvim-lspconfig'}
+  use {'jose-elias-alvarez/null-ls.nvim'}
 
   use {'hrsh7th/nvim-cmp', requires = {
       {'hrsh7th/cmp-nvim-lsp'}, -- funciona aqui comentario?
