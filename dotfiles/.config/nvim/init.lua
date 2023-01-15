@@ -3,4 +3,8 @@ require('settings')
 require('plugins')
 require('maps')
 
-vim.cmd.colorscheme('gruvbox')
+-- configura colorscheme gruvbox se existir
+local status_ok, _ = pcall(vim.cmd.colorscheme, "gruvbox")
+if not status_ok then
+    return
+end
