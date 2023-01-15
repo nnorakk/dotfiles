@@ -5,6 +5,7 @@ snap_packages:
 
 pip_packages:
   - pyls-isort # isort sort imports python
+  - pynvim # modulo nvim
 
 aur_packages:
   - polybar #barra
