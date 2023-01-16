@@ -38,13 +38,15 @@ return require('packer').startup({function()
   use {'lunarvim/darkplus.nvim'}
   use {'tanvirtin/monokai.nvim'}
   use {'williamboman/mason.nvim'}
-  -- -- Ja utilizados historicamente com o vim
   use {'morhetz/gruvbox'} -- tema
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- tabline
+
   use {'christoomey/vim-tmux-navigator'} -- interacao com tmux
   use {'tpope/vim-commentary'} -- comentarios
   use {'tpope/vim-surround'} --  manipular em ''"" em torno objetos mais complexos
   use {'tpope/vim-repeat'} -- repete comandos
+
   use {'hashivim/vim-terraform'} -- terraform
 end,
 config ={

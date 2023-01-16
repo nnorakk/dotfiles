@@ -35,6 +35,7 @@ endfunction
 -- definir statusline
 vim.g.lightline = {
     colorscheme = random_theme,
+    enable = { tabline = 0 },
     active = {
         left = { { 'mode', 'paste' }, { 'readonly', 'filename', 'modified', 'gitbranch' } },
         right = {{'lineinfo'}, {'percent'}, {'filetype'}}
