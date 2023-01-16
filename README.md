@@ -5,12 +5,12 @@ Meus (dotfiles|Arquivos de configuração)...um projeto inacabado
 ### Sistema Operacional
 * Fedora Linux ( maior conteúdo )
 * Macos ( Pouca utilização )
-* Arch Linux ( futuro)
+* ArchLinux ( Arch e Manjaro )
 
 ### Principais softwares
 * bspwm ( gerenciador de janelas )
 * zsh ( shell )
-* vim ( editor de arquivos )
+* ~vim~ neovim ( editor de arquivos )
 
 ## Instalação
 * Clonar repositorio
@@ -27,6 +27,3 @@ cd ~/.dotfiles/init && source bootstrap.sh
 ## TODO
 * proteger arquivos com vault
 * usar bitwarden com chave
-* procedimento para instalar aplicativos ( exemplo: grip ) usando pip install --user
-* adicionar ao xorg opcao shift:both_capslock
-* configurar gitconfig
