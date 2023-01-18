@@ -22,14 +22,20 @@ map('n', '<Leader>x', ':xit<CR>', options)
 map('n', '<Leader>so', ':source %<CR>', options)
 map('n', '<Leader>cd', ':cd %:p:h<CR>', options)
 
--- insert mapping
-map('i', 'jk', '<Esc>', {})
-
 -- normal mapping
 map('n', '<c-h>', '<c-w>h', options)
 map('n', '<c-j>', '<c-w>j', options)
 map('n', '<c-k>', '<c-w>k', options)
 map('n', '<c-l>', '<c-w>l', options)
+
+-- insert mapping
+map('i', 'jk', '<Esc>', {})
+map('i', '<C-u>', '<Esc>ui', {})
+map('i', '<C-r>', '<Esc><C-r>i', {})
+
+-- command mapping
+map('c', '<c-e>', '<End>', {})
+map('c', '<c-a>', '<Home>', {})
 
 -- telescope plugin
 map('n', '<Leader>ff', ':lua require("telescope.builtin").find_files({follow=true})<cr>', options)
