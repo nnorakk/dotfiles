@@ -38,7 +38,7 @@ return require('packer').startup({function()
   use {'lunarvim/darkplus.nvim'}
   use {'tanvirtin/monokai.nvim'}
   use {'williamboman/mason.nvim'}
-  use {'morhetz/gruvbox'} -- tema
+  use {'ellisonleao/gruvbox.nvim'} -- tema portado lua
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- tabline
 
