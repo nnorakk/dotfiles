@@ -8,7 +8,7 @@ return require('packer').startup({function()
 
   use {'neovim/nvim-lspconfig'}
   use {'jose-elias-alvarez/null-ls.nvim'}
-
+  use { "glepnir/lspsaga.nvim", branch = "main", config = function() require('lspsaga').setup({}) end, }
   use {'hrsh7th/nvim-cmp', requires = {
       {'hrsh7th/cmp-nvim-lsp'}, -- funciona aqui comentario?
       {'hrsh7th/cmp-buffer'},
