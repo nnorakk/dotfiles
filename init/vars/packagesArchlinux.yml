@@ -176,3 +176,4 @@ packages:
   - direnv # extensao para shell load and unload variaveis ambiente
   - termdown # cronometro, timer linha de comando
   - vivaldi # internet browser
+  - luarocks # lua package manager
