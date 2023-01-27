@@ -49,6 +49,7 @@ return require('packer').startup({function()
   use {'tpope/vim-repeat'} -- repete comandos
 
   use {'hashivim/vim-terraform'} -- terraform
+  use {'NvChad/nvim-colorizer.lua'}
 end,
 config ={
   display = {
