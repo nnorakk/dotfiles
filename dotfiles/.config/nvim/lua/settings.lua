@@ -4,11 +4,11 @@
 -- vim.o.background = 'dark' -- seta background
 -- vim.o.hlsearch = true -- highlight termos buscados
 -- vim.o.incsearch = true -- busca enquanto estiver digitando
--- vim.o.ignorecase = true -- ignore case em buscas /
--- vim.o.smartcase = true -- ignore case em buscas /
 -- vim.o.fillchars="vert:│" -- Modifica o caracter separador vertical (U+2503, UTF-8: E2 94 83)
 -- vim.o.backspace = 'indent,eol,start' -- comportamento backspace
 
+vim.opt.ignorecase = true -- ignore case em buscas /
+vim.opt.smartcase = true -- ignore case em buscas /
 vim.opt.clipboard = 'unnamedplus' -- forca registros * e + em yank
 vim.opt.foldmethod = 'indent' -- Usa folding atraves da identacao
 vim.opt.foldlevel = 99  -- Abre sem folding
