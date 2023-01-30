@@ -32,6 +32,7 @@ packages:
   - wdiff
   - iotop
   - ruby-devel
+  - lua-devel
   - tor
   # - proxychains # ajusta data # nao tem no fedora34
   - vagrant
