@@ -43,6 +43,7 @@ return require('packer').startup({function()
   use {'ellisonleao/gruvbox.nvim'} -- tema portado lua
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- tabline
+  use {'chentoast/marks.nvim'}
 
   use {'christoomey/vim-tmux-navigator'} -- interacao com tmux
   use {'tpope/vim-commentary'} -- comentarios
