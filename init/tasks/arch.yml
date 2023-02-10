@@ -2,6 +2,14 @@
       include_vars: "vars/packages{{ ansible_distribution }}.yml"
       tags: admin
 
+    - name: Colore saida pacman
+      lineinfile:
+        path: /etc/pacman.conf
+        regexp: '^#Color'
+        line: Color
+      become: true
+      tags: admin, arch
+
     - name: Corrige problema de assinaturas desconhecidas manjaro
       shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux manjaro"
       become: true
