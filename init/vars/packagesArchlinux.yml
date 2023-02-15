@@ -66,6 +66,7 @@ packages:
   - wireshark-qt
   - htop
   - procs # Modern replacement for ps
+  - strace # diagnostico, debug
   - unrar
   - axel
   - cmake
