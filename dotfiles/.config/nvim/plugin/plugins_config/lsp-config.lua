@@ -55,7 +55,7 @@ local lsp_flags = {
 require('lspconfig')['pylsp'].setup {on_attach = on_attach, flags = lsp_flags}
 
 -- lua lsp
-require('lspconfig')['sumneko_lua'].setup {
+require('lspconfig')['lua_ls'].setup {
     settings = {
         Lua = {
             diagnostics = {
