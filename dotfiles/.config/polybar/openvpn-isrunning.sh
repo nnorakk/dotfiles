@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if pgrep -x "openvpn" > /dev/null 
+if pgrep -x "openvpn" || pgrep -x "netExtender"  > /dev/null 
 then
     output=$(ping -q -c 2 10.16.1.1 2> /dev/null)
     rc=$?
