@@ -82,6 +82,7 @@ bspc rule -a Zoiper5 desktop='^7' state=floating follow=off
 bspc rule -a obs desktop='^7' follow=off
 bspc rule -a "serpro-ppgd-app-IRPFPGD" state=floating follow=on
 bspc rule -a "Sxiv" state=floating follow=on
+bspc rule -a "Vpn" desktop='^8' state=monocle follow=on
 
 # inicia sxhkd caso nao esteja rodando
 pgrep -x sxhkd > /dev/null || sxhkd -m 1 &

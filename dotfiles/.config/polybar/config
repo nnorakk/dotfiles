@@ -129,8 +129,8 @@ type = custom/script
 label-active-font = 2
 exec = ~/.config/polybar/openvpn-isrunning.sh
 interval = 10
-click-left = ~/bin/tmux-scratch
-click-right = ~/bin/stop-tmux-scratch
+click-left = kitty --class Vpn --name vpn -e "tmux-vpn-sonicwall.sh"
+click-right = ~/bin/stop-tmux-vpn-sonicwall.sh
 ; format-underline = #b294bb
 
 [module/internet-isup]

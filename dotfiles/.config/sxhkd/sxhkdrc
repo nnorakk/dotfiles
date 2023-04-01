@@ -132,13 +132,14 @@ super + {Left,Down,Up,Right}
 #########################################
 
 # abrir aplicativos terminal
-super + x; {b,r,c,v,o}
+super + x; {b,r,c,v,o,p}
     { \
     kitty --class Bashtop --name bashtop -e "bashtop", \
     kitty --class Ranger --name ranger -e "ranger", \
     kitty -c ~/.config/kitty/gruvbox_light.conf --class Calendar --name showcalendarofyear -e "testecal", \
     kitty --class Vim --name vim -e "vim", \
-    kitty -c ~/.config/kitty/gruvbox_light.conf --class Fzfsearch --name fzfsearch -e "fzfsearch" \
+    kitty -c ~/.config/kitty/gruvbox_light.conf --class Fzfsearch --name fzfsearch -e "fzfsearch", \
+    kitty --class Vpn --name vpn -e "tmux-vpn-sonicwall.sh" \
     }
 
 # modificar bsp-layouts
