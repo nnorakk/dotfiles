@@ -74,6 +74,7 @@ packages:
   - gpick
   - make
   - python-pip # instalar pacotes python
+  - python-netaddr # ansible utilizar ansible.utils.ipaddr
   - wdiff
   - iotop
   - ipcalc # calcula mascaras, quantidade enderecos, gw ...
@@ -178,3 +179,5 @@ packages:
   - termdown # cronometro, timer linha de comando
   - vivaldi # internet browser
   - luarocks # lua package manager
+  - expect # automatiza aplicacoes
+  - oath-toolkit # one time password toolkit
