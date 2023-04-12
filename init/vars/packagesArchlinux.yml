@@ -11,6 +11,7 @@ aur_packages:
   - polybar #barra
   - cava # visualizador de audio
   - google-chrome # google web browser
+  - google-chrome-beta # google versao beta web browser
   - bsp-layout # layouts dinamicos bspwm
   - xtitle # output x window titles
   - tty-clock-git # relogio em ascii para terminal
@@ -70,6 +71,10 @@ packages:
   - unrar
   - axel
   - cmake
+  - automake
+  - autoconf
+  - zoxide
+  - brave-browser
   - neovim
   - gpick
   - make
