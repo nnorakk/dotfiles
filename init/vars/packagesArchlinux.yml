@@ -37,6 +37,7 @@ aur_packages:
   - timeshift # snapshots btfrs
   - grub-btrfs # snapshots btfrs
   - timeshift-autosnap # snapshots btfrs
+  - netExtender # vpn sonicwall
   # - ytop-bin # monitor de sistema
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
