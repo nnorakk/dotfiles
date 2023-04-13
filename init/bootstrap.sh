@@ -74,4 +74,6 @@ case "$HOST_OS" in
     ;;
 esac
 
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 ansible-playbook -K deploy${HOST_OS}.yml 

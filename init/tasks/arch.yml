@@ -10,6 +10,19 @@
       become: true
       tags: admin, arch
 
+    - name: Configura variaveis de Locale
+      ansible.builtin.copy:
+        dest: "{{ item }}"
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/{{ item }}"
+        owner: root
+        group: root
+        mode: '0644'
+        backup: yes
+      with_items:
+        - /etc/locale.conf
+      become: true
+      tags: admin, arch, locale
+
     - name: Corrige problema de assinaturas desconhecidas manjaro
       shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux manjaro"
       become: true
