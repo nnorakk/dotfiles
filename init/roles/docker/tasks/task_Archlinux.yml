@@ -7,3 +7,10 @@
   when: docker_packages is defined
   become: true
   notify: Habilita docker
+
+- name: Habilita container service
+  service:
+    name: docker
+    enabled: yes
+    state: started
+  become: true
