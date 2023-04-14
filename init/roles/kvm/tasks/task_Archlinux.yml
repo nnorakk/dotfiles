@@ -28,6 +28,41 @@
   become: true
   notify: Habilita libvirt
 
+- name: Configura arquivo 30-ipforward.conf
+  lineinfile:
+    path: "/etc/sysctl.d/30-ipforward.conf"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    create: yes
+  with_items:
+    - { regexp: '^net.ipv4.ip_forward=1', line: 'net.ipv4.ip_forward=1' }
+  become: true
+
+- name: Configura arquivo bridge.conf
+  lineinfile:
+    path: "/etc/sysctl.d/bridge.conf"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    create: yes
+  with_items:
+    - { regexp: '^net.bridge.bridge-nf-call-ip6tables = 0', line: 'net.bridge.bridge-nf-call-ip6tables = 0' }
+    - { regexp: '^net.bridge.bridge-nf-call-iptables = 0', line: 'net.bridge.bridge-nf-call-iptables = 0' }
+    - { regexp: '^net.bridge.bridge-nf-call-arptables = 0', line: 'net.bridge.bridge-nf-call-arptables = 0'}
+  become: true
+
+- name: Configura arquivo br-netfilter.conf
+  lineinfile:
+    path: "/etc/modules-load.d/br-netfilter.conf"
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+    create: yes
+  with_items:
+    - { regexp: '^br-netfilter', line: 'br-netfilter' }
+  become: true
+
 - name: Configura network default para autostart
   command:
     cmd: virsh net-autostart --network default
@@ -35,3 +70,10 @@
   ignore_errors: yes
   changed_when: false
   failed_when: false
+
+- name: Habilita libvirtd service
+  service:
+    name: libvirtd
+    enabled: yes
+    state: started
+  become: true
