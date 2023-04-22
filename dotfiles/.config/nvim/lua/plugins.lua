@@ -34,10 +34,7 @@ return require('packer').startup({function()
 
   use {'echasnovski/mini.nvim'}
 
-  use {'folke/tokyonight.nvim'}
   use {'joshdick/onedark.vim'}
-  use {'lunarvim/darkplus.nvim'}
-  use {'tanvirtin/monokai.nvim'}
   use {'sainnhe/everforest'}
   use {'williamboman/mason.nvim'}
   use {'ellisonleao/gruvbox.nvim'} -- tema portado lua
