@@ -14,6 +14,7 @@ cask_packages:
   - wireshark
 
 packages:
+  - docker
   - tmux
   - nmap
   - telnet
