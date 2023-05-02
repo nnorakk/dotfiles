@@ -12,9 +12,9 @@ cask_packages:
   - brave-browser
   - font-hack-nerd-font # necessario pelo lsd
   - wireshark
+  - docker
 
 packages:
-  - docker
   - tmux
   - nmap
   - telnet
