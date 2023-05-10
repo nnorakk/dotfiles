@@ -2,11 +2,8 @@ local use = require('packer').use
 return require('packer').startup({function()
 -- Packer can manage itself
   use {'wbthomason/packer.nvim'}
-
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
   use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
-
   use {'neovim/nvim-lspconfig'}
   use {'jose-elias-alvarez/null-ls.nvim'}
   use { "glepnir/lspsaga.nvim", branch = "main", config = function() require('lspsaga').setup({}) end, }
@@ -19,21 +16,13 @@ return require('packer').startup({function()
       {'hrsh7th/vim-vsnip-integ'},
       {'onsails/lspkind-nvim'}}
   }
-
   use {'windwp/nvim-autopairs'}
-
   use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},}
-
   use {'lukas-reineke/indent-blankline.nvim'}
-
   use {'rafamadriz/friendly-snippets'}
-
   use {'mrjones2014/smart-splits.nvim'}
-
   use {'voldikss/vim-floaterm'}
-
   use {'echasnovski/mini.nvim'}
-
   use {'joshdick/onedark.vim'}
   use {'sainnhe/everforest'}
   use {'williamboman/mason.nvim'}
@@ -41,7 +30,6 @@ return require('packer').startup({function()
   use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- tabline
   use {'chentoast/marks.nvim'}
-
   use {'christoomey/vim-tmux-navigator'} -- interacao com tmux
   use {'tpope/vim-commentary'} -- comentarios
   use {'tpope/vim-surround'} --  manipular em ''"" em torno objetos mais complexos
