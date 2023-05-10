@@ -89,4 +89,5 @@ dotfiles:
   - .config/nvim/plugin/plugins_config
   - .config/nvim/ftplugin
   - .config/nvim/plugin/lua
+  - .config/nvim/after
   - .config/conky
