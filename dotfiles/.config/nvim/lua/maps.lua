@@ -22,6 +22,10 @@ map('n', '<Leader>x', ':xit<CR>', options)
 map('n', '<Leader>so', ':source %<CR>', options)
 map('n', '<Leader>cd', ':cd %:p:h<CR>', options)
 
+-- Duplica a funcao abaixo da atual
+-- https://github.com/omerxx/vim-notebook
+map('n', '<Leader>yyb', 'V}y}p<CR>', options)
+
 -- normal mapping
 map('n', '<c-h>', '<c-w>h', options)
 map('n', '<c-j>', '<c-w>j', options)
