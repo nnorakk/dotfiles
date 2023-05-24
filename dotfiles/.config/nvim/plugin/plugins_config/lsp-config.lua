@@ -51,6 +51,9 @@ local lsp_flags = {
     debounce_text_changes = 150
 }
 
+-- bash lsp
+require('lspconfig')['bashls'].setup {on_attach = on_attach, flags = lsp_flags}
+
 -- python lsp
 require('lspconfig')['pylsp'].setup {on_attach = on_attach, flags = lsp_flags}
 

@@ -147,6 +147,7 @@ packages:
   - flake8 # linter python para ALE plugin
   - python-pylint # linter python para ALE plugin
   - python-lsp-server # python language server para nvim
+  - bash-language-server # bash language server para neovim
   - filezilla # cliente ftp
   - pandoc # usado para renderizar MarkDown files
   - pandoc-crossref # dependencias opcionais do pacote pandoc
