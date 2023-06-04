@@ -188,3 +188,4 @@ packages:
   - luarocks # lua package manager
   - expect # automatiza aplicacoes
   - oath-toolkit # one time password toolkit
+  - eog # visualidor de imagens gnome
