@@ -29,7 +29,7 @@ aur_packages:
   - evernote-for-linux-bin # evernote
   - gcalcli # client cli google calendar
   - terraform-ls # lsp terraform
-  - autojump # database visited locations
+  # - autojump # database visited locations
   - sqlitestudio # studio gui para sqlite databases
   - entr # event notify
   - xidlehook # substitui o xautolock, executa comandos quando idle
@@ -38,6 +38,8 @@ aur_packages:
   - grub-btrfs # snapshots btfrs
   - timeshift-autosnap # snapshots btfrs
   - netExtender # vpn sonicwall
+  - picom-arian8j2-git # fork do picom
+
   # - ytop-bin # monitor de sistema
   # - zoiper # soft voip phone
   # - lens # kubernetes dashboard gui
@@ -132,7 +134,7 @@ packages:
   - bspwm # bspwm window manager
   - sxhkd # daemon atalhos teclado
   - rofi # launcher
-  - picom # compositor
+  # - picom # compositor
   - feh # wallpaper
   - dunst # notificoes
   - xdotool # Usado pelo scratchpad tdrop
@@ -146,8 +148,8 @@ packages:
   - yapf # fixer python para ALE plugin
   - flake8 # linter python para ALE plugin
   - python-pylint # linter python para ALE plugin
-  - python-lsp-server # python language server para nvim
-  - bash-language-server # bash language server para neovim
+  # - python-lsp-server # python language server para nvim
+  # - bash-language-server # bash language server para neovim
   - filezilla # cliente ftp
   - pandoc # usado para renderizar MarkDown files
   - pandoc-crossref # dependencias opcionais do pacote pandoc
