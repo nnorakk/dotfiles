@@ -17,6 +17,15 @@ if [ -z $monitor2 ]; then
 
     # Define 8 Desktops
     bspc monitor ${monitor1} -d 1 2 3 4 5 6 7 8
+
+    # testa se o monitor eh ultrawide
+    resolucao=$(xrandr --listmonitors | awk '/0:/{ print $3 }' | cut -d'/' -f1)
+    if [[ $resolucao -gt 3000 ]]; then
+        echo "resolucao: $resolucao"
+        bspc config single_monocle true
+        bspc config left_monocle_padding 760
+        bspc config right_monocle_padding 760
+    fi
 else
     # seta manualmente resolucao monitor antigo
     if [[ $(hostnamectl | awk '/hostname/ { print $3}') == bluestar* && $monitor2 == HDMI-1 ]]; then
