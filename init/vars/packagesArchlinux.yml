@@ -11,7 +11,7 @@ aur_packages:
   - polybar #barra
   - cava # visualizador de audio
   - google-chrome # google web browser
-  - google-chrome-beta # google versao beta web browser
+  # - google-chrome-beta # google versao beta web browser
   - bsp-layout # layouts dinamicos bspwm
   - xtitle # output x window titles
   - tty-clock-git # relogio em ascii para terminal
@@ -191,3 +191,7 @@ packages:
   - expect # automatiza aplicacoes
   - oath-toolkit # one time password toolkit
   - eog # visualidor de imagens gnome
+  - sway # sway wm
+  - swaylock # sway wm
+  - swayidle # sway wm
+  - swaybg # sway wm
