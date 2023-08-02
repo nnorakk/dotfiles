@@ -195,3 +195,4 @@ packages:
   - swaylock # sway wm
   - swayidle # sway wm
   - swaybg # sway wm
+  - blueberry # bluetooth interface
