@@ -11,7 +11,7 @@ aur_packages:
   - polybar #barra
   - cava # visualizador de audio
   - google-chrome # google web browser
-  # - google-chrome-beta # google versao beta web browser
+  - google-chrome-beta # google versao beta web browser
   - bsp-layout # layouts dinamicos bspwm
   - xtitle # output x window titles
   - tty-clock-git # relogio em ascii para terminal
@@ -29,7 +29,6 @@ aur_packages:
   - evernote-for-linux-bin # evernote
   - gcalcli # client cli google calendar
   - terraform-ls # lsp terraform
-  # - autojump # database visited locations
   - sqlitestudio # studio gui para sqlite databases
   - entr # event notify
   - xidlehook # substitui o xautolock, executa comandos quando idle
@@ -39,11 +38,7 @@ aur_packages:
   - timeshift-autosnap # snapshots btfrs
   - netExtender # vpn sonicwall
   - picom-arian8j2-git # fork do picom
-
-  # - ytop-bin # monitor de sistema
-  # - zoiper # soft voip phone
-  # - lens # kubernetes dashboard gui
-  # - paman # pulseaudio manager
+  - swayfx # sway wm
 
 packages:
   - base-devel
@@ -106,7 +101,6 @@ packages:
   - xautolock
   - terraform # hahicorp terraform
   - packer # hashicorp packer
-  # - dia
   - unzip
   - vlc
   - mpv # cross-platform media player
@@ -134,7 +128,6 @@ packages:
   - bspwm # bspwm window manager
   - sxhkd # daemon atalhos teclado
   - rofi # launcher
-  # - picom # compositor
   - feh # wallpaper
   - dunst # notificoes
   - xdotool # Usado pelo scratchpad tdrop
@@ -148,8 +141,6 @@ packages:
   - yapf # fixer python para ALE plugin
   - flake8 # linter python para ALE plugin
   - python-pylint # linter python para ALE plugin
-  # - python-lsp-server # python language server para nvim
-  # - bash-language-server # bash language server para neovim
   - filezilla # cliente ftp
   - pandoc # usado para renderizar MarkDown files
   - pandoc-crossref # dependencias opcionais do pacote pandoc
@@ -191,7 +182,6 @@ packages:
   - expect # automatiza aplicacoes
   - oath-toolkit # one time password toolkit
   - eog # visualidor de imagens gnome
-  - sway # sway wm
   - swaylock # sway wm
   - swayidle # sway wm
   - swaybg # sway wm
