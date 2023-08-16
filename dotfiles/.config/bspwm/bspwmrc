@@ -138,7 +138,7 @@ pgrep -x udiskie > /dev/null || udiskie &
 xbindkeys -f ${HOME}/.config/xbindkeys/xbindkeysrc
 
 # ajusta cores do monitor automaticamente
-pgrep -x redshift > /dev/null || redshift &
+pgrep -x redshift-gtk > /dev/null || redshift-gtk &
 
 # configura wallpapers lockscreen
 betterlockscreen -u  ~/.config/wallpapers/ --blur 0.5 &
