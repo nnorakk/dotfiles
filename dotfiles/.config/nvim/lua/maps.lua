@@ -5,7 +5,6 @@ local options = { noremap = true, silent = true }
 
 -- map the leader key
 map('n', '<Space>', '', {})
-vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
 -- rapidamente remove highligth na busca recente
 map('n', '<leader><esc>', ':nohlsearch<cr>', options)
@@ -56,3 +55,15 @@ vim.cmd [[nnoremap <silent> <M-l> :SmartResizeRight 3<cr>]]
 -- Floaterm plugin
 map('n', '<F12>', ':FloatermToggle<cr>', options)
 map('t', '<F12>', '<C-\\><C-n>:FloatermToggle<cr>', options)
+
+-- vim-tmux-navigator
+-- https://github.com/LazyVim/LazyVim/discussions/277
+vim.cmd([[
+ let g:tmux_navigator_no_mappings = 1
+ let g:tmux_navigator_disable_when_zoomed = 0
+  noremap <silent> <c-h> :<C-U>TmuxNavigateLeft<cr>
+    noremap <silent> <c-j> :<C-U>TmuxNavigateDown<cr>
+    noremap <silent> <c-k> :<C-U>TmuxNavigateUp<cr>
+    noremap <silent> <c-l> :<C-U>TmuxNavigateRight<cr>
+    noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
+  ]])

@@ -1,45 +1,57 @@
-local use = require('packer').use
-return require('packer').startup({function()
--- Packer can manage itself
-  use {'wbthomason/packer.nvim'}
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}} }
-  use {'neovim/nvim-lspconfig'}
-  use {'jose-elias-alvarez/null-ls.nvim'}
-  use { "glepnir/lspsaga.nvim", branch = "main", config = function() require('lspsaga').setup({}) end, }
-  use {'hrsh7th/nvim-cmp', requires = {
-      {'hrsh7th/cmp-nvim-lsp'}, -- funciona aqui comentario?
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-vsnip'},
-      {'hrsh7th/vim-vsnip'},
-      {'hrsh7th/vim-vsnip-integ'},
-      {'onsails/lspkind-nvim'}}
-  }
-  use {'windwp/nvim-autopairs'}
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},}
-  use {'lukas-reineke/indent-blankline.nvim'}
-  use {'rafamadriz/friendly-snippets'}
-  use {'mrjones2014/smart-splits.nvim'}
-  use {'voldikss/vim-floaterm'}
-  use {'echasnovski/mini.nvim'}
-  use {'joshdick/onedark.vim'}
-  use {'sainnhe/everforest'}
-  use {'williamboman/mason.nvim'}
-  use {'ellisonleao/gruvbox.nvim'} -- tema portado lua
-  use {'itchyny/lightline.vim', requires = {'itchyny/vim-gitbranch'}} -- statusline
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'} -- tabline
-  use {'chentoast/marks.nvim'}
-  use {'christoomey/vim-tmux-navigator'} -- interacao com tmux
-  use {'tpope/vim-commentary'} -- comentarios
-  use {'tpope/vim-surround'} --  manipular em ''"" em torno objetos mais complexos
-  use {'tpope/vim-repeat'} -- repete comandos
+-- install lazy if not installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
 
-  use {'hashivim/vim-terraform'} -- terraform
-  use {'NvChad/nvim-colorizer.lua'}
-end,
-config ={
-  display = {
-    open_fn = require('packer.util').float,
-  }
-}})
+vim.opt.rtp:prepend(lazypath)
+
+-- map the leader key
+vim.g.mapleader = ' '  -- 'vim.g' sets global variables
+
+require('lazy').setup({
+    {'nvim-telescope/telescope.nvim', dependencies = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}} ,
+    'neovim/nvim-lspconfig',
+    'jose-elias-alvarez/null-ls.nvim',
+    {'glepnir/lspsaga.nvim',
+        branch = "main",
+        config = function()
+            require('lspsaga').setup({})
+    end} ,
+    {'hrsh7th/nvim-cmp', dependencies = {
+        {'hrsh7th/cmp-nvim-lsp'}, -- funciona aqui comentario?
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'hrsh7th/cmp-vsnip'},
+        {'hrsh7th/vim-vsnip'},
+        {'hrsh7th/vim-vsnip-integ'},
+        {'onsails/lspkind-nvim'}}
+    } ,
+    'windwp/nvim-autopairs',
+    {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'}} ,
+    'lukas-reineke/indent-blankline.nvim',
+    'rafamadriz/friendly-snippets',
+    'mrjones2014/smart-splits.nvim',
+    'voldikss/vim-floaterm',
+    'echasnovski/mini.nvim',
+    'joshdick/onedark.vim',
+    'sainnhe/everforest',
+    'williamboman/mason.nvim',
+    'ellisonleao/gruvbox.nvim', -- tema portado lua
+    {'itchyny/lightline.vim', dependencies = {'itchyny/vim-gitbranch'}} , -- statusline
+    {'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons'} , -- tabline
+    'chentoast/marks.nvim',
+    'christoomey/vim-tmux-navigator', -- interacao com tmux
+    'tpope/vim-commentary', -- comentarios
+    'tpope/vim-surround', --  manipular em ''"" em torno objetos mais complexos
+    'tpope/vim-repeat', -- repete comandos
+    'hashivim/vim-terraform', -- terraform
+    'NvChad/nvim-colorizer.lua',
+})
