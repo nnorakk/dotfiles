@@ -1,14 +1,14 @@
 # Pacotes Virtualizacao
 kvm_packages:
-  - libvirt
   - qemu
-  - qemu-arch-extra
-  - ovmf
-  - bridge-utils
-  - dnsmasq
-  - vde2
-  - openbsd-netcat
-  - iptables-nft
   - virt-manager
   - virt-viewer
+  - dnsmasq
+  - vde2
+  - libvirt
+  - bridge-utils
+  - openbsd-netcat
   - dmidecode
+  - ovmf
+  - iptables-nft
+  - ebtables

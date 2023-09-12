@@ -4,8 +4,6 @@ snap_packages:
   - todoist # todo list app
 
 pip_packages:
-  - pyls-isort # isort sort imports python
-  - pynvim # modulo nvim
 
 aur_packages:
   - polybar #barra
@@ -141,6 +139,7 @@ packages:
   - yapf # fixer python para ALE plugin
   - flake8 # linter python para ALE plugin
   - python-pylint # linter python para ALE plugin
+  - python-pynvim # python nvim
   - filezilla # cliente ftp
   - pandoc # usado para renderizar MarkDown files
   - pandoc-crossref # dependencias opcionais do pacote pandoc
