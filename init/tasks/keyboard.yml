@@ -89,7 +89,7 @@
       become: true
       tags: keyboard
 
-    - name: Cria servico systed keychron
+    - name: Cria servico systemd keychron
       copy:
         dest: "{{ item }}"
         src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/{{ item }}"
