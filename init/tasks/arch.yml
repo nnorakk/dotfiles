@@ -113,6 +113,20 @@
       become: true
       tags: admin, arch
 
+    - name: Desabilita Hibernacao
+      ansible.builtin.systemd:
+        name: "{{ item }}"
+        enabled: no
+        masked: yes
+        daemon_reload: yes
+      become: true
+      with_items:
+        - sleep.target
+        - suspend.target
+        - hibernate.target
+        - hybrid-sleep.target
+      tags: admin, arch, sleep
+
     - name: Habilita sshd
       ansible.builtin.systemd:
         name: sshd
