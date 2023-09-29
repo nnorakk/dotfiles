@@ -44,6 +44,7 @@ require('lazy').setup({
     'joshdick/onedark.vim',
     'sainnhe/everforest',
     'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
     'ellisonleao/gruvbox.nvim', -- tema portado lua
     {'itchyny/lightline.vim', dependencies = {'itchyny/vim-gitbranch'}} , -- statusline
     {'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons'} , -- tabline
