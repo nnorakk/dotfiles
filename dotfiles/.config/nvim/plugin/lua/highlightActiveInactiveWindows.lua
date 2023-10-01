@@ -10,14 +10,14 @@ autocommands.win_enter = function()
     -- nao aplica em tipos help e manpages
     if filetype ~= 'help' and filetype ~= 'man' then
         vim.cmd('set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow')
-        vim.cmd [[IndentBlanklineEnable]]
+        require("ibl").setup_buffer(0, { enabled = true })
         vim.opt.relativenumber = true
     end
 end
 
 autocommands.win_leave = function()
     vim.cmd('set winhighlight=Normal:InactiveWindow,NormalNC:InactiveWindow')
-    vim.cmd [[IndentBlanklineDisable]]
+    require("ibl").setup_buffer(0, { enabled = false })
     vim.opt.relativenumber = false
 end
 
