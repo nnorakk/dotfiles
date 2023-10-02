@@ -1,1 +1,1 @@
-vim.cmd [[IndentBlanklineDisable]]
+vim.cmd [[IBLDisable]]
