@@ -21,7 +21,6 @@ dotfiles_dirs:
   - .vim/ftplugin
   - .vim/after/ftdetect
   - .config/nvim/lua
-  - .config/nvim/plugin/mappings
   - .config/nvim/plugin/plugins_config
   - .config/nvim/plugin/lua
 
@@ -63,10 +62,6 @@ dotfiles:
   - .vim/autoload/visual_movement.vim
   - .vim/autoload/mappings/leader.vim
   - .vim/plugin/customscolors.vim
-  - .vim/plugin/mappings/insertmap.vim
-  - .vim/plugin/mappings/leader.vim
-  - .vim/plugin/mappings/normal.vim
-  - .vim/plugin/mappings/visual.vim
   - .vim/plugin/protect.vim
   - .vim/plugin/statusline.vim
   - .vim/plugin/fern.vim
@@ -81,9 +76,9 @@ dotfiles:
   - .config/nvim/lua/maps.lua
   - .config/nvim/lua/plugins.lua
   - .config/nvim/lua/settings.lua
+  - .config/nvim/lua/autocmds.lua
   - .config/nvim/plugin/settings.vim
   - .config/nvim/plugin/statusline.lua
-  - .config/nvim/plugin/utils.lua
   - .config/nvim/plugin/mappings/insertmap.vim
   - .config/nvim/plugin/mappings/leader.vim
   - .config/nvim/plugin/mappings/normal.vim
