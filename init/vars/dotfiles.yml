@@ -22,7 +22,6 @@ dotfiles_dirs:
   - .vim/after/ftdetect
   - .config/nvim/lua
   - .config/nvim/plugin/plugins_config
-  - .config/nvim/plugin/lua
 
 dotfiles:
   - .alacritty.yml
@@ -96,8 +95,6 @@ dotfiles:
   - .config/nvim/plugin/plugins_config/nvim-autopairs.lua
   - .config/nvim/plugin/plugins_config/nvim-cmp.lua
   - .config/nvim/plugin/plugins_config/telescope.lua
-  - .config/nvim/plugin/lua/redefine_color_marksignhl.lua
-  - .config/nvim/plugin/lua/highlightActiveInactiveWindows.lua
   - .config/nvim/ftplugin
   - .config/nvim/after
   - .config/conky
