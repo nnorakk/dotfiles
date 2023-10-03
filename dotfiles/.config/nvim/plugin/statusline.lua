@@ -1,10 +1,10 @@
 -- temas agradaveis
-local themes = {  'seoul256', 'Tomorrow_Night', 'wombat', 'jellybeans', 'gruvbox' }
+local themes = { 'seoul256', 'Tomorrow_Night', 'wombat', 'jellybeans' }
 
 -- necessario para gerar aleatoridade
 math.randomseed(os.time())
 -- captura um dos temas aleatoriamente, #themes retorna o length da table 'themes'
-local random_theme = themes[math.random(1,#themes)]
+local random_theme = themes[math.random(1, #themes)]
 
 -- local function GitInformation()
 --    -- return vim.b.gitsigns_head
@@ -38,7 +38,7 @@ vim.g.lightline = {
     enable = { tabline = 0 },
     active = {
         left = { { 'mode', 'paste' }, { 'readonly', 'filename', 'modified', 'gitbranch' } },
-        right = {{'lineinfo'}, {'percent'}, {'filetype'}}
+        right = { { 'lineinfo' }, { 'percent' }, { 'filetype' } }
     },
     inactive = {
         left = { { 'absolutepath' } },
