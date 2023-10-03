@@ -1,5 +1,5 @@
 -- local nvim_lsp = require('lspconfig')
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 vim.g.diagnostics_visible = true
 
@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = {noremap = true, silent = true, buffer = bufnr}
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder,
-                   bufopts)
+        bufopts)
     vim.keymap.set('n', '<space>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
@@ -42,7 +42,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<Leader>fo',
-                   function() vim.lsp.buf.format {async = true} end, bufopts)
+        function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local lsp_flags = {
@@ -51,18 +51,34 @@ local lsp_flags = {
 }
 
 -- bash lsp
-require('lspconfig')['bashls'].setup {on_attach = on_attach, flags = lsp_flags}
+require('lspconfig')['bashls'].setup { on_attach = on_attach, flags = lsp_flags }
 
 -- python lsp
-require('lspconfig')['pylsp'].setup {on_attach = on_attach, flags = lsp_flags}
-
+-- require('lspconfig')['pylsp'].setup { on_attach = on_attach, flags = lsp_flags }
+require('lspconfig')['pylsp'].setup {
+    on_attach = on_attach,
+    flags = {
+        -- This will be the default in neovim 0.7+
+        debounce_text_changes = 150,
+    },
+    settings = {
+        -- configure plugins in pylsp
+        pylsp = {
+            -- Desabilita linter deixando apenas python lspserver
+            plugins = {
+                pyflakes = { enabled = false },
+                pylint = { enabled = false },
+            },
+        },
+    },
+}
 -- lua lsp
 require('lspconfig')['lua_ls'].setup {
     settings = {
         Lua = {
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
-                globals = {'vim'}
+                globals = { 'vim' }
             }
         }
     },

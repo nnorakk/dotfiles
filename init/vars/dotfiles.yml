@@ -87,7 +87,8 @@ dotfiles:
   - .config/nvim/plugin/plugins_config/marks.lua
   - .config/nvim/plugin/plugins_config/mason.lua
   - .config/nvim/plugin/plugins_config/mini.lua
-  - .config/nvim/plugin/plugins_config/null-ls.lua
+  - .config/nvim/plugin/plugins_config/conform.lua
+  - .config/nvim/plugin/plugins_config/nvim-lint.lua
   - .config/nvim/plugin/plugins_config/nvim-autopairs.lua
   - .config/nvim/plugin/plugins_config/nvim-cmp.lua
   - .config/nvim/plugin/plugins_config/telescope.lua
