@@ -26,7 +26,14 @@ require('lazy').setup({
         'stevearc/conform.nvim', -- formatters
         opts = {},
     },
-    'mfussenegger/nvim-lint', -- linters
+    'mfussenegger/nvim-lint',      -- linters
+    {
+        'nvim-tree/nvim-tree.lua', -- file tree explorer
+        lazy = true,
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    },
     {
         'glepnir/lspsaga.nvim',
         branch = "main",

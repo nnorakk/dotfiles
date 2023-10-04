@@ -91,6 +91,7 @@ dotfiles:
   - .config/nvim/plugin/plugins_config/nvim-lint.lua
   - .config/nvim/plugin/plugins_config/nvim-autopairs.lua
   - .config/nvim/plugin/plugins_config/nvim-cmp.lua
+  - .config/nvim/plugin/plugins_config/nvim-tree.lua
   - .config/nvim/plugin/plugins_config/telescope.lua
   - .config/nvim/ftplugin
   - .config/nvim/after
