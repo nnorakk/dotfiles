@@ -17,13 +17,16 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' ' -- 'vim.g' sets global variables
 
 require('lazy').setup({
-    { 'nvim-telescope/telescope.nvim', dependencies = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } },
-    'neovim/nvim-lspconfig',
     {
-        'stevearc/conform.nvim',
+        'nvim-telescope/telescope.nvim', -- fuzzy finder
+        dependencies = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } }
+    },
+    'neovim/nvim-lspconfig',     -- LSP
+    {
+        'stevearc/conform.nvim', -- formatters
         opts = {},
     },
-    'mfussenegger/nvim-lint',
+    'mfussenegger/nvim-lint', -- linters
     {
         'glepnir/lspsaga.nvim',
         branch = "main",
@@ -32,7 +35,7 @@ require('lazy').setup({
         end
     },
     {
-        'hrsh7th/nvim-cmp',
+        'hrsh7th/nvim-cmp',             -- completion
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' }, -- funciona aqui comentario?
             { 'hrsh7th/cmp-buffer' },
@@ -42,34 +45,37 @@ require('lazy').setup({
             { 'hrsh7th/vim-vsnip-integ' },
             { 'onsails/lspkind-nvim' } }
     },
-    'windwp/nvim-autopairs',
-    { 'lewis6991/gitsigns.nvim',       dependencies = { 'nvim-lua/plenary.nvim' } },
-    'lukas-reineke/indent-blankline.nvim',
-    'rafamadriz/friendly-snippets',
-    'mrjones2014/smart-splits.nvim',
-    'voldikss/vim-floaterm',
-    'echasnovski/mini.nvim',
-    'joshdick/onedark.vim',
-    'sainnhe/everforest',
+    'windwp/nvim-autopairs',       -- automaticamente [],{},{}
     {
-        'williamboman/mason.nvim',
+        'lewis6991/gitsigns.nvim', -- sinaliza modificacoes rastreadas pelo git
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    'lukas-reineke/indent-blankline.nvim', -- linhas de identacao de codigo
+    'rafamadriz/friendly-snippets',        -- conjunto de snippets
+    'mrjones2014/smart-splits.nvim',       -- manipula splits
+    'voldikss/vim-floaterm',               -- terminal
+    -- 'echasnovski/mini.nvim',
+    {
+        'williamboman/mason.nvim', -- instala lsp,linters,formatters
         dependencies = {
             { 'williamboman/mason-lspconfig.nvim' },
             { 'WhoIsSethDaniel/mason-tool-installer.nvim' } }
     },
-    'ellisonleao/gruvbox.nvim',                                              -- tema portado lua
-    { 'itchyny/lightline.vim', dependencies = { 'itchyny/vim-gitbranch' } }, -- statusline
+    'ellisonleao/gruvbox.nvim',  -- tema portado lua
     {
-        'akinsho/bufferline.nvim',
+        'itchyny/lightline.vim', -- statusline
+        dependencies = { 'itchyny/vim-gitbranch' }
+    },
+    {
+        'akinsho/bufferline.nvim', -- tabline
         version = "v3.*",
-        dependencies =
-        'nvim-tree/nvim-web-devicons'
-    },                                -- tabline
-    'chentoast/marks.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    'chentoast/marks.nvim',           -- bookmarks
     'christoomey/vim-tmux-navigator', -- interacao com tmux
     'tpope/vim-commentary',           -- comentarios
-    'tpope/vim-surround',             --  manipular em ''"" em torno objetos mais complexos
+    'tpope/vim-surround',             -- manipular em ''"" em torno objetos mais complexos
     'tpope/vim-repeat',               -- repete comandos
     'hashivim/vim-terraform',         -- terraform
-    'NvChad/nvim-colorizer.lua',
+    'NvChad/nvim-colorizer.lua',      -- colore descricao de cores em hexadecimal
 })

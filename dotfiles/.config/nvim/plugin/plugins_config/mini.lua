@@ -1,1 +1,1 @@
-require('mini.map').setup()
+-- require('mini.map').setup()
