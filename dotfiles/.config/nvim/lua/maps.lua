@@ -22,6 +22,7 @@ map('n', '<Leader>w', ':write<CR>', options)
 map('n', '<Leader>x', ':xit<CR>', options)
 map('n', '<Leader>so', ':source %<CR>', options)
 map('n', '<Leader>cd', ':cd %:p:h<CR>', options)
+map('n', '<Leader>noh', ':nohlsearch<CR>', options)
 
 -- Duplica a funcao abaixo da atual
 -- https://github.com/omerxx/vim-notebook
@@ -43,8 +44,8 @@ map('n', 'k', 'gk', options)
 
 -- from https://github.com/ThePrimeagen/.dotfiles
 -- Centraliza cursor na busca no centro da tela
-map('n', 'n',  'nzzzv', options)
-map('n', 'N',  'Nzzzv', options)
+map('n', 'n', 'nzzzv', options)
+map('n', 'N', 'Nzzzv', options)
 map('n', 'J', 'mzJ`z', options)
 
 -- abre ou fecha fold
@@ -71,7 +72,7 @@ map('n', '<leader>ls', ':ls<CR>', options)
 --
 map('i', 'jk', '<Esc>', {})
 map('i', '<C-u>', '<Esc>ui', {})
-map('i', '<C-r>', '<Esc><C-r>i', {})
+-- map('i', '<C-r>', '<Esc><C-r>i', {})
 map('i', '<C-a>', '<C-O>0', {})
 map('i', '<C-e>', '<C-O>$', {})
 
