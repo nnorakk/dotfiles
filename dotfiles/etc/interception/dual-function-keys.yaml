@@ -1,3 +1,6 @@
+# input-event-codes.h
+# os valores nesse arquivo estao 8 unidades atras
+# dos que se obtem ao usar o xev -event keyboard
 TIMING:
   TAP_MILLISEC: 200
   DOUBLE_TAP_MILLISEC: 150
