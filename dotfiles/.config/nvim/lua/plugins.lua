@@ -79,6 +79,7 @@ require('lazy').setup({
         'williamboman/mason.nvim', -- instala lsp,linters,formatters
         dependencies = {
             { 'williamboman/mason-lspconfig.nvim' },
+            { 'RubixDev/mason-update-all' },
             { 'WhoIsSethDaniel/mason-tool-installer.nvim' } }
     },
     'ellisonleao/gruvbox.nvim',  -- tema portado lua

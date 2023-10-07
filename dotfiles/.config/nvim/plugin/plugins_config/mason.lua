@@ -13,3 +13,5 @@ require('mason-tool-installer').setup {
         "black",
     },
 }
+
+require('mason-update-all').setup()
