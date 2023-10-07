@@ -7,6 +7,7 @@ fi
 if which nvim > /dev/null 2>&1; then 
     alias vim=$(which nvim) 
     alias v=$(which nvim) 
+    alias nvimdiff='nvim -d'
 fi
 
 # evita erros em maquinas remotas via ssh
