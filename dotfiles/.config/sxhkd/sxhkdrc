@@ -240,6 +240,10 @@ alt + {1-9,0}
 alt + {_,shift + }c
     bspc node -f {next,prev}.local.!hidden.window
 
+# close and kill
+alt + {_,shift + }w
+    bspc node -{c,k}
+
 # send to given desktop following
 super + shift + alt + {1-9,0}
     bspc node -d '^{1-9,10}' --follow
