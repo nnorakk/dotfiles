@@ -11,6 +11,8 @@ require('mason-tool-installer').setup {
         "pylint",
         "isort",
         "black",
+        "lua_ls",
+        "bashls",
     },
 }
 
