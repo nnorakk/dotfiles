@@ -99,6 +99,7 @@ map('v', '>', '>gv', {})
 --
 -- telescope plugin
 map('n', '<Leader>ff', ':lua require("telescope.builtin").find_files({follow=true})<cr>', options)
+map('n', '<Leader>fi', ':lua require("telescope.builtin").find_files({no_ignore=true})<cr>', options)
 map('n', '<Leader>fg', ':lua require("telescope.builtin").live_grep()<cr>', options)
 map('n', '<Leader>fb', ':lua require("telescope.builtin").buffers()<cr>', options)
 map('n', '<Leader>fh', ':lua require("telescope.builtin").help_tags()<cr>', options)
