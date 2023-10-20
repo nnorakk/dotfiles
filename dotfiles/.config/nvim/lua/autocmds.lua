@@ -3,7 +3,7 @@
 vim.api.nvim_exec([[
 augroup YankHighlight
     au!
-    au TextYankPost * silent! lua vim.highlight.on_yank() 
+    au TextYankPost * silent! lua vim.highlight.on_yank()
 augroup END
 ]], false)
 
@@ -12,6 +12,9 @@ vim.api.nvim_exec([[
 augroup redefine_group_marksignhl
     au!
     au ColorScheme * silent! lua vim.api.nvim_set_hl(0, "MarkSignHL", {link = "GruvboxBlueSign"})
+    au ColorScheme * silent! lua vim.api.nvim_set_hl(0, "GitSignsAdd", {link = "GruvboxBlueSign"})
+    au ColorScheme * silent! lua vim.api.nvim_set_hl(0, "GitSignsChange", { link = "GruvboxGreenSign" })
+    au ColorScheme * silent! lua vim.api.nvim_set_hl(0, "GitSignsDelete", { link = "GruvboxRedSign" })
 augroup END
 ]], false)
 
