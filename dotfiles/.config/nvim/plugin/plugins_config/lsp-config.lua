@@ -87,3 +87,6 @@ require('lspconfig')['lua_ls'].setup {
     on_attach = on_attach,
     flags = lsp_flags
 }
+
+-- ansible lsp
+require 'lspconfig'.ansiblels.setup {}
