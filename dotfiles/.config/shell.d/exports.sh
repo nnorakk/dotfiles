@@ -18,6 +18,8 @@ export TERM='xterm-256color'
 
 # formato 24h
 export LC_TIME=en_GB.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
 # fzf ignorar arquivos ignorados pelo .gitignore
 if which fd > /dev/null 2>&1; then 
