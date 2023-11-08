@@ -164,6 +164,7 @@ packages:
   - kubectx # Alternar entre clusters
   - minikube # kubernetes cluster local
   - helm # kubernetes package manager
+  - k9s # ferramenta cli para administrar clusters k9s
   - redshift # controla a temperatura dad cor do screen
   - cronie # crontab nao instalado por padrao no arch
   - pavucontrol # pulseaudio volume controle permite selecionar dispositivo saida volume
