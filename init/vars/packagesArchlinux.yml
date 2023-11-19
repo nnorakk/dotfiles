@@ -35,8 +35,8 @@ aur_packages:
   - grub-btrfs # snapshots btfrs
   - timeshift-autosnap # snapshots btfrs
   - netExtender # vpn sonicwall
-  - picom-arian8j2-git # fork do picom
   - swayfx # sway wm
+    #  - picom-arian8j2-git # fork do picom
 
 packages:
   - base-devel

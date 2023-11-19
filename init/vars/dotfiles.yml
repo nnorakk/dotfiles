@@ -96,3 +96,14 @@ dotfiles:
   - .config/nvim/ftplugin
   - .config/nvim/after
   - .config/conky
+
+dotfiles_home:
+  - /home/jpaulo/Dropbox/Tre-Pessoal/bin
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Ansible
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Docker
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Karbon
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Kubernetes
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Packer
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Scripts/Python
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Terraform
+  - /home/jpaulo/Dropbox/Tre-Pessoal/Vagrant
