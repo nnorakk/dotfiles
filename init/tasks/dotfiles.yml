@@ -58,6 +58,15 @@
          - "{{ dotfiles }}"
       tags: dotfiles, links
 
+    - name: Cria Links dos dotfiles na home
+      file:
+        src: "{{ item }}"
+        dest: "$HOME/{{ item | basename }}"
+        state: link
+      with_items:
+         - "{{ dotfiles_home }}"
+      tags: dotfiles, links, home_dotfiles
+
     # - name: Cria Link neovim to vim directory
     #   file:
     #     src: $HOME/.vim
