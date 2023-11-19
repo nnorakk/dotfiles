@@ -33,5 +33,5 @@
   roles:
     - { role: kvm, tags: ["kvm"] }
     - { role: docker, tags: ["docker"] }
-    - { role: virtualbox, tags: ["virtualbox"] }
+      # - { role: virtualbox, tags: ["virtualbox"] }
     # - { role: compiled_apps, tags: ["compiled_apps"] }
