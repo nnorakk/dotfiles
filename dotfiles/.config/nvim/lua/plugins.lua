@@ -60,10 +60,15 @@ require('lazy').setup({
             { 'hrsh7th/cmp-nvim-lsp' }, -- funciona aqui comentario?
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
-            { 'hrsh7th/cmp-vsnip' },
-            { 'hrsh7th/vim-vsnip' },
-            { 'hrsh7th/vim-vsnip-integ' },
             { 'onsails/lspkind-nvim' } }
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = { 'saadparwaiz1/cmp_luasnip' },
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
     },
     'windwp/nvim-autopairs',       -- automaticamente [],{},{}
     {
