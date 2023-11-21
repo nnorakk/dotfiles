@@ -7,30 +7,30 @@
 -- vim.o.fillchars="vert:│" -- Modifica o caracter separador vertical (U+2503, UTF-8: E2 94 83)
 -- vim.o.backspace = 'indent,eol,start' -- comportamento backspace
 
-vim.opt.ignorecase = true -- ignore case em buscas /
-vim.opt.smartcase = true -- ignore case em buscas /
-vim.opt.clipboard = 'unnamedplus' -- forca registros * e + em yank
-vim.opt.foldmethod = 'indent' -- Usa folding atraves da identacao
-vim.opt.foldlevel = 99  -- Abre sem folding
-vim.opt.tabstop = 4 -- expande tabs em espacos
-vim.opt.softtabstop = 4 -- expande tabs em espacos
-vim.opt.shiftwidth = 4 -- expande tabs em espacos
-vim.opt.expandtab = true -- expande tabs em espacos
-vim.opt.number = true -- Seta line
-vim.opt.relativenumber = true -- Seta relativenumber
-vim.opt.cursorline = true -- Habilita highlight na linha atual
-vim.opt.splitbelow = true -- " Preferencias ao splitar janelas
-vim.opt.splitright = true -- " Preferencias ao splitar janelas
-vim.opt.hidden = true -- Permite saltar para buffers nao salvos
-vim.opt.showcmd = false -- Nao imprime comando na ultima linha
-vim.opt.showmode = false -- Nao indica "INSERT","REPLACE","VISUAL" mode
-vim.opt.termguicolors = true --
-vim.opt.mouse = 'nv' -- habilita mouse modos normal e visual
-vim.opt.completeopt = "menuone,noselect" --https://github.com/hrsh7th/nvim-compe
-vim.opt.shortmess = vim.opt.shortmess + 'I' -- nao aparece tela inicial
-vim.opt.list           = true -- show whitespace
-vim.opt.listchars      = {trail='•'}
-vim.opt.undofile = true -- seta persistent undo ~/.local/share/nvim/undo
+vim.opt.ignorecase     = true               -- ignore case em buscas /
+vim.opt.smartcase      = true               -- ignore case em buscas /
+vim.opt.clipboard      = 'unnamedplus'      -- forca registros * e + em yank
+vim.opt.foldmethod     = 'indent'           -- Usa folding atraves da identacao
+vim.opt.foldlevel      = 99                 -- Abre sem folding
+vim.opt.tabstop        = 4                  -- expande tabs em espacos
+vim.opt.softtabstop    = 4                  -- expande tabs em espacos
+vim.opt.shiftwidth     = 4                  -- expande tabs em espacos
+vim.opt.expandtab      = true               -- expande tabs em espacos
+vim.opt.number         = true               -- Seta line
+vim.opt.relativenumber = true               -- Seta relativenumber
+vim.opt.cursorline     = true               -- Habilita highlight na linha atual
+vim.opt.splitbelow     = true               -- " Preferencias ao splitar janelas
+vim.opt.splitright     = true               -- " Preferencias ao splitar janelas
+vim.opt.hidden         = true               -- Permite saltar para buffers nao salvos
+vim.opt.showcmd        = false              -- Nao imprime comando na ultima linha
+vim.opt.showmode       = false              -- Nao indica "INSERT","REPLACE","VISUAL" mode
+vim.opt.termguicolors  = true               --
+vim.opt.mouse          = 'nv'               -- habilita mouse modos normal e visual
+vim.opt.completeopt    = "menuone,noselect" --https://github.com/hrsh7th/nvim-compe
+vim.opt.shortmess      = vim.opt.shortmess + 'I' -- nao aparece tela inicial
+vim.opt.list           = true               -- show whitespace
+vim.opt.listchars      = { trail = '•' }
+vim.opt.undofile       = true               -- seta persistent undo ~/.local/share/nvim/undo
 
-vim.g.gruvbox_italic = 1 -- verificar pq aqui antes de tudo
-vim.g.colors_name = 'gruvbox'
+vim.g.gruvbox_italic   = 1                  -- verificar pq aqui antes de tudo
+vim.g.colors_name      = 'gruvbox'
