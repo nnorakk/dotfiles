@@ -17,6 +17,7 @@ map('n', '<leader>p', ':bprev<cr>', options)
 
 -- atalhos rapidos economizam alguns movimentos
 map('n', '<Leader>q', ':quit<CR>', options)
+map('n', '<Leader>Q', ':quitall!<CR>', options)
 map('n', '<Leader>qa', ':quitall<CR>', options)
 map('n', '<Leader>w', ':write<CR>', options)
 map('n', '<Leader>x', ':xit<CR>', options)
