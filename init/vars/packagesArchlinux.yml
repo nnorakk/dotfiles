@@ -186,3 +186,4 @@ packages:
   - swayidle # sway wm
   - swaybg # sway wm
   - blueberry # bluetooth interface
+  - gum # TUI para scripts shell
