@@ -69,6 +69,8 @@ require('lspconfig')['pylsp'].setup {
             plugins = {
                 pyflakes = { enabled = false },
                 pylint = { enabled = false },
+                pycodestyle = { enabled = false }, -- desabilita warnings line too long
+                -- https://github.com/palantir/python-language-server/issues/229
             },
         },
     },
