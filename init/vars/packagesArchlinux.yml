@@ -81,6 +81,7 @@ packages:
   - ipcalc # calcula mascaras, quantidade enderecos, gw ...
   - tor
   - vagrant # vagrant plugin install vagrant-libvirt # instala plugin libvirt
+  - guestfs-tools # virt-customize
   - ansible-lint # linter para ansible
   - linux-headers # kernel headers
   - zsh
