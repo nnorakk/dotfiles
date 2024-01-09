@@ -21,11 +21,12 @@ if [ -z $monitor2 ]; then
     fi
 else
     # Define 8 Desktops em 2 monitores
-    bspc monitor ${monitor1} -d 1 2 3 4
-    bspc monitor ${monitor2} -d 5 6 7 8
+    bspc monitor ${monitor1} -d 1 2 3 4 5 6 7 8
+    bspc monitor ${monitor2} -d 9 10
 fi
 
 # configs
+bspc config automatic_scheme alternate
 bspc config window_gap 4
 bspc config top_padding 29
 bspc config border_width 4
