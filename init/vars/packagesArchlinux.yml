@@ -186,3 +186,4 @@ packages:
   - swaybg # sway wm
   - blueberry # bluetooth interface
   - gum # TUI para scripts shell
+  - swtpm # possibilita adicionar tpm 2.0 vms windows
