@@ -10,6 +10,15 @@
       become: true
       tags: admin, arch
 
+    - name: Evita que usuarios do grupo admin sejam bloqueados por faillock
+      ansible.builtin.lineinfile:
+        path: /etc/security/faillock.conf
+        line: 'admin_group = wheel'
+        insertafter: EOF
+        state: present
+      become: true
+      tags: admin, arch, faillock
+
     - name: Configura variaveis de Locale
       ansible.builtin.copy:
         dest: "{{ item }}"
