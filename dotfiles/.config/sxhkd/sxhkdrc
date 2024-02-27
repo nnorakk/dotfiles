@@ -247,3 +247,7 @@ alt + {_,shift + }w
 # send to given desktop following
 super + shift + alt + {1-9,0}
     bspc node -d '^{1-9,10}' --follow
+
+# diminui area util em monocle; ideal para usar em ultrawide monitores
+super + n
+    [ $(bspc config left_monocle_padding) -gt 0 ] && $( bspc config left_monocle_padding 0; bspc config right_monocle_padding 0 ) || $( bspc config left_monocle_padding 760; bspc config right_monocle_padding 760)
