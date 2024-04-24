@@ -22,7 +22,6 @@ aur_packages:
   - snapd
   - it87-dkms-git # detectar fan speed placa mae B450 asus
   - inxi # cmdline system information
-  - evernote-for-linux-bin # evernote
   - gcalcli # client cli google calendar
   - terraform-ls # lsp terraform
   - sqlitestudio # studio gui para sqlite databases
