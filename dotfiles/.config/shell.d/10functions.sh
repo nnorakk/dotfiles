@@ -28,3 +28,5 @@ function xfreerdp() {
 
     grep -q 'ERRCONNECT_DNS_NAME_NOT_FOUND\|ERRCONNECT_AUTHENTICATION_FAILED' /tmp/error.err && return 127 || return 0
 }
+
+function ztheme() { export ZSH_THEME="$@" && source $ZSH/oh-my-zsh.sh }
