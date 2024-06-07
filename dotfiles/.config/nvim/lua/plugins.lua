@@ -94,7 +94,7 @@ require('lazy').setup({
     },
     {
         'akinsho/bufferline.nvim', -- tabline
-        version = "v3.*",
+        version = "*",
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     'chentoast/marks.nvim',           -- bookmarks
