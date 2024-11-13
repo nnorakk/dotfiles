@@ -2,7 +2,7 @@
       yum_repository:
         name: google-chrome
         description: google-chrome repo
-        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64 
+        baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
         enabled: yes
       become: true
       tags: admin
@@ -17,7 +17,7 @@
       become: true
       tags: admin
 
-    # - name: Instala Repositorio alacritty 
+    # - name: Instala Repositorio alacritty
     #   yum_repository:
     #     name: "copr:copr.fedorainfracloud.org:pschyska:alacritty"
     #     description: "Allacrity Copr Repo"
@@ -59,7 +59,7 @@
 
     - name: Instala Pacotes Snap
       snap:
-        name: 
+        name:
           "{{ snap_packages }}"
         state: present
       become: true

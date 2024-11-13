@@ -5,37 +5,37 @@
       tags: dotfiles, fzf
 
     - name: Instala oh-my-zsh
-      git: 
+      git:
         repo: https://github.com/robbyrussell/oh-my-zsh
         dest: $HOME/.oh-my-zsh
       tags: dotfiles, zsh
 
     - name: Instala zsh-autosuggestions
-      git: 
+      git:
         repo: https://github.com/zsh-users/zsh-autosuggestions
         dest: $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
       tags: dotfiles, zsh, autosuggestions
 
     - name: Instala zsh-syntax-highlighting
-      git: 
+      git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting
         dest: $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
       tags: dotfiles, zsh, zsh-syntax-highlighting
 
     - name: Instala Tmux themes
-      git: 
+      git:
         repo: https://github.com/jimeh/tmux-themepack.git
         dest: $HOME/.tmux-themepack
       tags: dotfiles, tmux
 
     - name: Instala Tmux Power Themes
-      git: 
+      git:
         repo: https://github.com/wfxr/tmux-power
         dest: $HOME/.config/tmux-power
       tags: dotfiles, tmux
 
     - name: Instala Base16-shell
-      git: 
+      git:
         repo: https://github.com/chriskempson/base16-shell.git
         dest: $HOME/.config/base16-shell
       tags: dotfiles, base16

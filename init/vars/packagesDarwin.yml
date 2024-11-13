@@ -3,7 +3,7 @@ cask_packages:
   - google-chrome
   - vlc
   - spotify
-  - adobe-acrobat-pro 
+  - adobe-acrobat-pro
   - firefox
   - libreoffice
   - alfred

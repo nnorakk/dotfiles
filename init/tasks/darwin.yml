@@ -40,10 +40,10 @@
     - name: ranger configuracao preview iterm2
       file:
         src: $HOME/.dotfiles/dotfiles/.config/ranger/rc.conf.{{ ansible_system }}
-        dest: $HOME/.config/ranger/rc.conf 
+        dest: $HOME/.config/ranger/rc.conf
         state: link
         force: true
-      tags: darwin, ranger  
+      tags: darwin, ranger 
 
     - name: Copia Fonte Jetbrains
       copy:

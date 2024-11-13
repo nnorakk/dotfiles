@@ -65,7 +65,7 @@
       tags: arch
 
     - name: Instala yay
-      command: "{{ item }}" 
+      command: "{{ item }}"
       args:
         chdir: "{{ lookup('env', 'HOME') }}/tmp/yay-git"
       with_items:
@@ -97,7 +97,7 @@
 
     - name: Instala Pacotes Snap
       snap:
-        name: 
+        name:
           "{{ snap_packages }}"
         state: present
       become: true

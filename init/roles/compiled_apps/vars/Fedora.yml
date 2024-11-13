@@ -14,12 +14,12 @@ apps:
       - make install
       - make clean
     dependencies:
-      - git 
-      - gcc 
-      - make 
-      - pkgconfig 
-      - libX11-devel 
-      - libXtst-devel 
+      - git
+      - gcc
+      - make
+      - pkgconfig
+      - libX11-devel
+      - libXtst-devel
       - libXi-devel
 
   - app_name: i3lock-color
@@ -81,7 +81,7 @@ apps:
     dependencies:
       - g++
       - cmake
-      - libevdev-devel 
+      - libevdev-devel
       - systemd-devel
       - yaml-cpp-devel
       - boost-devel
@@ -93,7 +93,7 @@ apps:
       - make install
     dependencies:
       - cmake
-      - libevdev-devel 
+      - libevdev-devel
       - systemd-devel
       - yaml-cpp-devel
       - boost-devel
@@ -102,11 +102,11 @@ apps:
     repo: https://gitlab.com/interception/linux/plugins/space2meta
     targets:
       - cmake -Bbuild
-      - cmake --build build 
+      - cmake --build build
       - "cp -f build/space2meta /usr/local/bin"
     dependencies:
       - cmake
-      - libevdev-devel 
+      - libevdev-devel
       - systemd-devel
       - yaml-cpp-devel
       - boost-devel

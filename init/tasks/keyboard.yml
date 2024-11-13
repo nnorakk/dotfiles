@@ -25,7 +25,7 @@
     - name: Muda cedilha minusculo arquivo Compose
       replace:
         path: /usr/share/X11/locale/en_US.UTF-8/Compose
-        regexp: 'ć' 
+        regexp: 'ć'
         replace: 'ç'
       become: true
       tags: keyboard
@@ -33,7 +33,7 @@
     - name: Muda cedilha maiusculo arquivo Compose
       replace:
         path: /usr/share/X11/locale/en_US.UTF-8/Compose
-        regexp: 'Ć' 
+        regexp: 'Ć'
         replace: 'Ç'
       become: true
       tags: keyboard

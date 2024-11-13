@@ -25,15 +25,15 @@
 - name: Configura Bridge
   command: "{{ item }}"
   with_items:
-    - "nmcli connection add type bridge autoconnect yes con-name {{ conn_name }} ifname {{ bridge_name }}" 
-    - "nmcli connection modify {{ conn_name }} ipv4.addresses {{ ip_address }} ipv4.method manual" 
-    - "nmcli connection modify {{ conn_name }} ipv4.gateway {{ gateway }}" 
-    - "nmcli connection modify {{ conn_name }} ipv4.dns {{ dns1 }}" 
-    - "nmcli connection modify {{ conn_name }} +ipv4.dns {{ dns2 }}" 
-    - "nmcli connection del '{{ default_connection.stdout }}'" 
-    - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_default_ipv4['interface'] }} ifname {{ ansible_default_ipv4['interface'] }} master {{ bridge_name }}" 
+    - "nmcli connection add type bridge autoconnect yes con-name {{ conn_name }} ifname {{ bridge_name }}"
+    - "nmcli connection modify {{ conn_name }} ipv4.addresses {{ ip_address }} ipv4.method manual"
+    - "nmcli connection modify {{ conn_name }} ipv4.gateway {{ gateway }}"
+    - "nmcli connection modify {{ conn_name }} ipv4.dns {{ dns1 }}"
+    - "nmcli connection modify {{ conn_name }} +ipv4.dns {{ dns2 }}"
+    - "nmcli connection del '{{ default_connection.stdout }}'"
+    - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_default_ipv4['interface'] }} ifname {{ ansible_default_ipv4['interface'] }} master {{ bridge_name }}"
   when: >
-    ( ansible_default_ipv4['alias'] !=  bridge_name ) and 
+    ( ansible_default_ipv4['alias'] !=  bridge_name ) and
     ( "'Hypervisor detected' not in is_vm.stdout" ) and
     conn_name is defined and
     bridge_name is defined and

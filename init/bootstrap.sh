@@ -7,7 +7,7 @@
 HOST_OS=$(uname -s)
 
 # Obtem credenciais de superusuario para instalar apps
-sudo -v 
+sudo -v
 
 case "$HOST_OS" in
     Darwin)
@@ -40,7 +40,7 @@ case "$HOST_OS" in
         if grep -q 'NAME=Fedora' /etc/os-release; then
             echo "Sistema Fedora"
 
-            sudo dnf update -y 
+            sudo dnf update -y
 
             if $(hash ansible-playbook 2> /dev/null); then
                 echo "ansible ja instalado"
@@ -76,4 +76,4 @@ esac
 
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
-ansible-playbook -K deploy${HOST_OS}.yml 
+ansible-playbook -K deploy${HOST_OS}.yml

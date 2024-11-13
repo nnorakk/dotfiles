@@ -15,7 +15,7 @@
   git:
     repo: "{{ item.repo }}"
     dest: "{{ workspace }}/{{ item.app_name }}"
-  with_items: 
+  with_items:
     - "{{ apps }}"
 
 - name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
