@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if pgrep -x "openvpn" || pgrep -x "netExtender"  > /dev/null 
+if pgrep -x "openvpn" || pgrep -x "netExtender"  > /dev/null
 then
     output=$(ping -q -c 2 10.16.1.1 2> /dev/null)
     rc=$?
@@ -12,6 +12,11 @@ then
         echo "%{F#daa520} VPN%{F-}"
     fi
 else
-    # processo openvpn inativo
-    echo "%{F#ff5b77} VPN%{F-}"
+    # testa se wireguard
+    if $(ps aux | grep -qi '[wW]g-crypt'); then
+        echo "%{F#00ff7f} VPN%{F-}"
+    else
+        # vpn inativa
+        echo "%{F#ff5b77} VPN%{F-}"
+    fi
 fi
