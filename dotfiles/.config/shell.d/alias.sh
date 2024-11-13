@@ -8,6 +8,8 @@ if which nvim > /dev/null 2>&1; then
     alias vim=$(which nvim) 
     alias v=$(which nvim) 
     alias nvimdiff='nvim -d'
+    # laboratorio de configuracoes
+    alias nvimlab='NVIM_APPNAME=nvimlab nvim'
 fi
 
 # evita erros em maquinas remotas via ssh
