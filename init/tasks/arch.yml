@@ -1,6 +1,6 @@
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
       include_vars: "vars/packages{{ ansible_distribution }}.yml"
-      tags: admin
+      tags: admin, pkgs
 
     - name: Colore saida pacman
       lineinfile:
@@ -50,7 +50,7 @@
           "{{ packages }}"
         state: present
       become: true
-      tags: admin, arch
+      tags: admin, arch, pkgs
 
     # - name: Instala pacotes pip
     #   pip:
