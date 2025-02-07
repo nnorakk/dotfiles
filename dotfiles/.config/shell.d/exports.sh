@@ -11,7 +11,7 @@ export HISTSIZE=100000
 export EDITOR=nvim
 
 # Adiciona .loca/bin ao PATH
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/sbin
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/sbin:$HOME/Python/Diversos
 
 # Adiciona instant client oracle
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Python/Diversos/instantclient_21_6
