@@ -13,6 +13,9 @@ export EDITOR=nvim
 # Adiciona .loca/bin ao PATH
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/sbin
 
+# Adiciona instant client oracle
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Python/Diversos/instantclient_21_6
+
 # 256 cores
 export TERM='xterm-256color'
 
