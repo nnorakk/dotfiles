@@ -133,7 +133,7 @@ pgrep -x dropbox > /dev/null || dropbox &
 
 # Start conky
 pgrep -x conky > /dev/null || conky -d -c ~/.config/conky/conky.conf.4
-if [ -z $monitor2 ]; then
+if [ ! -z $monitor2 ]; then
     conky -d -c ~/.config/conky/conky.conf.5
 fi
 
