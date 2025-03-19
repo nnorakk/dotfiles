@@ -137,7 +137,7 @@ super + x; {b,r,c,v,o,p,m,k}
     kitty --class Vim --name vim -e "vim", \
     kitty -c ~/.config/kitty/gruvbox_light.conf --class Fzfsearch --name fzfsearch -e "fzfsearch", \
     kitty --class Vpn --name vpn -e "tmux-vpn-sonicwall.sh", \
-    kitty --class Marcacao --name marcacao -e "consulta_marcacao.sh", \
+    kitty --class Marcacao --name marcacao -o font_size=15 -e "consulta_marcacao.sh", \
     kitty --class Kittyfloat \
     }
 
