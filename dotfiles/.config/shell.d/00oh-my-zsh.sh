@@ -21,6 +21,8 @@ plugins=(git
     zsh-syntax-highlighting
     kube-ps1
     kubectl
+    sudo
+    history-substring-search
     z)
 
 source $ZSH/oh-my-zsh.sh
