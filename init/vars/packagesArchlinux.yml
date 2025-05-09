@@ -34,6 +34,7 @@ aur_packages:
   - netExtender # vpn sonicwall
   - swayfx # sway wm
     #  - picom-arian8j2-git # fork do picom
+#  - simplescreenrecorder # usado para gravar screen # instalacao simples com problema
 
 packages:
   - base-devel
