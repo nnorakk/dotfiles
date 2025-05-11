@@ -115,6 +115,7 @@ packages:
   - httpie # curl para seres humanos :)
   - dust # du + rust verificar utilizacao disco particao diretorio
   - duf # versao turbinada do df
+  - dysk # versao turbinada do df
   - gdu # versao turbinada do du
   - dog # versao turbinada do dig dns consulta
   - glow # renderiza MarkDown no terminal
