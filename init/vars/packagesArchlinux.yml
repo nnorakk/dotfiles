@@ -33,6 +33,7 @@ aur_packages:
   - timeshift-autosnap # snapshots btfrs
   - netExtender # vpn sonicwall
   - swayfx # sway wm
+  - gemini-cli # gemini IA
     #  - picom-arian8j2-git # fork do picom
 #  - simplescreenrecorder # usado para gravar screen # instalacao simples com problema
 
