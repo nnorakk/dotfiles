@@ -34,6 +34,7 @@ aur_packages:
   - netExtender # vpn sonicwall
   - swayfx # sway wm
   - gemini-cli # gemini IA
+  - krew # busca e instala plugins para kubectl
     #  - picom-arian8j2-git # fork do picom
 #  - simplescreenrecorder # usado para gravar screen # instalacao simples com problema
 

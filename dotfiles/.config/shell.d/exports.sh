@@ -31,3 +31,6 @@ fi
 
 # temas cores do tmux
 export TMUXTHEMES=('redwine' 'gold' 'moon' 'forest' 'violet' 'snow' 'coral' 'sky')
+
+# habilita kubectl plugin krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
