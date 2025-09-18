@@ -39,7 +39,7 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = pulseaudio memory cpu openvpn-isrunning internet-isup powermenu sysmenu
+modules-right = consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup powermenu sysmenu
 
 tray-position = right
 ; tray-position = center
@@ -92,7 +92,7 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = pulseaudio memory cpu openvpn-isrunning powermenu sysmenu
+modules-right = consultaponto pulseaudio memory cpu openvpn-isrunning powermenu sysmenu
 
 tray-position = right
 ; tray-padding = 2
@@ -120,6 +120,15 @@ type = custom/text
 content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.config/polybar/scripts/powermenu
+
+[module/consultaponto]
+type = custom/script
+; font-3 = "FontAwesome:pixelsize=12;1"
+; font-4 = HackNerdFont:pixelsize=10;
+click-left = notify-send -t 2300 Saídas "$(consultaponto.sh 30024388 | sed -n '2,$p')"
+label-active-font = 2
+exec = ~/.config/polybar/consultaponto.sh
+interval = 10
 
 ; https://github.com/Alumniminium/dots/blob/master/.config/polybar/config
 [module/openvpn-isrunning]
