@@ -55,6 +55,30 @@ config.font_size = 16
 -- :: Esquema de Cores ::
 config.color_scheme = 'Atelier Cave Light (base16)'
 
+local colors = {
+    background = '#efecf4',
+    foreground = '7e56c2',
+    active_bg = '#1e66f5',   -- Azul Escuro
+    active_fg = '#1e1e2e',
+    inactive_bg = '#6c7086', -- Azul Claro/Acinzentado
+    inactive_fg = '#1e1e2e',
+}
+config.colors = {
+    tab_bar = {
+        background = colors.background,
+
+        new_tab = {
+            bg_color = colors.background,
+            fg_color = '#cdd6f4',
+        },
+
+        new_tab_hover = {
+            bg_color = '#313244',
+            fg_color = '#ffffff',
+        },
+    },
+}
+
 -- :: Janela e Decoração ::
 config.window_decorations = "RESIZE"
 config.window_padding = {
@@ -72,19 +96,23 @@ config.hide_tab_bar_if_only_one_tab = true
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
     -- Cores utilizadas para a barra de abas customizada
     local colors = {
-        background = '#1e1e2e',
+        background = '#efecf4',
         active_bg = '#1e66f5',   -- Azul Escuro
-        active_fg = '#ffffff',
+        active_fg = '#1e1e2e',
         inactive_bg = '#6c7086', -- Azul Claro/Acinzentado
-        inactive_fg = '#cdd6f4',
+        inactive_fg = '#1e1e2e',
     }
 
     -- Caracteres separadores da Nerd Font (Powerline)
     local left_separator = ''
     local right_separator = ''
 
+
     -- Pega o título do painel ativo e o trunca se for muito longo
     local title = wezterm.truncate_right(tab.active_pane.title, max_width)
+    --
+    -- Número da aba (1-based para ficar mais intuitivo)
+    local tab_index = tostring(tab.tab_index + 1)
 
     if tab.is_active then
         -- Formato para a ABA ATIVA
@@ -94,7 +122,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
             { Text = left_separator },
             { Background = { Color = colors.active_bg } },
             { Foreground = { Color = colors.active_fg } },
-            { Text = ' ' .. title .. ' ' },
+            { Text = ' ' .. tab_index .. ':' .. title .. ' ' },
             { Background = { Color = colors.background } },
             { Foreground = { Color = colors.active_bg } },
             { Text = right_separator },
@@ -107,7 +135,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
             { Text = left_separator },
             { Background = { Color = colors.inactive_bg } },
             { Foreground = { Color = colors.inactive_fg } },
-            { Text = ' ' .. title .. ' ' },
+            { Text = ' ' .. tab_index .. ':' .. title .. ' ' },
             { Background = { Color = colors.background } },
             { Foreground = { Color = colors.inactive_bg } },
             { Text = right_separator },
@@ -156,7 +184,7 @@ config.keys = {
     -- :: Gerenciamento de Abas (Tabs) ::
     { key = "c", mods = "LEADER",     action = action.SpawnTab("CurrentPaneDomain") },
     { key = "p", mods = "LEADER",     action = action.ActivateTabRelative(-1) }, -- Aba anterior
-    { key = "n", mods = "LEADER",     action = action.ActivateTabRelative(1) }, -- Próxima aba
+    { key = "n", mods = "LEADER",     action = action.ActivateTabRelative(1) },  -- Próxima aba
 
     -- :: Modo de Cópia ::
     { key = "[", mods = "LEADER",     action = action.ActivateCopyMode },
@@ -176,4 +204,3 @@ end
 -- :: RETORNO FINAL DA CONFIGURAÇÃO
 -- =============================================================================
 return config
-
