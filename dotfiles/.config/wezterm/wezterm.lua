@@ -1,68 +1,39 @@
--- wezterm.lua configuration
+-- =============================================================================
+--
+--                  WEZTERM CONFIGURATION by @jpaulo
+--
+-- =============================================================================
 
 -- Importa as bibliotecas necessárias do WezTerm
 local wezterm = require("wezterm")
 local mux = wezterm.mux
 local action = wezterm.action
 
--- Inicia novas janelas maximizadas
-wezterm.on("gui-startup", function(cmd)
-    local tab, pane, window = mux.spawn_window(cmd or {})
-    window:gui_window():maximize()
-end)
-
 -- Cria o objeto de configuração principal
 local config = wezterm.config_builder()
 
-------------------------------------------------------------------
--- :: Aparência ::
-------------------------------------------------------------------
+-- =============================================================================
+-- :: FUNÇÕES AUXILIARES (HELPERS)
+-- =============================================================================
 
-config.color_scheme = 'Atelier Cave Light (base16)'
-config.term = "xterm-256color"
-config.font_size = 16
-config.window_decorations = "RESIZE"
-config.window_padding = {
-    top = 10,
-    bottom = 10,
-    left = 10,
-    right = 10,
-}
-
-------------------------------------------------------------------
--- :: Atalhos de Teclado (Keybindings) ::
-------------------------------------------------------------------
-
--- Define a tecla "Leader" (CTRL+a)
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
-
--- Função auxiliar para navegação condicional de painéis (Vim vs WezTerm).
+-- Função para navegação condicional de painéis (Vim vs WezTerm).
 -- Permite usar CTRL + h/j/k/l para navegar entre painéis do WezTerm,
 -- mas repassa as teclas se o Neovim estiver em execução no painel ativo.
 local function split_nav(key)
-    local direction_map = {
-        h = "Left",
-        j = "Down",
-        k = "Up",
-        l = "Right",
-    }
+    local direction_map = { h = "Left", j = "Down", k = "Up", l = "Right" }
     local direction = direction_map[key]
 
     return {
         key = key,
         mods = "CTRL",
         action = wezterm.action_callback(function(win, pane)
-            if not pane then
-                return
-            end
+            if not pane then return end
 
             -- Verifica a variável de usuário definida pelo Neovim (`IS_NVIM`)
             if pane:get_user_vars().IS_NVIM == "true" then
                 -- Se estiver no Neovim, repassa a combinação de teclas
                 wezterm.log_info("Neovim detectado: Enviando CTRL-" .. key .. " para o painel")
-                win:perform_action({
-                    SendKey = { key = key, mods = "CTRL" },
-                }, pane)
+                win:perform_action({ SendKey = { key = key, mods = "CTRL" } }, pane)
             else
                 -- Caso contrário, executa a navegação de painel do WezTerm
                 wezterm.log_info("Fora do Neovim: Ativando painel na direção " .. direction)
@@ -72,31 +43,122 @@ local function split_nav(key)
     }
 end
 
+
+-- =============================================================================
+-- :: APARÊNCIA (APPEARANCE)
+-- =============================================================================
+
+-- :: Fonte e Terminal ::
+config.term = "xterm-256color"
+config.font_size = 16
+
+-- :: Esquema de Cores ::
+config.color_scheme = 'Atelier Cave Light (base16)'
+
+-- :: Janela e Decoração ::
+config.window_decorations = "RESIZE"
+config.window_padding = {
+    top = 10,
+    bottom = 10,
+    left = 10,
+    right = 10,
+}
+
+-- :: Barra de Abas (Tab Bar) ::
+config.use_fancy_tab_bar = false -- Desativa a barra de abas padrão para usar a customizada abaixo
+config.hide_tab_bar_if_only_one_tab = true
+
+-- Evento para formatar o título da aba de forma customizada (Powerline style)
+wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+    -- Cores utilizadas para a barra de abas customizada
+    local colors = {
+        background = '#1e1e2e',
+        active_bg = '#1e66f5',   -- Azul Escuro
+        active_fg = '#ffffff',
+        inactive_bg = '#6c7086', -- Azul Claro/Acinzentado
+        inactive_fg = '#cdd6f4',
+    }
+
+    -- Caracteres separadores da Nerd Font (Powerline)
+    local left_separator = ''
+    local right_separator = ''
+
+    -- Pega o título do painel ativo e o trunca se for muito longo
+    local title = wezterm.truncate_right(tab.active_pane.title, max_width)
+
+    if tab.is_active then
+        -- Formato para a ABA ATIVA
+        return {
+            { Background = { Color = colors.background } },
+            { Foreground = { Color = colors.active_bg } },
+            { Text = left_separator },
+            { Background = { Color = colors.active_bg } },
+            { Foreground = { Color = colors.active_fg } },
+            { Text = ' ' .. title .. ' ' },
+            { Background = { Color = colors.background } },
+            { Foreground = { Color = colors.active_bg } },
+            { Text = right_separator },
+        }
+    else
+        -- Formato para as ABAS INATIVAS
+        return {
+            { Background = { Color = colors.background } },
+            { Foreground = { Color = colors.inactive_bg } },
+            { Text = left_separator },
+            { Background = { Color = colors.inactive_bg } },
+            { Foreground = { Color = colors.inactive_fg } },
+            { Text = ' ' .. title .. ' ' },
+            { Background = { Color = colors.background } },
+            { Foreground = { Color = colors.inactive_bg } },
+            { Text = right_separator },
+        }
+    end
+end)
+
+
+-- =============================================================================
+-- :: COMPORTAMENTO (BEHAVIOR)
+-- =============================================================================
+
+-- Inicia novas janelas já maximizadas
+wezterm.on("gui-startup", function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    window:gui_window():maximize()
+end)
+
+
+-- =============================================================================
+-- :: ATALHOS DE TECLADO (KEYBINDINGS)
+-- =============================================================================
+
+-- Define a tecla "Leader" (CTRL+a)
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
+
 -- Tabela principal com todos os atalhos
 config.keys = {
-    -- Gerenciamento de Painéis (Panes)
+    -- :: Gerenciamento de Painéis (Panes) ::
     { key = "\\", mods = "LEADER", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { key = "-",  mods = "LEADER", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
     { key = "m",  mods = "LEADER", action = action.TogglePaneZoomState },
 
-    -- Navegação Condicional de Painéis (h,j,k,l)
+    -- :: Navegação Condicional de Painéis (h,j,k,l) ::
     split_nav("h"),
     split_nav("j"),
     split_nav("k"),
     split_nav("l"),
 
-    -- Redimensionamento de Painéis
+    -- :: Redimensionamento de Painéis ::
     { key = "h", mods = "CTRL|SHIFT", action = action.AdjustPaneSize({ "Left", 5 }) },
     { key = "l", mods = "CTRL|SHIFT", action = action.AdjustPaneSize({ "Right", 5 }) },
     { key = "j", mods = "CTRL|SHIFT", action = action.AdjustPaneSize({ "Down", 5 }) },
     { key = "k", mods = "CTRL|SHIFT", action = action.AdjustPaneSize({ "Up", 5 }) },
 
-    -- Gerenciamento de Abas (Tabs)
+    -- :: Gerenciamento de Abas (Tabs) ::
     { key = "c", mods = "LEADER",     action = action.SpawnTab("CurrentPaneDomain") },
     { key = "p", mods = "LEADER",     action = action.ActivateTabRelative(-1) }, -- Aba anterior
-    { key = "n", mods = "LEADER",     action = action.ActivateTabRelative(1) },  -- Próxima aba
+    { key = "n", mods = "LEADER",     action = action.ActivateTabRelative(1) }, -- Próxima aba
 
-    -- Modo de Cópia
+    -- :: Modo de Cópia ::
     { key = "[", mods = "LEADER",     action = action.ActivateCopyMode },
 }
 
@@ -109,7 +171,9 @@ for i = 1, 9 do
     })
 end
 
-------------------------------------------------------------------
--- :: Retorno Final ::
-------------------------------------------------------------------
+
+-- =============================================================================
+-- :: RETORNO FINAL DA CONFIGURAÇÃO
+-- =============================================================================
 return config
+
