@@ -92,6 +92,21 @@ config.window_padding = {
 config.use_fancy_tab_bar = false -- Desativa a barra de abas padrão para usar a customizada abaixo
 config.hide_tab_bar_if_only_one_tab = true
 
+-- This function returns the suggested title for a tab.
+-- It prefers the title that was set via `tab:set_title()`
+-- or `wezterm cli set-tab-title`, but falls back to the
+-- title of the active pane in that tab.
+function tab_title(tab_info)
+    local title = tab_info.tab_title
+    -- if the tab title is explicitly set, take that
+    if title and #title > 0 then
+        return title
+    end
+    -- Otherwise, use the title from the active pane
+    -- in that tab
+    return tab_info.active_pane.title
+end
+
 -- Evento para formatar o título da aba de forma customizada (Powerline style)
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
     -- Cores utilizadas para a barra de abas customizada
@@ -107,9 +122,8 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
     local left_separator = ''
     local right_separator = ''
 
-
     -- Pega o título do painel ativo e o trunca se for muito longo
-    local title = wezterm.truncate_right(tab.active_pane.title, max_width)
+    local title = wezterm.truncate_right(tab_title(tab), max_width)
     --
     -- Número da aba (1-based para ficar mais intuitivo)
     local tab_index = tostring(tab.tab_index + 1)
@@ -168,6 +182,22 @@ config.keys = {
     { key = "\\", mods = "LEADER", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { key = "-",  mods = "LEADER", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
     { key = "m",  mods = "LEADER", action = action.TogglePaneZoomState },
+
+    -- Rename current tab; analagous to command in tmux
+    {
+        key = ',',
+        mods = 'LEADER',
+        action = action.PromptInputLine {
+            description = 'Enter new name for tab',
+            action = wezterm.action_callback(
+                function(window, pane, line)
+                    if line then
+                        window:active_tab():set_title(line)
+                    end
+                end
+            ),
+        },
+    },
 
     -- :: Navegação Condicional de Painéis (h,j,k,l) ::
     split_nav("h"),
