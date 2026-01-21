@@ -3,6 +3,7 @@
 --                  WEZTERM CONFIGURATION by @jpaulo
 --
 -- =============================================================================
+-- https://mwop.net/blog/2024-07-04-how-i-use-wezterm.html
 
 -- Importa as bibliotecas necessárias do WezTerm
 local wezterm = require("wezterm")
@@ -90,7 +91,7 @@ config.window_padding = {
 
 -- :: Barra de Abas (Tab Bar) ::
 config.use_fancy_tab_bar = false -- Desativa a barra de abas padrão para usar a customizada abaixo
-config.hide_tab_bar_if_only_one_tab = true
+-- config.hide_tab_bar_if_only_one_tab = true
 
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
@@ -106,6 +107,46 @@ function tab_title(tab_info)
     -- in that tab
     return tab_info.active_pane.title
 end
+
+wezterm.on('update-status', function(window)
+    -- Grab the utf8 character for the "powerline" left facing
+    -- solid arrow.
+    -- local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+    local SOLID_LEFT_ARROW = ''
+    -- local SOLID_LEFT_ARROW = 'a'
+
+    -- Grab the current window's configuration, and from it the
+    -- palette (this is the combination of your chosen colour scheme
+    -- including any overrides).
+    local color_scheme = window:effective_config().resolved_palette
+    -- local bg = color_scheme.background
+    -- local fg = color_scheme.foreground
+    local bg = colors.active_bg
+    local fg = colors.active_fg
+
+
+    window:set_right_status(wezterm.format({
+        -- First, we draw the arrow...
+        { Background = { Color = 'none' } },
+        { Foreground = { Color = bg } },
+        { Text = SOLID_LEFT_ARROW },
+        -- Then we draw our text
+        { Background = { Color = bg } },
+        { Foreground = { Color = fg } },
+        { Text = ' ' .. wezterm.hostname() .. ' ' },
+    }))
+end)
+
+-- wezterm.on('update-right-status', function(window, pane)
+--     local date = wezterm.strftime '%H:%M %Y-%m-%d'
+
+--     -- Make it italic and underlined
+--     window:set_right_status(wezterm.format {
+--         { Attribute = { Underline = 'Single' } },
+--         { Attribute = { Italic = true } },
+--         { Text = date },
+--     })
+-- end)
 
 -- Evento para formatar o título da aba de forma customizada (Powerline style)
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
@@ -197,6 +238,13 @@ config.keys = {
                 end
             ),
         },
+    },
+
+    -- copy mode
+    {
+        key = '[',
+        mods = 'LEADER',
+        action = wezterm.action.ActivateCopyMode,
     },
 
     -- :: Navegação Condicional de Painéis (h,j,k,l) ::
