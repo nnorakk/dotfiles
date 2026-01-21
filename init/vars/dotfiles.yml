@@ -25,7 +25,6 @@ dotfiles_dirs:
   - .config/nvim/plugin/plugins_config
 
 dotfiles:
-  - .alacritty.yml
   - .fzf.bash
   - .fzf.zsh
   - .tmux.conf
@@ -98,6 +97,7 @@ dotfiles:
   - .config/nvim/ftplugin
   - .config/nvim/after
   - .config/conky
+  - .config/alacritty
 
 dotfiles_home:
   - /home/jpaulo/Dropbox/Tre-Pessoal/bin
