@@ -1,0 +1,1 @@
+/home/jpaulo/.config/shell.d/exports.sh
