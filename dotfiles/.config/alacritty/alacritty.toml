@@ -20,17 +20,5 @@ unfocused_hollow = false
 [cursor.style]
 shape = "Underline"
 
-[colors.primary]
-
-[colors.normal]
-black = "#000000"
-red = "#FF5555"
-green = "#50FA7B"
-yellow = "#F1FA8C"
-blue = "#BD93F9"
-magenta = "#FF79C6"
-cyan = "#8BE9FD"
-white = "#BFBFBF"
-
 [general]
-import = ["/home/jpaulo/.config/alacritty/themes/themes/acme.toml"]
+import = ["/home/jpaulo/.config/alacritty/themes/themes/seoul256-light.toml"]
