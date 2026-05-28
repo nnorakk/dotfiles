@@ -164,7 +164,7 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 
 config.keys = {
     -- :: Gerenciamento de Painéis (Splits & Zoom) ::
-    { key = "\", mods = "LEADER", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "\\", mods = "LEADER", action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     { key = "-",  mods = "LEADER", action = action.SplitVertical({ domain = "CurrentPaneDomain" }) },
     { key = "m",  mods = "LEADER", action = action.TogglePaneZoomState },
 
