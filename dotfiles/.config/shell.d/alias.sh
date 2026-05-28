@@ -71,3 +71,6 @@ fi
 
 # colorir saida do comando ip
 alias ip='ip --color=always'
+
+# alias para configurar variavel KUBECONFIG do nkp
+alias nkp-get-kubeconfig='source $HOME/bin/nkp-get-kubeconfig.sh'
