@@ -1,5 +1,9 @@
 #!/usr/bin/sh
 
+export XDG_SESSION_TYPE=x11
+export QT_QPA_PLATFORM=xcb
+unset WAYLAND_DISPLAY
+
 # clean bspwm rules
 bspc rule -r "*"
 
