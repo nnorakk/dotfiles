@@ -140,6 +140,7 @@ pgrep -x dropbox > /dev/null || dropbox &
 pgrep -x conky > /dev/null || conky -d -c ~/.config/conky/conky.conf.4
 if [ ! -z $monitor2 ]; then
     conky -d -c ~/.config/conky/conky.conf.5
+    conky -d -c ~/.config/conky/calendar.conf
 fi
 
 # randomize border color
