@@ -1,0 +1,17 @@
+# Segredos e variáveis de ambiente
+.dotenv
+*.gemini_api_key.sh
+vars/dnsmasq.yml
+*.env
+.env
+
+# Chaves e credenciais
+*.pem
+*.key
+id_rsa*
+*.ovpn
+*.kubeconfig
+
+# Backups locais
+*.bak
+*.bak.*
