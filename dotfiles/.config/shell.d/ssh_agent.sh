@@ -54,7 +54,7 @@ ssh_infra() {
     echo "if"
   else
     local passw=$(pass "$entry" | head -1)
-    sshpass -p "$passw" ssh -o StrictHostKeyChecking=no "$host"
+    SSHPASS="$passw" sshpass -e ssh -o StrictHostKeyChecking=accept-new "$host"
   fi
 }
 
