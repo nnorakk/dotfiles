@@ -44,6 +44,21 @@ vem de `init/vars/dotfiles.yml`. Para aplicar só os links:
 cd ~/.dotfiles/init && ansible-playbook -K deployArch.yml --tags links
 ```
 
+A lista de pacotes fica em `init/vars/packages<SO>.yml`, separada por origem:
+`packages` (repo oficial), `aur_packages` (via yay) e `snap_packages`.
+
+A stack Wayland (`niri`, `sway*`, `dms-shell`) mora em blocos próprios —
+`wayland_packages` e `wayland_aur_packages` — instalados pelas tasks com a tag
+`wayland`. O ambiente principal continua sendo bspwm/X11. Para aplicar só ela:
+
+```bash
+cd ~/.dotfiles/init && ansible-playbook -K deployArch.yml --tags wayland
+```
+
+**Atenção:** tags no Ansible *restringem* a execução, não excluem. Num run
+completo (sem `--tags`) as tasks de Wayland rodam junto com o resto; a tag serve
+para conseguir rodá-las isoladamente. Para pular, use `--skip-tags wayland`.
+
 ## Como editar
 
 - Edite os arquivos **dentro de `dotfiles/`** — como estão symlinkados, a mudança
