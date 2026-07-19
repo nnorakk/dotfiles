@@ -32,11 +32,15 @@ aur_packages:
   - grub-btrfs # snapshots btfrs
   - timeshift-autosnap # snapshots btfrs
   - netExtender # vpn sonicwall
-  - gemini-cli # gemini IA
   - krew # busca e instala plugins para kubectl
   - concalc # calculadora de linha de comando
   - kind # clusters kubernetes locais em docker
   - wezterm-nightly-bin # terminal (versao nightly, a usada em shell.d/wezterm)
+  # agentes de IA de linha de comando
+  - claude-code # claude code, agente da anthropic
+  - pi-coding-agent # agente com troca de modelo em sessao
+  - openai-codex-bin # codex cli da openai
+  - opencode-bin # agente de terminal opencode
     #  - picom-arian8j2-git # fork do picom
 #  - simplescreenrecorder # usado para gravar screen # instalacao simples com problema
 
@@ -222,3 +226,4 @@ wayland_packages:
 
 wayland_aur_packages:
   - swayfx # sway wm com efeitos
+  - dms-shell # DankMaterialShell, shell de desktop baseado em quickshell
