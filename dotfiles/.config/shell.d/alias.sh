@@ -74,3 +74,5 @@ alias ip='ip --color=always'
 
 # alias para configurar variavel KUBECONFIG do nkp
 alias nkp-get-kubeconfig='source $HOME/bin/nkp-get-kubeconfig.sh'
+
+alias wireshark='GTK_THEME=Adwaita:light QT_QPA_PLATFORMTHEME=gtk3 wireshark'  
