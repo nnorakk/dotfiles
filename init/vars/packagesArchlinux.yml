@@ -55,7 +55,7 @@ packages:
   - firefox
   - libreoffice-still # suite escritorio
   - tcpdump
-  - dnsutils # commando host
+  - bind # comandos dig e host (antigo dnsutils)
   - inetutils # comando telnet
   - traceroute # traceroute
   - net-tools # comando arp
@@ -108,7 +108,7 @@ packages:
   - ffmpeg
   - kitty
   - bat
-  - exa # versao turbinada do ls
+  - eza # versao turbinada do ls (sucessor do exa, descontinuado)
   - lsd # versao turbinada do ls
   - bashtop # monitor de sistema
   - bpytop # monitor de sistema

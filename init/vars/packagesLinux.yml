@@ -86,7 +86,7 @@ packages:
   - ffmpeg
   - kitty
   - bat
-  - exa # versao turbinada do ls
+  - eza # versao turbinada do ls (sucessor do exa, descontinuado)
   - lsd # versao turbinada do ls
   # - bashtop # monitor de sistema # nao tem no fedora34
   - ytop # monitor de sistema
