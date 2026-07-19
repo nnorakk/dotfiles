@@ -4,7 +4,7 @@
 # (consultaponto/openvpn); darkstar (trabalho) usa o fallback do config.
 case "$(hostname)" in
   quasar)
-    export PB_BAR_RIGHT="pulseaudio memory cpu internet-isup powermenu sysmenu"
+    export PB_BAR_RIGHT="pulseaudio memory cpu internet-isup mouse-battery powermenu sysmenu"
     export PB_BAR_LEFT="pulseaudio memory cpu powermenu sysmenu"
     ;;
 esac

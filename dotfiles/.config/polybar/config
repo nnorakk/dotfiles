@@ -39,7 +39,7 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = ${env:PB_BAR_RIGHT:consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup powermenu sysmenu}
+modules-right = ${env:PB_BAR_RIGHT:consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup mouse-battery powermenu sysmenu}
 
 tray-position = right
 ; tray-position = center
