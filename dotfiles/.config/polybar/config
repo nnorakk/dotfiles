@@ -39,7 +39,7 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = ${env:PB_BAR_RIGHT:consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup mouse-battery powermenu sysmenu}
+modules-right = ${env:PB_BAR_RIGHT:consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup mouse-battery powermenu}
 
 tray-position = right
 ; tray-position = center
@@ -92,7 +92,7 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = ${env:PB_BAR_LEFT:consultaponto pulseaudio memory cpu openvpn-isrunning powermenu sysmenu}
+modules-right = ${env:PB_BAR_LEFT:consultaponto pulseaudio memory cpu openvpn-isrunning powermenu}
 
 tray-position = right
 ; tray-padding = 2
@@ -315,9 +315,9 @@ expand-right = true
 
 format-spacing = 1
 
-; label-open = 
+label-open = 
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
