@@ -49,11 +49,15 @@ done
 # Tenta chave primeiro; se falhar, usa senha do pass
 ssh_infra() {
   local host="$1"
-  local entry="$host"
   if ssh -o BatchMode=yes -o ConnectTimeout=5 "$host" exit 2>/dev/null; then
-    echo "if"
+    ssh "$host"
   else
-    local passw=$(pass "$entry" | head -1)
+    local passw
+    passw=$(pass "$host" | head -1)
+    if [[ -z "$passw" ]]; then
+      echo "ssh_infra: senha vazia para '$host' (pass falhou?)" >&2
+      return 1
+    fi
     SSHPASS="$passw" sshpass -e ssh -o StrictHostKeyChecking=accept-new "$host"
   fi
 }
