@@ -79,10 +79,19 @@ bspc rule -a "Sxiv" state=floating follow=on
 bspc rule -a "Vpn" desktop='^8' state=monocle follow=off
 bspc rule -a "Kittyfloat" state=floating rectangle=680x770+540+110 follow=on
 
+# sobe um daemon apenas se ainda nao estiver rodando
+# $1 e o nome do processo (usado no pgrep) e tambem o comando; os demais
+# argumentos sao repassados intactos
+run_once() {
+    pgrep -x "$1" > /dev/null && return
+    "$@" &
+}
+
 # inicia sxhkd caso nao esteja rodando
-pgrep -x sxhkd > /dev/null || sxhkd -m 1 &
+run_once sxhkd -m 1
 
 # Inicia polybar caso nao esteja rodando
+# fora do run_once: o processo chama-se polybar mas quem sobe eh o launch.sh
 pgrep -x polybar > /dev/null || ${HOME}/.config/polybar/launch.sh
 
 # Random Wallpaper
@@ -92,45 +101,45 @@ feh --bg-fill --randomize ${HOME}/.config/wallpapers/*
 xsetroot -cursor_name left_ptr
 
 # esconde cursor do mouse
-pgrep -x unclutter > /dev/null || unclutter & 
+run_once unclutter
 
 # Inicia compositor
-pgrep -x picom > /dev/null || picom &
-# pgrep -x picom > /dev/null || ${HOME}/tmp/picom/build/src/picom &
+run_once picom
+# run_once ${HOME}/tmp/picom/build/src/picom
 bspc config top_padding 29
 
 # Inicia Notificacoes
-pgrep -x dunst > /dev/null || dunst &
+run_once dunst
 
 # protege tela depois de 5 minutos
 # metodo prefencial usando xidlehook
 # caso nao esteja instalado tenta xautolock
 if command -v xidlehook &> /dev/null; then
-    pgrep -x xidlehook > /dev/null || xidlehook --not-when-fullscreen --not-when-audio --timer 300 "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" "" --timer 29 'betterlockscreen -l' '' --timer 20 'xset dpms force off' '' &
+    run_once xidlehook --not-when-fullscreen --not-when-audio --timer 300 "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" "" --timer 29 'betterlockscreen -l' '' --timer 20 'xset dpms force off' ''
 elif command -v xautolock &> /dev/null; then
-    pgrep -x xautolock > /dev/null || xautolock -time 4 -corners ---- -cornersize 30 -locker 'betterlockscreen -l' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'" &
+    run_once xautolock -time 4 -corners ---- -cornersize 30 -locker 'betterlockscreen -l' -notify 30 -notifier "notify-send -u critical -t 10000 'Locking screen in 30 seconds'"
 fi
 
 # abre terminal kitty
-pgrep -x kitty > /dev/null || kitty &
+run_once kitty
 
 # Indicador rede
-nm-applet --indicator &
+run_once nm-applet --indicator
 
 # automount disks
-pgrep -x udiskie > /dev/null || udiskie &
+run_once udiskie
 
 # atalhos mouse
-xbindkeys -f ${HOME}/.config/xbindkeys/xbindkeysrc
+run_once xbindkeys -f ${HOME}/.config/xbindkeys/xbindkeysrc
 
 # ajusta cores do monitor automaticamente
-pgrep -x redshift-gtk > /dev/null || redshift-gtk &
+run_once redshift-gtk
 
 # configura wallpapers lockscreen
 betterlockscreen -u  ~/.config/wallpapers/ --blur 0.5 &
 
 # Start Dropbox
-pgrep -x dropbox > /dev/null || dropbox &
+run_once dropbox
 
 # Start conky
 # guarda por arquivo de config: 'pgrep -x conky' nao distingue as instancias,
