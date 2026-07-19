@@ -39,17 +39,9 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = ${env:PB_BAR_RIGHT:consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup mouse-battery powermenu}
+modules-right = ${env:PB_BAR_RIGHT:consultaponto pulseaudio memory cpu openvpn-isrunning internet-isup mouse-battery powermenu tray}
 
-tray-position = right
-; tray-position = center
-; tray-padding = 2
-; tray-padding = 10
-;tray-background = #0063ff
-; tray-offset-x = ${self.radius}
-; tray-offset-x = -20
-; tray-detached = true
-tray-detached = false
+; Tray: ver [module/tray] (as opcoes tray-* da barra sairam no polybar 3.7)
 
 wm-restack = bspwm
 ;override-redirect = true
@@ -92,15 +84,9 @@ font-1 = "Iosevka:pixelsize=12;1"
 
 modules-left = bspwm
 modules-center = date
-modules-right = ${env:PB_BAR_LEFT:consultaponto pulseaudio memory cpu openvpn-isrunning powermenu}
+modules-right = ${env:PB_BAR_LEFT:consultaponto pulseaudio memory cpu openvpn-isrunning powermenu tray}
 
-tray-position = right
-; tray-padding = 2
-; tray-padding = 10
-;tray-background = #0063ff
-; tray-offset-x = ${self.radius}
-; tray-offset-x = -20
-tray-detached = false
+; Tray: ver [module/tray] (as opcoes tray-* da barra sairam no polybar 3.7)
 
 wm-restack = bspwm
 ;override-redirect = true
@@ -120,6 +106,14 @@ type = custom/text
 content = 
 content-foreground = ${colors.secondary}
 click-left = ~/.config/polybar/scripts/powermenu
+
+; Substitui as opcoes tray-* das barras (polybar >= 3.7). A posicao do tray
+; agora e definida pelo lugar do modulo na lista modules-*.
+[module/tray]
+type = internal/tray
+; tray-spacing = 2
+; tray-padding = 2
+; tray-background = #0063ff
 
 [module/consultaponto]
 type = custom/script
