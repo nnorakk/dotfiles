@@ -32,9 +32,11 @@ aur_packages:
   - grub-btrfs # snapshots btfrs
   - timeshift-autosnap # snapshots btfrs
   - netExtender # vpn sonicwall
-  - swayfx # sway wm
   - gemini-cli # gemini IA
   - krew # busca e instala plugins para kubectl
+  - concalc # calculadora de linha de comando
+  - kind # clusters kubernetes locais em docker
+  - wezterm-nightly-bin # terminal (versao nightly, a usada em shell.d/wezterm)
     #  - picom-arian8j2-git # fork do picom
 #  - simplescreenrecorder # usado para gravar screen # instalacao simples com problema
 
@@ -186,10 +188,37 @@ packages:
   - expect # automatiza aplicacoes
   - oath-toolkit # one time password toolkit
   - eog # visualidor de imagens gnome
-  - swaylock # sway wm
-  - swayidle # sway wm
-  - swaybg # sway wm
   - blueberry # bluetooth interface
   - gum # TUI para scripts shell
   - swtpm # possibilita adicionar tpm 2.0 vms windows
   - dbeaver # SQL client
+  - sqlite # cliente cli sqlite3
+  - uv # gerenciador de pacotes/projetos python
+  - gnupg # comandos gpg, usado tambem pelo pass
+  - pass # gerenciador de senhas
+  - yq # jq para yaml
+  - xdg-utils # comando xdg-open
+  - psmisc # comandos killall e pstree
+  - evince # visualizador de pdf gnome
+  - imagemagick # comando convert, manipula imagens
+  - rsync # sincroniza arquivos
+  - sshpass # senha ssh nao interativa, usado pelo ansible
+  - television # fuzzy finder geral (comando tv)
+  - fdupes # localiza arquivos duplicados
+  - pwgen # gerador de senhas
+  - gparted # particionador grafico
+  - lvm2 # comandos lvs, vgs, pvs
+  - chromium # browser
+  - velero # backup e restore de clusters kubernetes
+
+# Stack Wayland, instalada separadamente pela tag "wayland".
+# O ambiente principal continua sendo bspwm/X11 (ver packages acima).
+wayland_packages:
+  - niri # compositor wayland scrollable-tiling
+  - xwayland-satellite # roda aplicacoes X11 sob o niri
+  - swaylock # bloqueio de tela
+  - swayidle # acoes quando idle
+  - swaybg # wallpaper
+
+wayland_aur_packages:
+  - swayfx # sway wm com efeitos

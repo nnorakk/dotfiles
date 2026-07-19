@@ -86,6 +86,20 @@
           "{{ aur_packages }}"
       tags: admin, arch
 
+    - name: Instala pacotes da stack wayland
+      community.general.pacman:
+        name:
+          "{{ wayland_packages }}"
+        state: present
+      become: true
+      tags: wayland
+
+    - name: Instala pacotes aur da stack wayland
+      kewlfft.aur.aur:
+        name:
+          "{{ wayland_aur_packages }}"
+      tags: wayland
+
     - name: Habilita snapd
       ansible.builtin.systemd:
         name: snapd
