@@ -1,5 +1,14 @@
 #!/usr/bin/env sh
 
+# Modulos por host: quasar (casa) nao mostra os modulos de trabalho
+# (consultaponto/openvpn); darkstar (trabalho) usa o fallback do config.
+case "$(hostname)" in
+  quasar)
+    export PB_BAR_RIGHT="pulseaudio memory cpu internet-isup powermenu sysmenu"
+    export PB_BAR_LEFT="pulseaudio memory cpu powermenu sysmenu"
+    ;;
+esac
+
 # Terminate already running bar instances
 killall -q polybar
 
