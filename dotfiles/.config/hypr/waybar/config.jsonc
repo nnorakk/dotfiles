@@ -24,6 +24,7 @@
     "custom/openvpn",
     "custom/internet",
     "custom/mousebattery",
+    "custom/notification",
     "custom/powermenu",
     "tray"
   ],
@@ -136,6 +137,31 @@
     "exec": "~/.config/hypr/waybar/scripts/polybar-shim.sh ~/.config/polybar/battery.sh --show_icon G703 󰍽",
     "interval": 600,
     "tooltip": false
+  },
+
+  // central de notificacoes (swaync) — substitui o "sino" que faltava.
+  // Mostra o estado (sino cheio quando ha notificacao guardada / DND) e o
+  // clique abre a central; clique-direito alterna o nao-perturbe.
+  // -swb = subscribe (json em stream); casa com os binds super+shift/ctrl+N.
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "none": "",
+      "notification": "<span foreground='#d6006e'><sup></sup></span>",
+      "dnd-none": "",
+      "dnd-notification": "<span foreground='#d6006e'><sup></sup></span>",
+      "inhibited-none": "",
+      "inhibited-notification": "<span foreground='#d6006e'><sup></sup></span>",
+      "dnd-inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='#d6006e'><sup></sup></span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
 
   // polybar [module/powermenu] (custom/menu de 3 niveis)

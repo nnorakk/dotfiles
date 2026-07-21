@@ -78,8 +78,14 @@ window#waybar {
 #custom-openvpn,
 #custom-internet,
 #custom-mousebattery,
+#custom-notification,
 #custom-powermenu {
     padding: 0 8px;
+}
+
+/* sino de notificacoes: cor base; o badge vem colorido via <span> no format */
+#custom-notification {
+    color: @foreground;
 }
 
 /* cor base SO p/ os modulos que nao trazem cor propria via <span>.
