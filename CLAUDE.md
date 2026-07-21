@@ -88,8 +88,11 @@ resolvido forçando XWayland (sub-tag `chrome`); o cedilha base continua na role
 Alguns comportamentos apoiam-se em ferramentas dedicadas: screenshot com
 anotação (Print) usa `grimblast` + `satty` (substitui o `flameshot`); o terminal
 dropdown (super+ctrl+Return) usa o **pyprland** (daemon `pypr`, config em
-`~/.config/hypr/pyprland.toml`) para animar a descida e esconder ao perder o
-foco. Os demais scratchpads e o hide-all (super+d) seguem nativos do Hyprland.
+`~/.config/pypr/config.toml` — local canônico do pyprland 3.4+, symlinkado de
+`dotfiles/.config/pypr/`; o antigo `~/.config/hypr/pyprland.toml` era o
+"legacy location" que gerava aviso no login) para animar a descida e esconder
+ao perder o foco. Os demais scratchpads e o hide-all (super+d) seguem nativos
+do Hyprland.
 
 Os widgets "post-it" que no bspwm eram **conky** (X11, `own_window_type=desktop`
 + `below`/`sticky`) não têm equivalente direto no Wayland: o conky não fala

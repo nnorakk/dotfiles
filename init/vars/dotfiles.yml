@@ -99,6 +99,7 @@ dotfiles:
   - .config/conky
   - .config/alacritty
   - .config/eww
+  - .config/pypr
 
 dotfiles_home:
   - /home/jpaulo/Dropbox/Tre-Pessoal/bin
