@@ -15,3 +15,8 @@ id_rsa*
 # Backups locais
 *.bak
 *.bak.*
+
+# Estado por-maquina (nao sincronizar): symlink que escolhe a config do host.
+# O deploy (tag hyprland) recria este link por maquina, a partir de
+# host-<hostname>.conf. Sincronizar o link faria darkstar e quasar brigarem.
+dotfiles/.config/hypr/conf/host.conf

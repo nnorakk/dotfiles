@@ -59,6 +59,32 @@ cd ~/.dotfiles/init && ansible-playbook -K deployArch.yml --tags wayland
 completo (sem `--tags`) as tasks de Wayland rodam junto com o resto; a tag serve
 para conseguir rodá-las isoladamente. Para pular, use `--skip-tags wayland`.
 
+O ambiente **Hyprland** (tradução do bspwm/polybar/sxhkd para Hyprland/waybar) é
+uma stack própria, aditiva ao bspwm/X11, com pacotes em `hyprland_packages` /
+`hyprland_aur_packages` e tasks em `init/tasks/hyprland.yml`, todas com a tag
+`hyprland`. Para aplicar só ela:
+
+```bash
+cd ~/.dotfiles/init && sudo -v && ansible-playbook -K deployArch.yml --tags hyprland
+```
+
+O `sudo -v` (que o `bootstrap.sh` já faz num deploy completo) é **necessário**
+quando a tag instala pacotes AUR: o módulo `kewlfft.aur.aur` roda o `yay` como
+usuário normal e o `sudo pacman -U` interno dele precisa da credencial primada —
+o `-K` do Ansible cobre só as tasks `become`, não o `yay`. Vale para qualquer tag
+com AUR (`hyprland`, `wayland`).
+
+A config vive em `dotfiles/.config/hypr/` e é symlinkada inteira para
+`~/.config/hypr`. Os `binds`/`rules`/`scratchpads` e os scripts são
+compartilhados entre máquinas; o que varia por máquina (monitores, workspaces e
+qual waybar subir) fica em `conf/host-<hostname>.conf`, escolhido pelo symlink
+**`conf/host.conf`** — que é **gitignorado** (estado local) e recriado pelo
+deploy a partir do hostname. Para uma máquina nova, crie o
+`conf/host-<hostname>.conf` (copie de `host-darkstar.conf` p/ 2 monitores ou
+`host-quasar.conf` p/ 1) antes de rodar a tag. O ç no Chrome sob Wayland é
+resolvido forçando XWayland (sub-tag `chrome`); o cedilha base continua na role
+`keyboard`.
+
 ## Como editar
 
 - Edite os arquivos **dentro de `dotfiles/`** — como estão symlinkados, a mudança

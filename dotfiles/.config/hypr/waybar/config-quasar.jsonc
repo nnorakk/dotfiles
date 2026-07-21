@@ -1,0 +1,21 @@
+// =====================================================================
+// Waybar — quasar (casa)
+// Herda TUDO de config.jsonc (darkstar) via include e so redefine
+// modules-right para tirar o "custom/consultaponto" (ponto do trabalho),
+// espelhando o case "$(hostname)" do polybar/launch.sh.
+// A chave definida aqui tem precedencia sobre a do arquivo incluido.
+// =====================================================================
+{
+  "include": ["$HOME/.config/hypr/waybar/config.jsonc"],
+
+  "modules-right": [
+    "wireplumber",
+    "memory",
+    "cpu",
+    "custom/openvpn",
+    "custom/internet",
+    "custom/mousebattery",
+    "custom/powermenu",
+    "tray"
+  ]
+}

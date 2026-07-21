@@ -1,0 +1,124 @@
+    # =====================================================================
+    # Ambiente Hyprland (Wayland) — ADITIVO ao ambiente principal bspwm/X11.
+    # Traducao de bspwm/polybar/sxhkd para Hyprland/waybar.
+    #
+    # Tudo aqui leva a tag "hyprland" para poder rodar isolado:
+    #     cd ~/.dotfiles/init && ansible-playbook -K deployArch.yml --tags hyprland
+    # (tags restringem, nao excluem: num run completo isto roda junto; para
+    #  pular use --skip-tags hyprland.)
+    #
+    # Config (fonte da verdade): dotfiles/.config/hypr -> ~/.config/hypr (symlink).
+    # Por-maquina: conf/host.conf e um symlink escolhido pelo hostname
+    #   host-darkstar.conf = trabalho, 2 monitores
+    #   host-quasar.conf   = casa, 1 monitor
+    # (host.conf e' gitignorado — estado local de cada maquina.)
+    #
+    # Pre-requisito compartilhado com o bspwm: cedilha (GTK/QT_IM_MODULE +
+    # Compose) e' feito pela role keyboard (tag keyboard).
+    # =====================================================================
+
+    - name: Carrega lista de pacotes (necessario ao rodar so --tags hyprland)
+      include_vars: "vars/packages{{ ansible_facts['distribution'] }}.yml"
+      tags: hyprland
+
+    - name: Instala pacotes do Hyprland (repo oficial)
+      community.general.pacman:
+        name:
+          "{{ hyprland_packages }}"
+        state: present
+      become: true
+      tags: hyprland
+
+    - name: Instala pacotes do Hyprland (AUR)
+      kewlfft.aur.aur:
+        name:
+          "{{ hyprland_aur_packages }}"
+      tags: hyprland
+
+    # --- Symlink da config (mesmo mecanismo dos demais dotfiles) ---------
+    - name: Verifica ~/.config/hypr existente
+      ansible.builtin.stat:
+        path: "{{ lookup('env', 'HOME') }}/.config/hypr"
+      register: hypr_cfg
+      tags: hyprland, links
+
+    - name: Backup se ~/.config/hypr for diretorio real (nao symlink)
+      ansible.builtin.command:
+        cmd: "mv {{ lookup('env', 'HOME') }}/.config/hypr {{ lookup('env', 'HOME') }}/.config/hypr.bak-{{ ansible_facts['date_time'].iso8601_basic_short }}"
+      when: hypr_cfg.stat.exists and hypr_cfg.stat.isdir and not hypr_cfg.stat.islnk
+      tags: hyprland, links
+
+    - name: Cria link ~/.config/hypr -> repo (fonte da verdade)
+      ansible.builtin.file:
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/.config/hypr"
+        dest: "{{ lookup('env', 'HOME') }}/.config/hypr"
+        state: link
+        force: true
+      tags: hyprland, links
+
+    # --- Selecao por-maquina: host.conf -> host-<hostname>.conf ----------
+    - name: Confirma que existe a config desta maquina
+      ansible.builtin.stat:
+        path: "{{ lookup('env', 'HOME') }}/.config/hypr/conf/host-{{ ansible_facts['hostname'] }}.conf"
+      register: host_conf
+      tags: hyprland
+
+    - name: Aponta host.conf para a config da maquina (darkstar/quasar/...)
+      ansible.builtin.file:
+        src: "host-{{ ansible_facts['hostname'] }}.conf"
+        dest: "{{ lookup('env', 'HOME') }}/.config/hypr/conf/host.conf"
+        state: link
+        force: true
+      when: host_conf.stat.exists
+      tags: hyprland
+
+    - name: Avisa se falta host-<hostname>.conf para esta maquina
+      ansible.builtin.debug:
+        msg: >-
+          Nao ha conf/host-{{ ansible_facts['hostname'] }}.conf. Crie um (copie de
+          host-darkstar.conf ou host-quasar.conf e ajuste monitores/workspaces)
+          e rode de novo, ou aponte conf/host.conf manualmente.
+      when: not host_conf.stat.exists
+      tags: hyprland
+
+    # --- c cedilha no Chrome sob Wayland ---------------------------------
+    # Chrome nativo-Wayland ignora GTK_IM_MODULE=cedilla; forcar XWayland
+    # (--ozone-platform=x11) faz voltar a usar o cedilha da role keyboard,
+    # igual ao bspwm (X11). Override do usuario, so p/ os Chrome instalados.
+    - name: Garante ~/.local/share/applications
+      ansible.builtin.file:
+        path: "{{ lookup('env', 'HOME') }}/.local/share/applications"
+        state: directory
+      tags: hyprland, chrome
+
+    - name: Localiza os .desktop do Chrome no sistema
+      ansible.builtin.stat:
+        path: "/usr/share/applications/{{ item }}"
+      loop:
+        - google-chrome.desktop
+        - google-chrome-beta.desktop
+      register: chrome_desktops
+      tags: hyprland, chrome
+
+    - name: Cria override do usuario a partir do .desktop do sistema
+      ansible.builtin.copy:
+        src: "{{ item.stat.path }}"
+        dest: "{{ lookup('env', 'HOME') }}/.local/share/applications/{{ item.item }}"
+        remote_src: true
+        force: false
+      loop: "{{ chrome_desktops.results }}"
+      loop_control:
+        label: "{{ item.item }}"
+      when: item.stat.exists
+      tags: hyprland, chrome
+
+    - name: Insere --ozone-platform=x11 no Exec (idempotente)
+      ansible.builtin.replace:
+        path: "{{ lookup('env', 'HOME') }}/.local/share/applications/{{ item.item }}"
+        regexp: '^(Exec=(?!.*--ozone-platform=x11)\S+)'
+        replace: '\1 --ozone-platform=x11'
+      loop: "{{ chrome_desktops.results }}"
+      loop_control:
+        label: "{{ item.item }}"
+      when: item.stat.exists
+      tags: hyprland, chrome

@@ -1,0 +1,5 @@
+-- Loader do experimento Lua (DESATIVADO). Para reativar:
+--   mv guardados/hyprland.lua.off ../hyprland.lua
+-- Os require() internos (init/binds/rules/scratchpads) resolvem em guardados/.
+package.path = os.getenv("HOME") .. "/.config/hypr/guardados/?.lua;" .. package.path
+require("init")

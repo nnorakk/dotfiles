@@ -1,0 +1,115 @@
+/* =====================================================================
+   Waybar — cores e fontes herdadas do seu polybar
+
+   polybar [colors]:
+     background #222      background-alt #444
+     foreground #dfdfdf   foreground-alt #555
+     primary    #ffb52a   secondary      #e60053   alert #bd2c40
+
+   polybar fonts:
+     font-0 = JetBrainsMonoMedium:pixelsize=10
+     font-1 = Iosevka:pixelsize=12
+   ===================================================================== */
+
+@define-color background     #222222;
+@define-color background_alt #444444;
+@define-color foreground     #dfdfdf;
+@define-color foreground_alt #555555;
+@define-color primary        #ffb52a;
+@define-color secondary      #e60053;
+@define-color alert          #bd2c40;
+
+* {
+    /* Iosevka Nerd Font fica na pilha porque e a unica instalada que cobre a
+       faixa Material Design ANTIGA (U+F500-FD46) — era dela que vinham os
+       icones do seu polybar. Os icones daqui ja usam a faixa nova (U+F0001+),
+       coberta pela JetBrains, mas a Iosevka segura qualquer glifo legado. */
+    font-family: "JetBrainsMono Nerd Font", "Iosevka Nerd Font", "JetBrainsMonoMedium", monospace;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: @background;
+    color: @foreground;
+}
+
+/* --- workspaces: espelha label-focused/occupied/urgent/empty do polybar --- */
+#workspaces button {
+    padding: 0 8px;                     /* polybar: label-*-padding = 2 */
+    color: @foreground;
+    background: transparent;
+}
+
+#workspaces button.active {             /* label-focused */
+    background: @background_alt;
+    box-shadow: inset 0 -2px @primary;  /* label-focused-underline */
+}
+
+#workspaces button.urgent {             /* label-urgent */
+    background: @alert;
+    color: #ffffff;
+}
+
+#workspaces button.empty {              /* label-empty */
+    color: @foreground_alt;
+}
+
+#workspaces button:hover {
+    background: @background_alt;
+    box-shadow: inset 0 -2px @secondary;
+}
+
+#window {
+    color: @foreground;
+    padding: 0 8px;
+}
+
+/* --- modulos: module-margin-left = 1 / right = .3 do polybar --- */
+/* padding p/ TODOS os modulos */
+#clock,
+#cpu,
+#memory,
+#wireplumber,
+#tray,
+#custom-consultaponto,
+#custom-openvpn,
+#custom-internet,
+#custom-mousebattery,
+#custom-powermenu {
+    padding: 0 8px;
+}
+
+/* cor base SO p/ os modulos que nao trazem cor propria via <span>.
+   consultaponto/openvpn/internet/mousebattery recebem a cor do proprio
+   script (polybar-shim) e por isso NAO podem levar "color" aqui — senao
+   o CSS ganha do <span> e o icone fica preso em @foreground. */
+#clock,
+#cpu,
+#memory,
+#wireplumber,
+#tray {
+    color: @foreground;
+}
+
+#wireplumber.muted {
+    color: @foreground_alt;
+}
+
+#custom-powermenu {
+    color: @secondary;
+    padding-right: 12px;
+}
+
+/* Os scripts do polybar ja trazem a propria cor via <span color=...>,
+   entao consultaponto/openvpn/internet/mousebattery NAO recebem cor aqui
+   — se receberem, o span perde. */
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

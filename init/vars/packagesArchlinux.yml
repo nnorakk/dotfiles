@@ -227,3 +227,30 @@ wayland_packages:
 wayland_aur_packages:
   - swayfx # sway wm com efeitos
   - dms-shell # DankMaterialShell, shell de desktop baseado em quickshell
+
+# Ambiente Hyprland, instalado separadamente pela tag "hyprland".
+# Aditivo ao ambiente principal (bspwm/X11): traducao do bspwm/polybar/sxhkd
+# para Hyprland/waybar. Config em dotfiles/.config/hypr (ver tasks/hyprland.yml).
+hyprland_packages:
+  - hyprland # compositor wayland tiling
+  - hyprlock # bloqueio de tela (lockscreen)
+  - hypridle # acoes quando idle (substitui xidlehook)
+  - xdg-desktop-portal-hyprland # portais (screenshare, file picker) no hypr
+  - waybar # barra (substitui polybar)
+  - swaync # notificacoes (substitui dunst no wayland)
+  - cliphist # historico de clipboard
+  - wl-clipboard # wl-copy/wl-paste (substitui xsel/xclip)
+  - swaybg # wallpaper (usado por scripts/wallpaper.sh)
+  - polkit-gnome # agente de autenticacao polkit
+  - network-manager-applet # nm-applet (bandeja de rede)
+  - qt5-wayland # apps Qt5 sob wayland
+  - qt6-wayland # apps Qt6 sob wayland
+  - grim # screenshot (backend do grimblast)
+  - slurp # selecao de regiao (backend do grimblast)
+  - brightnessctl # controle de brilho (binds)
+  - playerctl # controle de midia mpris (binds)
+  - libnotify # notify-send (usado por binds/waybar)
+
+hyprland_aur_packages:
+  - wlogout # menu de power (logout/lock/reboot...) da waybar
+  - grimblast-git # wrapper de screenshot (grim+slurp) usado nos binds

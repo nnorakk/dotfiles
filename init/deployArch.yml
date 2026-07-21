@@ -24,6 +24,9 @@
     - name: Dotfiles Tasks
       import_tasks: tasks/dotfiles.yml
 
+    - name: Hyprland Environment
+      import_tasks: tasks/hyprland.yml
+
     - name: Vim Configs
       import_tasks: tasks/vim.yml
 
