@@ -25,9 +25,10 @@
   (literal :content saldo_tree))
 
 ; Janela no FUNDO (:stacking "bg"), sem reservar espaco e sem foco.
-; :monitor 0 = AOC auxiliar (DP-3). ATENCAO: a ordem do GTK/eww difere da do
-; Hyprland — aqui o auxiliar AOC e o indice 0 e o LG principal e o 1 (confira
-; com `eww ...` ou GDK). O eww 0.5.0 so aceita indice inteiro, nao nome/modelo.
+; :monitor aqui e so um FALLBACK: quem escolhe o monitor certo e o launcher
+; scripts/eww-saldo.sh, que abre com `--screen <n>` descoberto em runtime. O
+; indice do GDK/eww NAO e estavel entre logins (apos o GDM a ordem inverte),
+; e o eww 0.5.0 nao casa por nome/modelo — dai o launcher.
 ; So darkstar abre esta janela. Ancorada topo-direita com os gaps do conky.
 (defwindow saldo
   :monitor 0
