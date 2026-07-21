@@ -91,6 +91,18 @@ dropdown (super+ctrl+Return) usa o **pyprland** (daemon `pypr`, config em
 `~/.config/hypr/pyprland.toml`) para animar a descida e esconder ao perder o
 foco. Os demais scratchpads e o hide-all (super+d) seguem nativos do Hyprland.
 
+Os widgets "post-it" que no bspwm eram **conky** (X11, `own_window_type=desktop`
++ `below`/`sticky`) não têm equivalente direto no Wayland: o conky não fala
+`wlr-layer-shell`, então nem via XWayland fica atrás das janelas. O substituto é
+o **eww** (pacote AUR `eww`, config em `~/.config/eww/`), que desenha na layer
+`bg` (fundo, abaixo de tudo, em todos os workspaces). Hoje há um widget, `saldo`
+— porta do `conky.conf.5` (monitor auxiliar do darkstar): `eww.yuck` faz um
+`defpoll` de 300s sobre `scripts/saldo.sh`, que coleta o ponto e passa por
+`scripts/conky2eww.py` — este traduz o markup do conky (`${colorN}`, `${font}`,
+`${alignr}`, `${hr}`, `${voffset}`) numa árvore de widgets eww injetada via
+`(literal)`. A janela sobe só no darkstar (depende do 2º monitor + coletor do
+trabalho), via `exec-once = eww open saldo` no `host-darkstar.conf`.
+
 ## Como editar
 
 - Edite os arquivos **dentro de `dotfiles/`** — como estão symlinkados, a mudança

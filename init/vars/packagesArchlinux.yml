@@ -256,3 +256,4 @@ hyprland_aur_packages:
   - wlogout # menu de power (logout/lock/reboot...) da waybar
   - grimblast-git # wrapper de screenshot (grim+slurp) usado nos binds
   - pyprland # plugin daemon: scratchpad dropdown do terminal (pyprland.toml)
+  - eww # widgets na layer de fundo (substitui os conky "post-it"; ver .config/eww)

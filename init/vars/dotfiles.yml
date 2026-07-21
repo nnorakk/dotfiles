@@ -98,6 +98,7 @@ dotfiles:
   - .config/nvim/after
   - .config/conky
   - .config/alacritty
+  - .config/eww
 
 dotfiles_home:
   - /home/jpaulo/Dropbox/Tre-Pessoal/bin

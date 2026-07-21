@@ -1,0 +1,41 @@
+; =====================================================================
+; eww — widgets de fundo do Hyprland (equivalente aos conky "post-it")
+;
+; Porque eww e nao conky: o conky e X11-puro e nao fala wlr-layer-shell,
+; entao no Wayland nao consegue ficar ATRAS das janelas. O eww desenha na
+; layer "bg" (fundo), abaixo de tudo e em todos os workspaces — que e o
+; efeito que os conky tinham via own_window_type=desktop + below/sticky.
+;
+; Por ora ha um widget: "saldo" — porta do conky.conf.5 (monitor secundario,
+; darkstar). Ele roda scripts/saldo.sh a cada 5 min; o script coleta o ponto
+; e traduz o markup conky para uma arvore de widgets (scripts/conky2eww.py),
+; injetada via (literal).
+;
+; Subir (so darkstar, monitor DP-3):  eww open saldo   (ver host-darkstar.conf)
+; =====================================================================
+
+; Arvore de widgets (string) gerada pelo coletor; recarrega a cada 300s
+; como o ${execpi 300} do conky. :initial evita janela vazia no primeiro tick.
+(defpoll saldo_tree
+  :interval "300s"
+  :initial "(label :class \"saldo\" :text \"carregando...\")"
+  `$HOME/.config/eww/scripts/saldo.sh`)
+
+(defwidget saldo []
+  (literal :content saldo_tree))
+
+; Janela no FUNDO (:stacking "bg"), sem reservar espaco e sem foco.
+; :monitor 0 = AOC auxiliar (DP-3). ATENCAO: a ordem do GTK/eww difere da do
+; Hyprland — aqui o auxiliar AOC e o indice 0 e o LG principal e o 1 (confira
+; com `eww ...` ou GDK). O eww 0.5.0 so aceita indice inteiro, nao nome/modelo.
+; So darkstar abre esta janela. Ancorada topo-direita com os gaps do conky.
+(defwindow saldo
+  :monitor 0
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  :geometry (geometry :x "30px"
+                      :y "65px"
+                      :anchor "top right"
+                      :width "440px")
+  (saldo))
