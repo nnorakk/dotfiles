@@ -247,6 +247,7 @@ hyprland_packages:
   - qt6-wayland # apps Qt6 sob wayland
   - grim # screenshot (backend do grimblast)
   - slurp # selecao de regiao (backend do grimblast)
+  - satty # editor de anotacao de screenshot (substitui o flameshot gui)
   - brightnessctl # controle de brilho (binds)
   - playerctl # controle de midia mpris (binds)
   - libnotify # notify-send (usado por binds/waybar)
