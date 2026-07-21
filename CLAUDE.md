@@ -85,6 +85,12 @@ deploy a partir do hostname. Para uma máquina nova, crie o
 resolvido forçando XWayland (sub-tag `chrome`); o cedilha base continua na role
 `keyboard`.
 
+Alguns comportamentos apoiam-se em ferramentas dedicadas: screenshot com
+anotação (Print) usa `grimblast` + `satty` (substitui o `flameshot`); o terminal
+dropdown (super+ctrl+Return) usa o **pyprland** (daemon `pypr`, config em
+`~/.config/hypr/pyprland.toml`) para animar a descida e esconder ao perder o
+foco. Os demais scratchpads e o hide-all (super+d) seguem nativos do Hyprland.
+
 ## Como editar
 
 - Edite os arquivos **dentro de `dotfiles/`** — como estão symlinkados, a mudança

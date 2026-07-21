@@ -255,3 +255,4 @@ hyprland_packages:
 hyprland_aur_packages:
   - wlogout # menu de power (logout/lock/reboot...) da waybar
   - grimblast-git # wrapper de screenshot (grim+slurp) usado nos binds
+  - pyprland # plugin daemon: scratchpad dropdown do terminal (pyprland.toml)
