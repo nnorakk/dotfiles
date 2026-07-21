@@ -8,7 +8,7 @@
 
   tasks:
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
-      include_vars: "vars/packages{{ ansible_system }}.yml"
+      include_vars: "vars/packages{{ ansible_facts['system'] }}.yml"
       tags: packages
 
     - name: Macos Tasks

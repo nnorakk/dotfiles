@@ -12,7 +12,7 @@
   args:
     chdir: "{{ workspace }}/{{ item[0].app_name }}"
   environment:
-    PATH: "{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_facts['env'].PATH }}"
   with_subelements:
     - "{{ apps }}"
     - targets

@@ -39,7 +39,7 @@
 
     - name: ranger configuracao preview iterm2
       file:
-        src: $HOME/.dotfiles/dotfiles/.config/ranger/rc.conf.{{ ansible_system }}
+        src: $HOME/.dotfiles/dotfiles/.config/ranger/rc.conf.{{ ansible_facts['system'] }}
         dest: $HOME/.config/ranger/rc.conf
         state: link
         force: true

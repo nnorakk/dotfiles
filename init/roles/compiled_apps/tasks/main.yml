@@ -9,7 +9,7 @@
     state: directory
 
 - name: Inclui variaveis para distribuicao especifica
-  include_vars: "{{ ansible_distribution }}.yml"
+  include_vars: "{{ ansible_facts['distribution'] }}.yml"
 
 - name: Git Clone App
   git:
@@ -19,4 +19,4 @@
     - "{{ apps }}"
 
 - name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
-  include_tasks: "task_{{ ansible_distribution }}.yml"
+  include_tasks: "task_{{ ansible_facts['distribution'] }}.yml"

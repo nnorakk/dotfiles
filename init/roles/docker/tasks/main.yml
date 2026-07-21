@@ -1,10 +1,10 @@
 ---
 
 - name: Inclui variaveis para distribuicao especifica
-  include_vars: "{{ ansible_distribution }}.yml"
+  include_vars: "{{ ansible_facts['distribution'] }}.yml"
 
 - name: Inclui tarefa de instalacao de pacotes para distribuicao especifica
-  include_tasks: "task_{{ ansible_distribution }}.yml"
+  include_tasks: "task_{{ ansible_facts['distribution'] }}.yml"
 
 - name: Adiciona usuario ao grupo docker
   user:

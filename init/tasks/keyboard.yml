@@ -19,7 +19,7 @@
         state: present
         disable_gpg_check: yes
       become: true
-      when: ansible_os_family == "Fedora"
+      when: ansible_facts['os_family'] == "Fedora"
       tags: keyboard
 
     - name: Muda cedilha minusculo arquivo Compose
@@ -60,7 +60,7 @@
       command: imsettings-switch im-cedilla
       become: true
       changed_when: false
-      when: ansible_os_family == "Fedora"
+      when: ansible_facts['os_family'] == "Fedora"
       tags: keyboard
 
     - name: Cria diretorio

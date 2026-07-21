@@ -1,5 +1,5 @@
     - name: inclui lista de pacotes de acordo com o SO obtido pelo ansible
-      include_vars: "vars/packages{{ ansible_distribution }}.yml"
+      include_vars: "vars/packages{{ ansible_facts['distribution'] }}.yml"
       tags: admin, pkgs
 
     - name: Colore saida pacman

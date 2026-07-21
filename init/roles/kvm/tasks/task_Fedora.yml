@@ -17,7 +17,7 @@
 
 # get default connection
 - name: Get default NetworkManager connection ethernet
-  shell: "nmcli | grep '{{ ansible_default_ipv4['interface'] }}:' | sed 's/.*connected to //'"
+  shell: "nmcli | grep '{{ ansible_facts['default_ipv4']['interface'] }}:' | sed 's/.*connected to //'"
   changed_when: false
   register: default_connection
 
@@ -31,9 +31,9 @@
     - "nmcli connection modify {{ conn_name }} ipv4.dns {{ dns1 }}"
     - "nmcli connection modify {{ conn_name }} +ipv4.dns {{ dns2 }}"
     - "nmcli connection del '{{ default_connection.stdout }}'"
-    - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_default_ipv4['interface'] }} ifname {{ ansible_default_ipv4['interface'] }} master {{ bridge_name }}"
+    - "nmcli connection add type bridge-slave autoconnect yes con-name {{ ansible_facts['default_ipv4']['interface'] }} ifname {{ ansible_facts['default_ipv4']['interface'] }} master {{ bridge_name }}"
   when: >
-    ( ansible_default_ipv4['alias'] !=  bridge_name ) and
+    ( ansible_facts['default_ipv4']['alias'] !=  bridge_name ) and
     ( "'Hypervisor detected' not in is_vm.stdout" ) and
     conn_name is defined and
     bridge_name is defined and
