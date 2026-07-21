@@ -1,6 +1,6 @@
 #!/bin/sh
 
-output=$(ping -q -c 2 10.16.1.1 2> /dev/null)
+output=$(ping -q -c 2 -w 2 10.16.1.1 2> /dev/null)
 rc=$?
 if [[ $rc -eq 0 ]]; then
     # processo openvpn ativo e vpn acessivel
