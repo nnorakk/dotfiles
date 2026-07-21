@@ -56,6 +56,22 @@
         force: true
       tags: hyprland, links
 
+    # --- Config do pyprland (terminal dropdown super+ctrl+Return) ---------
+    # O pacote pyprland vem em hyprland_aur_packages, mas o link da config e'
+    # criado pela task generica de links (tag "links"). Sem isto, um deploy so
+    # com --tags hyprland instala o pyprland e deixa o "pypr" quebrado
+    # ("Config file not found ~/.config/pypr/config.toml"). Recriado aqui com
+    # a tag hyprland p/ a tag ficar auto-suficiente. Local canonico do
+    # pyprland 3.4+: ~/.config/pypr/config.toml (o antigo ~/.config/hypr/
+    # pyprland.toml era "legacy" e gerava aviso no login).
+    - name: Cria link ~/.config/pypr -> repo
+      ansible.builtin.file:
+        src: "{{ lookup('env', 'HOME') }}/.dotfiles/dotfiles/.config/pypr"
+        dest: "{{ lookup('env', 'HOME') }}/.config/pypr"
+        state: link
+        force: true
+      tags: hyprland, links
+
     # --- Selecao por-maquina: host.conf -> host-<hostname>.conf ----------
     - name: Confirma que existe a config desta maquina
       ansible.builtin.stat:
