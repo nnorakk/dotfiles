@@ -1,18 +1,15 @@
 #!/bin/sh
-# Randomiza a cor da borda da janela em foco (col.active_border).
-# Porta do bspwm/randomize_focused_border_color.sh: la era cron +
-# `bspc config focused_border_color`; aqui e `hyprctl keyword`.
-#
-# No Wayland cron nao serve (hyprctl precisa do HYPRLAND_INSTANCE_SIGNATURE
-# e XDG_RUNTIME_DIR da sessao), entao o modo --loop roda dentro da sessao,
-# lancado por exec-once no hyprland.conf.
+# Randomiza a cor da borda da janela em foco (col.active_border) via
+# `hyprctl keyword`. O modo --loop roda dentro da sessao (lancado por
+# exec-once no hyprland.conf), pois hyprctl precisa do
+# HYPRLAND_INSTANCE_SIGNATURE e XDG_RUNTIME_DIR da sessao.
 #
 # Uso:
 #   randomize-border.sh            # aplica UMA cor aleatoria e sai
 #   randomize-border.sh --loop     # troca a cada 60s (default)
 #   randomize-border.sh --loop 300 # troca a cada 300s
 
-# Mesma paleta do bspwm (sem o '#'); alpha 'ee' p/ casar com o estilo atual.
+# Paleta de cores (sem o '#'); alpha 'ee' p/ casar com o estilo atual.
 colors="00ded1 00ffff 406ea5 7fff00 7fffd4 8b008b d6006e daa520 ff00ff ffd700"
 
 set_random() {

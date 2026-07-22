@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Converte o markup conky (stdin) numa arvore de widgets eww (stdout).
+"""Converte markup em formato conky (stdin) numa arvore de widgets eww (stdout).
 
-Portado do conky.conf.5 (monitor secundario, darkstar): o script
-analisa_saldo_semanal.sh emite texto com tokens do conky (${colorN}, ${color},
-${font ...}, ${font}, ${voffset N}, ${hr}, ${alignr}). O eww nao entende esse
-markup, entao aqui traduzimos:
+O coletor analisa_saldo_semanal.sh emite texto com tokens de conky (${colorN},
+${color}, ${font ...}, ${font}, ${voffset N}, ${hr}, ${alignr}). O eww nao
+entende esse markup, entao aqui traduzimos:
 
   - ${colorN}/${color}/${font ...}/${font}  -> spans Pango (label :markup)
   - ${alignr}   -> quebra a linha em coluna esquerda e direita (spacer hexpand)
@@ -20,7 +19,7 @@ import html
 import re
 import sys
 
-# Paleta final do conky.conf.5 (chaves duplicadas no Lua: vale a ultima).
+# Paleta de cores (indices 1-9 usados nos tokens ${colorN} da entrada).
 COLORS = {
     "1": "#FF0000",
     "2": "#00FF00",
@@ -32,7 +31,7 @@ COLORS = {
     "8": "#FFA500",
     "9": "#adc178",
 }
-DEFAULT_COLOR = "#D9FFE2"          # conky default_color
+DEFAULT_COLOR = "#D9FFE2"          # cor padrao do texto
 
 TOKEN = re.compile(r"\$\{([^}]*)\}")
 

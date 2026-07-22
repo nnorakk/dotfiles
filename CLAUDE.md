@@ -59,10 +59,9 @@ cd ~/.dotfiles/init && ansible-playbook -K deployArch.yml --tags wayland
 completo (sem `--tags`) as tasks de Wayland rodam junto com o resto; a tag serve
 para conseguir rodá-las isoladamente. Para pular, use `--skip-tags wayland`.
 
-O ambiente **Hyprland** (tradução do bspwm/polybar/sxhkd para Hyprland/waybar) é
-uma stack própria, aditiva ao bspwm/X11, com pacotes em `hyprland_packages` /
-`hyprland_aur_packages` e tasks em `init/tasks/hyprland.yml`, todas com a tag
-`hyprland`. Para aplicar só ela:
+O ambiente **Hyprland** (Wayland) é uma stack própria, aditiva ao ambiente
+X11, com pacotes em `hyprland_packages` / `hyprland_aur_packages` e tasks em
+`init/tasks/hyprland.yml`, todas com a tag `hyprland`. Para aplicar só ela:
 
 ```bash
 cd ~/.dotfiles/init && sudo -v && ansible-playbook -K deployArch.yml --tags hyprland
@@ -86,25 +85,21 @@ resolvido forçando XWayland (sub-tag `chrome`); o cedilha base continua na role
 `keyboard`.
 
 Alguns comportamentos apoiam-se em ferramentas dedicadas: screenshot com
-anotação (Print) usa `grimblast` + `satty` (substitui o `flameshot`); o terminal
-dropdown (super+ctrl+Return) usa o **pyprland** (daemon `pypr`, config em
-`~/.config/pypr/config.toml` — local canônico do pyprland 3.4+, symlinkado de
-`dotfiles/.config/pypr/`; o antigo `~/.config/hypr/pyprland.toml` era o
-"legacy location" que gerava aviso no login) para animar a descida e esconder
-ao perder o foco. Os demais scratchpads e o hide-all (super+d) seguem nativos
-do Hyprland.
+anotação (Print) usa `grimblast` + `satty`; o terminal dropdown
+(super+ctrl+Return) usa o **pyprland** (daemon `pypr`, config em
+`~/.config/pypr/config.toml`, symlinkado de `dotfiles/.config/pypr/`) para
+animar a descida e esconder ao perder o foco. Os demais scratchpads e o
+hide-all (super+d) seguem nativos do Hyprland.
 
-Os widgets "post-it" que no bspwm eram **conky** (X11, `own_window_type=desktop`
-+ `below`/`sticky`) não têm equivalente direto no Wayland: o conky não fala
-`wlr-layer-shell`, então nem via XWayland fica atrás das janelas. O substituto é
-o **eww** (pacote AUR `eww`, config em `~/.config/eww/`), que desenha na layer
-`bg` (fundo, abaixo de tudo, em todos os workspaces). Hoje há um widget, `saldo`
-— porta do `conky.conf.5` (monitor auxiliar do darkstar): `eww.yuck` faz um
-`defpoll` de 300s sobre `scripts/saldo.sh`, que coleta o ponto e passa por
-`scripts/conky2eww.py` — este traduz o markup do conky (`${colorN}`, `${font}`,
-`${alignr}`, `${hr}`, `${voffset}`) numa árvore de widgets eww injetada via
-`(literal)`. A janela sobe só no darkstar (depende do 2º monitor + coletor do
-trabalho), via `exec-once = eww open saldo` no `host-darkstar.conf`.
+Os widgets de fundo ("post-it") usam o **eww** (pacote AUR `eww`, config em
+`~/.config/eww/`), que desenha na layer `bg` (fundo, abaixo de tudo, em todos
+os workspaces). Hoje há um widget, `saldo` (monitor auxiliar do darkstar):
+`eww.yuck` faz um `defpoll` de 300s sobre `scripts/saldo.sh`, que coleta o
+ponto e passa por `scripts/conky2eww.py` — este traduz o markup em formato
+conky (`${colorN}`, `${font}`, `${alignr}`, `${hr}`, `${voffset}`) numa árvore
+de widgets eww injetada via `(literal)`. A janela sobe só no darkstar (depende
+do 2º monitor + coletor do trabalho), via `exec-once = eww open saldo` no
+`host-darkstar.conf`.
 
 ## Como editar
 

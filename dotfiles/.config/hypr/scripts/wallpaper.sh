@@ -1,6 +1,5 @@
 #!/bin/sh
-# Wallpaper aleatorio — equivale a:
-#   feh --bg-fill --randomize ${HOME}/.config/wallpapers/*
+# Wallpaper aleatorio de ~/.config/wallpapers.
 # swaybg nao aceita diretorio, entao sorteamos o arquivo aqui.
 
 DIR="$HOME/.config/wallpapers"

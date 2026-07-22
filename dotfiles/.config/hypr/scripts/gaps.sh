@@ -1,11 +1,9 @@
 #!/bin/sh
-# Gaps dinamicos em runtime — equivale a:
-#   bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) +- 5))"
-# Uso: gaps.sh +5  |  gaps.sh -5
+# Gaps dinamicos em runtime.  Uso: gaps.sh +5  |  gaps.sh -5
 # Guarda o valor num arquivo de estado porque "hyprctl getoption general:gaps_in"
 # devolve uma estrutura de 4 lados, chata de reparsear a cada chamada.
 
-STATE="${XDG_RUNTIME_DIR:-/tmp}/hypr-jp-gaps"
+STATE="${XDG_RUNTIME_DIR:-/tmp}/hypr-gaps"
 [ -f "$STATE" ] || echo 2 > "$STATE"
 
 cur=$(cat "$STATE")

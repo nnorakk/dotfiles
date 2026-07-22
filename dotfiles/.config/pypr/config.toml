@@ -1,11 +1,11 @@
 # =====================================================================
 # pyprland (pypr) — plugin daemon do Hyprland.
-# Lido de ~/.config/hypr/pyprland.toml. Daemon sobe no autostart (exec-once=pypr).
+# Lido de ~/.config/pypr/config.toml. Daemon sobe no autostart (exec-once=pypr).
 #
 # Aqui so o "term" (terminal dropdown estilo quake): o special workspace
 # nativo nao anima a descida nem esconde ao perder foco — o pyprland faz os dois.
 # O tmux-scratch e a gaveta super+d (hide-all / special:hidden) seguem
-# NATIVOS e intocados (ver conf/scratchpads.conf e scripts/hide-all.sh).
+# nativos do Hyprland (ver conf/scratchpads.conf e scripts/hide-all.sh).
 # =====================================================================
 
 [pyprland]
@@ -14,7 +14,7 @@ plugins = ["scratchpads"]
 [scratchpads.term]
 command = "kitty --class Scratchterm"
 class = "Scratchterm"       # pyprland casa a janela por esta classe
-size = "90% 60%"            # ~ igual ao windowrule antigo
+size = "90% 60%"            # largura x altura da janela dropdown
 animation = "fromTop"       # desce do topo
 unfocus = "hide"            # some ao clicar fora
 lazy = true                 # so sobe o kitty na 1a vez que abrir

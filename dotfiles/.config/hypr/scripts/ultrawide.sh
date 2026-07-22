@@ -1,10 +1,9 @@
 #!/bin/sh
-# Reduz a area util em telas ultrawide — equivale ao seu super+n:
-#   bspc config left_monocle_padding 760 / right_monocle_padding 760
-# No Hyprland nao ha "monocle padding"; o equivalente e inflar gaps_out
-# lateralmente, o que produz o mesmo efeito de coluna central estreita.
+# Reduz a area util em telas ultrawide, inflando gaps_out lateralmente
+# (760px de cada lado), o que produz uma coluna central estreita.
+# Segunda invocacao restaura os gaps normais.
 
-STATE="${XDG_RUNTIME_DIR:-/tmp}/hypr-jp-ultrawide"
+STATE="${XDG_RUNTIME_DIR:-/tmp}/hypr-ultrawide"
 PAD=760
 
 if [ -f "$STATE" ]; then

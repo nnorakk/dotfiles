@@ -1,21 +1,16 @@
 ; =====================================================================
-; eww — widgets de fundo do Hyprland (equivalente aos conky "post-it")
+; eww — widgets de fundo do Hyprland
 ;
-; Porque eww e nao conky: o conky e X11-puro e nao fala wlr-layer-shell,
-; entao no Wayland nao consegue ficar ATRAS das janelas. O eww desenha na
-; layer "bg" (fundo), abaixo de tudo e em todos os workspaces — que e o
-; efeito que os conky tinham via own_window_type=desktop + below/sticky.
-;
-; Por ora ha um widget: "saldo" — porta do conky.conf.5 (monitor secundario,
-; darkstar). Ele roda scripts/saldo.sh a cada 5 min; o script coleta o ponto
-; e traduz o markup conky para uma arvore de widgets (scripts/conky2eww.py),
-; injetada via (literal).
+; O eww desenha na layer "bg" (fundo), abaixo de tudo e em todos os
+; workspaces. Ha um widget: "saldo" — roda scripts/saldo.sh a cada 5 min;
+; o script coleta o dado e traduz o markup para uma arvore de widgets
+; (scripts/conky2eww.py), injetada via (literal).
 ;
 ; Subir (so darkstar, monitor DP-3):  eww open saldo   (ver host-darkstar.conf)
 ; =====================================================================
 
-; Arvore de widgets (string) gerada pelo coletor; recarrega a cada 300s
-; como o ${execpi 300} do conky. :initial evita janela vazia no primeiro tick.
+; Arvore de widgets (string) gerada pelo coletor; recarrega a cada 300s.
+; :initial evita janela vazia no primeiro tick.
 (defpoll saldo_tree
   :interval "300s"
   :initial "(label :class \"saldo\" :text \"carregando...\")"
@@ -29,7 +24,7 @@
 ; scripts/eww-saldo.sh, que abre com `--screen <n>` descoberto em runtime. O
 ; indice do GDK/eww NAO e estavel entre logins (apos o GDM a ordem inverte),
 ; e o eww 0.5.0 nao casa por nome/modelo — dai o launcher.
-; So darkstar abre esta janela. Ancorada topo-direita com os gaps do conky.
+; So darkstar abre esta janela. Ancorada topo-direita.
 (defwindow saldo
   :monitor 0
   :stacking "bg"

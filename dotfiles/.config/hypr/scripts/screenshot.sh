@@ -1,12 +1,11 @@
 #!/bin/sh
-# Flameshot-like no Wayland: capturar -> ANOTAR -> escolher copiar ou salvar.
+# Screenshot com anotacao: capturar -> ANOTAR -> escolher copiar ou salvar.
 #
 #   grimblast  faz a captura (area/tela) e trata o cancelamento do slurp;
 #   satty      abre o editor de anotacao (setas, texto, retangulo, blur,
 #              numeros) com botoes de "copiar" (wl-copy) e "salvar".
 #
 # Uso: screenshot.sh [area|screen|active]   (default: area)
-# Substitui o "flameshot gui" do bspwm/X11.
 set -e
 
 mode="${1:-area}"

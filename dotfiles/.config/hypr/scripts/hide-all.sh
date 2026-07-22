@@ -1,7 +1,6 @@
 #!/bin/sh
-# Oculta TODAS as janelas do workspace atual — equivale a:
-#   bspc query -N -n .local.window | xargs -I ID bspc node ID -g hidden
-# Segunda invocacao traz tudo de volta (o bspwm nao fazia isso; aqui e de graca).
+# Oculta TODAS as janelas do workspace atual (manda para a gaveta "hidden").
+# Segunda invocacao traz tudo de volta.
 
 ws=$(hyprctl activeworkspace -j | jq -r '.id')
 

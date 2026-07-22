@@ -1,19 +1,15 @@
 // =====================================================================
-// Waybar — traducao do ~/.dotfiles/dotfiles/.config/polybar/config
+// Waybar
 //
-// Testar sem mexer na barra da ML4W:
-//     waybar -c ~/.config/hypr/waybar/config.jsonc -s ~/.config/hypr/waybar/style.css
-//
-// Seus 5 scripts do polybar rodam SEM ALTERACAO, via scripts/polybar-shim.sh,
-// que converte %{F#rrggbb} em markup Pango.
+// Alguns modulos rodam scripts em formato polybar (saida com %{F#rrggbb}),
+// via scripts/polybar-shim.sh, que converte esse formato em markup Pango.
 // =====================================================================
 {
   "layer": "top",
   "position": "top",
-  "height": 30,                       // polybar: height = 30
+  "height": 30,
   "spacing": 4,
 
-  // polybar bar/right: modules-left/center/right
   "modules-left":   ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
   "modules-right": [
@@ -29,34 +25,23 @@
     "tray"
   ],
 
-  // ------------------------------------------------------------------
-  // polybar [module/bspwm]  ->  hyprland/workspaces
-  // ------------------------------------------------------------------
-  // Sem persistent-workspaces aqui: o Hyprland ja persiste 1-8 no monitor
-  // principal e 9-10 no auxiliar (workspace_rule em hypr-jp/init.lua). O
-  // "[]" (todos os outputs) era o que empurrava 1-8 para o monitor auxiliar.
-  // NB: nesta waybar (0.15) hyprland/workspaces NAO tem "on-click"; o clique
-  // e nativo e usa o dispatcher legado "workspace", que a config Lua rejeita.
+  // Sem persistent-workspaces aqui: o Hyprland ja persiste os workspaces
+  // por monitor (ver conf/host.conf).
   "hyprland/workspaces": {
     "format": "{name}",
     "sort-by": "number"
   },
 
-  // polybar [module/xwindow]
   "hyprland/window": {
     "format": "{title}",
     "max-length": 30,
     "separate-outputs": true
   },
 
-  // ------------------------------------------------------------------
-  // polybar [module/date] + popup-calendar.sh
-  // O yad/xdotool do popup-calendar e X11-puro; o calendario nativo do
-  // waybar (tooltip) substitui com vantagem.
-  // ------------------------------------------------------------------
+  // Relogio com calendario nativo no tooltip.
   "clock": {
-    "format": "\uF073 {:%d %b %H:%M}",
-    "format-alt": "\uF073 {:%a %b %d, %Y  %H:%M}",
+    "format": " {:%d %b %H:%M}",
+    "format-alt": " {:%a %b %d, %Y  %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
@@ -71,19 +56,16 @@
     "actions": { "on-scroll-up": "shift_up", "on-scroll-down": "shift_down" }
   },
 
-  // polybar [module/cpu]: format-prefix " ", label %percentage:2%%
   "cpu": {
-    "format": "\uE234 {usage}%",
+    "format": " {usage}%",
     "interval": 2
   },
 
-  // polybar [module/memory]: label = %gb_used%/%gb_free%
   "memory": {
-    "format": "\uF0C2 {used:0.1f}G/{avail:0.1f}G",
+    "format": " {used:0.1f}G/{avail:0.1f}G",
     "interval": 2
   },
 
-  // polybar [module/pulseaudio] — aqui via pipewire (voce ja usa wpctl)
   "wireplumber": {
     "format": "{icon} {volume:3}%",
     "format-muted": "󰖁 Muted",
@@ -98,13 +80,10 @@
   },
 
   // ------------------------------------------------------------------
-  // SEUS SCRIPTS — rodam sem alteracao, via shim
+  // Scripts via polybar-shim.sh
   // ------------------------------------------------------------------
 
-  // polybar: exec = ~/.config/polybar/consultaponto.sh ; interval = 10
-  // ATENCAO: o polybar apontava para ~/.config/polybar/consultaponto.sh,
-  // que NAO EXISTE. O script real esta em ~/bin/ e exige a matricula.
-  // Corrigido aqui. Retorna vazio fora da VPN.
+  // Consulta de ponto — exige a matricula; retorna vazio fora da VPN.
   "custom/consultaponto": {
     "exec": "~/.config/hypr/waybar/scripts/polybar-shim.sh ~/bin/consultaponto.sh 30024388",
     "interval": 60,
@@ -113,7 +92,6 @@
     "tooltip": false
   },
 
-  // polybar [module/openvpn-isrunning]
   "custom/openvpn": {
     "exec": "~/.config/hypr/waybar/scripts/polybar-shim.sh ~/.config/polybar/openvpn-isrunning.sh",
     "interval": 10,
@@ -122,39 +100,35 @@
     "tooltip": false
   },
 
-  // polybar [module/internet-isup]
   "custom/internet": {
     "exec": "~/.config/hypr/waybar/scripts/polybar-shim.sh ~/.config/polybar/internet-isup.sh",
     "interval": 10,
     "tooltip": false
   },
 
-  // polybar [module/mouse-battery] — Logitech G703 (detectado no upower)
-  // exec-if do polybar -> "exec-if" nao existe no waybar; o proprio
-  // battery.sh nao imprime nada se o mouse estiver desconectado, o que
-  // ja faz o modulo sumir.
+  // Bateria do mouse (Logitech G703). O battery.sh nao imprime nada se o
+  // mouse estiver desconectado, o que ja faz o modulo sumir.
   "custom/mousebattery": {
     "exec": "~/.config/hypr/waybar/scripts/polybar-shim.sh ~/.config/polybar/battery.sh --show_icon G703 󰍽",
     "interval": 600,
     "tooltip": false
   },
 
-  // central de notificacoes (swaync) — substitui o "sino" que faltava.
-  // Mostra o estado (sino cheio quando ha notificacao guardada / DND) e o
-  // clique abre a central; clique-direito alterna o nao-perturbe.
-  // -swb = subscribe (json em stream); casa com os binds super+shift/ctrl+N.
+  // Central de notificacoes (swaync). Mostra o estado (sino cheio quando ha
+  // notificacao guardada / DND); clique abre a central, clique-direito
+  // alterna o nao-perturbe. -swb = subscribe (json em stream).
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "none": "",
-      "notification": "<span foreground='#d6006e'><sup></sup></span>",
-      "dnd-none": "",
-      "dnd-notification": "<span foreground='#d6006e'><sup></sup></span>",
-      "inhibited-none": "",
-      "inhibited-notification": "<span foreground='#d6006e'><sup></sup></span>",
-      "dnd-inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='#d6006e'><sup></sup></span>"
+      "none": "",
+      "notification": "<span foreground='#d6006e'><sup></sup></span>",
+      "dnd-none": "",
+      "dnd-notification": "<span foreground='#d6006e'><sup></sup></span>",
+      "inhibited-none": "",
+      "inhibited-notification": "<span foreground='#d6006e'><sup></sup></span>",
+      "dnd-inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='#d6006e'><sup></sup></span>"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -164,10 +138,9 @@
     "escape": true
   },
 
-  // polybar [module/powermenu] (custom/menu de 3 niveis)
-  // Waybar nao tem menu hierarquico -> wlogout, que voce ja tem instalado.
+  // Menu de energia via wlogout.
   "custom/powermenu": {
-    "format": "\uF011",
+    "format": "",
     "on-click": "wlogout -l ~/.config/hypr/wlogout/layout",
     "tooltip": false
   }

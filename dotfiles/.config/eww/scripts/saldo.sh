@@ -1,6 +1,6 @@
 #!/bin/sh
-# Coleta o saldo de ponto e converte o markup conky numa arvore de widgets eww.
-# Usado pelo defpoll "saldo_tree" no eww.yuck (porta do conky.conf.5, darkstar).
+# Coleta o saldo de ponto e converte o markup em arvore de widgets eww.
+# Usado pelo defpoll "saldo_tree" no eww.yuck.
 # Se o coletor falhar (sem VPN/Oracle), devolve um widget de aviso em vez de vazio.
 set -eu
 
