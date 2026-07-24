@@ -64,7 +64,7 @@ window#waybar {
 #wireplumber,
 #tray,
 #custom-consultaponto,
-#custom-openvpn,
+#custom-vpn,
 #custom-internet,
 #custom-mousebattery,
 #custom-notification,
@@ -78,7 +78,7 @@ window#waybar {
 }
 
 /* cor base SO p/ os modulos que nao trazem cor propria via <span>.
-   consultaponto/openvpn/internet/mousebattery recebem a cor do proprio
+   consultaponto/vpn/internet/mousebattery recebem a cor do proprio
    script (via polybar-shim) e por isso NAO podem levar "color" aqui — senao
    o CSS ganha do <span> e o icone fica preso em @foreground. */
 #clock,

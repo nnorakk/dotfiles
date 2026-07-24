@@ -11,7 +11,7 @@
     "wireplumber",
     "memory",
     "cpu",
-    "custom/openvpn",
+    "custom/vpn",
     "custom/internet",
     "custom/mousebattery",
     "custom/powermenu",

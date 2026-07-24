@@ -17,7 +17,7 @@
     "wireplumber",
     "memory",
     "cpu",
-    "custom/openvpn",
+    "custom/vpn",
     "custom/internet",
     "custom/mousebattery",
     "custom/notification",
@@ -92,11 +92,12 @@
     "tooltip": false
   },
 
-  "custom/openvpn": {
-    "exec": "~/.config/hypr/waybar/scripts/polybar-shim.sh ~/.config/polybar/openvpn-isrunning.sh",
-    "interval": 10,
-    "on-click": "kitty --class Vpn -e tmux-vpn-sonicwall.sh",
-    "on-click-right": "~/bin/stop-tmux-vpn-sonicwall.sh",
+  "custom/vpn": {
+    "exec": "~/.config/hypr/waybar/scripts/vpn-sonicwall.sh",
+    "interval": 5,
+    "signal": 8,
+    "on-click": "hyprctl dispatch exec 'kitty --class Vpn -e tmux-vpn-sonicwall.sh'",
+    "on-click-right": "hyprctl dispatch exec '~/bin/stop-tmux-vpn-sonicwall.sh'",
     "tooltip": false
   },
 
