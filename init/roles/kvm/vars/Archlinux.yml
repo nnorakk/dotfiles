@@ -6,7 +6,6 @@ kvm_packages:
   - dnsmasq
   - vde2
   - libvirt
-  - bridge-utils
   - openbsd-netcat
   - dmidecode
   - ovmf
