@@ -58,10 +58,17 @@
     #       "{{ pip_packages }}"
     #   tags: admin, arch, pip
 
+    - name: Verifica se yay ja esta instalado
+      stat:
+        path: /usr/bin/yay
+      register: yay_bin
+      tags: arch
+
     - name: Clona yay repositorio
       git:
         repo: "https://aur.archlinux.org/yay-git.git"
         dest: $HOME/tmp/yay-git
+      when: not yay_bin.stat.exists
       tags: arch
 
     - name: Instala yay
@@ -72,6 +79,7 @@
         - "makepkg -si --noconfirm"
         - "git reset --hard HEAD"
       changed_when: false
+      when: not yay_bin.stat.exists
       tags: arch
 
     # https://aur.archlinux.org/packages/dropbox/
