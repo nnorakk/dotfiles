@@ -70,13 +70,20 @@
          - "{{ dotfiles }}"
       tags: dotfiles, links
 
+    - name: Verifica quais itens de dotfiles_home existem nesta maquina
+      stat:
+        path: "{{ item }}"
+      loop: "{{ dotfiles_home }}"
+      register: dotfiles_home_stat
+      tags: dotfiles, links, home_dotfiles
+
     - name: Cria Links dos dotfiles na home
       file:
-        src: "{{ item }}"
-        dest: "$HOME/{{ item | basename }}"
+        src: "{{ item.item }}"
+        dest: "$HOME/{{ item.item | basename }}"
         state: link
-      with_items:
-         - "{{ dotfiles_home }}"
+      loop: "{{ dotfiles_home_stat.results }}"
+      when: item.stat.exists
       tags: dotfiles, links, home_dotfiles
 
     # - name: Cria Link neovim to vim directory
