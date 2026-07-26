@@ -24,14 +24,12 @@ aur_packages:
   - inxi # cmdline system information
   - gcalcli # client cli google calendar
   - terraform-ls # lsp terraform
-  - sqlitestudio # studio gui para sqlite databases
   - entr # event notify
   - xidlehook # substitui o xautolock, executa comandos quando idle
   - lazydocker # monitora docker
   - timeshift # snapshots btfrs
   - grub-btrfs # snapshots btfrs
-  - timeshift-autosnap # snapshots btfrs
-  - netExtender # vpn sonicwall
+  - netextender # vpn sonicwall (nome AUR e case-sensitive, minusculo)
   - krew # busca e instala plugins para kubectl
   - concalc # calculadora de linha de comando
   - kind # clusters kubernetes locais em docker
@@ -41,6 +39,8 @@ aur_packages:
   - pi-coding-agent # agente com troca de modelo em sessao
   - openai-codex-bin # codex cli da openai
   - opencode-bin # agente de terminal opencode
+  - vagrant # vagrant plugin install vagrant-libvirt # instala plugin libvirt (removido dos repos oficiais, so AUR)
+  - blueberry # config bluetooth (removido dos repos oficiais, so AUR)
     #  - picom-arian8j2-git # fork do picom
 #  - simplescreenrecorder # usado para gravar screen # instalacao simples com problema
 
@@ -55,7 +55,7 @@ packages:
   - fping
   - wget
   - xf86-video-fbdev
-  - xorg
+  - xorg-server # (renomeado de xorg, que virou apenas grupo)
   - xorg-xinit
   - mesa-demos # glxinfo command
   - firefox
@@ -86,10 +86,10 @@ packages:
   - iotop
   - ipcalc # calcula mascaras, quantidade enderecos, gw ...
   - tor
-  - vagrant # vagrant plugin install vagrant-libvirt # instala plugin libvirt
+  - timeshift-autosnap-manjaro # snapshots btfrs (pacote oficial, substitui o timeshift-autosnap do AUR)
   - guestfs-tools # virt-customize
   - ansible-lint # linter para ansible
-  - linux-headers # kernel headers
+  - linux-headers-meta # kernel headers (nome Manjaro; nao existe "linux-headers" generico)
   - zsh
   - fzf
   - git
@@ -103,7 +103,6 @@ packages:
   - minicom # terminal console
   - fd # mais rapido que o find
   - ripgrep
-  - xautolock
   - terraform # hahicorp terraform
   - packer # hashicorp packer
   - unzip
@@ -147,13 +146,13 @@ packages:
   - qpdf # cli tool para remover password
   - sxiv # visualizador de imagem
   - yapf # fixer python para ALE plugin
-  - flake8 # linter python para ALE plugin
+  - python-flake8 # linter python para ALE plugin (renomeado de flake8)
   - python-pylint # linter python para ALE plugin
   - python-pynvim # python nvim
   - filezilla # cliente ftp
-  - pandoc # usado para renderizar MarkDown files
+  - pandoc-cli # usado para renderizar MarkDown files (renomeado de pandoc)
   - pandoc-crossref # dependencias opcionais do pacote pandoc
-  - texlive-core # dependencias opcionais do pacote pandoc
+  - texlive-basic # dependencias opcionais do pacote pandoc (renomeado de texlive-core)
   - ttf-jetbrains-mono # fonts com ligaduras =>
   - xsel # commandline manipula clipboard
   - xclip # commandline manipula clipboard
@@ -161,7 +160,7 @@ packages:
   - tldr # ajuda em comandos mais uteis
   - udiskie # automount disks
   - ntfs-3g # montar particoes/discos ntfs
-  - neofetch # cmdline system information
+  - fastfetch # cmdline system information (sucessor do neofetch, descontinuado)
   - lsb-release # comando lsb_release
   - openvpn # vpn client
   - unclutter # esconde cursor do mouse quando digitando
@@ -192,7 +191,6 @@ packages:
   - expect # automatiza aplicacoes
   - oath-toolkit # one time password toolkit
   - eog # visualidor de imagens gnome
-  - blueberry # bluetooth interface
   - gum # TUI para scripts shell
   - swtpm # possibilita adicionar tpm 2.0 vms windows
   - dbeaver # SQL client
