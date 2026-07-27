@@ -35,12 +35,14 @@
     - name: Corrige problema de assinaturas desconhecidas manjaro
       shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux manjaro"
       become: true
+      ignore_errors: true
       tags: admin, arch
       when: ansible_facts["lsb"]["id"] == "ManjaroLinux"
 
     - name: Corrige problema de assinaturas desconhecidas archlinux
       shell: "rm -R /etc/pacman.d/gnupg && pacman-key --init && pacman-key --populate archlinux"
       become: true
+      ignore_errors: true
       tags: admin, arch
       when: ansible_facts["lsb"]["id"] == "Arch"
 
@@ -92,6 +94,8 @@
       kewlfft.aur.aur:
         name:
           "{{ aur_packages }}"
+        use: yay
+        extra_args: "--ask 4" # aceita remocao de pacotes conflitantes sob --noconfirm
       tags: admin, arch
 
     - name: Instala pacotes da stack wayland
@@ -106,6 +110,8 @@
       kewlfft.aur.aur:
         name:
           "{{ wayland_aur_packages }}"
+        use: yay
+        extra_args: "--ask 4" # aceita remocao de pacotes conflitantes sob --noconfirm
       tags: wayland
 
     - name: Habilita snapd

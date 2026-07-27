@@ -33,6 +33,8 @@
       kewlfft.aur.aur:
         name:
           "{{ hyprland_aur_packages }}"
+        use: yay
+        extra_args: "--ask 4" # aceita remocao de pacotes conflitantes sob --noconfirm
       tags: hyprland
 
     # --- Symlink da config (mesmo mecanismo dos demais dotfiles) ---------
