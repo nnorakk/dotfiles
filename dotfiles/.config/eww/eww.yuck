@@ -35,3 +35,33 @@
                       :anchor "top right"
                       :width "440px")
   (saldo))
+
+; =====================================================================
+; Widget "relogio" — relogio grande + calendario do mes (estilo post-it).
+; Hora/minuto por defpoll (10s); a data por poll de 10min (so muda no dia).
+; O calendario e o widget nativo do eww: sem :day/:month/:year ele mostra o
+; mes atual e marca o dia de hoje sozinho (dias de outros meses saem esmaecidos).
+; =====================================================================
+(defpoll clk_hour :interval "10s" :initial "--" `date +%H`)
+(defpoll clk_min  :interval "10s" :initial "--" `date +%M`)
+(defpoll clk_date :interval "600s" :initial "" `date +'%A, %d %B'`)
+
+(defwidget relogio []
+  (box :class "relogio" :orientation "v" :space-evenly false
+    (box :class "clock" :orientation "h" :space-evenly false :halign "center"
+      (label :class "hh" :text clk_hour)
+      (box :class "sep")
+      (label :class "mm" :text clk_min))
+    (label :class "subdate" :halign "center" :text clk_date)
+    (calendar :class "cal")))
+
+(defwindow relogio
+  :monitor 0
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  :geometry (geometry :x "30px"
+                      :y "40px"
+                      :anchor "bottom left"
+                      :width "340px")
+  (relogio))
