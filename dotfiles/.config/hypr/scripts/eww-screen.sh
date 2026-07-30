@@ -1,17 +1,20 @@
 #!/bin/sh
-# Abre o widget eww "saldo" no monitor certo (AOC auxiliar), resiliente a
-# reordenacao de monitores entre sessoes.
+# Abre uma janela eww no monitor certo (casando pelo MODELO do monitor),
+# resiliente a reordenacao de indices GDK entre sessoes.
 #
 # Porque nao basta :monitor no eww.yuck: o indice de monitor do GDK/eww NAO e
 # estavel entre logins (apos o GDM a ordem inverte e o indice fixo cai no LG
 # principal). O eww 0.5.0 so aceita indice inteiro, nao nome/modelo — entao
 # aqui descobrimos, em runtime, qual indice GDK corresponde ao monitor alvo
-# (casando pelo modelo passado como argumento) e abrimos la com --screen.
+# (casando pelo modelo passado) e abrimos la com --screen.
 #
-# Uso:  eww-saldo.sh "24P1W1"   (modelo/substring do monitor auxiliar)
+# Uso:  eww-screen.sh <janela> <modelo>
+#   ex: eww-screen.sh saldo   "24P1W1"
+#       eww-screen.sh relogio "24P1W1"
 set -eu
 
-match="${1:-}"
+win="${1:?uso: eww-screen.sh <janela> <modelo-do-monitor>}"
+match="${2:-}"
 
 # Garante o daemon do eww antes de abrir.
 eww daemon >/dev/null 2>&1 || true
@@ -49,5 +52,5 @@ while [ "$i" -lt 10 ]; do
 done
 [ "$screen" != "none" ] || screen=0   # fallback: 1o monitor
 
-eww close saldo >/dev/null 2>&1 || true
-exec eww open saldo --screen "$screen"
+eww close "$win" >/dev/null 2>&1 || true
+exec eww open "$win" --screen "$screen"
