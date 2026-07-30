@@ -19,7 +19,7 @@
 (defwidget saldo []
   (literal :content saldo_tree))
 
-; Janela no FUNDO (:stacking "bg"), sem reservar espaco e sem foco.
+; Janela no FUNDO (:stacking "bottom"), sem reservar espaco e sem foco.
 ; :monitor aqui e so um FALLBACK: quem escolhe o monitor certo e o launcher
 ; scripts/eww-saldo.sh, que abre com `--screen <n>` descoberto em runtime. O
 ; indice do GDK/eww NAO e estavel entre logins (apos o GDM a ordem inverte),
@@ -27,7 +27,7 @@
 ; So darkstar abre esta janela. Ancorada topo-direita.
 (defwindow saldo
   :monitor 0
-  :stacking "bg"
+  :stacking "bottom"
   :exclusive false
   :focusable false
   :geometry (geometry :x "30px"
