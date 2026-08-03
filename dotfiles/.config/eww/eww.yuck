@@ -21,7 +21,10 @@
 
 ; Janela no FUNDO (:stacking "bottom"), sem reservar espaco e sem foco.
 ; :monitor aqui e so um FALLBACK: quem escolhe o monitor certo e o launcher
-; scripts/eww-saldo.sh, que abre com `--screen <n>` descoberto em runtime. O
+; ~/.config/hypr/scripts/eww-screen.sh, que abre com `--screen <n>` descoberto
+; em runtime (casando o monitor pelo modelo) e confere no hyprctl layers que a
+; surface subiu, reabrindo em loop se nao (o `eww open` as vezes marca a janela
+; como active sem mapear a surface). O
 ; indice do GDK/eww NAO e estavel entre logins (apos o GDM a ordem inverte),
 ; e o eww 0.5.0 nao casa por nome/modelo — dai o launcher.
 ; So darkstar abre esta janela. Ancorada topo-direita.
