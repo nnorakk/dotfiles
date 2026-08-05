@@ -57,12 +57,14 @@
       become: true
       tags: admin
 
-    - name: Instala Pacotes Snap
-      snap:
-        name:
-          "{{ snap_packages }}"
-        state: present
+    - name: Desabilita snapd # nao usamos mais pacotes snap, so desliga se ja estiver instalado
+      ansible.builtin.systemd:
+        name: snapd
+        enabled: no
+        state: stopped
+        masked: yes
       become: true
+      ignore_errors: true # unidade pode nao existir em maquinas novas
       tags: admin
 
     - name: Habilita ssh server

@@ -1,8 +1,3 @@
-snap_packages:
-  - bw
-  - spotify
-  - todoist # todo list app
-
 packages:
   - pwgen # gerador de senha
   - dnf-utils
@@ -133,7 +128,6 @@ packages:
   - udiskie # automount disks
   - lxappearance # gtk theme switcher
   - qt5ct # qt5 configuration tool
-  - snapd # permite instalar pacotes snap
   - neofetch # cmdline system information
   - inxi # Script da informacoes sobre o sistema
   - arandr # gui xrandr monitor ajuste
