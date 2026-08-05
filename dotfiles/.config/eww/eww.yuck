@@ -36,7 +36,7 @@
   :geometry (geometry :x "30px"
                       :y "65px"
                       :anchor "top right"
-                      :width "440px")
+                      :width "510px")
   (saldo))
 
 ; =====================================================================
