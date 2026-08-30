@@ -21,7 +21,7 @@ vim.keymap.set('n', '<space>dq', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -53,10 +53,10 @@ local lsp_flags = {
 }
 
 -- bash lsp
-require('lspconfig')['bashls'].setup { on_attach = on_attach, flags = lsp_flags }
+vim.lsp.config('bashls', { on_attach = on_attach, flags = lsp_flags })
 
 -- python lsp
-require('lspconfig')['pylsp'].setup {
+vim.lsp.config('pylsp', {
     on_attach = on_attach,
     flags = {
         -- This will be the default in neovim 0.7+
@@ -74,10 +74,10 @@ require('lspconfig')['pylsp'].setup {
             },
         },
     },
-}
+})
 
 -- lua lsp
-require('lspconfig')['lua_ls'].setup {
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -88,7 +88,9 @@ require('lspconfig')['lua_ls'].setup {
     },
     on_attach = on_attach,
     flags = lsp_flags
-}
+})
 
 -- ansible lsp
-require 'lspconfig'.ansiblels.setup {}
+vim.lsp.config('ansiblels', {})
+
+vim.lsp.enable({ 'bashls', 'pylsp', 'lua_ls', 'ansiblels' })
