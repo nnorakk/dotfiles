@@ -20,3 +20,7 @@ id_rsa*
 # O deploy (tag hyprland) recria este link por maquina, a partir de
 # host-<hostname>.conf. Sincronizar o link faria darkstar e quasar brigarem.
 dotfiles/.config/hypr/conf/host.conf
+
+# Artefatos locais do codex
+/codexresume.txt
+/dotfiles/.codex
