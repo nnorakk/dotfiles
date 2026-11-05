@@ -67,8 +67,7 @@
 | `Super + Ctrl + Return` | Terminal dropdown (pyprland, desce do topo) |
 | `Super + Shift + Return` | tmux-scratch (special workspace) |
 | `Super + Shift + Escape` | Fecha o tmux-scratch |
-| `Super + Shift + I` | Esconde a janela na "gaveta" |
-| `Alt + I` | Abre/fecha a gaveta de janelas ocultas |
+| `Alt + I` | Esconde a janela focada; de novo, traz de volta a última escondida |
 | `Super + D` | Esconde **todas** as janelas do workspace |
 
 ## Submap **apps** — `Super + X`, depois:
